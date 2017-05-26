@@ -851,7 +851,7 @@
     <link href="http://yoursite.com/2016-07-30-First-Year-Graduate/"/>
     <id>http://yoursite.com/2016-07-30-First-Year-Graduate/</id>
     <published>2016-07-29T16:00:00.000Z</published>
-    <updated>2016-08-13T15:16:32.000Z</updated>
+    <updated>2017-05-26T16:46:30.000Z</updated>
     
     <content type="html"><![CDATA[<p>这两天身体不太舒服，但是头脑分外清灵。</p>
 <p>岛主刚过完25岁的生日，而我，离24岁生日还有7个多月，时间流逝得如此迅速，如果不带着目标干点什么，7个月后生日时应该会很遗憾吧，那时我会许什么愿望呢？会吃哪种口味的蛋糕呢？那些人会在我身旁呢？🤔</p>
@@ -1757,7 +1757,7 @@ summary(lin.mod)$coef
     <link href="http://yoursite.com/2016-06-17-final-test/"/>
     <id>http://yoursite.com/2016-06-17-final-test/</id>
     <published>2016-06-16T16:00:00.000Z</published>
-    <updated>2016-08-13T15:41:08.000Z</updated>
+    <updated>2017-05-26T16:46:15.000Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>不想抬起腿又必须要迈过这道坎的时光里，<br>你总比自己想象中更容易走神。</p>
@@ -2121,9 +2121,9 @@ summary(lin.mod)$coef
       <category term="数据科学实践" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%AE%9E%E8%B7%B5/"/>
     
     
-      <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
-    
       <category term="Statistics" scheme="http://yoursite.com/tags/Statistics/"/>
+    
+      <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
     
       <category term="R" scheme="http://yoursite.com/tags/R/"/>
     
@@ -2289,7 +2289,7 @@ summary(lin.mod)$coef
     <link href="http://yoursite.com/2016-05-12-Lecture-Divide-Combine/"/>
     <id>http://yoursite.com/2016-05-12-Lecture-Divide-Combine/</id>
     <published>2016-05-11T16:00:00.000Z</published>
-    <updated>2016-08-13T15:11:40.000Z</updated>
+    <updated>2017-05-26T16:45:59.000Z</updated>
     
     <content type="html"><![CDATA[<p>不想结束和岛主的聊天，然后问了个傻问题「博客里能不能写下听讲座的感想？」岛主说「当然可以啦~」</p>
 <p>然后我就开始敲字，因为是第一篇，虽然心存敬畏有些忐忑，但是也因为是「第一篇」，所以能找到能多理由安慰自己「你还有很大的进步空间…」</p>
