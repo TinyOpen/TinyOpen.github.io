@@ -1,0 +1,858 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Statistics,译文," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="岛主夫人的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="此文初衷&amp;amp;构架 在Udacicy论坛上看到有位导师贴出了这篇文章:《Understanding the Bias-Variance Tradeoff》，希望感兴趣的同学能够翻译下。我想了下，那我就试试吧。既是试试，那就不藏拙了，也想介绍一些模型背后的智慧。">
+<meta name="keywords" content="Statistics,译文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性模型往深讲——Trade-off between accuracy and precision">
+<meta property="og:url" content="http://yoursite.com/2016-06-27-translate-biasvariance/index.html">
+<meta property="og:site_name" content="岛主夫人的博客">
+<meta property="og:description" content="此文初衷&amp;amp;构架 在Udacicy论坛上看到有位导师贴出了这篇文章:《Understanding the Bias-Variance Tradeoff》，希望感兴趣的同学能够翻译下。我想了下，那我就试试吧。既是试试，那就不藏拙了，也想介绍一些模型背后的智慧。">
+<meta property="og:image" content="http://yoursite.com/img/in-post/6-27-bias-variance/fun.jpg">
+<meta property="og:updated_time" content="2017-05-26T15:39:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="线性模型往深讲——Trade-off between accuracy and precision">
+<meta name="twitter:description" content="此文初衷&amp;amp;构架 在Udacicy论坛上看到有位导师贴出了这篇文章:《Understanding the Bias-Variance Tradeoff》，希望感兴趣的同学能够翻译下。我想了下，那我就试试吧。既是试试，那就不藏拙了，也想介绍一些模型背后的智慧。">
+<meta name="twitter:image" content="http://yoursite.com/img/in-post/6-27-bias-variance/fun.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6292665083919074000,
+      author: 'Kathy'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016-06-27-translate-biasvariance/"/>
+
+  <title> 线性模型往深讲——Trade-off between accuracy and precision | 岛主夫人的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+    <div class="site-meta-headline">
+      <a>
+        <img class="custom-logo-image" src="http://obrxj270y.bkt.clouddn.com/hold%20on.jpg"
+             alt="岛主夫人的博客"/>
+      </a>
+    </div>
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">岛主夫人的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">带点小追求过日子</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                线性模型往深讲——Trade-off between accuracy and precision
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-27T00:00:00+08:00" content="2016-06-27">
+              2016-06-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/数据科学实践/" itemprop="url" rel="index">
+                    <span itemprop="name">数据科学实践</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016-06-27-translate-biasvariance/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016-06-27-translate-biasvariance/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>此文初衷&amp;构架</p>
+<p>在Udacicy论坛上看到有位导师贴出了<a href="http://scott.fortmann-roe.com/docs/BiasVariance.html" target="_blank" rel="external">这篇文章:《Understanding the Bias-Variance Tradeoff》</a>，希望感兴趣的同学能够翻译下。我想了下，那我就试试吧。既是试试，那就不藏拙了，也想介绍一些模型背后的智慧。</p>
+<a id="more"></a>
+<p>我的这篇文章主要由下述三块构成：</p>
+<ul>
+<li><p><strong>解释一句话「所有的模型都是错的，只是其中有些很有用罢了」</strong> </p>
+<p>  决定在翻译前这部分作为「导读」，是觉得网上很多写这块的大部分作者，功底还是不够扎实，或者太注重应用，我之所以觉得理论的东西很重要，是因为它——<strong>「既出生，即永生」</strong></p>
+</li>
+<li><p><strong>翻译上面提到的文章<a href="http://scott.fortmann-roe.com/docs/BiasVariance.html" target="_blank" rel="external">《Understanding the Bias-Variance Tradeoff》</a></strong></p>
+</li>
+<li><strong>既然正事已干完，那就闲聊两句吧</strong>~😀</li>
+</ul>
+<blockquote>
+<p>ps: 希望我写完后不会心生如下的感慨——我的功底呢？ ⊂( ˆ - ˆ )⊃ </p>
+</blockquote>
+<p>哦，容我贴张非常无关的小黄人的图放松下</p>
+<p><img src="/img/in-post/6-27-bias-variance/fun.jpg" alt="fun"></p>
+<hr>
+<h3 id="Why「真相无法用模型描述」"><a href="#Why「真相无法用模型描述」" class="headerlink" title="Why「真相无法用模型描述」"></a><strong>Why「真相无法用模型描述」</strong></h3><h4 id="Data浮出水面"><a href="#Data浮出水面" class="headerlink" title="Data浮出水面"></a><strong>Data浮出水面</strong></h4><p>在大脑一片空白的情况下，我们遇到了一堆数据。假设这是堆有自变量x和因变量y的数据，比如说，商品销售额是y，广告预算是x，我们要研究的是y怎样被x所影响。</p>
+<p>此时你要意识到，这些数据只是<strong>「观测值」</strong>，而不是<strong>「真实值」</strong>。真实值加上随机生成的&amp;无法观测的误差，然后变成了观测值。因为随机误差不可测，所以真实值也被掩藏起来了。</p>
+<ul>
+<li><p>乐观一点 如果随机误差在0附近波动，那么多次观测取平均，其平均值几乎可以代表真实值，这也是很多模型假设「随机误差项服从均值为零的正态分布」的美好愿景，亦或者「好累，来个假设让问题简单化吧」。</p>
+</li>
+<li><p>更加感性&amp;悲观些的话<br>  作为人类，你永远不会得到「真实值」，更别提被「苍茫现实世界」所掩盖的真实模型。 就好像那句<strong>老话</strong>说的「所有的模型都是错的，但是其中有一些<strong>非常有用</strong>」。</p>
+</li>
+</ul>
+<blockquote>
+<p>不过现在，让我们忽略前半句话吧（眨眼~）从「非常有用」这个主观概念入手吧。</p>
+</blockquote>
+<h4 id="定义「好的模型」"><a href="#定义「好的模型」" class="headerlink" title="定义「好的模型」"></a><strong>定义「好的模型」</strong></h4><p>从直观感觉入手，然后慢慢将其进行抽象化。</p>
+<blockquote>
+<p><strong>直观上</strong>，好的模型通常有以下两个特点：</p>
+</blockquote>
+<ul>
+<li><p><strong>预测准确</strong><br>  预测值和真实值之间的差距要足够小，但是因为真实值不可知，所以退而求其次，预测值与观察值之间的差距足够小就可以了。</p>
+</li>
+<li><p><strong>可被理解</strong></p>
+<ul>
+<li>模型中的自变量都非常重要「模型足够简洁」  </li>
+<li>自变量之间的相关性较低「模型冗余度低，更精简」  </li>
+<li>能体现自变量是如何影响因变量的「参数的意义」<br>  但是这一点的重要性越来越低，唉，关于这个心中满是感慨，先压下。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>抽象化</strong>，如何量化一个模型的好坏呢？</p>
+</blockquote>
+<ul>
+<li><p>在工程领域的小伙伴看来，好坏=预测准确与否。<br>  即，对于每一个自变量x，模型会给出一个预测值，同时我们会有一个观测值，预测值和观测值之间的距离可以被定义。如果距离够近，那就足够好。当然，怎么定义距离，又是后话了。</p>
+</li>
+<li><p>在统计专业的小伙伴看来，模型的整体表现是最重要的。<br>  例如无偏性、渐进性等统计术语喷薄而出，保证这个模型是稳定的，不会被大西洋彼岸的蝴蝶的一次翅膀扇动而受海啸冲击飞灰湮灭。</p>
+</li>
+</ul>
+<blockquote>
+<p>以上，我们都没有谈及真实模型，why？因为我们对其一无所知呀。不过，虽然真实模型无法企及，但是有所追求始终是好事😄~接下来就谈谈真实模型吧。</p>
+</blockquote>
+<h4 id="真实模型"><a href="#真实模型" class="headerlink" title="真实模型"></a><strong>真实模型</strong></h4><p>这世界纷繁复杂得很，观测值围绕着真实值随机产生，二者之间的误差不是模型所能减少的，这个误差就叫做<strong>irreducible error</strong>（ps：同时模型也不是为了减少这个误差而存在的）。</p>
+<p>退很多步讲，即使我们知道真实模型，在预测的时候，我们得到的预测值依旧与观测值不一致（好愁人，那岛主的完美主义该怎么办呢（眨眼~）。</p>
+<p>so，「所有模型都是错的」趋近真理了。</p>
+<blockquote>
+<p>那么，就从真实模型退一步</p>
+</blockquote>
+<h4 id="真实模型-gt-最优模型"><a href="#真实模型-gt-最优模型" class="headerlink" title="真实模型-&gt;最优模型"></a><strong>真实模型-&gt;最优模型</strong></h4><p>两个问题：</p>
+<ul>
+<li><p>Q：看到「最优」两字后，我知道接下来该讲讲「这个『优』背后的衡量指标是什么？」</p>
+<p>  A：取<strong>均方误差MSE</strong>作为模型衡量指标后，在$X=x$这点取何值，才能使得均方误差最小？<br>   可以在理论上得到证明，当模型f(x)取值为<strong>E(Y| X=x)</strong>时，均方误差达到最小。</p>
+</li>
+<li><p>Q：<strong>E(Y| X=x)</strong>是何方神圣呢？<br>   A：如下图，在x=4这一点，取在「这一点<strong>所有观测值</strong>（各种灰色的点）的平均数（红色的那个点）」作为「最优模型在这点的值」</p>
+</li>
+</ul>
+<p>ok，然后又出问题，「所有观测值」听上去也很遥远呢~没错呀，我们也做不到这点。</p>
+<p>先停下来回顾下：</p>
+<ol>
+<li>真实模型肯定搞不定</li>
+<li>加上一个衡量标准「均方误差」</li>
+<li>得到最优模型$f(x)=E(Y|X=x)$</li>
+<li>这个最优模型还有一个美丽的名字——回归模型（向均值回归）</li>
+<li>但是最优模型也不好搞定呢——无法弄到所有的观测值</li>
+<li>那就试试向最优模型靠近吧——随着观测值数量的增多，这个靠近是可行的</li>
+<li>终于可以做点什么了</li>
+</ol>
+<blockquote>
+<p>从真实模型退两步: 真实模型-最优模型(回归方程)-我们的模型</p>
+</blockquote>
+<h4 id="我们的模型"><a href="#我们的模型" class="headerlink" title="我们的模型"></a><strong>我们的模型</strong></h4><p>ok，再回顾下：</p>
+<ul>
+<li>$Y$：观测值</li>
+<li>$…$：真实值（完全不知道）</li>
+<li>$f(x)$：最优模型（回归方程）给出的值，最优模型使得$E[(Y-f(x))^{2}]$最小</li>
+<li>$\hat{f}(x)$：我们的模型给出的值</li>
+</ul>
+<p>当有了<strong>「我们的模型」</strong>后，此时应该衡量的就是，「观测值」与「我们的的模型给出的值」之间的差距。</p>
+<p>$$\varepsilon = y-f(x)$$</p>
+<p>$$E[(Y-\hat{f}(X))^{2}|X=x] = [f(x)-\hat{f}(x)]^{2} + Var(\varepsilon)$$</p>
+<p>其中，$Var(\varepsilon)$ is irreducible, while $[f(x)-\hat{f}(x)]^{2}$ is reducible</p>
+<p>看得更清楚些，在特定的点 $x_{0}$ 处:</p>
+<ul>
+<li>我们的观测值是: $y_{0}$</li>
+<li>估计值是: $\hat{f}(x_{0})$</li>
+<li>偏差: $Bias(\hat{f}(x_{0})) = E[\hat{f}(x_{0})] - \hat{f}(x_{0})$</li>
+</ul>
+<hr>
+<p>ok，接下来再贴翻译稿我觉得好多啦！</p>
+<hr>
+<h3 id="译-Understanding-the-Bias-Variance-Tradeoff"><a href="#译-Understanding-the-Bias-Variance-Tradeoff" class="headerlink" title="译| Understanding the Bias-Variance Tradeoff"></a>译| Understanding the Bias-Variance Tradeoff</h3><h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h4><p>当我们讨论预测模型的时候，预测误差可以被分解成两个部分：</p>
+<ul>
+<li>偏差，即预测值偏离真实值的部分</li>
+<li>波动，即预测的稳定性</li>
+</ul>
+<p>但是对于一个模型而言，上述两部分是此消彼长的关系，所以就需要对其二者进行权衡。理解这两类误差可以帮助我们诊断模型，从而更好地避免过拟合及欠拟合。</p>
+<h4 id="1-Bias-and-Variance"><a href="#1-Bias-and-Variance" class="headerlink" title="1. Bias and Variance"></a>1. Bias and Variance</h4><p>理解误差组成部分——<strong>预测偏差</strong>&amp;<strong>预测波动</strong>产生的机制，能够帮助我们优化数据拟合的过程，从而得到更加准确的模型。接下来，我们将从直观概念、图形和数学，这三个角度解释偏差和波动。</p>
+<h5 id="1-1-直观上的定义"><a href="#1-1-直观上的定义" class="headerlink" title="1.1 直观上的定义"></a>1.1 直观上的定义</h5><ul>
+<li><strong>由偏差导致的误差</strong>：预测的目标和模型给出的<strong>平均预测值</strong>之间的差距。当只有一个模型时就去谈论平均预测值有些奇怪。然而，想象下你可以多次重复模型构建的过程：收集到新的数据，开始分析，得到一个模型。由于数据集产生时所暗含的随机性，每一个数据集对应一个模型，每个模型给出一个预测值。偏差衡量的是这些模型的预测值与正确值之间的距离。</li>
+</ul>
+<ul>
+<li><strong>由波动导致的误差</strong>：预测给定点的值时，由不同数据集得到的的模型会分别给出值，这些值的波动性就代表了此类误差。再一次，想象下，多次重复构建模型的过程。此时，方差衡量了「不同的模型所给出的预测值之间的差异是否很大」。</li>
+</ul>
+<h5 id="1-2-图形表示"><a href="#1-2-图形表示" class="headerlink" title="1.2 图形表示"></a>1.2 图形表示</h5><p>利用靶心图可以很好地用图形解释偏差-波动。想象靶的中心代表了一个模型，它可以准确预测真实值。离中心越远，预测的效果越差。重复模型构建的过程（新数据-新模型），我们得到了靶上的很多点（hits，恩，我们射了好多飞镖😉）.当可以多次获取训练集时，我们同时也触及了数据中暗含的可变性，此时，每个点代表了基于新的训练集数据所得到的模型给出的预测值。</p>
+<blockquote>
+<p>注：恩，此时有很多点分布在靶上，接下来可以做的工作还有很多。举个例子🌰，就好像「有了」后可以带着眼镜细细推敲下「孩子聪明不？孩子会不会是小迷糊」这类问题😀</p>
+</blockquote>
+<p>有时，各个训练集中的数据都非常棒，使得基于这些训练集得到的模型，基于模型得到的预测值都在靶心附近；有时，训练集中会包含异常值或者是一些不标准的数据，导致了非常惨烈的预测。上述两种情况导致了靶上飞镖的不同分布。</p>
+<p>下面👇这张图代表了预测的偏差与波动不同表现之间的组合。</p>
+<h5 id="1-3-数学解释"><a href="#1-3-数学解释" class="headerlink" title="1.3 数学解释"></a>1.3 数学解释</h5><p>after Hastie, et al. 2009 《The Elements of Statistical Learning》</p>
+<p>Y是一个我们希望去预测的变量，而X是可以帮助我们预测的变量(covariate).我们可以假设这里存在一个关系式$Y = f(X)+\varepsilon$ 误差项$\varepsilon \sim N(0,\sigma_{\varepsilon})$</p>
+<p>利用线性回归或者其它的构建模型的方法，我们用$\hat{f}(x)$去估计$f(x)$.并且计算在$x$这一点的误差：</p>
+<p>$$Err(x) = E[(Y-\hat{f}(x))^{2}]$$</p>
+<p>此时上述误差可以被分解为两个部分：</p>
+<p>$$Err(x) = (E[\hat{f}(x)] - f(x))^{2} + E[(\hat{f}(x)-E[\hat{f}(x)])^{2}] + \sigma_{\varepsilon}^{2}$$</p>
+<p>$$Err(x) = Bias^{2} + Variance + Irreducible Error$$</p>
+<p>上述公式的第三项，不可约误差，是X与Y的真实关系中带有的，不能被任何模型所减少。在给定真实模型下，看起来，无限的数据能够使得我们通过减少偏差和波动至0来校准模型。但是，在现实中，最小化偏差和最小化方差之间有个博弈关系，使得二者不能同时减少。</p>
+<h4 id="2-一个例子：投票中的紧张局势"><a href="#2-一个例子：投票中的紧张局势" class="headerlink" title="2. 一个例子：投票中的紧张局势"></a>2. 一个例子：投票中的紧张局势</h4><p>让我们着手开始构建一个简单的模型。目标是构建一个模型来预测，有多少人会在下一次总统选举中投票给共和党。这个模型比人们通常提及建模时所设想的过程要简单得多，但是这对于解释偏差和波动的。</p>
+<hr>
+<p>未完，争取早日完成！💪</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Statistics/" rel="tag">#Statistics</a>
+          
+            <a href="/tags/译文/" rel="tag">#译文</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016-06-18-ANN-to-CNN/" rel="next" title="再听神经网络 From BNN to CNN">
+                <i class="fa fa-chevron-left"></i> 再听神经网络 From BNN to CNN
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016-06-30-Rennes/" rel="prev" title="Rennes——法国暑期学校小记">
+                Rennes——法国暑期学校小记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://oqk9k7f97.bkt.clouddn.com/header.jpg"
+               alt="Kathy" />
+          <p class="site-author-name" itemprop="name">Kathy</p>
+          <p class="site-description motion-element" itemprop="description">统计姑娘 | 漫威小粉 | 小黄人挚友</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/MissIslander" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/55447115/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/nothing-kathy" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              什么值得点😀
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://onebaiyi.github.io" title="岛主的博客" target="_blank">岛主的博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Why「真相无法用模型描述」"><span class="nav-number">1.</span> <span class="nav-text">Why「真相无法用模型描述」</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Data浮出水面"><span class="nav-number">1.1.</span> <span class="nav-text">Data浮出水面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定义「好的模型」"><span class="nav-number">1.2.</span> <span class="nav-text">定义「好的模型」</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#真实模型"><span class="nav-number">1.3.</span> <span class="nav-text">真实模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#真实模型-gt-最优模型"><span class="nav-number">1.4.</span> <span class="nav-text">真实模型->最优模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我们的模型"><span class="nav-number">1.5.</span> <span class="nav-text">我们的模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#译-Understanding-the-Bias-Variance-Tradeoff"><span class="nav-number">2.</span> <span class="nav-text">译| Understanding the Bias-Variance Tradeoff</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引言"><span class="nav-number">2.1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Bias-and-Variance"><span class="nav-number">2.2.</span> <span class="nav-text">1. Bias and Variance</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-直观上的定义"><span class="nav-number">2.2.1.</span> <span class="nav-text">1.1 直观上的定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-图形表示"><span class="nav-number">2.2.2.</span> <span class="nav-text">1.2 图形表示</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-数学解释"><span class="nav-number">2.2.3.</span> <span class="nav-text">1.3 数学解释</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-一个例子：投票中的紧张局势"><span class="nav-number">2.3.</span> <span class="nav-text">2. 一个例子：投票中的紧张局势</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kathy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'missislander';
+      var disqus_identifier = '2016-06-27-translate-biasvariance/';
+      var disqus_title = "线性模型往深讲——Trade-off between accuracy and precision";
+      var disqus_url = 'http://yoursite.com/2016-06-27-translate-biasvariance/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>

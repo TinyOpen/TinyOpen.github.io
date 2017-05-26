@@ -1,0 +1,2399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>岛主夫人的博客</title>
+  <subtitle>带点小追求过日子</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-05-26T14:45:11.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Kathy</name>
+    <email>kathy9302fam@gmail.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>标签测试文章</title>
+    <link href="http://yoursite.com/%E6%A0%87%E7%AD%BE/"/>
+    <id>http://yoursite.com/标签/</id>
+    <published>2017-05-26T14:44:37.000Z</published>
+    <updated>2017-05-26T14:45:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>hi tags</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;hi tags&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="Testing" scheme="http://yoursite.com/tags/Testing/"/>
+    
+      <category term="Another Tag" scheme="http://yoursite.com/tags/Another-Tag/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/Mathematics%20in%20Data%20Science/"/>
+    <id>http://yoursite.com/Mathematics in Data Science/</id>
+    <published>2016-12-16T01:02:15.000Z</published>
+    <updated>2016-12-16T01:02:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Mathematics-in-Data-Science"><a href="#Mathematics-in-Data-Science" class="headerlink" title="Mathematics in Data Science"></a>Mathematics in Data Science</h1><p>#讲座</p>
+<p>Zuowei Shen 新加坡国立大学理学院院长</p>
+<p>数据科学目前遇到很多瓶颈，是软件的不足，也就是数学的不足。牛顿时代，数学和物理相互促进都有了十足的发展，而现在，接下去的时代里，数据和数学也将相互促进。</p>
+<h2 id="什么是数据科学？"><a href="#什么是数据科学？" class="headerlink" title="什么是数据科学？"></a>什么是数据科学？</h2><p>Data science is science</p>
+<ul>
+<li>数据推动科学：rules</li>
+</ul>
+<ul>
+<li>科学推动数据：methods to acquire and process </li>
+</ul>
+<h2 id="对数据科学的兴趣源头"><a href="#对数据科学的兴趣源头" class="headerlink" title="对数据科学的兴趣源头"></a>对数据科学的兴趣源头</h2><ul>
+<li>数据量和维数</li>
+</ul>
+<ul>
+<li>我们想做的是现在的方法所力所不能及的</li>
+<li>想要得到信息，想要获得知识，想要预测未来</li>
+</ul>
+<h2 id="数据对社会的作用"><a href="#数据对社会的作用" class="headerlink" title="数据对社会的作用"></a>数据对社会的作用</h2><p>Science - Industry (中间的连接是Technology）<br>through translational research<br>Industry leads to application-driven research</p>
+<p>数据科学，从科学和工业，是通过软件来实现的。大大缩小了科学和工业之间的鸿沟。因为之前的Gap是硬件造成的。</p>
+<p>So the cycle in time is short, competition is very intense.</p>
+<p>computer vision 在deep learning 的发展下逐渐变成了现实，那些大牛都走了。</p>
+<p>工业界的优势：</p>
+<ul>
+<li>真问题</li>
+</ul>
+<ul>
+<li>真数据</li>
+<li>真的计算能力<br>工业界对Data Science有了巨大的推动。</li>
+</ul>
+<p>学校很像招Data Science 的人才，结果招的只是numerical analyse.</p>
+<h2 id="一些例子"><a href="#一些例子" class="headerlink" title="一些例子"></a>一些例子</h2><ul>
+<li>Data Compression<br>其中的技术就是小波，使得图像压缩后图片似乎不变<br>100年前某位学生的phd论文<br>20年前，Daubechies的一个光滑的小波，4-5年后，FBI用小波压缩了指纹的数据<br>JPEG-2000 the new standard for digital picture compression </li>
+</ul>
+<p>能够压缩的原理是：稀疏逼近，基函数；</p>
+<ul>
+<li>Compressed Sensing<br>压缩感知，两位斯坦福的统计学家和UCLA的陶哲轩。<br>工业界的人每天早上起床的第一件事就是去Donaho和Candes的网页上看看他们有没有新的进展。学术界本该如此，这就是它对Data Science 的贡献。</li>
+</ul>
+<p>矮胖子矩阵得到了f，如何把u重构回来。三年前这个理论非常hot，但现在已经过去了。所以，不可能一个问题做一辈子。</p>
+<ul>
+<li><p>Low Rank Matrix Completion<br>有很多问题，很多人都在寻求答案。</p>
+</li>
+<li><p>Removal of unknown noise from Data<br>很多噪音在实际中根本不是高斯那回事。所以，如何在不知道噪音的情况下去燥音呢？</p>
+</li>
+<li><p>The LA Riot in 1992<br>video看不清楚，去UCLA找了数学家，没有找计算机系的教授——有现成方法找计算机系，没有现成问题找数学系。这是美国法庭第一次接受经过处理的图像。<br>simulating fire</p>
+</li>
+<li><p>Google search engine<br>20年前发明了page rank，最初的思想很简单，但是实际处理起来不容易，因为这是一个网络。最终抽象成一个算奇异值的问题。那篇问题的专利属于斯坦福，然后斯坦福靠这个专利发了一笔。所以Gap越来越窄了。</p>
+</li>
+<li><p>AlphaGo<br>AlphaGo has the ability to learn while Deep Blue cannot.</p>
+<ul>
+<li>根据现有竞赛中的棋谱学习</li>
+<li>自己下</li>
+<li>search solution</li>
+</ul>
+</li>
+</ul>
+<h2 id="Features-of-Data-Science-Research"><a href="#Features-of-Data-Science-Research" class="headerlink" title="Features of Data Science Research"></a>Features of Data Science Research</h2><p>这个时代已经来了，但是谁都不知道，如果你不进去，时代会把你推进去。牛顿时代的科学给人们带来了工业革命，将人类从体力劳动中解放出来了。下一次工业发展will leberate human beings from heavy, tedious “brain work”.  </p>
+<blockquote>
+<p>你们可能没到退休就淘汰了，反正我已经不在了。但是，创新的需求还在。  </p>
+</blockquote>
+<p>30年前一篇phd论文做一辈子，但现在已经不是这样了，没有一个题目你能做好几年，现实中的问题太多了。</p>
+<p>我们很多脑力功能都已经丧失了，例如心算，例如记电话号码；<br>怎么办，脑力和体力都不行了。</p>
+<pre><code>- no clear boundary in between fundamental research, translational research and industrial application.
+- Real life driven research
+</code></pre><p>40‘ 重新👂</p>
+<p>对个人：兼顾广和深，问题驱动创新为主，真正深入原始的问题。<br>对机构：大学是鼓励个人创新，大多数人的研究目标不是为了工业界，只是为人类的知识宝库做贡献（创新的源泉）。大学给予学术自由&amp;经济支持。</p>
+<h2 id="我的提问"><a href="#我的提问" class="headerlink" title="我的提问"></a>我的提问</h2><p>Q：您的很多观点都很好，您本人也获得了很大的成就，我很感兴趣，是什么观念，是什么您年轻的时候就有的观念，让你获得今天的这些思想和成就的呢？</p>
+<p>A：我没有什么成就，但是有这三点是我一直在坚持的✊</p>
+<pre><code>- 思想要自由，不要一直活在别人的光环下，我看论文的习惯就是，不细读，读的不做，做的不读；
+- 要创新——创新才是一个NP问题，看懂问题只是有限时间就可以；
+- 要有用，高维数据低维流行逼近，现在只有PCA，PCA只是在二维世界中的线性逼近，所以现实世界是多么需要有理论研究者在这块干点什么呀～
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Mathematics-in-Data-Science&quot;&gt;&lt;a href=&quot;#Mathematics-in-Data-Science&quot; class=&quot;headerlink&quot; title=&quot;Mathematics in Data Science&quot;&gt;&lt;/a&gt;Mathe
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>感谢Trump🤓, 让我们在中国接受民主训练</title>
+    <link href="http://yoursite.com/2016-11-10-training-of-politics-for-kids/"/>
+    <id>http://yoursite.com/2016-11-10-training-of-politics-for-kids/</id>
+    <published>2016-11-10T06:25:04.000Z</published>
+    <updated>2016-11-11T02:07:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>昨儿的午饭时光，食堂里隐约可听见很多关于美国大选的谈话，我们这桌和隔壁桌也罕见地互通有无了一下——原来希拉里的指控又被撤销了。再对比，前两日，班长在群里统计户口在西湖区的人，并告知他们需要去投票时，班级群中涌现的都是一番拒绝。贺贺和我说，她本科时就去过一次，在谁都不认识的情况了，选了一个她最喜欢的名字。</p>
+<center><br><img src="http://obrwm9a7w.bkt.clouddn.com/wow.jpg" width="200" high="200" title="gagaga"><br></center>
+
+
+<a id="more"></a>
+<p>我不太懂中国政治现状到底如何，一来是因为自身利益不相关，二来是我国政治娱乐属性欠佳。最初看到胡适用「阿斗」形容1933年的国人时，我很自觉地想，「60年后出生的我也是阿斗呢。」刚有个同学来问我点事，然后带着惊讶的表情走了（恩，他平常也这样🙂）。</p>
+<p>1933年12月24日《独立评论》上，胡适发表了一篇文章《再论建国与专制》，美国大选刚结束这会儿，心血来潮，又翻来看。</p>
+<blockquote class="blockquote-center"><p>先在这里摘录一段：</p>
+</blockquote>
+<blockquote>
+<p>我有一个很狂妄的僻见：我观察近几十年的世界政治，感觉到民主宪政只是一种幼稚的政治制度，最适宜于训练一个缺乏政治经验的民族。向来崇拜议会式的民主政治的人，说那是人类政治天才的最高发明；向来攻击议会政治的人，又说它是私有资本制度的附属品：这些都是不合历史事实的评判。我们看惯了英美国会与地方议会里的任务，都不能不承认那种制度是很幼稚的，那种人才也是很平凡的。至于说议会政治是资本主义的政治制度，那更是笑话。</p>
+<p>照资本主义的自然趋势，资本主义的社会应该有第一流人才集中的政治，应该有效率最高的「智囊团」政治，不应该让第一流的聪明才智都走到科学工业的路上去，而剩下一班庸人去统治国家。Bryce的「美洲民主国」曾历数美国大总统之中很少第一流英才，但他不曾想到英国的政治领袖也不能比同时别种职业离得人才；即如名震一时的格兰斯顿如何可比他同时的流辈（如赫胥黎等人）？有许多幼稚的民主很早就有民主政治，正不足奇怪。民主政治的好处在于不甚需要出类拔萃的人才；在于可以逐渐推广政权，有伸缩的余地；在于「集思广益」，使许多阿斗把它们平凡常识凑起来也可以勉强对付；在于给多数平庸的人有个参加政治的机会，可以训练他们爱护自己的权利。</p>
+<p>总而言之，民主政治是常识的政治，而开明专制是特别英杰的政治。特别英杰不可必得，而常识比较容易训练。在我们这样缺乏人才的国家，最好的政治是一种可以住减推广政权的民主宪政。</p>
+<p>中国的阿斗固然应该受训练，中国的诸葛亮也应该多受一点训练。而我们看看世界的政治制度，只有民主宪政是最幼稚的政治学校，最适宜于收容我们这种幼稚阿斗。我们小心翼翼的经过三五十年的民主宪政训练之后，将来也许可以有发愤实行一种开明专制的机会。这种僻见，好像是戏言，其实是慎重考虑的结果，我认为值得研究政治思想的学者们的思考的。</p>
+</blockquote>
+<hr>
+<p>早晨与佳旭通电话，她说有一个教室的同学面对选举结果，都哭了。心理学专业的同学，对「性别歧视，种族问题等话题」敏感程度更高，这些问题实实在在地存在于美国社会中，而川普不负责任的言论使得他们有一种悲凉的预期「近几十年来，美国在这些问题上所做的努力，瞬间便消失了」。在佳旭实习的地方，大伙也是很悲观的态度，那些人考虑的则是这样一个问题「身为父母，如何向孩子解释『这是我们投票产生的总统，但是他有很多不负责的观点，你不能认为它是正确的』，如何面对孩子的疑问『那你们为什么要选他？』」</p>
+<p>我在这些问题上想得少，想当然地觉得「一个人的人品和它所做的事情将会做的事情应该分开来看」，所以，昨儿我看到共和党的初选辩论时觉得他很靠谱，截了他的话语👇。</p>
+<center><br><img src="http://obrwm9a7w.bkt.clouddn.com/Trump.png" width="200" high="200"><br></center>
+
+
+<p>听佳旭说后，我也意识到我忘了，比一些事情更重要（至少没那么不重要）的是，我们对待一些事情的看法，政治正确虽然不是个褒义词，但是它至少指出了前进的方向。身处高位者，大都有着自己的信仰，不过，这信仰能否与国家机器良好结合，从而照顾到国民利益，则是个仁者见仁的问题，取决于国家矛盾最大的那个点。川普的胜利，可能就是基于「『最』需要被照顾的国民利益——白人中下阶层」。那么其它阶级呢？</p>
+<p>身为一名局外人，我还是很感谢美国的民主选举训练了我的政治意识——我的政治知识库终于不再空空如也了，也基本上脱离了「外国的选举比较圆」的单一印象。另外，<a href="https://ipn.li/xuanmei/" target="_blank" rel="external">选美播客</a>以及IPN旗下的其它栏目等入侵了我的通勤&amp;锻炼时间，我也很享受。另外，我读胡适先生谈政治的书时，也终于觉得不再像是个小学生了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;昨儿的午饭时光，食堂里隐约可听见很多关于美国大选的谈话，我们这桌和隔壁桌也罕见地互通有无了一下——原来希拉里的指控又被撤销了。再对比，前两日，班长在群里统计户口在西湖区的人，并告知他们需要去投票时，班级群中涌现的都是一番拒绝。贺贺和我说，她本科时就去过一次，在谁都不认识的情况了，选了一个她最喜欢的名字。&lt;/p&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://obrwm9a7w.bkt.clouddn.com/wow.jpg&quot; width=&quot;200&quot; high=&quot;200&quot; title=&quot;gagaga&quot;&gt;&lt;br&gt;&lt;/center&gt;
+    
+    </summary>
+    
+      <category term="小日子一朵朵" scheme="http://yoursite.com/categories/%E5%B0%8F%E6%97%A5%E5%AD%90%E4%B8%80%E6%9C%B5%E6%9C%B5/"/>
+    
+    
+      <category term="社会" scheme="http://yoursite.com/tags/%E7%A4%BE%E4%BC%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>期中复习惯性之计数过程与生存分析</title>
+    <link href="http://yoursite.com/2016-11-10-counting-process-and-survival-analysis/"/>
+    <id>http://yoursite.com/2016-11-10-counting-process-and-survival-analysis/</id>
+    <published>2016-11-10T04:08:52.000Z</published>
+    <updated>2016-11-11T02:21:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>学期过半，虽然没有期中考的压力，但是还是想回顾下，因为最重要的永远都是<strong>「你学到了，你学懂了，你会用了」</strong>。</p>
+</blockquote>
+<p>目前学院里只有一个关于生物统计的讨论班，我能参与到这个讨论班要感谢挺多人：组织这场讨论班的张奕教授，告知我这个讨论班的信息贺贺，还有老板和张大帅的小兵们（一开始这个讨论班与老板的讨论班在时间上有冲突，很感谢他们愿意调换时间）。这个讨论班所需要的很多知识储备我都没有，但是这并不影响我参与其中的热情和信心，相反，我意识到了自己还有这么多需要学的，有紧迫感的同时也更有效率。</p>
+<center><br><img src="http://obrwm9a7w.bkt.clouddn.com/cat%20so%20lovely.jpg" width="200" title="so cute😃 come back home with him🌹"><br></center>
+
+<a id="more"></a>
+<p>讨论班用的参考书是<a href="https://book.douban.com/subject/2862564/" target="_blank" rel="external">《Counting Processes and Survival Analysis》</a>我已经报告了两次，最近的这次报告，由于中间回家看望爸妈等情感事件，有些匆忙，但是我也在连续两天高效学习后，觉得自己：</p>
+<ul>
+<li>灰常乐观没有手忙脚乱（依旧留出了锻炼的时间，知道任何时候，身体都是最重要的😎）</li>
+<li>心中灰常有谱（知道自己懂和不懂，知道哪些是必须要弄懂的🤔）</li>
+<li>效率灰常高、遇到突发事件也没有很影响自己的心情（顺便学了一下小波分析的知识🙂）</li>
+</ul>
+<h2 id="再回首Preface"><a href="#再回首Preface" class="headerlink" title="再回首Preface"></a>再回首Preface</h2><p><strong>最近我讲的这个方法，也算是一个里程碑，挺幸运的</strong>👇</p>
+<blockquote>
+<p>In 1978 Odd Aalen introduced the multiplicative intensity model for counting process, and his ideas have led to important advances in statistical methods for counting process data and for the censored data found in many biomedical studies. </p>
+</blockquote>
+<p><strong>书本简介</strong>👇</p>
+<blockquote>
+<p>In recent years, a great deal of research has been conducted on the application of martingales and counting processes to the analysis of censored data. This research has yielded many powerful methods——some for calculating the asymptotic distribution of nonparametric estimators of survival distributions and regression coefficients, and others for determining the large sample operating characteristics of significance tests used in this setting. </p>
+</blockquote>
+<p>统计中的方法用处有二：一是估计、二是检验。在censoring存在的情况下，鞅和记数过程为这两个目标提供了一整套完整的理论框架。而所谓的完整，往往需要借助概率这个小武器——大样本下的渐近分布等。</p>
+<blockquote>
+<p>Counting Process and Survival Analysis is an accessible compendium of this research. It provides a thorough and unified treatment of the martingale approach to the statistical analysis of counting processes, with a unique blend of theory and applications. Special emphasis is given to the asymptotic theory for methods of inference for right-censored data as well as to graphical diagnostics for regression models with these data.</p>
+</blockquote>
+<p>这本书先介绍了鞅理论和随机过程积分。这些框架在后面被用到了估计生存函数以及proportional hazards and multiplicative intensity regression models. 同时在处理回归模型时，partial likelihood 取代了一般的极大似然方法。图示方法也发挥了很大的作用（鞅残差的可视化）</p>
+<h2 id="一张思维导图"><a href="#一张思维导图" class="headerlink" title="一张思维导图"></a>一张思维导图</h2><p>这个学期承苏中根老师教诲良多，有一次他提到，「我现在对这个内容还不熟，所以上课要PPT要看书，等到我自己脑海中有一套体系后，再上课就可以只用黑板了。」</p>
+<p>而我老板，也经常教育我们，检验自己到底有没有把论文看懂很简单，就是扔掉论文，你再看看你能不能把它们写出来。</p>
+<p>信息的有效连接，即为知识。</p>
+<p><img src="http://obrwm9a7w.bkt.clouddn.com/%E9%9E%85%E6%96%B9%E6%B3%95%E5%92%8C%E8%AE%B0%E6%95%B0%E8%BF%87%E7%A8%8B.png" alt="鞅和记数过程"></p>
+<p>以上 2016.11.10 </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;学期过半，虽然没有期中考的压力，但是还是想回顾下，因为最重要的永远都是&lt;strong&gt;「你学到了，你学懂了，你会用了」&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;目前学院里只有一个关于生物统计的讨论班，我能参与到这个讨论班要感谢挺多人：组织这场讨论班的张奕教授，告知我这个讨论班的信息贺贺，还有老板和张大帅的小兵们（一开始这个讨论班与老板的讨论班在时间上有冲突，很感谢他们愿意调换时间）。这个讨论班所需要的很多知识储备我都没有，但是这并不影响我参与其中的热情和信心，相反，我意识到了自己还有这么多需要学的，有紧迫感的同时也更有效率。&lt;/p&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://obrwm9a7w.bkt.clouddn.com/cat%20so%20lovely.jpg&quot; width=&quot;200&quot; title=&quot;so cute😃 come back home with him🌹&quot;&gt;&lt;br&gt;&lt;/center&gt;
+    
+    </summary>
+    
+      <category term="偶遇新事物" scheme="http://yoursite.com/categories/%E5%81%B6%E9%81%87%E6%96%B0%E4%BA%8B%E7%89%A9/"/>
+    
+    
+      <category term="Biostatistics" scheme="http://yoursite.com/tags/Biostatistics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>生物统计相关的几场讲座随笔</title>
+    <link href="http://yoursite.com/2016-10-30-biostat-related-lecture/"/>
+    <id>http://yoursite.com/2016-10-30-biostat-related-lecture/</id>
+    <published>2016-10-30T15:34:12.000Z</published>
+    <updated>2016-11-10T07:12:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>转眼一个月又要过去了，正巧最近听了几场生物相关的讲座，就趁着周日的晚上写篇博客。顺便重温了一把研究生初入学时的两场讲座。</p>
+<blockquote class="blockquote-center"><p>三场讲座的主题分别是：<br>Lecture 1: What Do Statisticians Do?<br>Lecture 2: Analysis of Integrated Data<br>Lecture 3: 数理统计在药物临床试验中的应用</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="Lecture-1-What-Do-Statisticians-Do"><a href="#Lecture-1-What-Do-Statisticians-Do" class="headerlink" title="Lecture 1: What Do Statisticians Do?"></a>Lecture 1: What Do Statisticians Do?</h1><p>by 胡飞芳教授<br>2015.10.23 </p>
+<h2 id="Uncertainty-amp-Statistics"><a href="#Uncertainty-amp-Statistics" class="headerlink" title="Uncertainty &amp; Statistics"></a>Uncertainty &amp; Statistics</h2><p>现在社会中关键词是uncertainty, 其中最大的一块就是金融市场中的Uncertainty—— financial market come up because of uncertainty. 另外，之所以要谈恋爱也是因为不确定性😏</p>
+<blockquote>
+<p>对于不确定性，概率使用数学的方式去描述他，而统计是用数学的方法去理解它，理解不确定背后的确定性——Statistics is a “GAME” between human and nature.</p>
+</blockquote>
+<h2 id="统计学家的定义"><a href="#统计学家的定义" class="headerlink" title="统计学家的定义"></a>统计学家的定义</h2><p><strong>Statisticians are experts in:</strong></p>
+<ul>
+<li>Producing useful data<br>  survey sampling; experiment designs</li>
+<li>Analyzing data to make meaningful results<br>  statistical methods</li>
+<li>Drawing practical conclusions</li>
+</ul>
+<p><strong>A Good Applied Statistician require a combination of four types of knowledge：</strong></p>
+<ul>
+<li>Scientific: 学科背景需要快速掌握</li>
+<li>Statistical: Needs to have the knowledge and experience to be able to apply appropriate procedures for design and analysis. 哪怕不会，也要能快速上手</li>
+<li>Computational: Sufficient proficiency to perform the actual data using software.</li>
+<li>Communication: 语言能力在实验室里至关重要。</li>
+</ul>
+<h2 id="以试验设计为例"><a href="#以试验设计为例" class="headerlink" title="以试验设计为例"></a>以试验设计为例</h2><p><strong>试验设计：</strong></p>
+<ul>
+<li>如何得到有用的数据？</li>
+<li>如何在任何给定的情况下，都优化结果——统计学所追求的是方法上的进步而不是技术上的进步。</li>
+<li>Good design of experiment must be realistic and efficient</li>
+</ul>
+<p><strong>判读AZT对艾滋病是否真的有效果？</strong></p>
+<ul>
+<li>传统做法：实验组&amp;安慰剂 历史5年，最后发表在顶尖医学杂志上</li>
+<li>最后结果：AZT Group 20/239；安慰剂组 60/238，所以这个药非常有效</li>
+<li>反思，在实验过程中逐渐看出AZT的确是很有效的，所以这个实验组人员的比例就应该逐渐升高。自适应设计的思想被引入的话，如果用DBCB试验方法的话，可以拯救20个艾滋病小孩。（张教授2004年发表的文献中得出的结果）</li>
+</ul>
+<h2 id="Work-Environment"><a href="#Work-Environment" class="headerlink" title="Work Environment"></a>Work Environment</h2><ol>
+<li><p>Pharmaceutical Industries<br> 美国的医疗行业占GDP的比重为17%-18%，中国平均6％-7%，在北京占到10%。<br> 新药研发非常烧钱，辉瑞最近使几年，花了200亿美元，产生了3种新药。<br> 利益背后时生物统计系雇的教授超过了统计系。</p>
+</li>
+<li><p>IT<br> 例如Google的搜索引擎的Algorithm<br> Research and business decision</p>
+</li>
+<li><p>Business<br> Government<br> Census Bureau<br> Investment Bank：美国最好的本科生已经不去投行，而是去Facebook这类的公司。</p>
+</li>
+<li><p>生物统计在中国的发展会怎样？<br> 跨国制药公司来华开设研究院（但是目前规模并不大，同时中国的制药公司也还没有进入新药研发阶段，随着合成药研发的难度越来越大，不知中国是否会直接跳过这一步🤔）<br> 做研究的医院需要生物统计的人才（这点还是很靠谱的，这学期参加的一个讨论班，其成立的初衷就是为了解决一个实际问题）</p>
+</li>
+</ol>
+<p>Data Science 来势汹汹，美国院校动力十足。大数据的核心还是统计，Data science has become a forth approach to scientific discovery, in addition to experimentation, modeling, and computation.（对这点持怀疑态度，除了生物领域，统计能做的，还太少，也不太受重视）</p>
+<h1 id="Lecture-2-Analysis-of-Integrated-Data"><a href="#Lecture-2-Analysis-of-Integrated-Data" class="headerlink" title="Lecture 2: Analysis of Integrated Data"></a>Lecture 2: Analysis of Integrated Data</h1><p>2015.11.30 by Peter Song</p>
+<p>有一类大数据的一种特征是，它是由小数据合并而来的，这个时候统计工作应该如何展开呢？</p>
+<p>大约100年前，似然估计的发明者R.A.Fisher就已经开始着手处理这一类的问题，meta analysis, 现在如何在大数据领域推广古典的meta analysis呢？最近这个话题的文章很容易发表，统计的人可以从meta analysis到大数据这个思路上去考虑。</p>
+<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>现在很多的数据库来源于不同的渠道——不同的地点、时间、人群。考虑到统计的两大原则：数据的随机性&amp;采样的代表性——Blocking is the principle to handle potential heterogeneities. 但是，差异性不仅仅是由于study population造成的。例如，杭州和北京的家庭调查问卷得出的结果之间的差异不仅仅是因为两地家庭的差异，还因为这两个调查问卷，一份中有10个问题，另一份中有15个问题，所以这25个变量如何进行融合得到更广范围内的结论呢？</p>
+<p>在基因研究中，DNA测序是一项很昂贵的实验，而比较好的实验需要1000个个体。这个时候如果能把不同研究的DNA的数据融合在一起就好了。</p>
+<p><strong>数据融合适用领域</strong></p>
+<ul>
+<li>combining genetic studies</li>
+<li>multi-center clinical trial 多中心的临床实验</li>
+<li><p>survey data sets from different regions and from times 社会调查</p>
+</li>
+<li><p>hope to increase sample size and thus improve statistical power</p>
+</li>
+<li>hope to increase coverage of data diversity and thus improve the representativeness of data and generality of statistics results</li>
+</ul>
+<p><strong>BUT, Inter-study heterogeneity is one of the major trouble makers:</strong></p>
+<ul>
+<li>study goals</li>
+<li>study population 很多实验本来就是基于人种差异去进行的</li>
+<li>experimental protocols 实验测试的方法</li>
+<li>study coordination 病人每三个月要回访，但是有些地方的人比较懒散（例如迈阿密的小伙伴）</li>
+</ul>
+<h2 id="成功融合的案例"><a href="#成功融合的案例" class="headerlink" title="成功融合的案例"></a>成功融合的案例</h2><p>此时，我们的优势是在study population上的，而非数据结构上的。凡是由政府资助的研究课题需要在2年后完全公开数据，以此来防止数据造假问题。</p>
+<p><strong>e.g.1: Longitudinal Data Asthma PACE Study</strong></p>
+<p>考虑个体之间的差异性，哮喘病在美国医疗上的开销是第三名，因为小孩子气喘不过来时家长在没有常识的情况下都会打911，警车、救护车、救火车都会前来，但是哮喘实际上是一个慢性病。而利用100+哮喘儿科医生提供的800+份档案，让家长学会如何处理。</p>
+<p><strong>e.g.2: 家庭的收入和美国小孩的BMI之间的关系</strong></p>
+<p>美国第一大的慢性病是忧郁症depression，第二大就是obesity。肥胖症对后续的生育、cancer都有很大的影响。数据来自纵向调查，1997、2002、2007年，4个地区年龄在18岁下的1880个小孩。目的是探究”How social economic status can impact the children and adolescence’s BMI.” 如果k个study是高度homogeneous，则数据可以看作从同一个study population中来的。如果k个study中的数据是heterogeneous，那么就分开来做呗；如果某些数据集是homogeneous的，那么就可以分组合并进行回归分析。</p>
+<p>现在要问的问题是，哪些数据是一样的可以合并以增加量本容量从而增加统计的power。虽然所有的数据都不一样，数据收集的过程中肯定有一些相似性。Meta Analysis——不需要原始数据也能估计共同的参数不能检验假设，这一定很糟糕。(Meta Analysis： data are summary statistics from different data sets; Integrated-Data Analysis: subject-level data of individual studies)</p>
+<p>然后就有了从Meta Analysis👉🏻Integrated Analysis，Confidence Distribution 也是很新的一个领域。后面记了一堆现在也不知道是什么意思的东西（嗯，估计是听的时候已经晕了～😅）</p>
+<h1 id="Lecture-3-数理统计在药物临床试验中的应用"><a href="#Lecture-3-数理统计在药物临床试验中的应用" class="headerlink" title="Lecture 3: 数理统计在药物临床试验中的应用"></a>Lecture 3: 数理统计在药物临床试验中的应用</h1><p>2016.10.29 by 龚坚坚</p>
+<blockquote>
+<p>利用最近完成的心脏衰竭药物试验来展示数理统计学在临床试验设计，数据分析及药物有效性和安全性结论形成中的应用。</p>
+</blockquote>
+<h2 id="Clinical-trials"><a href="#Clinical-trials" class="headerlink" title="Clinical trials"></a>Clinical trials</h2><ul>
+<li>non- clinical: 动物身上做实验</li>
+<li>pre-clinical dose tolerability 最大剂量（西方的制药思想是：大家都能用（是一种平均数的概念），不过奥巴马卸任前提出了「精准医疗」的概念，恐怕会改变这个大方向）</li>
+<li>phase I drug mechanism</li>
+<li>phase II 建立假设 -dose finding/proof of concept</li>
+<li>phase III 检验（model base）confirmatory for efficacy and safety</li>
+<li>phase IV post-marketing surveillance</li>
+</ul>
+<h2 id="Key-items-related-to-Statistics-in-clinical-trials"><a href="#Key-items-related-to-Statistics-in-clinical-trials" class="headerlink" title="Key items related to Statistics in clinical trials"></a>Key items related to Statistics in clinical trials</h2><blockquote>
+<p>统计工作者在药厂的职责所在</p>
+</blockquote>
+<ul>
+<li>protocol and statistical analysis plan(不可以看了数据后再去改变实验方法，所以Plan非常重要）</li>
+<li>design of the study 试验如何设计、如何招募病人、如何进行比较</li>
+<li>randomization 如何进行随机化(使得性别等因素不成为 cofounder)</li>
+<li>primary objective 帮助团队定义</li>
+<li>primary endpoint </li>
+<li>primary analysis variable</li>
+<li>secondary objectives</li>
+<li>exploratory objectives</li>
+<li>Study patient population 依据的是 inclusion criteria and exclusion criteria - Analysis Set</li>
+<li>统计量的势 &amp; 样本量 （找90%的势所需要的sample size）</li>
+<li>interim analysis (有些study很大，上千病人，需要进行好几年的跟踪，药的有效性比预期要早地显现的话）</li>
+<li>Statistical analysis methods（不同的endpoint需要用不同的方法）</li>
+</ul>
+<h2 id="与统计相关的关键点："><a href="#与统计相关的关键点：" class="headerlink" title="与统计相关的关键点："></a>与统计相关的关键点：</h2><p><strong>实验流程</strong><br>心脏衰竭的病人对药物很敏感，所以先用standard药，先单盲，再双盲。</p>
+<p><strong>Multiplicity adjustment</strong><br>每一个比较不能用原先的显著性水平来做，要提高显著性水平，才能控制overall的p</p>
+<p>所以需要设计方案，在药厂必须控制type I error的情况下，很多统计学的知识就很重要了。</p>
+<p><strong>Interim analysis</strong><br>可以在中间的时候看看显著性水平有没有达到。8400人的study需要花费2-3亿美元，这个新药的研发，中途显著性就已经达到。</p>
+<p><strong>Selected exploratory objective</strong><br>负二项分布 Poisson被用来建模count type的variable<br>找出对应于不同类型data的分析方法。</p>
+<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><p>有很多case也会没有一个显著性的结果的，所以，有很多的运气成分在其中。</p>
+<p>此外，还需要做很多其它的Analysis，例如，因为对比的对象（目前主流药物）已经在市场上存在了20年，所以也有可能是由于抗药性的使得新药效果好于原先的药物。所以还要把新药数据和20年前的安慰剂组做对比，相当于检验下新研发的药如果在20年前进行的话，是否有效。</p>
+<p>统计的发展历史很奇特，麦迪森学校的农学很强，需要处理很多数据的人，所以一开始统计学家是帮着农学，但是，渐渐地生物统计开始发展了，这也是一个国家走向发达的标志。</p>
+<p>大型医药公司现在有100-200个统计的phd在工作。包括试验设计、数据分析，还有制定如何回答药监部门的质疑策略。中国一旦开始发展新药，就会需要大量的人。</p>
+<hr>
+<center><br><img src="http://obrwm9a7w.bkt.clouddn.com/tighter.jpg" width="200" high="200" title="照例放一张小黄人的图"><br></center>
+
+<p>2016.10.31凌晨</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;转眼一个月又要过去了，正巧最近听了几场生物相关的讲座，就趁着周日的晚上写篇博客。顺便重温了一把研究生初入学时的两场讲座。&lt;/p&gt;
+&lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;三场讲座的主题分别是：&lt;br&gt;Lecture 1: What Do Statisticians Do?&lt;br&gt;Lecture 2: Analysis of Integrated Data&lt;br&gt;Lecture 3: 数理统计在药物临床试验中的应用&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="偶遇新事物" scheme="http://yoursite.com/categories/%E5%81%B6%E9%81%87%E6%96%B0%E4%BA%8B%E7%89%A9/"/>
+    
+    
+      <category term="Lecture" scheme="http://yoursite.com/tags/Lecture/"/>
+    
+      <category term="Biostatistics" scheme="http://yoursite.com/tags/Biostatistics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>该认真聊聊🍞全麦吐司啦！</title>
+    <link href="http://yoursite.com/2016-09-29-Startday-whole-grain-toast/"/>
+    <id>http://yoursite.com/2016-09-29-Startday-whole-grain-toast/</id>
+    <published>2016-09-29T09:35:17.000Z</published>
+    <updated>2016-09-29T15:42:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在法国的时候，吃过几次当地的全麦吐司，给我的感觉非常单一，即「难吃」——不甜、不软、没有水很难下咽。那时我领悟到「原来猪宝宝的生活并没有想象中的好」。回国后，我吃着一鸣的吐司，感到疑惑和恐惧——Why the whole grain toast made in China is sososo palatable？😱</p>
+<p>微服私访了家附近的各种面包店，作为一个常吃全麦吐司的主儿，自己终于卖出了科学的一小步。不过，收集到的数据几乎让我心脆——全麦吐司的确存在，可是我家附近几乎没有，同时，我家附近集中了大部分杭州的面包店品牌，也就是说：<em>就算G20在杭州举办，我们依旧没有靠谱的全麦吐司😌</em></p>
+<a id="more"></a>
+<h3 id="面包选购指南"><a href="#面包选购指南" class="headerlink" title="面包选购指南"></a>面包选购指南</h3><p>然后用岛主给的vpn看了眼国外的<a href="http://www.webmd.com/food-recipes/features/the_best_bread_tips_for_buying_breads#1" target="_blank" rel="external">选购面包指南</a>。重点信息翻译如下：当你站在一堆面包前时，你肯定会疑惑，下面为你一一揭开这些面包的秘密。</p>
+<h4 id="Bread-Myth-No-1"><a href="#Bread-Myth-No-1" class="headerlink" title="Bread Myth No.1"></a>Bread Myth No.1</h4><p>如果它看起来是<strong>褐色</strong>的，并且名称中有「麦」这个字（注：要和巧克力口味的区分开哦🙂），那么，它肯定含有大量的<strong>纤维和全谷物</strong>。<br><blockquote class="blockquote-center"><p>也就是说，它应该看起来是这样的👇（图片By <a href="http://minimalistbaker.com/the-easiest-whole-grain-seeded-bread/" target="_blank" rel="external">Dana</a>)</p>
+</blockquote></p>
+<center><br><img src="http://obrxj270y.bkt.clouddn.com/SIMPLE-Whole-Grain-Bread.jpg" width="200" high="200" title="maybe genuine"><br></center>
+
+
+<blockquote class="blockquote-center"><p>而不是这样的👇图片 by me😁(灰常不负责任地没有马赛克，作为补偿——它家的奶油小甜点真的太好吃啦！)</p>
+</blockquote>
+<center><br><img src="http://obrxj270y.bkt.clouddn.com/%E8%BE%BE%E5%B8%83%E9%9B%B7%E5%85%8B.jpg" width="200" high="200" title="probably counterfeit"><br></center>
+
+<h4 id="Bread-Myth-No-2"><a href="#Bread-Myth-No-2" class="headerlink" title="Bread Myth No.2"></a>Bread Myth No.2</h4><p>配料表的<strong>第一个名词</strong>说明了一切。如果是<code>全麦粉</code>，好嘞！干杯~如果是<code>小麦粉</code>，放下，走人~因为你想要全麦的理由不是「只有淀粉」，而是：</p>
+<ul>
+<li>低脂肪</li>
+<li>零胆固醇</li>
+<li>含有10-15%的蛋白质</li>
+<li>灰常多的纤维</li>
+<li>抗性淀粉</li>
+<li>矿物质</li>
+<li>维生素…</li>
+</ul>
+<h4 id="Bread-Myth-No-3"><a href="#Bread-Myth-No-3" class="headerlink" title="Bread Myth No.3"></a>Bread Myth No.3</h4><p>注意钠的摄入量。全麦吐司制作中需要Na来控制发酵，通常来说，如果你打想把每日的Na摄入量控制在2g内的话，100g的吐司中含有的Na就占了约1/5了。在国内的美食网站上找了一个全麦面包的食谱，大概是「全麦面粉300g、糖12g、橄榄油12g、盐6g」，恩，真的很高。</p>
+<p>这一点是吐司类的通病，查了下膳食指南，每天食言的摄入量最好低于6g，也就是说Na的摄入量要低于<code>2358mg</code>$\frac{23}{23+35.5} \frac{6g}{1000mg/g}$. 有篇报道的标题为<a href="http://finance.sina.com.cn/consume/puguangtai/20120229/084611478563.shtml" target="_blank" rel="external">曼可顿切片面包含盐高过薯片 面包市场高钠普遍</a>，说得倒也有理有据。</p>
+<p>我已经默默地转战「桂格燕麦片」，桂格燕麦片的营养成分中，每100g中，Na的含量大概是40mg.</p>
+<hr>
+<h3 id="现场图"><a href="#现场图" class="headerlink" title="现场图"></a>现场图</h3><p>其实这些蛋糕店我都很喜欢，也是老主顾了，不过最近吃得少，一来钱包长空，恩，没有「二来」。本来想隐去店名，后来一想，啧啧，这食品行业的，你都卖了还怕人说，而且你们半斤八两都不好估计也不会在乎，最重要的一点是，我放在这里，应该也没人看~~🙂</p>
+<p>先上一些现场图吧~~</p>
+<p>下面四张图分别来自：</p>
+<ol>
+<li>喜士多便利店（这性价比，只要￥5.9，而且后面还会谈到，营养不错）</li>
+<li><a href="http://www.bratee-bakery.com/" target="_blank" rel="external">Bratee</a>（挺棒的店，店员很帅）</li>
+<li>贝丝客（非连锁，装修不错的私人蛋糕店，岛主怕我进去只拍照被刁难，于是在刚吃了一顿的情况下又买了一个面包，我看上去像是脸皮薄的人嘛🤔）</li>
+<li><a href="http://www.withwheat.com/" target="_blank" rel="external">原麦山丘</a>（一家创业公司，已风生水起）</li>
+</ol>
+<center><br><img src="http://obrxj270y.bkt.clouddn.com/%E7%95%A5%E6%9C%89%E8%AF%9A%E6%84%8F.jpeg" width="200" high="200" title="从颜色上看还不错的吐司们，其实也不怎么行"><br></center>
+
+
+
+<p>对了，看到「白色全麦吐司」时，千万别掏钱。例如下面三张图，分别来自：1. 可莎蜜儿 2. 达布雷克 3. 全家便利店</p>
+<center><br><img src="http://obrxj270y.bkt.clouddn.com/%E6%AF%94%E8%BE%83%E6%B2%A1%E6%9C%89%E8%AF%9A%E6%84%8F%E7%9A%84%E5%85%A8%E9%BA%A6%E5%90%90%E5%8F%B8.jpeg" width="200" high="200" title="好感慨，怎么能这么赤裸裸地欺骗"><br></center>
+
+<h3 id="一些数据"><a href="#一些数据" class="headerlink" title="一些数据"></a>一些数据</h3><p>其实我拍的时候，也很心虚，有的就没拍好，不然，我就可以，刷刷地放图，不用自己这么辛苦写了。所以，结合一些线上做的功课，我把我身边的一些吐司们，再仔细理一理~</p>
+<h4 id="配料表第一个名词"><a href="#配料表第一个名词" class="headerlink" title="配料表第一个名词"></a>配料表第一个名词</h4><table>
+<thead>
+<tr>
+<th>面包店</th>
+<th style="text-align:center">正气浩然的面包名称</th>
+<th style="text-align:center">配料表第一个名词</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>喜士多</td>
+<td style="text-align:center">全麦蔓越莓吐司</td>
+<td style="text-align:center">小麦粉</td>
+</tr>
+<tr>
+<td>可莎蜜儿</td>
+<td style="text-align:center">经典全麦土司面包</td>
+<td style="text-align:center">小麦粉</td>
+</tr>
+<tr>
+<td>美丽健</td>
+<td style="text-align:center">裸麦核桃</td>
+<td style="text-align:center">全麦粉</td>
+</tr>
+<tr>
+<td>全家</td>
+<td style="text-align:center">全麦土司</td>
+<td style="text-align:center">小麦粉</td>
+</tr>
+<tr>
+<td>达布雷克</td>
+<td style="text-align:center">全麦吐司</td>
+<td style="text-align:center">小麦粉</td>
+</tr>
+<tr>
+<td>克里斯汀</td>
+<td style="text-align:center">全麦核桃面包</td>
+<td style="text-align:center">高筋小麦粉</td>
+</tr>
+<tr>
+<td>一鸣</td>
+<td style="text-align:center">全麦土司</td>
+<td style="text-align:center">高筋小麦粉</td>
+</tr>
+<tr>
+<td>淘宝</td>
+<td style="text-align:center">无糖全麦面包吐司</td>
+<td style="text-align:center">全麦粉</td>
+</tr>
+</tbody>
+</table>
+<h4 id="每一百克吐司蛋白质的营养物质"><a href="#每一百克吐司蛋白质的营养物质" class="headerlink" title="每一百克吐司蛋白质的营养物质"></a>每一百克吐司蛋白质的营养物质</h4><p>请注意，两幅图末尾的是淘宝上的「正宗全麦吐司」，价格为￥36/360g，颜色正宗，配料ok，所以，拿它作为参照物还是很棒的~它的蛋白质含量远远高于其余吐司，脂肪含量居中。</p>
+<center><br><img src="http://obrxj270y.bkt.clouddn.com/%E8%90%A5%E5%85%BB%E7%89%A9%E8%B4%A8%E5%AF%B9%E6%AF%94.png" width="700" high="700" title="营养物质对比图"><br></center>
+
+<h4 id="乱七八糟的添加剂与全数据"><a href="#乱七八糟的添加剂与全数据" class="headerlink" title="乱七八糟的添加剂与全数据"></a>乱七八糟的添加剂与全数据</h4><center><br><img src="http://obrxj270y.bkt.clouddn.com/%E5%90%90%E5%8F%B8%E5%85%A8%E6%95%B0%E6%8D%AE.png" width="700" high="700" title="恩，好多添加剂"><br></center>
+
+<h3 id="为什么没有正宗的全麦？"><a href="#为什么没有正宗的全麦？" class="headerlink" title="为什么没有正宗的全麦？"></a>为什么没有正宗的全麦？</h3><p>假设：难道是全麦粉比较贵？<br>验证：查询马爸爸家的店后，发现某品牌<strong>1kg全麦预拌粉:</strong>售价16元——成分为「小麦粉、精制麦麸、麦香粉」，面包成色还不错~而单单的<strong>高筋小麦粉</strong>1kg是16.8元，还要贵0.8😅</p>
+<p>所以，我猜测，是这样的原因：</p>
+<blockquote>
+<p>我们长久以来的饮食习惯并不适合食用全麦吐司——我们没有往面包上涂抹奶酪、果酱的习惯，而真正的全麦面包口感着实不行，在食用全麦吐司时，大部分都不是干吃的，而是抹各种东西的。</p>
+<p>所以市场上对正宗全麦吐司的需求实际上是不多的，大部分的顾客去买全麦吐司是基于两个认知：1.听说营养不错；2.口感也不错哦。二者缺一不可，所以商家只能一边忽悠一边还照着你的口味来。</p>
+</blockquote>
+<h3 id="那怎么办呢？"><a href="#那怎么办呢？" class="headerlink" title="那怎么办呢？"></a>那怎么办呢？</h3><p>我打算吃燕麦片~不打算吃全麦吐司了。</p>
+<p>因为，我发现，即食的燕麦片直接放入酸奶中，搅拌静置2分钟后的口感灰常好！而且燕麦片蛋白质含量也不错、Na含量低、膳食纤维含量也不错~</p>
+<p>而且，真的好便宜。</p>
+<h3 id="我还有个宏伟的目标😋"><a href="#我还有个宏伟的目标😋" class="headerlink" title="我还有个宏伟的目标😋"></a>我还有个宏伟的目标😋</h3><p>对了，我心中还有个宏伟的目标，就是「能每日不间断地吃上口感最好的猕猴桃，不会出现『剩下的猕猴桃都不够软』这种进退两难的情况」，所以，特别想知道：</p>
+<ul>
+<li>一个给定软硬程度的猕猴桃</li>
+<li>在一定温度和湿度下</li>
+<li>在一定的催熟条件下（例如，与香蕉🍌、苹果🍎一起放置）</li>
+<li>要放置多久，才能达到最好吃程度</li>
+</ul>
+<p>对于一个经常吃猕猴桃的人来说，这件事情意义太重大了。同时，在「判定给定猕猴桃的软硬程度」这个问题上，我做了灰常严密的思考，最好的解决方案应该就是「通过在猕猴桃半径最大处施以给定的压力，看半径最大处的圆周凹陷的平均程度」，可能需要内置灰常精密的传感器😌 还有，最近猕猴桃好贵，估计得找个赞助商🤔 </p>
+<p>@宿舍~ 祖国母亲生日前写完~</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在法国的时候，吃过几次当地的全麦吐司，给我的感觉非常单一，即「难吃」——不甜、不软、没有水很难下咽。那时我领悟到「原来猪宝宝的生活并没有想象中的好」。回国后，我吃着一鸣的吐司，感到疑惑和恐惧——Why the whole grain toast made in China is sososo palatable？😱&lt;/p&gt;
+&lt;p&gt;微服私访了家附近的各种面包店，作为一个常吃全麦吐司的主儿，自己终于卖出了科学的一小步。不过，收集到的数据几乎让我心脆——全麦吐司的确存在，可是我家附近几乎没有，同时，我家附近集中了大部分杭州的面包店品牌，也就是说：&lt;em&gt;就算G20在杭州举办，我们依旧没有靠谱的全麦吐司😌&lt;/em&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="小日子一朵朵" scheme="http://yoursite.com/categories/%E5%B0%8F%E6%97%A5%E5%AD%90%E4%B8%80%E6%9C%B5%E6%9C%B5/"/>
+    
+    
+      <category term="发会呆" scheme="http://yoursite.com/tags/%E5%8F%91%E4%BC%9A%E5%91%86/"/>
+    
+      <category term="好吃的" scheme="http://yoursite.com/tags/%E5%A5%BD%E5%90%83%E7%9A%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>老教授的三场讲座</title>
+    <link href="http://yoursite.com/2016-09-21-three-lectures-of-an-academician/"/>
+    <id>http://yoursite.com/2016-09-21-three-lectures-of-an-academician/</id>
+    <published>2016-09-21T07:36:24.000Z</published>
+    <updated>2017-05-26T15:27:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>这两天开学，兵荒马乱之余，听了三场陈木法院士的讲座。</p>
+<p>其中有个笑话让我印象很深。有次陈木法教授与一位浙大搞工程的教授在飞机上相遇，浙大教授太无聊遂提议「我们互相问问题吧？你问的我答不出来我给500，我问的你答不出来，你给50.」「好啊，你先问」浙大教授问了一个关于机翼的问题，陈老师给了50.然后陈老师问「有一种动物，白天5只腿，晚上3只腿，是什么动物？」下飞机时浙大教授还是没想出来，给了500顺便问了下「是什么？」陈老师没有说话，只是给了他50.🙂</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><p>研一听讲座时，看到「底层术语」就感慨「为什么不能实用点呢」，而现在，若不是周围人的类似的抱怨，我甚至都没意识到原来我已经很习惯这类表述了。所以，之前只是自己学问不精，怪不得讲座内容。</p>
+<p>陈木法老师的最后一场讲座在另一个校区，讲座结束后等公交车时，还遇到了张大帅推着自行车，他说要走几步锻炼下。我老板最近换了辆车，永久牌的，我觉得特别好，很亲切，因为我特别穷，也只买得起自行车。</p>
+<p>以下随手一记，因本人学术功底有限，不涉细节。</p>
+<center><br><img src="http://obrwm9a7w.bkt.clouddn.com/pi.jpg" width="200" high="200" title="这图还不错"><br></center>
+
+
+<h2 id="优选法"><a href="#优选法" class="headerlink" title="优选法"></a>优选法</h2><p>百度百科上对于<a href="http://baike.baidu.com/link?url=24u8qNsUjvPdf4DbfhVrh48GkK3a36vSqR_hV68j3Lt4x6jWpg2un1l_lWVBt5jtJ6E46NqsWgHO2M4Bsz3zpq" target="_blank" rel="external">优选法</a>的介绍挺完善的，细节在这里就不一一叙述了。</p>
+<p>单峰函数的最大值点如何寻找？比较学究的回答就是「求导&amp;求二阶导」，但是，实际问题往往是这样的：</p>
+<ul>
+<li>你基本可以确定这是一个单峰函数</li>
+<li>可是并不知道函数长什么样？</li>
+</ul>
+<p>例如，<strong>如何烧饭更好吃？</strong>你当然可以做千万次实验，估计函数，然后再借助你心心念念的「求导&amp;求二阶导」达到目的，但这时候，你要面对的，就不仅仅是「黄花菜都凉了」的问题。</p>
+<p>例如，<strong>血液化验</strong>，当化验结果需要2-3天时间才能出来时，如果你是城里人，无所谓，等出来了再去取呗~但如果你是翻越山岭来到市区做的检查，2-3天的等待意味着很多，例如「家里的鸡鸭猪吃什么？」「住在哪里？」</p>
+<p>所以，问题就变成了，如何用最少的试验次数找到它的最大值点所在区间？问题的答案，就是「优选法」。这个方法非常有效，陈木法老先生的学术道路就从这里起步，从一本7分钱的优选法书籍起步。上个世纪改革开放那段日子里，华罗庚老先生对中国的帮助是很大的，例如他想了一些办法对文化程度普遍不高的工人推广优选法，比较有名的就是「折纸法」，老一辈的人很多都听说过0.618方法，是同源的。</p>
+<p>这个方法还有着非常好的理论基础。Jack Carl Kiefer, 在1953时用一篇4页+4行的论文证明了分数法是n步最优策略：$inf sup {c_{f}(P, n)- c_{f}}= 1/F_{n}+1$. 老先生是统计学家，MIT，大一时，世界大战爆发，去当空军，回来后，花了3年完成了本科和硕士学位，这是他的硕士论文。那个年代统计学家的数学功底是很强的。Kiefer后来做的是最优试验设计。</p>
+<p>以上都是单因素下的问题。可现今，动辄高维稀疏计算上的难度非常大，理论上则更大。乐观地看，这会带动学术界的发展，但是，不要在这个过程中失去用大脑抽丝剥茧降维的能力。</p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>陈木法老师试了两种算法去处理同一个矩阵，其中一个算法迭代了990次，另一个算法在高效的初值下只用了2次。冯康教授对前算法有个小小的批注——有些笨，无用。后来陈木法教授就在「如何找到高效初值」这个领域深耕了一会儿。</p>
+<h2 id="小记忆"><a href="#小记忆" class="headerlink" title="小记忆"></a>小记忆</h2><ul>
+<li>做学问，往粗里说就三件事，如何选方向？如何选题？如何步步深入？</li>
+<li>理论数学，九分无用，一分瞎说。</li>
+<li>要时常自己捣鼓下。</li>
+</ul>
+<h2 id="闲聊一会儿"><a href="#闲聊一会儿" class="headerlink" title="闲聊一会儿"></a>闲聊一会儿</h2><p>今天出宿舍门看到双峰的送奶车开过，我在想，几乎每天晚上双峰都卖完了自己鲜奶产品，这个鲜奶产品，是不是处在一种供不应求的状态呢？双峰知道嘛？一所学校对鲜奶的需求在周一-周日是否会发生明显变化，不同天气状况对鲜奶需求有无影响，如何找到每天配送鲜奶的最优数量（基于利润最大&amp;风险最小？）。</p>
+<p>这是个因素分外明显的模型，完全可以进行优化，所需要的知识也很简单。</p>
+<p>恩，数学还是很实用的。<br>以上。</p>
+<p>@宿舍，上完课中午回宿舍看完了《釜山行》，随手写点什么。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这两天开学，兵荒马乱之余，听了三场陈木法院士的讲座。&lt;/p&gt;
+&lt;p&gt;其中有个笑话让我印象很深。有次陈木法教授与一位浙大搞工程的教授在飞机上相遇，浙大教授太无聊遂提议「我们互相问问题吧？你问的我答不出来我给500，我问的你答不出来，你给50.」「好啊，你先问」浙大教授问了一个关于机翼的问题，陈老师给了50.然后陈老师问「有一种动物，白天5只腿，晚上3只腿，是什么动物？」下飞机时浙大教授还是没想出来，给了500顺便问了下「是什么？」陈老师没有说话，只是给了他50.🙂&lt;/p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;
+    
+    </summary>
+    
+      <category term="遇见新事物" scheme="http://yoursite.com/categories/%E9%81%87%E8%A7%81%E6%96%B0%E4%BA%8B%E7%89%A9/"/>
+    
+    
+      <category term="Lecture" scheme="http://yoursite.com/tags/Lecture/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我有个很聪明的老板</title>
+    <link href="http://yoursite.com/2016-09-16-dine-together-with-boss/"/>
+    <id>http://yoursite.com/2016-09-16-dine-together-with-boss/</id>
+    <published>2016-09-14T16:37:10.000Z</published>
+    <updated>2016-09-18T06:39:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>周围的人都好聪明好上进<br>可为什么我一点压力都没有🙂<br>难道因为我有个很聪明的老板🤔</p>
+</blockquote>
+<p><img src="http://obrxj270y.bkt.clouddn.com/boss.jpg" width="200" high="200"><br></p>
+<a id="more"></a>
+<p>凑着教师节和中秋，张大帅的小兵们跟着张大帅出校门吃了一顿晚饭，顺便接受了下智慧的洗礼。朴素地讲，和老板接触得越多，他的形象越立体、高大。不过，作为他的学生，我配不上师门的可能性也在不断增加😅。</p>
+<center><br><img src="http://obrxj270y.bkt.clouddn.com/boring.jpg" width="200" high="200"><br></center>
+
+<h3 id="张大帅的奋斗史"><a href="#张大帅的奋斗史" class="headerlink" title="张大帅的奋斗史"></a>张大帅的奋斗史</h3><p>张大帅目前是俺们院的副院长、俺们系的系主任，岛主有次看了下张大帅的履历，然后督促我向张大帅学习。</p>
+<p>这次饭桌上，老板提起他的本科院校时，是这样说的：</p>
+<ul>
+<li>我的本科学校特别差，班上只有我一个人做题，有时拓扑的题目比较难，老师都不会做。然后，考试的时候，我就比较忙。</li>
+<li>班上的同学有不同的追求，有的人就比较喜欢看电视剧，有的人比较喜欢打游戏，这些当然都是可以的，我与他们关系都很好。</li>
+<li>我一直以来都没想太多，只是把事情一件一件做好。</li>
+<li>对了，当时我们班上有个男同学和女同学在大冬天打架，有个人掉到水池里去了，然后爬起来继续打，后来他们俩在一起了，这是我们班上唯一的一对。</li>
+</ul>
+<p>后来，老板就来杭州读书了，选专业的时候，张大帅依旧没想太多，我们问他<strong>「老板，你当年怎么选的概率统计？」「随机选的呀🙂。」</strong>那时候，因为有林正炎老先生在，杭州大学的概率在全国都是很好的，老板就拜在林正炎先生门下。后来，浙大拆分只剩下工学，原先浙大的数学系变成了现复旦的数学系。再后来，杭城比较好的高校开始合并，浙大又逐渐壮大，杭州大学的数学系就变成了浙大的数学系。老板博士毕业后，在浙大任职，几年后就破格升了教授。</p>
+<p>有次我们帮张大帅搬办公室（总书记提倡清廉，教授办公室面积有限制，于是老板办公室的1/4被砍去，得重新布局），途中无人说话，我就随便问了下「老板，你儿子现在的数学题你还会做嘛？」「恩，大部分一看都是不会的，但是真要我做，我觉得也能做出来。」是啊，我虽然大二以后专业课学得水，但是学数学以来，所有在定理上花费的功夫都让我有了一种小自信「你让我直接说证明思路，我肯定半个字都吐不出来，但是只要让我瞄一眼，我就想起来了」。像数学这样纯粹由逻辑堆砌起来的学科，打基础上花费的精力，越往后走，越觉得「还好当初学了」。不过，谢益辉在<a href="http://cos.name/2011/07/we-never-know-randomness/" target="_blank" rel="external">真理在缩水，还是上帝在掷骰子？</a>中的观点，也有道理，凡事还是都不能走极端，摘录如下：</p>
+<blockquote>
+<p>随机变量在统计分析中占据中心地位，数学上关于随机变量的定义只是一个“干巴巴的函数”，从样本空间映射到实数集，保证从实数集上的Borel域逆回去的集合仍然在原来的sigma域中即可。随机变量的性质由其分布函数刻画。写这段话的目的不是为了吓唬你，也不是为了作八股文，而是来说明我为什么不喜欢数学的理由，对我而言，我觉得有些数学工具只是为了让自己不要太心虚，相信某时某刻某个角落有个理论在支撑你，<strong>但后果是弱化了人的感知</strong>，当然，也有很多数学工具有很强的直觉性。</p>
+</blockquote>
+<h3 id="张大帅谈信仰"><a href="#张大帅谈信仰" class="headerlink" title="张大帅谈信仰"></a>张大帅谈信仰</h3><p>佳攀在饭桌上问起我在法国的生活，我用寥寥几句概括了下，这背后的原因是「在法国没有吃饱饭，上课没有好好听😅~」不过，回国后，我倒是对自己政治身份产生了一丢丢的怀疑，于是我就像个战士一样问了老板关于信仰的问题。真的没有想到，老板后来竟然引申到了中东战略、朝鲜问题、台湾问题上，恩，这些我都不太懂，不过听起来感觉党和国家领导人好不容易。对于信仰，老板的观点是：</p>
+<ul>
+<li>有一部分人的信仰是很纯粹的，这不能用正误去评判它</li>
+<li>部分人的信仰会经历三个阶段「全盘接受、些许怀疑、升华阶段」，如是看来，我处在第二阶段</li>
+<li>同时，大部分人，并没有信仰的。</li>
+</ul>
+<h3 id="张大帅聊出国专业"><a href="#张大帅聊出国专业" class="headerlink" title="张大帅聊出国专业"></a>张大帅聊出国专业</h3><p>学术话题前，我们聊了下出国读博专业前景的问题，他说，如果出国读博，还是学正统的统计，稍微偏一下生物即可。因为，美国除了大的制药厂之外，现在还有非常多的小的生物公司，对统计背景的人才需求量还是很大的，但是千万别学生物。在美国，读生物的人大约需要当10年+博士后，申请到能够养活一个实验室的基金后才能谋得一份教职，21世纪是生物的世纪，这完全是骗人的。像FDR这样的概念，你需要好好了解一下，它就是从统计中来的，现在被生物统计用得如火如荼。</p>
+<p>他也提到，你也可以去欧洲读一个博士，时间短很多。「可是，生物统计，不是美国最好嘛？」「任何统计都是美国最好。」「好可惜，统计起源于英国，竟然在美国全盛。那我还是去美国吧~~」</p>
+<h3 id="张大帅讲FDR"><a href="#张大帅讲FDR" class="headerlink" title="张大帅讲FDR"></a>张大帅讲FDR</h3><p>吃完饭后，佳攀特别开心，因为老板没有问起她暑假看了哪些论文😂。饭桌上，师兄倒是借着地理优势和老板讨论了极限理论中用截断法证明的技巧。而我，就稍微提了下最近看的术语，老板挑了FDR给我细细讲了下。</p>
+<p>的确，样本量不大的年代里，假设检验运行得灰常ok，Type Ⅰ error与Type Ⅱ error完全撑起了inference power这片天。但是在高维数据中，例如基因数据——24个样本，12个犯病&amp;12个正常，10000种基因，需要寻找在对照组和实验组中差异最大的基因，原假设为「这个基因与病症无关」。做一次假设检验时，我们完全可以控制犯错的概率在类似0.05这样小的水平，但是当进行10000次假设检验时，10000次检验中出现错误的概率就非常大，几乎接近1（如果单次的$\alpha$不是异常小的话）。</p>
+<p>这是因为，<strong>1万个噪音积累下总有显著性，这是高维数据的必然结果</strong>。这个难题现在横亘在统计学界，最主要的还是高维的结构分外复杂，难以分析，只能假设其独立，而独立性的假设，熵最大。</p>
+<h3 id="张大帅眼里的「统计学习」vs-「机器学习」"><a href="#张大帅眼里的「统计学习」vs-「机器学习」" class="headerlink" title="张大帅眼里的「统计学习」vs 「机器学习」"></a>张大帅眼里的「统计学习」vs 「机器学习」</h3><p>后来我们还聊了下计算机和统计之间的关系，随着「机器学习」浩浩荡荡，「统计学习」有些销声匿迹了，老板倒是很坦然，他说「<strong>计算机不可能代替统计，但它永远走在前面。</strong>计算机走到前面，让人看到希望，但是结果到底是对还是错 还是需要统计慢悠悠滴来回答。计算机偶尔碰巧算对，背后或许不是本质因素。因为只是计算机得出来的只是一个值，如果是统计，就一定要有置信区间，要有概率。绝不仅仅是结果。」</p>
+<h3 id="师兄补刀——遇见好逻辑"><a href="#师兄补刀——遇见好逻辑" class="headerlink" title="师兄补刀——遇见好逻辑"></a>师兄补刀——遇见好逻辑</h3><p>我问问题的过程忽略了老板个人的一些情况，在后来师兄的告知下，有些问题并不是很合适，还好，张大帅心胸宽阔，并没有和我计较~<br>非常尴尬的我悻悻地转移了话题「师兄你看我这信仰问题，从『全然接受』变为『有所怀疑』，也算是有进步是吧~」师兄说，「你在现实世界中引入偏序是很不恰当的。」「那，数学于真实世界，岂不毫无意义。」「我一直觉得，生活的事情，就让生活来回答。如果生活可以被它的一个子集来回答，那么这个子集的补集是什么呢？」「这个逻辑好，谁说的~~？」「我。」「🙂」</p>
+<hr>
+<center><br>对了，新学期就要开始啦，给自己和岛主都鼓鼓劲儿~希望我过得开心些上进些，至于他，肯定会过得开心&amp;上进哒~<br><br><img src="http://obrxj270y.bkt.clouddn.com/groot.jpg" width="200" high="200"><br></center>
+
+
+
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;周围的人都好聪明好上进&lt;br&gt;可为什么我一点压力都没有🙂&lt;br&gt;难道因为我有个很聪明的老板🤔&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;http://obrxj270y.bkt.clouddn.com/boss.jpg&quot; width=&quot;200&quot; high=&quot;200&quot;&gt;&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="小日子一朵朵" scheme="http://yoursite.com/categories/%E5%B0%8F%E6%97%A5%E5%AD%90%E4%B8%80%E6%9C%B5%E6%9C%B5/"/>
+    
+    
+      <category term="小聚" scheme="http://yoursite.com/tags/%E5%B0%8F%E8%81%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Something is Wrong with Mathjax😱</title>
+    <link href="http://yoursite.com/2016-08-18-something-is-wrong-with-mathjax/"/>
+    <id>http://yoursite.com/2016-08-18-something-is-wrong-with-mathjax/</id>
+    <published>2016-08-18T14:47:18.000Z</published>
+    <updated>2016-08-19T06:54:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>严格意义上来说，这不是一则清单。<br>只是：<br>记录下我是如何找到「部分博客公式不能正常显示」的根源<br>然后做一些小修改</p>
+<p>真是场奇妙的旅程~😋</p>
+<center><br><img src="http://obrxj270y.bkt.clouddn.com/Funny-Minions-Quotes-499.jpg" width="300" high="300"><br></center>
+
+
+<a id="more"></a>
+<p>早晨敲公式预览的时候灰常奔溃：</p>
+<ul>
+<li><p>为什么这个公式没问题，后面那个公式有问题呢？</p>
+</li>
+<li><p>为什么这个公式连在一起有问题，但是前半段和后半段分开却可以正常显示呢？</p>
+</li>
+</ul>
+<p>看了会儿肥猫猫的笑容后👇，我觉得是时候来一个了断了，我起这么早不是为了敲半天公式然后公式无法正常显示哒！于是，去到了mathjax的官网，其实这个官网还是很棒的，细节明了逻辑清楚，隐约觉得是转译环节出了问题，之前simple模板的小伙伴也提到过，在此感谢下！我很喜欢simple亮眼的粉红色~</p>
+<center><br><img src="http://obrxj270y.bkt.clouddn.com/fat-cat.jpg" width="200" high="200"><br></center>
+
+<p>后来更加详细地搜索了下基于Hexo NexT主题的公式问题，找到了一篇最近发表的博文——<a href="http://xialeizhou.com/2016/08/04/mathjs-tut/" target="_blank" rel="external">MathJax在hexo中的使用总结</a>，它里面的一个例子启发了我——<code>$$ \mathbf{X}\_{n,p} = \mathbf{A}\_{n,k} \mathbf{B}\_{k,p} $$</code>.原来问题在这里。我经常写需要下标的公式，所以时常有<code>_{}</code>这类符号，原来之前大片大片的公式显示失败是这个原因。另外，我本来以为需要修改NexT模板的mathjax代码（事实上我也这样做了，但是后来预览时我发现不修改的效果是一样的，我就回归原位了~）</p>
+<hr>
+<p><code>$x_{j}, j=0,1,2,...,k$</code>能够正常表示：<br>$x_{j}, j=0,1,2,…,k$</p>
+<p>但是，<code>$x_{j}, x_{j}, j=0,1,2,...,k$</code>就不行了…<br>$x<em>{j}, x</em>{j}, j=0,1,2,…,k$</p>
+<p>如果加上转译符号<code>\</code>，<code>$x\_{j}, x\_{j}, j=0,1,2,...,k$</code> 便可以使用：<br>$x_{j}, x_{j}, j=0,1,2,…,k$</p>
+<p>结论就是：有两个<code>_{}</code>就需要转译符号咯！so easy</p>
+<hr>
+<p>综上，我遇到的问题很简单，之所以花了这么长时间才解决，是因为：</p>
+<ul>
+<li><strong>真的没想到原因会这么奇怪</strong></li>
+<li>排除法的运用还是不够细致</li>
+<li>网上搜索资料为找到真正靠谱的——一直懒得去官网&amp;总想奉行拿来主义（😅）</li>
+</ul>
+<p>所以呢，今后遇到「部分问题」时，值得开心的一点是大环境还是对的，只是部分有冲突，成功的部分和失败的部分都铁板钉钉了，这信息量已足够充足让人找到问题根源，接下来要做的，就是：</p>
+<blockquote class="blockquote-center"><p>缓步排除不能着急，错过了真实原因后便容易渐行渐远<br>大海捞针找「共苦的小伙伴」<br>上官网&amp;上官网&amp;上官网</p>
+</blockquote>
+<center><br><img src="http://obrxj270y.bkt.clouddn.com/cat-asleep.jpg" width="200" high="200" title="这下真的晚安咯！"><br></center>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;严格意义上来说，这不是一则清单。&lt;br&gt;只是：&lt;br&gt;记录下我是如何找到「部分博客公式不能正常显示」的根源&lt;br&gt;然后做一些小修改&lt;/p&gt;
+&lt;p&gt;真是场奇妙的旅程~😋&lt;/p&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://obrxj270y.bkt.clouddn.com/Funny-Minions-Quotes-499.jpg&quot; width=&quot;300&quot; high=&quot;300&quot;&gt;&lt;br&gt;&lt;/center&gt;
+    
+    </summary>
+    
+      <category term="爬出坑后写清单" scheme="http://yoursite.com/categories/%E7%88%AC%E5%87%BA%E5%9D%91%E5%90%8E%E5%86%99%E6%B8%85%E5%8D%95/"/>
+    
+    
+      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线性模型的开端——最小二乘&amp;误差分布</title>
+    <link href="http://yoursite.com/2016-08-18-OLS/"/>
+    <id>http://yoursite.com/2016-08-18-OLS/</id>
+    <published>2016-08-18T01:31:52.000Z</published>
+    <updated>2016-08-18T14:39:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>这几日在家中看书，重温之前粗粗看过的统计学书籍，不过，闲适之余想到未来难免有点小忧愁，于是今早去了浙图，沾沾人气。这段时间一直有在做一些笔记，不过手中几本书多有重叠，我又是很喜欢「求其同」的人，所以这段时间就只憋出这一篇。</p>
+<p>最小二乘是一个转折点——这么长时间里我们都对「多次测量取平均值」深信不疑，可是在它经得起历史的检验背后，究竟是什么在支撑着它？看到最后我们会发现，是误差的本质在支撑着它，而误差本质的另一种表现则是正态分布。</p>
+<p>注：以下笔记主要基于<a href="https://book.douban.com/subject/1522839/" target="_blank" rel="external">《数理统计学简史》</a>，一本豆瓣评分9.2的著作，感谢陈希孺老先生。</p>
+<center><br>    <img src="http://obrxj270y.bkt.clouddn.com/chair-book.jpg" width="300" high="300" title="wonderful time"><br></center>
+
+
+<a id="more"></a>
+<blockquote>
+<p>如果我们从理论的角度走一点极端，则可以说，一部数理统计学的历史，就是从纵横两个方向对<strong>算术平均</strong>进行不断的深入的研究的历史。纵的方向在与平均值本身。众多大数定律、棣莫弗-拉普拉斯中心极限定理、高斯正态误差理论。同时，也因平均值精度研究的需要引进了方差。从横的方向来看，是指有许多统计方法，看似与算术平均很不同，但从某种意义上看，是算术平均思想的发展。其中最重要的一项就是——最小二乘法。</p>
+</blockquote>
+<p>所谓的最小二乘法，就是使得<strong>误差平方和达到最小</strong>以寻求估计值的方法。因为最小二乘法得到的最小二乘估计是算术平均，而算数平均又是一个「久经沙场」的方法，所以我们对于最小二乘法的合理性也增添了信心。这种推断在逻辑上似乎有些站不住脚，但确实是启发思维的好方法。高斯捣鼓出误差密度函数靠的也是类似的「勇往直前」😉~</p>
+<p>最小二乘法之所以与统计学关系密切的原因在于——<strong>观测值有随机误差</strong>&amp;<strong>随机误差服从正态分布</strong>。因此，最小二乘与误差论紧密相联。有的学者把最小二乘法称为「十九世纪统计学的中心主题」。</p>
+<blockquote class="blockquote-center"><p>Legendre的贡献</p>
+</blockquote>
+<h2 id="Legendre贡献：最小二乘法崭露头角"><a href="#Legendre贡献：最小二乘法崭露头角" class="headerlink" title="Legendre贡献：最小二乘法崭露头角"></a>Legendre贡献：最小二乘法崭露头角</h2><center><br>    <img src="http://obrxj270y.bkt.clouddn.com/Legendre.jpg" width="300" high="300" title="Legendre~"><br></center>
+
+
+<p>其实在Legendre之前，应该也有类似的问题，不过他将此真正抽象出来，并且赋予这个问题以新的高度。</p>
+<p>Legendre在研究天文和测地学中的一些数据分析问题时，将问题抽象成如下表述：</p>
+<p>有若干我们想要估计其值的量$\theta_{i}, i=1,2,…,k$, 另外有若干个可以测量的量$x_{j}, j=0,1,2,…,k$. <strong>理论上</strong>，这些量之间有线性关系：</p>
+<p>$$x_0 + \sum_{i=1}^{k} x_{i} \theta_{i} = 0$$</p>
+<p>但是实际得到的数据中有如下<strong>两道屏障</strong>：</p>
+<ol>
+<li>测量$x_i$时产生的误差</li>
+<li>上述等式可能只是数学上的近似而非严格成立</li>
+</ol>
+<p>面对着这两道屏障，我们得到了n个方程，线性代数的知识告诉我们，如果$k=n$未知数的数量和方程个数相等，那么方程有唯一解。但是现实是，在$n&gt;k$的情况下，在上式并非严格成立的情况下，从n个方程中挑选k个方程有$\binom{n}{k}$中结果，所以，如何从这些结果中进行选择呢？</p>
+<p>在Legendre之前，有过下述尝试：在3个未知数，27个观测值的情况下，把27个观测值分成3组，将各组9个方程相加得到一个方程。此时就变成了3个未知数3个方程的情况。（同时还降低了求解的误差）</p>
+<p>上述问题的本质是「解线性矛盾方程组」，这实际上是一个实用性的数据处理问题，需要一点<code>新思维</code>，而整合n个方程得到与未知数个数一致的解离「新思维」还差很多。最后，Legendre提出了如下的角度去解决这个问题：<strong>考虑误差在各个方程间的分布，考虑误差在整体上的平衡，使得误差均匀地分布于各个方程。</strong>例如，求解$\theta$的原则是使得:<br>$$ \sum_{i = 1}^{n}(x_{0i} + \sum_{j=1}^{k} x_{ji}\theta_{j})^2 = min $$</p>
+<p>再过一阵子，这个式子的身影就会出现在误差的分布函数中。</p>
+<blockquote>
+<p>这个例子也启发了我们，在科研中的<strong>观念上的革新和突破</strong>是多么得不容易，一经点破，我们会感到事情理所当然，但在没有发现之前，许多 大学者努力了几十年也无功而返。——by 陈希孺</p>
+</blockquote>
+<p>最小二乘法也因其只涉及线性方程组计算效率高而应用广泛，因其有非常优良的统计推断性质（在正态误差的假定下，它有着较为完善的小样本理论）而被统计学家喜爱。不过，Legendre的工作没有涉及最小二乘方法误差分析的问题（即，误差的本质是什么？K·Pearson的观点我一直很欣赏，数据的本质是分布，只有分布才是真实的），高斯在1809年发表的正态误差理论将之补足。</p>
+<blockquote class="blockquote-center"><p>Gauss的贡献 </p>
+</blockquote>
+<h2 id="Gauss贡献1：Gauss-Markov定理"><a href="#Gauss贡献1：Gauss-Markov定理" class="headerlink" title="Gauss贡献1：Gauss-Markov定理"></a>Gauss贡献1：Gauss-Markov定理</h2><p>它被奉为最小二乘法理论中最重要的结果，它从统计学的角度肯定了最小二乘估计的合法性。在此之前，最小二乘估计只是一种算法（使得误差平方和最小），尽管它看上去合理且有计算简单的有点，但还是不足以回答它在缩小误差这个根本点上，究竟有何出众之处。</p>
+<p>这个定理说的是，线性模型$y_{i} = x_{i}’\beta + e_{i}$基于最小二乘方法得到的估计$\hat{\beta} = (XX’)^{-1}XY$是$\beta$的线性无偏估计，且参数的任一线性函数$c’\beta$的最小二乘估计$c’\hat{\beta}$也是无偏的。</p>
+<p>首先要感谢Laplace, 他注意到，在一维的情况下，模型$y_i = x_i \beta +e_i$两边乘以常数再将n个方程相加后可以得到$\beta$的无偏估计：</p>
+<p>$$\widetilde{\beta} \equiv \frac{\sum_{i=1}^{n}c_{i}y_{i}}{\sum_{i=1}^{n}c_{i}x_{i}} = \beta + \frac{\sum_{i=1}^{n}c_{i}e_{i}}{\sum_{i=1}^{n}c_{i}x_{i}} \equiv \beta + \xi_{n}$$</p>
+<p>进一步，为了得到最好的无偏估计，只需要$Var( \xi_{n})$尽可能小即可，注意到(施瓦茨不等式):</p>
+<p>$$Var(\xi_{i}) = \frac{\sigma^{2}\sum_{i=1}^{n}c_{i}^{2}}{(\sum_{i=i}^{n}c_{i}x_{i})^2} \ge \frac{\sigma^{2}\sum_{i=1}^{n}c_{i}^{2}}{(\sum_{i=i}^{n}c_{i}^{2} \sum_{i=i}^{n}x_{i}^{2})}$$</p>
+<p>当且仅当$c_{i}与x_{i}$相等时等号取到，即最小方差达到时有最小二乘估计：<br>$$ \widetilde { \beta} = \frac{\sum_{i=1}^{n}x_{i}y_{i}}{\sum_{i=1}^{n}x_{i}^{2}}$$</p>
+<h2 id="Gauss贡献2：误差与正态分布"><a href="#Gauss贡献2：误差与正态分布" class="headerlink" title="Gauss贡献2：误差与正态分布"></a>Gauss贡献2：误差与正态分布</h2><p>19世纪的统计学可以说是由正态分布所引导的，这源头是1908年Gauss提出的「正态误差理论」.Laplace在Gauss之前做了一些很有意义的工作，首先他提出的问题是：</p>
+<ul>
+<li>应该取怎样的分布为误差分布？</li>
+<li>在决定了误差分布后，如何根据未知量$\theta$的多次测量值$x_{1},…,x_n$去估计$\theta$</li>
+</ul>
+<p>关于前一个问题，LapLace从这样的假定出发进行推导：</p>
+<ul>
+<li>误差密度函数关于0对称</li>
+<li>在0的右边($x&gt;0$)，随着$x\rightarrow\infty$, $f(x)\rightarrow 0$</li>
+<li>在0的右边($x&gt;0$)，$-f’(x), f(x)$随着$x$的增加都逐渐下降，且保持恒定的比例——$-f’(x)=mf(x)$</li>
+</ul>
+<p>随着Laplace得到了一个「误差密度函数」：</p>
+<p>$$f(x) = \frac{m}{2}e^{-m|x|}, -\infty &lt; x &lt; \infty$$</p>
+<p>在此基础上，Laplace解决第二个问题的时候，Laplace提出的假定是：在估计值$\hat{\theta}$两边，$\theta$的概率是相同——估计值「比真实值大」与「比真实值小」是差不多的。</p>
+<p>但是在这个假定/条件下求解$\hat{\theta}$灰常困难！于是Gauss接棒😉</p>
+<center><br>    <img src="http://obrxj270y.bkt.clouddn.com/Gauss.jpg" width="300" high="300" title="Gauss~"><br></center>
+
+<p>他老人家灰常干脆：</p>
+<ol>
+<li>把使得式子$L(\theta) = L(\theta; X_{1}, … ,X_{n})$达到最大的$\hat{\theta}$作为$\theta$的估计值, 即$L(\hat{\theta})=max(L(\theta))$</li>
+<li>我先认定$\hat{\theta} = \bar{X}$，再去找满足这个条件的误差密度函数，发现之前Laplace提出的$-f’(x)=mf(x)$实际上是$-f’(x)=mxf(x)$, 然后解出$f(x)$是正态分布的去曲线</li>
+</ol>
+<p>然后神奇的事情发生就发生咯！<br>如果正态分布是误差密度函数，则n次观测产生误差$(e_{1}, e_{2},…,e_{n})$的概率为：<br>$$ (\sqrt{2\pi h})^{-n}exp{-\frac{1}{2h^{2}}\sum_{i=1}^{n}(x_{oi}+x_{1i}\theta_{1}+…+x_{ki}\theta_{k})^{2}}$$</p>
+<p>使得这个概率最大的真实参数$\theta$的估计值为$\hat{\theta}$，同时还使得如下表达式达到最小，而这个表达式就是，最小二乘中我们遇到的那个（灰常神奇~😀）:</p>
+<p>$$ \sum_{i = 1}^{n}(x_{0i} + \sum_{j=1}^{k} x_{ji}\theta_{j})^2 = min $$</p>
+<p>高斯说法中虽然明显有循环论证的感觉：算术平均是优良的，所以误差分布是正态分布；因为误差分布是正态分布，所以算术平均和最小二乘估计的优良性也可以保证。</p>
+<p>此时，Laplace接了一棒帮了Gauss兄一把：若误差可以看作许多量的叠加，则根据中心极限定理，误差理应有高斯分布。</p>
+<hr>
+<p>8月18日 @浙江图书馆</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这几日在家中看书，重温之前粗粗看过的统计学书籍，不过，闲适之余想到未来难免有点小忧愁，于是今早去了浙图，沾沾人气。这段时间一直有在做一些笔记，不过手中几本书多有重叠，我又是很喜欢「求其同」的人，所以这段时间就只憋出这一篇。&lt;/p&gt;
+&lt;p&gt;最小二乘是一个转折点——这么长时间里我们都对「多次测量取平均值」深信不疑，可是在它经得起历史的检验背后，究竟是什么在支撑着它？看到最后我们会发现，是误差的本质在支撑着它，而误差本质的另一种表现则是正态分布。&lt;/p&gt;
+&lt;p&gt;注：以下笔记主要基于&lt;a href=&quot;https://book.douban.com/subject/1522839/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《数理统计学简史》&lt;/a&gt;，一本豆瓣评分9.2的著作，感谢陈希孺老先生。&lt;/p&gt;
+&lt;center&gt;&lt;br&gt;    &lt;img src=&quot;http://obrxj270y.bkt.clouddn.com/chair-book.jpg&quot; width=&quot;300&quot; high=&quot;300&quot; title=&quot;wonderful time&quot;&gt;&lt;br&gt;&lt;/center&gt;
+    
+    </summary>
+    
+      <category term="偶遇新事物" scheme="http://yoursite.com/categories/%E5%81%B6%E9%81%87%E6%96%B0%E4%BA%8B%E7%89%A9/"/>
+    
+    
+      <category term="Statistics" scheme="http://yoursite.com/tags/Statistics/"/>
+    
+      <category term="Notes" scheme="http://yoursite.com/tags/Notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搭建博客的一些小感悟(Jekyll&amp;Hexo)</title>
+    <link href="http://yoursite.com/2016-08-12-blog-rethink/"/>
+    <id>http://yoursite.com/2016-08-12-blog-rethink/</id>
+    <published>2016-08-11T16:00:00.000Z</published>
+    <updated>2016-09-01T12:42:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>用Jekyll时掉进坑去好多次；用Hexo时少了些。这两次，好事多磨，也学到一点东西，在这里记录下~</p>
+<p>同时，趁此开始我的「爬出坑后写清单」系列。</p>
+<p>这要感谢岛主，他不经意间提起过，做事还是要有清单意识，我觉得非常有道理。例如：上手一个不熟悉的事物——<strong>搭建博客</strong>时如何应对错误。</p>
+<a id="more"></a>
+<p>这篇文章分为三块：</p>
+<ul>
+<li>清单of上手一个不熟悉的事物时如何应对错误</li>
+<li>用Hexo搭建博客的感悟(2016.08)</li>
+<li>用Jekyll搭建博客的感悟（2016.06）</li>
+</ul>
+<h2 id="清单-上手一个不熟悉的事物时如何应对错误"><a href="#清单-上手一个不熟悉的事物时如何应对错误" class="headerlink" title="清单: 上手一个不熟悉的事物时如何应对错误"></a>清单: 上手一个不熟悉的事物时如何应对错误</h2><center><br>    <img src="http://ww4.sinaimg.cn/large/005BXWnJgw1f509pimq6ej30dw0e83z9.jpg" width="300" high="300"><br></center>
+
+<p>先问自己几个问题：</p>
+<ul>
+<li>这件事后效如何？如果持续地对你有影响，那么一开始对其多多了解肯定没有错。</li>
+<li>前期资料收集得如何？资料的共通处是哪些？合上资料后你对其了解还剩多少？<br>  1.从经验撰写人的文笔推断其靠谱程度作第一步筛选；<br>  2.用纸和笔做些笔记，而非网页一个个全打开，关键的网页收藏在临时的一个文件夹中；<br>  3.如果这件事很重要，至少花15分钟吧~</li>
+<li>网速怎么样？如遇到下载相关的任务，请保证网速，这样在后期遇到问题时，网络问题即可排除。</li>
+</ul>
+<p>遇到报错：</p>
+<ul>
+<li>错误的源头在哪里？是哪个组件/步骤出错？</li>
+<li>如何应对？</li>
+</ul>
+<p>然而事实是，面对着不是很熟悉的事物，上述问题很难回答。比较有可行性的应对措施是：</p>
+<ul>
+<li>要一直记得：我本来想干什么？我的目的是什么？</li>
+<li>自问：我已经做了什么？<br>  我已经做了哪些工作，这些工作能确保没问题嘛？如果不能，再确认下。至于如何确认，比如说可以先实现一个小案例。</li>
+<li>收集信息：<br>  搜索错误提示得到相关网页，依旧不能只开着网页，列出「出错的原因，根据可能性从高到低排列」，并保存网页至临时文件夹，同时尽量看懂应对措施的原理。<br>  这个过程中，除非找到「就是这个原因啦~」的解答，否则不能贸然行动，因为贸然行动容易造成新问题，非常惨。至少10分钟吧~</li>
+<li>尝试解决问题：<br>  如果问题未解决&amp;还是原先的问题，那么更新笔记，排除这个原因。<br>  如果问题未解决&amp;有了新的问题，此时停下来，细细想下再行动，可以针对新问题再重复之前的思考。</li>
+</ul>
+<blockquote>
+<p>总的原则是</p>
+</blockquote>
+<ul>
+<li>带着做实验的思想，有效率地处理错误，同时做好笔记。</li>
+<li>如果能对网上给出的解决方法的原理有所了解再行动，那是再好不过了。</li>
+<li>心态：<br>  不抱侥幸心理，连问题都不知道就想解决，基本是不可能的~<br>  多学点总是好的——做不到五分钟搭建好Hexo博客也没关系，至少对Github又熟悉了一些</li>
+</ul>
+<hr>
+<h2 id="Hexo后的感悟-2016-08"><a href="#Hexo后的感悟-2016-08" class="headerlink" title="Hexo后的感悟(2016.08)"></a>Hexo后的感悟(2016.08)</h2><p>刚换了博客的模板，比上次稍微轻松些，谢谢Hexo的开发者。</p>
+<p>之前用Jekyll搭建过一个博客，捣鼓好久，遇到各种坑，在坑内兜兜转转时经常对自己哑然失笑——你日子怎么过得这么苦，后来，也写了一篇搭建感言，觉得挺有纪念意义的，就还是放在这里。后来由于半路出家（直接拷贝他人的模板），我对底层的设计也没有了解的欲望（或者说能力🙂）。正好岛主也开了博客，我觉得他挑选的主题非常漂亮，所以我也夫唱妇随地换了😋。</p>
+<blockquote class="blockquote-center"><p>不过这一次，我又掉进坑里了.</p>
+</blockquote>
+<p>在这里稍微说一下。</p>
+<p>我用的是苹果系统，钥匙串中保存了很早以前一个Github帐号的信息。hexo同步本地文件至github上时是默认采取的是老帐号的信息，老帐号自然没有git push的权限，所以就有了如下的报错：</p>
+<pre><code>remote: Permission to MissIslander/MissIslander.github.io.git denied to KathyKim.
+# KathyKim是之前Github帐号名
+</code></pre><p>解决方法很简单，<a href="https://stackoverflow.com/questions/5335197/gits-famous-error-permission-to-git-denied-to-user/31005094#31005094" target="_blank" rel="external">在这里</a>。</p>
+<p>解决后，我很感慨「不知道问题出在哪里的迷茫状态」与「解决方法的易操作性」形成的鲜明对比。</p>
+<p>之前岛主曾提起过，做事还是要有清单意识，也就是被励志书籍说烂的「习惯决定一切」。我觉得非常有道理。例如：</p>
+<ul>
+<li>上手一个不熟悉的事物时如何应对错误</li>
+<li>买机票时要如何进行比价</li>
+<li>增添生活小物时要如何避免「始乱终弃」</li>
+<li>说出一个目标后要做哪些准备避免自己「言而无信」&amp;「出言不逊」</li>
+<li>……</li>
+</ul>
+<p>所以，借由这两次搭博客付出的学费——没时间看神盾局特工第三季，我在一开始设想的分类中增添了一个「爬出坑后写清单」，恩，感觉很好~</p>
+<hr>
+<h2 id="Jekyll后的感悟-2016-06"><a href="#Jekyll后的感悟-2016-06" class="headerlink" title="Jekyll后的感悟(2016.06)"></a>Jekyll后的感悟(2016.06)</h2><p>上着政治课，一心二用，顺便理一理印象笔记。</p>
+<p>思来想去，还是应该放一下这篇文章的。</p>
+<ul>
+<li>一方面是因为自己真的折腾了学费付得比较多，和大家分享下，至少让别人知道「还有个人这么惨啊」；</li>
+<li>另外一方面也想正式感谢下在这个模版上付出心血的Hux和Sugarole，感谢！</li>
+</ul>
+<center><br>    <img src="http://obrxj270y.bkt.clouddn.com/leave%20footprint.jpg" width="300" high="300"><br></center>
+
+<h3 id="准备非常非常重要"><a href="#准备非常非常重要" class="headerlink" title="准备非常非常重要"></a>准备非常非常重要</h3><p>做一件事情之前，如果这件事会影响很多东西，那么它的确值得好好做准备工作。不是说要把所有都准备好了再去做，而是说，要预见其价值并且在思想上给予足够多的重视。</p>
+<p>这件事和订机票一样，都受了上次成功经验的影响，<strong>以至于掉以轻心</strong>，分外不可取。</p>
+<blockquote>
+<p>列张清单吧，如果你要干一件影响比较长久的事情：</p>
+</blockquote>
+<ul>
+<li><strong>至少看3个比较全的攻略</strong>，并且标明异同，心中有数这件事大概要干多久。    也可以看下别人失败的经验，很多人的失败后会写一篇「xxx与yyy的比较」，他们会觉得能够胜任的是好的。<br>  可以同时搜索关键词「终于」&amp;「你的目标」</li>
+<li><strong>遇到问题时不要急着去试搜到的解决办法</strong><br>  在尝试solution前，不妨先弄懂问题是什么，solution也同上，要筛选后再尝试</li>
+<li><strong>想清楚这件事的意义</strong><br>  并告诉自己「如果不太顺利的话，我可能会出现放弃的想法，这个很正常，忽略即可」</li>
+</ul>
+<h3 id="循序渐进，一次只解决一个问题"><a href="#循序渐进，一次只解决一个问题" class="headerlink" title="循序渐进，一次只解决一个问题"></a>循序渐进，一次只解决一个问题</h3><p>要有目标性，该解决的问题不能拖，不能逃避，不要幻想计算机系统有天傻了你做错了它还给出特别正确的结果。</p>
+<p>不过这个是基于第一步的，所以你知道第一步很重要了吧😉～</p>
+<p><strong>心思要单纯，效率才能高。</strong></p>
+<center><br>    <img src="http://obrxj270y.bkt.clouddn.com/overthink.jpg" width="300" high="300"><br></center>
+
+
+<hr>
+<h3 id="6-7日清晨随手一写"><a href="#6-7日清晨随手一写" class="headerlink" title="6.7日清晨随手一写"></a>6.7日清晨随手一写</h3><blockquote>
+<p>积极的心理&amp;勇于尝试才能获得通向幸福的心力</p>
+</blockquote>
+<p>现在是2016年6月7日早晨7点钟，昨天晚上调试好了最终的_config然后将近1点半才睡觉，今早6点多一点就起床了，想着自己也真的很拼，但是很有成就感！</p>
+<p>结合看到的改变自己翻译的一篇文章<a href="http://mp.weixin.qq.com/s?__biz=MjM5NDg2NjA4MQ==&amp;mid=2650936104&amp;idx=1&amp;sn=cb1e14d62cf98ce340e8496a21604b0a&amp;scene=1&amp;srcid=0606n4SKFcEzHORiuxkvtnFo#rd" target="_blank" rel="external">今天你失败了嘛？</a>，我觉得我过去三天都在用实际行动回答这个问题，没错，今天我又失败了，但是至少我比昨天更成功了一点。</p>
+<p>不过话说回来了，不成功时真的有打脸的感觉，但是呢~没关系，还有一边没肿哦。</p>
+<p>乐呵呵地苦干好几天，也没抱怨，最多自己和自己开玩笑「啧啧啧，你再这么折腾，估计要去测下智商看看有没有问题了」</p>
+<hr>
+<h3 id="6月15日回顾"><a href="#6月15日回顾" class="headerlink" title="6月15日回顾"></a>6月15日回顾</h3><p>想再提下BLOG这件事，让我非常非常有成就感。之前由于弄BLOG，落下一些工作，写得很不接地气。</p>
+<p>今天，补上一些细节。</p>
+<blockquote>
+<p>现在我搞定了本地的环境：</p>
+</blockquote>
+<ul>
+<li>可以用Jekyll进行本地预览</li>
+<li>熟练使用Github Desktop，因为我中途用sudo改了一个系统隐藏的文件，结果用不了终端写git…后来就和Github桌面版交上了朋友</li>
+<li>后来我又把终端弄好了，这使得我有了两个好朋友</li>
+</ul>
+<blockquote>
+<p><strong>我具体是这样做的：</strong></p>
+</blockquote>
+<ul>
+<li>找到一个做设计出生的人的博客模板，在知乎的一个回答中找到了<a href="http://huangxuan.me" target="_blank" rel="external">Hux的博客</a>真的很有设计感，感谢！</li>
+<li>在对于这个模板比较有贡献的人当中，选了一个与我同样需要写公式的<a href="http://voleking.me" target="_blank" rel="external">Sugarole的博客</a>相必他已经加上支持公式的板块了，感谢！</li>
+<li><p>Fork Sugarole的博客代码到本地</p>
+</li>
+<li><p>中途各种着急地折腾，部署本地环境，解决终端突然之间不能用的问题。</p>
+</li>
+<li>解决后，发现我误删了一些代码or文件，使得about me这个页面不见了，出现了404。。。同时，由于代码提交时不注意写ps使得版本回溯也很困难（恩，这也是一课）</li>
+</ul>
+<blockquote>
+<p>这个时候，我面对一团文件，如何找到问题的源头呢？</p>
+<center><br>    <img src="http://obrxj270y.bkt.clouddn.com/hold%20on.jpg" width="300" high="300"><br></center>
+
+
+<p><strong>这个问题是这么解决的</strong></p>
+</blockquote>
+<p>🙈说来惭愧，我一开始的办法特别笨，感慨了「天呐这可怎么办」，然后一个个打开文件，在源代码里搜索「about」——找已经删除的东西找了好久，好辛苦😂半天无所获后，开始采用文件夹替换的方法。</p>
+<ul>
+<li>打开Jekyll 本地预览</li>
+<li>重新下载Sugarole的博客</li>
+<li>在文件夹高度，逐一替换我的，直到替换了<strong>_site</strong>这个文件夹发现about me出现了问题。</li>
+</ul>
+<blockquote>
+<p><strong>总结下</strong></p>
+</blockquote>
+<ul>
+<li>就是，一步一步缩小范围。<strong>穷举法</strong>的确是有朴素大智慧的。</li>
+<li>在不知道问题到底出在哪里的时候，一定要逐一假设、逐一排除、有条有理、<strong>避免在排除过程中产生新的问题</strong>。</li>
+</ul>
+<blockquote>
+<p><strong>至于我为什么会误删这些关键字符，这个问题很有价值。</strong></p>
+</blockquote>
+<ul>
+<li>我对错误一知半解，由于Jekyll的配置一直不成功，提示中有「about」等字符，于是我想当然地开始删有关about的文件。</li>
+<li>我对Jekyll的基本元素一知半解。后来回顾时，感慨「与其一个个🔍，不妨直接去了解其骨架，然后去对应的地方细细找」。这才是终极手段，才是真正有价值的。</li>
+</ul>
+<blockquote>
+<p><strong>如何避免踏入我所踏入的坑呢？</strong></p>
+</blockquote>
+<p>有个非常棒的心得：不妨细细分析fork了Hux设计模板的人，在一开始修改的参数😉</p>
+<h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h3><ul>
+<li>感谢<a href="http://huangxuan.me" target="_blank" rel="external">Hux</a>制作了这么漂亮的博客模板</li>
+<li>感谢<a href="http://voleking.me" target="_blank" rel="external">Sugarole</a>添加了公式等功能</li>
+</ul>
+<p>版面设计的成果属于他们，感谢身处开源的时代。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;用Jekyll时掉进坑去好多次；用Hexo时少了些。这两次，好事多磨，也学到一点东西，在这里记录下~&lt;/p&gt;
+&lt;p&gt;同时，趁此开始我的「爬出坑后写清单」系列。&lt;/p&gt;
+&lt;p&gt;这要感谢岛主，他不经意间提起过，做事还是要有清单意识，我觉得非常有道理。例如：上手一个不熟悉的事物——&lt;strong&gt;搭建博客&lt;/strong&gt;时如何应对错误。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="爬出坑后写清单" scheme="http://yoursite.com/categories/%E7%88%AC%E5%87%BA%E5%9D%91%E5%90%8E%E5%86%99%E6%B8%85%E5%8D%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>写在研一结束时——不焦虑</title>
+    <link href="http://yoursite.com/2016-07-30-First-Year-Graduate/"/>
+    <id>http://yoursite.com/2016-07-30-First-Year-Graduate/</id>
+    <published>2016-07-29T16:00:00.000Z</published>
+    <updated>2016-08-13T15:16:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>这两天身体不太舒服，但是头脑分外清灵。</p>
+<p>岛主刚过完25岁的生日，而我，离24岁生日还有7个多月，时间流逝得如此迅速，如果不带着目标干点什么，7个月后生日时应该会很遗憾吧，那时我会许什么愿望呢？会吃哪种口味的蛋糕呢？那些人会在我身旁呢？🤔</p>
+<a id="more"></a>
+<p>昨天回实验室了一趟，翻看着《泛函分析》讲义、翻看《概率极限理论》，虽然没有了当初的排斥，但曾经有过的无力感一瞬间变得分外清晰。这让我感到焦躁——真的要读博嘛？</p>
+<p>在食堂随便吃了点就去了购书中心，这个我从小学开始就经常光顾的书店让我觉得亲切。</p>
+<p><img src="/img/in-post/7-30-First-Year-Graduate/books.jpg" alt="books"></p>
+<p>它离西湖很近，四层高，一楼是各种励志书畅销书杂志的聚集地；二楼小说、职业考证；三楼教辅书；四楼才是专业书，物理化学生物计算机等，每次我都会去数学那块看看有什么书，这块的书更新的速度很慢，随着我修的专业课越来越多，大部分术语都变得熟悉起来，不过，熟悉之外，也没有别的了。</p>
+<blockquote>
+<p>你知道这里风景很美，可是一路走来你都未曾试图下车走进这片风光。</p>
+</blockquote>
+<h3 id="走进这风光？"><a href="#走进这风光？" class="headerlink" title="走进这风光？"></a>走进这风光？</h3><p>这个问题一出现，我小脑袋一转，立马出现了很多「冠冕堂皇」的理由：</p>
+<ul>
+<li>我喜欢应用</li>
+<li>我喜欢解决实际问题</li>
+<li>我想要减轻家里的负担</li>
+<li>我想要感受这个时代的快速发展</li>
+<li>我想要财务自由</li>
+<li>我不够聪明，这可是天生的，我得接受它</li>
+</ul>
+<p>不过，如果诚实点，我想这样回答——因为我没有投入时间，只是停留在「我乘坐火车时见过这片风光，可以信手拈来几个术语忽悠下别人」。</p>
+<p>这么久以来，我甚少下车，一方面火车上的任务繁多，我无暇顾及其它只能疲于应对；另一个原因可能是我不够果断、不够勇敢、只想轻轻松松过日子吧。毕竟，走进任何风光，成为风景中的一部分是需要时间的，这段路或泥泞或坎坷或空无一人或横尸遍野，我在火车上就着看到的风景浑浑噩噩过日子似乎也不错，为什么要下车呢？</p>
+<p>之前，我总以为事情只有0-1，却忽略了1-100这个阶段。非常享受不是很愚笨的自己完成0-1阶段后的「成就感」——可以向停留在0的人夸夸其谈，然后调转方向寻找另一个1.在积累了很多1后，我很焦虑。</p>
+<p>下火车走到风景中的这段路，或许就是2-99。积累了太多0-1后，虽然可以在工作中完成2-99，但是被问及「为什么不纯粹一点，以学生的身份去做呢？」我哑口无言。</p>
+<p>二十多岁的小姑娘（我说我自个儿呢~）什么都想要，想要一技之长，想要财务自由，想要一份心仪的工作，还担心各种来不及，担心错过了统计好就业的时节。你说她为什么就不能踏踏实实学点什么呢？这个反问也让我哑口无言。</p>
+<p>是呢~不就是统计硕士特别好找工作的几年嘛？我还错过了改革开放呢~也错过了在深圳买房~还错过了研究生毕业就可以去当大学老师，而现在博士毕业也只能当高中老师~啧啧，果然不能担心会不会错过这个问题。</p>
+<p>今晚与岛主通话直到他收到「手机话费不足20」的短信提醒，他说「你去读博吧，就算中途你坚持不了想放弃也没关系，真正有学到什么，比博士毕业证这张纸重要太多」，这家伙说得，我都要掉眼泪了，我么好一枚壮丁，还有岛，竟然被我遇上了，我这好运气。</p>
+<p>我和老板商量读博的勇气，起始于与佳旭的一次聊天「任何人，年轻时刚起步的阶段，都是挺不容易的，但是一段感情，双方品性好，肯定不会因为最初的困难而受损」。佳旭的话很给我力量，岛主口头上的支持(光是有这份心我就觉得很难得了😉~)也让我觉得其实我可以不焦虑地做点事儿。我明儿回学校咯~</p>
+<h3 id="深圳行"><a href="#深圳行" class="headerlink" title="深圳行"></a>深圳行</h3><p>顺道说下深圳行，我与佳旭的聊天中她谈及，希望我多说说国内的现状，那我也写点~误导就误导吧，没准还能把她忽悠回来呢~</p>
+<p>前两天去深圳，这座充盈着技术的城市不拘小节满身活力。有次我穿着拖鞋，口袋里还有12元岛主的钱，没带手机，在KFC前等岛主顺便观察来来往往的人。我挺喜欢观察周围人的，可能是因为生活比较单调也尊重别人隐私不主动问询，就只能通过提高自己的观察能力来抽丝剥茧感知众相吧~</p>
+<p>马路对面有一个凉亭，同时也是百度外卖小哥的聚集处。<br>负责管理超市门口存储柜的大爷把他手中的几张购物小票挑了金额大的给了另一位中年男子。<br>旁边开来一辆好车，下来一位中年妇女和两个小男孩，中年妇女安顿好孩子后开始人工指挥女驾驶员倒车相关事宜。我的猜测是，中年妇女是女驾驶员的妈妈，其中一个小男孩是女驾驶员的孩子，另一个不知道。和中年妇女略带窘迫的表情对比明显的是两个孩子一言不合就开打，其中一个小孩子明显更有成就「霸业」的潜质。<br>大部分人衣着不讲究行色匆匆眉头微锁经过我时望我两眼，我当然也没有回避对方的打量（啧啧~我这吨位就是有安全感）。</p>
+<p>在正午的深圳大街步行的人显然是一个有偏的群体，而且一次试验的偶然性过大妄想以此下什么结论也不靠谱。但是，这座城市的人，应该更快乐点的，这座城市本身就是一个奇迹，很了不起，若我生活在深圳，即使毫无成就也会觉得与有荣焉。对了，我也贡献了几顿饭钱、一场感冒的药费，不过钱是岛主出的。有次我问他，为什么我感觉这么惬意呢？他说「因为我包吃住」，哈哈~真的呢~😋</p>
+<h3 id="本该拥有的开心"><a href="#本该拥有的开心" class="headerlink" title="本该拥有的开心"></a>本该拥有的开心</h3><p>进一步，我也想在这里谈谈我心中由来已久的困惑，为什么生活中乐观开朗真正有追求的人这么少？是因为我所处的层次太低了遇不到他们吗？</p>
+<p>小的时候老师家长会灌输这样的一种价值观——吃得苦中苦方为人上人。我甚至背过一句特别鸡汤的话还把它写在某个纠错本的扉页上——我们之所以愿意承受当下的痛苦是因为我们知道必将因此而收获。</p>
+<p>想起，前段时间收拾旧物，好几次哑然失笑，看着我给我爸写的小纸条，那些勉励自己的话语，大笔一挥作的诗，未完成的长篇小说，修改好多次准备投稿青春文学的小故事。相比我在数理化上的随意，我在这些不靠谱的事情上原来这么有热情呢。</p>
+<p>之前，我常常在想，我一定要选一个「特别有前途」「能最大程度上抗击风险」的方向好好过这辈子。我也被网上那些「经济独立很重要」「最重要的就是有钱」这样的话弄得一直嫌弃自己穷。我眼高手低不愿碰触实际中的问题，或许是怕自己也没办法有很好的方法解决它吧。还有「我不够聪明」这点，唉，我连努力都不够。</p>
+<p>回过头看生活原来是这样的，把该干的事情好好做，剩下的时间随便乐呵留下铁证，供今后自个儿打趣自己。呀，那就再不扯什么年轻时吃苦然后享福的大道理了。什么样的阶段干什么样的事呗，有精力就卯足力量做自己想做的。</p>
+<blockquote>
+<p>全局最优一定是基于局部最优之上的。所以，就从全局最优的开始做起吧~</p>
+</blockquote>
+<h3 id="假期小清单"><a href="#假期小清单" class="headerlink" title="假期小清单"></a>假期小清单</h3><p>趁今晚，我也给暑期一个月的生活列个小清单吧：</p>
+<ul>
+<li>把线性代数这块的基础再完善下</li>
+<li>我决定成为Bayes学派的人啦~那么这块是大头，开始咯！</li>
+<li>Python既然说了那就做到😉~每天200行</li>
+<li>和佳旭每天絮絮念不要停</li>
+<li>瘦一点点~</li>
+</ul>
+<p><img src="/img/in-post/7-30-First-Year-Graduate/thinner.jpg" alt="books"></p>
+<h3 id="小总结"><a href="#小总结" class="headerlink" title="小总结"></a>小总结</h3><p>这篇文章主要是纠结要不要读博，我想好后，接下来还有能不能读这个问题😂~</p>
+<p>于杭州家中<br>2016.7.30</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这两天身体不太舒服，但是头脑分外清灵。&lt;/p&gt;
+&lt;p&gt;岛主刚过完25岁的生日，而我，离24岁生日还有7个多月，时间流逝得如此迅速，如果不带着目标干点什么，7个月后生日时应该会很遗憾吧，那时我会许什么愿望呢？会吃哪种口味的蛋糕呢？那些人会在我身旁呢？🤔&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="小日子一朵朵" scheme="http://yoursite.com/categories/%E5%B0%8F%E6%97%A5%E5%AD%90%E4%B8%80%E6%9C%B5%E6%9C%B5/"/>
+    
+    
+      <category term="发会呆" scheme="http://yoursite.com/tags/%E5%8F%91%E4%BC%9A%E5%91%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何优雅地表示变量之间的相关性——从图开始</title>
+    <link href="http://yoursite.com/2016-07-08-PGM-cor-plot/"/>
+    <id>http://yoursite.com/2016-07-08-PGM-cor-plot/</id>
+    <published>2016-07-07T16:00:00.000Z</published>
+    <updated>2017-05-26T15:35:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>写在最开头</p>
+<p>犹豫了一会儿是否要在标签中写Statistics &amp; Algorithm，最后还是决定不写，因为这篇文章非常「随意溜达」，有很大的可能性我会写一篇比较正经的概率图的文章，那么这篇，就熬一会儿夜编辑下直接放在这里咯！</p>
+<p>这应该算是<a href="http://tinyopen.github.io/2016/06/30/Rennes/" target="_blank" rel="external">法国暑期学校</a>的一个番外了。上了两节概率图模型的课，还挺有意思的，深挖下去肯定会牵扯很多底层的知识分外难啃，但至少乍一看「挺漂亮」&amp;「挺有用」。</p>
+<p>接下来，我就现学现卖&amp;借刀卖钱了。</p>
+<a id="more"></a>
+<p>注：</p>
+<ol>
+<li><p>以下代码大部分是雷恩一大的V.Monbet教授写的，我只是加了些注释理了下逻辑，我就是个开心的小搬运工( -_・)</p>
+</li>
+<li><p>另外，这篇文章尝试了下小赵的黑魔法，直接用rmd的html代码，恩，效果真的挺不错的，感谢！不过Rmd的输出太多warning和文本提示，不知道如何去掉，最后还是结合了笨办法，保存图片~</p>
+</li>
+</ol>
+<hr>
+<h3 id="正事"><a href="#正事" class="headerlink" title="正事"></a>正事</h3><h4 id="分析初衷"><a href="#分析初衷" class="headerlink" title="分析初衷"></a>分析初衷</h4><p>我们需要分析的这个数据集中中有104个同学9门课的成绩，希望探究下这9门课成绩之间的相关关系。更准确地说，我们其实是想探究其独立性的问题以更好地在概率图模型中进行后续工作(而只有对正态分布而言，相关和独立是等价的，所以模型的前提假设很多都是随机变量服从正态分布。)</p>
+<blockquote>
+<p>如何表示这9门课之间的相关关系呢？ok，这也是以下代码的逻辑——</p>
+</blockquote>
+<p><strong>不断优化视觉体验</strong>：</p>
+<ul>
+<li>step1: pairs图，两两变量之间的散点图（我什么都看不出来。。。）</li>
+<li>step2: 用主成分分析（我觉得这个还不错，但是用作交流的话，解释起来要费很久）</li>
+<li>step3: 协方差矩阵（依旧好累）</li>
+<li>step4: 色彩化的协方差矩阵（恩，有点感觉了）</li>
+<li>图模型：变量为点，相关性较强的变量之间连上线，颜色代表正相关or负相关，连线的粗细颜色的深浅代表相关性的强弱    <ul>
+<li>step5: hard threshold 所生成的图模型</li>
+<li>step6: soft threshold 所生成的图模型</li>
+</ul>
+</li>
+</ul>
+<h4 id="视觉效果"><a href="#视觉效果" class="headerlink" title="视觉效果"></a>视觉效果</h4><h4 id="pairs"><a href="#pairs" class="headerlink" title="pairs"></a>pairs</h4><p>用pairs将高维数据，用「两两之间的相关性」代替「整体之间千丝万缕的相关性」，得到二维空间进行相关性表示。满世界都是红色&amp;噪音很多的情况下，找到具有比较清晰主要的变化曲线似乎有些奢求，而且变量之间的协同作用能因为均无法体现，但是，比较幸运的是，这只是第一步。</p>
+<p><img src="\img\in-post\7-08-PGM1\pairs.png" alt="pairs"></p>
+<hr>
+<h4 id="主成分分析"><a href="#主成分分析" class="headerlink" title="主成分分析"></a>主成分分析</h4><p>网上有很多讲主成分的文章，那我也就随意点吧，主成分现在越来越偏向于辅助算法的角色，就是说我要用其它算法前会先用下主成分看下通过「代数意义上的拉伸旋转」，数据集是否可以降维。</p>
+<p>其中心思想就是，找到高维空间中，数据波动最大的正交的<strong>方向们</strong>作为新的基向量。</p>
+<p>9个成绩变量若用两个主成分来表示，就是下图。但是图中的数据显示，第一主成分加上第二主成分，这两个维度上的波动就可以解释50%原先数据集的波动。</p>
+<ul>
+<li>第一主成分的系数都大于0，其可以看做一个学生成绩的加权平均，以这样的方式加权平均所得到的值，在解释学生之间的成绩差异上，可以起到大约35%的效果，35%略小，但是请注意，此时用的是1维的数据，而原先的数据维度，为9.</li>
+<li>第二主成分的系数开始出现负值，最大的负系数$\beta_{Analysis} = -0.46$，较大的正系数$\beta_{Economy} = 0.627, \beta_{English} = 0.67$. 能解释约15%原先数据中的波动，不过这里有个博弈：<ul>
+<li>一位同学的English和Economy成绩较好的话，其Analysis成绩一般不太好，在9维空间中，这两类课程数据的方向是相背离的，体现在第二主成分上就是系数之间的差异较大。</li>
+<li>（让我再尝试下能否更为直观些）主成分分析为了以最小的<strong>信息损失</strong>实现降维目的，所以希望原先差异较大的观测点（每个学生9门功课的的成绩）在新的基坐标下也能有最大的差异。原先的数据显示，English、Economy较好的学生其Analysis较差，第二主成分是这样体现这点的——如果一个学生Analysis成绩较高，那么在第二主成分上的值将会是一个<strong>较大的负数</strong>($\beta_{Analysis} &lt;0$)；如果一个同学的English成绩或者Economy成绩较高，那么此时它在第二主成分上的值会是一个<strong>较大的正数</strong>.</li>
+<li><strong>And it’s the difference.</strong></li>
+</ul>
+</li>
+</ul>
+<pre><code>
+#维度1与维度2的系数
+
+## Variables     Dim.1   Dim.2 
+## Algebra    |  0.792  | -0.092 
+## Analysis   |  0.653  | -0.463 
+## Proba      |  0.741  | -0.242 
+## Informatic |  0.529  | -0.281 
+## Economy    |  0.554  |  0.627 
+## Option1    |  0.742  | -0.016  
+## Option2    |  0.334  |  0.376 
+## English    |  0.276  |  0.670 
+## Sport      |  0.417  |  0.140  
+</code></pre>
+
+
+
+<p><img src="\img\in-post\7-08-PGM1\PCA1.png" alt="PCA1"><br><img src="\img\in-post\7-08-PGM1\PCA2.png" alt="PCA2"></p>
+<hr>
+<h4 id="协方差矩阵以及热力图表示"><a href="#协方差矩阵以及热力图表示" class="headerlink" title="协方差矩阵以及热力图表示"></a>协方差矩阵以及热力图表示</h4><p>协方差矩阵真的很不直观，而且同pairs图，其完全忽视了变量之间的条件相依。在这里就不列出了，在后面的代码中有，协方差矩阵为”C”.</p>
+<p>至于热力图，恩，它应该不叫这个，我随便取的名字。。。相较于协方差矩阵动辄5位小数，它还是比较友好的，但是，缺点同上。</p>
+<p><img src="\img\in-post\7-08-PGM1\matrix-plot.png" alt="matrix-plot"></p>
+<hr>
+<h4 id="漂亮的图-hard"><a href="#漂亮的图-hard" class="headerlink" title="漂亮的图(hard)"></a>漂亮的图(hard)</h4><blockquote>
+<p>从precision matrix谈起</p>
+</blockquote>
+<p><img src="\img\in-post\7-08-PGM1\precision-matrix.png" alt="precision-matrix"></p>
+<p>上述的协方差矩阵求逆后，各元素的值都很有内涵，上图是其热力图👆🏻.<br>关于precision matrix，趁着老师给我开的小灶还热乎👇，随便讲几点：</p>
+<p><img src="\img\in-post\7-08-PGM1\note.jpg" alt="note"></p>
+<ul>
+<li>左边的图的意思是，如果想要构建一个线性模型来描述一个学生概率论课的成绩Proba是如何被其英语成绩A&amp;统计成绩S所决定的</li>
+<li>数据-&gt;相关矩阵-&gt;相关矩阵的逆矩阵，如果逆矩阵中Proba与S的对应元素值为0，那么这就代表了在给定A的前提下，Proba与S是条件独立的</li>
+<li><p>表现在图中就是Proba在S与A张成的平面中的投影与A平行</p>
+</li>
+<li><p>那这是否说明$\alpha<em>{2} = 0$？其实不然，因为A与S不是正交垂直的，所以Proba在S方向上的投影非零，即$\alpha\</em>{2} \neq 0$</p>
+</li>
+<li>所以现在就有个一个很有意思的结论，在线性模型中各有作用的变量，在考虑了条件变量后，有的变量竟然对因变量无关，这种关系，或者说，这种全局性的关系——非两两考虑，对于模型的简洁度有非常大的帮助，我向来不喜欢数据冗余，所以很开心概率图模型的出现。</li>
+<li>在这种情况下，图成了比数更好的表示手段。</li>
+</ul>
+<blockquote>
+<p>将precision matrix中暗含条件独立表现在图中</p>
+</blockquote>
+<p>此时学生9门功课之间的相关性如下👇，不过下图可能有些过了（用的是hard-thresholding方法，即把precision matrix中小于0.2的值都变为0.</p>
+<p><img src="\img\in-post\7-08-PGM1\precision-hard.png" alt="precision-hard"></p>
+<p>以Analysis为例，上图的意思是，给定Proba和English课的成绩后，其余的课的成绩对Analysis成绩无影响——不相关。可以从线性模型的参数估计来辅助解读上述图模型得出的结果，挺一致的，关注最后一列，*代表这个变量的重要程度。</p>
+<pre><code>lin.mod &lt;- lm(Analysis~., data = deug$tab)
+summary(lin.mod)$coef
+</code></pre><p>为了更科学，再折腾一下，选定AIC模型衡量指标，在一系列的hard-thresholding中选定使得AIC最好的那一个，再去画此时的precision matrix带来的相关图。</p>
+<blockquote>
+<p>AIC-for-hard-thresholding</p>
+</blockquote>
+<p><img src="\img\in-post\7-08-PGM1\AIC-for-hard-threshold.png" alt="AIC-for-hard-threshold"></p>
+<blockquote>
+<p>best-hard-thresholding</p>
+</blockquote>
+<p><img src="\img\in-post\7-08-PGM1\best-hard-threshold.png" alt="best-hard-threshold"></p>
+<h4 id="漂亮的图-soft"><a href="#漂亮的图-soft" class="headerlink" title="漂亮的图(soft)"></a>漂亮的图(soft)</h4><p>上述hard-thresholding有些过于武断，所以，接下来得到的结果是基于加了惩罚项来约束系数非零个数的算法——glasso得到的，最优的$\lambda$是根据cv指标来选取的。</p>
+<p>直接上图看效果，细节部分请参照下文代码部分。</p>
+<p><img src="\img\in-post\7-08-PGM1\cv-for-soft-threshold.png" alt="cv-for-soft-threshold"></p>
+<h3 id="代码部分"><a href="#代码部分" class="headerlink" title="代码部分"></a>代码部分</h3><p>那接下来，就把代码放这里啦！来日方长，今天不早了就先睡咯！</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># step1: pairs</span></div><div class="line"><span class="keyword">library</span>(ade4)</div><div class="line">data(deug)</div><div class="line">pairs(deug$tab,pch=<span class="number">1</span>,col=<span class="string">"red"</span>)</div><div class="line"></div><div class="line"><span class="comment">#step2: 主成分分析</span></div><div class="line"><span class="keyword">library</span>(FactoMineR)</div><div class="line">pca = PCA(deug$tab)<span class="comment"># for dimentions 1 and 2</span></div><div class="line">plot(pca, axes = c(<span class="number">3</span>,<span class="number">4</span>), choix = <span class="string">"var"</span>) <span class="comment"># plot correlation circle for dimensions 3 and 4</span></div><div class="line"></div><div class="line"><span class="comment">#step3&amp;4: 协方差矩阵以及热力图表示</span></div><div class="line"></div><div class="line"><span class="keyword">library</span>(fields)</div><div class="line"></div><div class="line">plot.mat &lt;- <span class="keyword">function</span>(A,zr=<span class="literal">NULL</span>,col = tim.colors(<span class="number">64</span>),main=<span class="literal">NULL</span>)&#123;</div><div class="line">  par(mar=c(<span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">5</span>) + <span class="number">0.1</span>)</div><div class="line">  <span class="keyword">if</span> (is.null(zr)) &#123;zr = range(A)&#125;</div><div class="line">  n1 = dim(A)[<span class="number">1</span>]</div><div class="line">  ticks = seq(<span class="number">0</span>,<span class="number">1</span>,length.out=dim(A)[<span class="number">1</span>])</div><div class="line">  image(t(A)[,rev(<span class="number">1</span>:n1)],zlim = zr,axes=<span class="literal">FALSE</span>,col=col,main=main)</div><div class="line">  box(col=<span class="string">"black"</span>)</div><div class="line">  axis(<span class="number">1</span>,at=ticks,labels=<span class="literal">FALSE</span>)</div><div class="line">  text(ticks, par(<span class="string">"usr"</span>)[<span class="number">3</span>] - <span class="number">.12</span>, labels = colnames(C), srt = <span class="number">30</span>,</div><div class="line">       pos = <span class="number">2</span>, xpd = <span class="literal">TRUE</span>)</div><div class="line">  image.plot( legend.only=<span class="literal">TRUE</span>, zlim= zr,col=col)</div><div class="line">&#125;<span class="comment">#老师自己编的生成相关关系热力图的函数，我觉得配色有点奇怪。。。</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#协方差矩阵C</span></div><div class="line"></div><div class="line">C = cor(deug$tab[,-<span class="number">9</span>]) <span class="comment">#without sport variable</span></div><div class="line">plot.mat(C)</div><div class="line"></div><div class="line">C.inv = solve(C) <span class="comment">#求逆矩阵 -&gt; precision matrix 这个矩阵就是概率图中的精髓了，mark~</span></div><div class="line"></div><div class="line">plot.mat(C.inv)</div><div class="line">title(<span class="string">"precision matrix"</span>)</div><div class="line"></div><div class="line"><span class="comment"># step5&amp;6：漂亮的图</span></div><div class="line"></div><div class="line"><span class="keyword">library</span>(qgraph)</div><div class="line">qgraph(C, labels=colnames(C)) <span class="comment"># 这是体现变量之间全部相关性的图，有些复杂，而且洞见少，冗余多</span></div><div class="line"></div><div class="line">T0 &lt;- C.inv</div><div class="line">T0[abs(C.inv)&lt;<span class="number">.2</span>] &lt;- <span class="number">0</span> <span class="comment">#这就是hard threshold的精髓~</span></div><div class="line">qgraph(wi2net(T0), labels = colnames(C))</div><div class="line"></div><div class="line"></div><div class="line">lin.mod &lt;- lm(Analysis~., data = deug$tab)<span class="comment">#可以从以下这个线性模型的参数估计来辅助解读上述图模型得出的结果，挺一致的，关注最后一列，*代表这个变量的重要程度。</span></div><div class="line">summary(lin.mod)$coef</div><div class="line"></div><div class="line"><span class="comment"># log likelihood </span></div><div class="line">S = cov(deug$tab[,-<span class="number">9</span>])</div><div class="line">ll &lt;- log(det(T0))-sum(diag(S%*%T0))</div><div class="line"></div><div class="line">d &lt;- dim(C.inv)[<span class="number">1</span>]</div><div class="line">s.seq &lt;- seq(<span class="number">.01</span>, <span class="number">.5</span>, by = <span class="number">.01</span>) <span class="comment">#thresholds</span></div><div class="line"></div><div class="line">AIC = <span class="literal">NULL</span></div><div class="line">cnt &lt;- <span class="number">0</span></div><div class="line"><span class="keyword">for</span> (s <span class="keyword">in</span> s.seq)&#123;</div><div class="line">  cnt = cnt+<span class="number">1</span></div><div class="line">  T0 = C.inv</div><div class="line">  T0[abs(C.inv) &lt; s] = <span class="number">0</span></div><div class="line">  k = d+(sum(abs(T0)&gt;<span class="number">0</span>) - d)/<span class="number">2</span> + d</div><div class="line">  ll = log(det(T0)) - sum(diag(S%*%T0))</div><div class="line">  AIC[cnt] = -<span class="number">2</span>*ll + <span class="number">2</span>*k</div><div class="line">&#125;</div><div class="line"></div><div class="line">plot(s.seq, AIC, pch = <span class="number">20</span>)</div><div class="line">s = s.seq[which.min(AIC)]</div><div class="line"></div><div class="line">T0 = C.inv</div><div class="line">T0[abs(C.inv) &lt; s] = <span class="number">0</span></div><div class="line">qgraph(wi2net(T0), labels = colnames(C))<span class="comment"># 红色代表负相关，绿色代表正相关</span></div><div class="line"></div><div class="line"></div><div class="line">mod.eco = lm(Economy~Algebra+Analysis+Proba+Informatic+Option1+Option2+English, data = deug$tab)</div><div class="line"></div><div class="line">summary(mod.eco)</div><div class="line">step(mod.eco) <span class="comment"># stepwise selection according to AIC criteria</span></div><div class="line"></div><div class="line">mod.opt2 = lm(Option2~Algebra+Analysis+Proba+Informatic+Option1+Economy+English, data = deug$tab)</div><div class="line"></div><div class="line">summary(mod.opt2)</div><div class="line">step(mod.opt2) <span class="comment"># stepwise selection according to AIC criteria# 以上是在不同的s，用AIC准则下去评价的结果# combine the outcome of linear model and precision matrix to predict t</span></div><div class="line"></div><div class="line"><span class="comment"># soft theresholding</span></div><div class="line"><span class="keyword">library</span>(glmnet)</div><div class="line"></div><div class="line">cv.eco &lt;- cv.glmnet(as.matrix(deug$tab[, -c(<span class="number">5</span>,<span class="number">9</span>)]), </div><div class="line">                    deug$tab[,<span class="number">5</span>]) <span class="comment"># find the regularization constant lambda</span></div><div class="line">glm.eco &lt;- glmnet(as.matrix(deug$tab[,-c(<span class="number">5</span>,<span class="number">9</span>)]),</div><div class="line">                  deug$tab[,<span class="number">5</span>],</div><div class="line">                  lambda = cv.eco$lambda.1se)</div><div class="line">glm.eco$beta</div><div class="line"></div><div class="line"></div><div class="line">cv.opt2 &lt;- cv.glmnet(as.matrix(deug$tab[, -c(<span class="number">8</span>,<span class="number">9</span>)]), </div><div class="line">                     deug$tab[,<span class="number">8</span>]) </div><div class="line">glm.opt2 &lt;- glmnet(as.matrix(deug$tab[,-c(<span class="number">9</span>,<span class="number">9</span>)]),</div><div class="line">                  deug$tab[,<span class="number">8</span>],</div><div class="line">                  lambda = cv.opt2$lambda.1se)</div><div class="line">glm.opt2$beta</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">library</span>(glasso)</div><div class="line">a &lt;- glasso(C,rho = <span class="number">.01</span>) <span class="comment">#a regularization constant(same as lambda)# rho等于0.1与0.01所得到的图大不相同</span></div><div class="line">qgraph(wi2net(a$wi), labels=colnames(C))</div></pre></td></tr></table></figure>
+<p>2016年7月9日<br>@Rennes 唉，这都快两点了 碎觉~</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;写在最开头&lt;/p&gt;
+&lt;p&gt;犹豫了一会儿是否要在标签中写Statistics &amp;amp; Algorithm，最后还是决定不写，因为这篇文章非常「随意溜达」，有很大的可能性我会写一篇比较正经的概率图的文章，那么这篇，就熬一会儿夜编辑下直接放在这里咯！&lt;/p&gt;
+&lt;p&gt;这应该算是&lt;a href=&quot;http://tinyopen.github.io/2016/06/30/Rennes/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;法国暑期学校&lt;/a&gt;的一个番外了。上了两节概率图模型的课，还挺有意思的，深挖下去肯定会牵扯很多底层的知识分外难啃，但至少乍一看「挺漂亮」&amp;amp;「挺有用」。&lt;/p&gt;
+&lt;p&gt;接下来，我就现学现卖&amp;amp;借刀卖钱了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据科学实践" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%AE%9E%E8%B7%B5/"/>
+    
+    
+      <category term="Statistics" scheme="http://yoursite.com/tags/Statistics/"/>
+    
+      <category term="R" scheme="http://yoursite.com/tags/R/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rennes——法国暑期学校小记</title>
+    <link href="http://yoursite.com/2016-06-30-Rennes/"/>
+    <id>http://yoursite.com/2016-06-30-Rennes/</id>
+    <published>2016-06-29T16:00:00.000Z</published>
+    <updated>2016-08-13T15:37:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在班内同学进军杭城各大互联网公司实习的这个暑假，我参加了法国雷恩一大承办的统计学夏令营。不过我也因此错过了一个医药公司关于数据科学家的夏令营&amp;华师大一个非常棒的夏令营。</p>
+<blockquote>
+<p>日子总是有得有失的，好好享受得到的部分就好啦~</p>
+</blockquote>
+<p>雷恩是个地处法国西北部的城市，很有欧洲特色，夏天气候宜人，只有20多度。我将在这里上大约3周的课，住在当地居民家里，享受一个欧洲旅游城市的美景和缓慢的生活节奏，其中，缓慢的生活节奏对于我而言，蛮新奇的。</p>
+<a id="more"></a>
+<h3 id="这篇游记"><a href="#这篇游记" class="headerlink" title="这篇游记"></a>这篇游记</h3><p>写在博客首次发布时：</p>
+<p>25日早上7点抵达巴黎，转眼已是6月30日的晚上10点了，我躺在床上，没有开灯，外面天色就如同杭州8点左右的样子，我想着，那我就把这篇博客挂上去再睡吧😉~</p>
+<p>在动笔写这篇法国三周生活连载前，我的确犹豫了好一会儿是否要在博客里写。</p>
+<ol>
+<li>在博客里写的话，不如在日记中写那么自由，肯定会因假想观众的目光而略去一些内容，也会油然而生一些”show off”的冲动。 我都有些不好意思坦白这样的想法了，写到这里的时候我还笑出声，啧啧，这脸皮，敢说不敢做呀~但是最后我想，对于年轻人而言(👉🏻说我自己呢~)，不藏拙是进步的第一步。恩，那就让我尽量忠实地记录些什么吧。</li>
+<li>把这篇文章放在一个原本打算偏技术的博客里，难免损耗该博客「干正事」的好氛围，乍一看，不妥。不过转念一想，这或许能激励我「多多写偏技术的重新抬高这个博客的技术水平」，谁说不是呢~</li>
+</ol>
+<blockquote>
+<p><strong>既然如此，不能浪费我准备好的理由，以下就是我的流水账啦！</strong></p>
+</blockquote>
+<p>以下内容写于不同时刻，依旧采取「写了就是写了，最多改改错别字」的原则，不触碰我写时的心境。争取不间断地更新下，也多放点照片，为了让照片漂亮点，我用手机里不多的内存又下了修图软件。</p>
+<p>没错，我其实是在坦诚「图片已经二次加工😏」，不过，大部分的图片只是加了一个白色的边框，人物照片都没有也只是加了下模糊效果而已，毕竟，我和小胖墩都觉得，我们的智慧可以尝试下当段子手，但是我们的脸，还是离网红远一点吧😌，网红这大大的壳，累人得很。那些因努力工作（或者说效率不高还死撑熬夜）长出的青春痘，那就留着吧~</p>
+<p>从巴黎开往雷恩的火车上，我遇到一种特别漂亮的红色，完美地遮盖了我额头上的几颗痘痘，同时还凸现了我本来就很好的皮肤，不过岛主说我表情太严肃了——难道我只有傻笑的时候表情才是不严肃的嘛~😏 那就换张开心点的好啦~</p>
+<center><br>    <img src="/img/in-post/6-30-Rennes/me.jpg" title="me~" width="300" high="300"><br></center>
+
+<hr>
+<h3 id="感谢小伙伴"><a href="#感谢小伙伴" class="headerlink" title="感谢小伙伴"></a>感谢小伙伴</h3><p>还蛮幸运的，老板转发了这个项目给我们，那段时间我刚好心里得空，就一步一个脚印地写申请。期间：</p>
+<ul>
+<li>小胖墩的美国男朋友帮我改了下career expectation，母语的力量啊~；</li>
+<li>从紫金港上完课，晚上9点多了，去往Lulu家，在她的客厅里开工讨论至凌晨2点。她提供了非常好的关于study project的修改意见，当年小领导身上的完美主义真亲切。</li>
+</ul>
+<p>感谢她们~</p>
+<hr>
+<h3 id="来法国的第1天"><a href="#来法国的第1天" class="headerlink" title="来法国的第1天"></a>来法国的第1天</h3><p>来到法国已一天，接待我的是一位65岁的小学全科教师Fabiola。她独居一幢小房子——色彩明亮、温馨，金色的头发瘦瘦的脸胖胖的身子很优雅，在我搞定WIFI密码重置时惊呼”You’re superwomen!”同时摆了一个大力水手吃完菠菜后pose.有两台苹果设备，非常喜欢我的金色mac觉得颜色可爱，我非常激动，说还有一款粉色的更cute，不过她觉得电脑是粉色的好奇怪😅。</p>
+<p>我与她用英文交流，谈及食物时，她拿出了「看图学英文」询问我的饮食偏好。虽然有点不好意思但我还是和她说「出于对<strong>某些习俗</strong>的尊敬，这段时间不能吃热量太高的食物」。而这番坦诚，在今天的午餐让我，相比同席的小伙伴，少吃了三块cheese😋，老天保佑，没有在第一天胖一圈。</p>
+<p>挺喜欢她的——用mac pro，在65岁独居时开始接待中国交流生，坦然很喜欢巴黎但是物价太高，对法国的素质教育有些失望，对英国脱离欧盟表示忧伤，曾经有Facebook帐号但是遇见bad person后弃之享受和现实朋友相处的时光，喜欢莫奈吃早饭时听爵士的女士，希望我们能愉快地度过这段时光。</p>
+<p>刚刚区域警察上门提醒「晚上睡觉要把外窗关好」。哦，原来如此，我一直很疑惑布列塔尼区日照时间为早晨5点-晚上10点+。如果没有外窗，光靠薄薄的窗帘遮挡的话，我在想，如果这段时间每天只能睡6小时的话，简直比期末还辛苦呢~😅</p>
+<hr>
+<h3 id="挨饿时光"><a href="#挨饿时光" class="headerlink" title="挨饿时光"></a>挨饿时光</h3><p>写完上面那一段后，我觉得有必要写写我的挨饿时刻。</p>
+<blockquote>
+<p>时刻一：机场<br>在杭州机场等候时觉得甚饿，但另一个感觉大获全胜「恩，机场里的一顿饭这么贵呢😅」，幸得机场超市有卖11元6个装的好友派，吃了2个。出巴黎机场后，就看到一个胖胖的法方工作人员，很是顺利。</p>
+</blockquote>
+<center><br>    <img src="/img/in-post/6-30-Rennes/1.jpg" width="300" high="300"><br></center>    
+
+<blockquote>
+<p>时刻二：火车上<br>在火车上和小伙伴分享了剩余的4个好友派的不久后，我饿了，然后一直饿到火车到站，抵达寄宿家庭。途中景色很美，随手一拍发了Facebook，自由的感觉真好。</p>
+</blockquote>
+<center><br>    <img src="/img/in-post/6-30-Rennes/train_scene.jpg" width="300" high="300"><br></center>
+
+
+<blockquote>
+<p>时刻三：第一天自己闲逛<br>我一人出去闲逛Fabiola在家备课，与她约定12点前回来。当9点半我决定启程回去时，一辆公交车开了过来，我想了下，就小跑上车了，顺便完成了一场「说走就走的旅行」。我很喜欢雷恩市中心的感觉，喜欢到觉得小迷路也不错的地步，所以就只管走不记路。</p>
+<p>途中无数次感慨，天空好美丽，云朵好白，随手一拍就觉得「原来学数学也可以很有美感呢~」<br>下图👇是雷恩14年动工预计19年完工的在建地铁工程，虽然效率不高，但是可取之处也很多。</p>
+<p>在接近三个小时的步行后，我在Fabiola家的门口扶着墙壁给爸妈打了个电话，进去后看到午餐还没开始准备时，若无其事地喝了杯水😂</p>
+</blockquote>
+<center><br>    <img src="/img/in-post/6-30-Rennes/sky.jpg" width="300" high="300"><br></center>
+
+
+<blockquote>
+<p>时刻四：晚上（几乎是每晚）<br>充分尊重布列塔尼地区的人民，在长时间日照的情况下，将晚餐时间调整至8点后的决定。但是我的肚子还是6点就饿了😂</p>
+</blockquote>
+<hr>
+<h3 id="飞机上的12个小时"><a href="#飞机上的12个小时" class="headerlink" title="飞机上的12个小时"></a><strong>飞机上的12个小时</strong></h3><p>凌晨在广州改签，一路小跑上了飞往巴黎的飞机，过于疲惫没有吃飞机餐就睡了，按照生物钟7个小时后醒来，此时机上大部分人还在沉睡，发了会儿呆，然后去拿了一个三明治，打开印象笔记。</p>
+<p>随后花了近3小时，阅读&amp;整理完「待整理的数据相关大杂烩信息」笔记本，它在「数据科学家」这个笔记本族中，一般我都会把第一手与此相关的笔记放在这里，整理完后这个笔记本就是空的。</p>
+<p><strong>最开始的时候</strong><br>   笔记放在这里就觉得很安心很踏实，感觉整个世界都是自己的。</p>
+<p><strong>后来</strong><br>   不踏实日渐兴起，拥有并没有完全理解透的事物，并没有满足感反而很不踏实。</p>
+<p><strong>现在</strong> 在上述两者中寻找平衡点不容易，但是要努力向它靠近呢~呀~原来，我是喜欢「本人比照片美」这种朴素的不言过其实的美感的😉。</p>
+<hr>
+<h3 id="第3天-惊奇感"><a href="#第3天-惊奇感" class="headerlink" title="第3天, 惊奇感"></a>第3天, 惊奇感</h3><h4 id="法国的早餐"><a href="#法国的早餐" class="headerlink" title="法国的早餐"></a><strong>法国的早餐</strong></h4><p>今天早餐时，Fabiola很认真地夸我漂亮，她说「你很漂亮，黑黑的头发，胖胖的嘴唇，most importantly, you have so good personality.」恩，我喜欢她的审美😉</p>
+<p>原本以为，我来这里会胖，现在我觉得完全不会呀，在我对高热量的cheese butter说no后，我的早餐和晚餐都非常像素食主义者。Fabiola给我准备了一袋薄饼当早餐，12片，我每次吃两片，今早吃的时候问她，「为什么你不吃呢？我觉得很美味呢~」「It’s too much calorie 😌」 但是，当时她正朝面包上涂厚厚的黄油😅</p>
+<p>这是我某天早餐的照片👇，一壶红茶、两勺谷物放在一杯酸奶里、一勺蜂蜜涂两张薄饼上。恩，非常喜欢~</p>
+<center><br>    <img src="/img/in-post/6-30-Rennes/breakfast.jpg" title="breakfast" width="300" high="300"><br></center>
+
+<hr>
+<h4 id="跑步和晚餐"><a href="#跑步和晚餐" class="headerlink" title="跑步和晚餐"></a><strong>跑步和晚餐</strong></h4><p>负责翻译的师兄帮我找到了雷恩一大健身房的信息，所以在第三天下课后，我回家换了装备慢跑去车站，准备去gym.哦，当时手机的电就剩10%，但是我想着我有公交卡，基本能看懂地图，应该可以安然到家吧。</p>
+<p>傍晚的雷恩一大人烟稀少，每问一个人我都觉得gym就在前方。最后问的那个跑步的男生终于告诉我前面那幢建筑就是gym，我灰常开心，他也很开心能帮助我，在我与他告别准备走的时候，他提及了一个非常重要的信息「学校的gym在夏天是不开放的😉」</p>
+<p>当时我已围着学校慢跑好久，我感觉运动量也差不多了。再动的话，应该撑不到晚上9点+Fabiola准备晚餐吧~雷恩的居民常常吃完晚餐就去刷牙睡觉了，而我总觉得得过两小时再睡吧。于是，我过着比国内更晚睡，更早起的生活，这让我额头上又多了几颗暗示我「正青春」的痘痘。</p>
+<hr>
+<h3 id="与同学的聊天"><a href="#与同学的聊天" class="headerlink" title="与同学的聊天"></a>与同学的聊天</h3><p>同学中有个手臂长长的男生，同时我们还有一个很棒的自拍杆，这是合影~</p>
+<center><br>    <img src="/img/in-post/6-30-Rennes/classmates.jpg" title="us" width="300" high="300"><br></center>
+
+
+<h4 id="所学无用？"><a href="#所学无用？" class="headerlink" title="所学无用？"></a><strong>所学无用？</strong></h4><p>在机场，与同行的一个女生聊起算法与统计时。听着她说「我们在写代码这件事上没有优势但是我们之所学前景广阔，应该从事更偏智慧的领域」，我想着我自己之前何尝不是如此——「轻工程重理论」。</p>
+<p>但是现在呢？</p>
+<p>我渐渐改掉了眼高手低的坏毛病，有段时间甚至矫枉过正，甚至对于「我所学难转换成生产力」感到分外沮丧，面对着泛函实变感慨着「我既学不好，而且学这些使得我不再有其它的精力学其余，工程领域的确有很多重复性的劳动，但是至少它们都有实际价值。」</p>
+<p>现在的我吧，既能尊重工程师的工作，也喜欢偶尔发呆时遇到的源于基础学科的智慧。这两者并不冲突，只要职业生涯浸润着充盈着绵延的努力时光。</p>
+<hr>
+<h4 id="恩，我们都有个朋友叫大鹏"><a href="#恩，我们都有个朋友叫大鹏" class="headerlink" title="恩，我们都有个朋友叫大鹏"></a><strong>恩，我们都有个朋友叫大鹏</strong></h4><p>本科阶段的第一年，我跟着李大鹏学长写新闻稿，在专业课上给了我很多建议，我高代非常棒的基础要归功于他借我的基本参考书。研究生阶段，他去往四川大学，师从马天，特别棒的一位教授。</p>
+<p>之所以谈起他，是因为我与随行的一位女生都认识他。大鹏学长信佛，与人为善，所以在那个女生感慨「出门在外，只要认识大鹏就能朋友满天下」时，我很认真地点了点头。</p>
+<p>第一天下午，由于她所在的寄宿家庭的中午有事外出，她和与她同住的女生来到我的寄宿家庭共进午餐。被问及家里还有谁时，我说就我和Fabiola，说完后我有种「两个独身女人相依为命」的感觉😂。</p>
+<hr>
+<h4 id="法语很棒的女生"><a href="#法语很棒的女生" class="headerlink" title="法语很棒的女生"></a><strong>法语很棒的女生</strong></h4><p>我陪一个女生逛街买衣服，雷恩天气比她想象中低很多，逛街时，她羡慕我可以随便买裤子不需要考虑裤子太长的问题。恩，我很认真回应，我不但比你高，还比你胖哦~</p>
+<p>我非常喜欢她的性格，很开朗很真诚。长我两岁，今年9月份会来巴黎读博士。</p>
+<hr>
+<h4 id="仿佛来到四川，我们还有小国旗"><a href="#仿佛来到四川，我们还有小国旗" class="headerlink" title="仿佛来到四川，我们还有小国旗"></a><strong>仿佛来到四川，我们还有小国旗</strong></h4><p>随行的15人中有个性格特别开朗的四川妹子和一个重庆男生，恩，时常有种身处四川的感觉，男生叫刘青，天呐，性格好逗，第一天他说他的住宿家庭带他去山里跑步，感觉被遛了两小时。</p>
+<p>随行的另一位男同学也特别逗，拍照必附国旗，我想着自己党员的身份，深深感慨了下，若要打败他，必须借助党旗😏</p>
+<p>接待我们并提供翻译的是一位在雷恩读博的师兄，每天为我们拍一张合影作为他翻译工作的签到证明发给法方。有次我们坐地铁经过雷恩的医疗区，他说「你们谁有病可以来这里呢~」「师兄你怎么这么会说话😅」「我是看人说话的😉」</p>
+<hr>
+<h3 id="第5天-被否定？"><a href="#第5天-被否定？" class="headerlink" title="第5天, 被否定？"></a>第5天, 被否定？</h3><h4 id="Fabiola外孙的生日"><a href="#Fabiola外孙的生日" class="headerlink" title="Fabiola外孙的生日"></a><strong>Fabiola外孙的生日</strong></h4><p>6.29日在学校收到了Fabiola的短信，被邀请去参加她外孙的生日，于是上午下课后，我就去Republique的商场逛了逛，买了一份打五折的礼物。</p>
+<p>途中遇到一个特别可爱的盘子👇，真的满心欢喜呢~顺道给岛主发了张图片，恩，岛主当时正在飞机上陪着别人家的老婆孩子😌。于是我自己，小小地想了下还是算了，飞机上弄碎的话我心也会碎的，因为好喜欢&amp;好贵。等回国后可以买一套这个系列的呢——老马家威武。</p>
+<center><br>    <img src="/img/in-post/6-30-Rennes/plate.jpg" width="300" high="300"><br></center>
+
+<p>先说这个过生日的小男孩，因为掉门牙的缘故显得有些闷闷不乐。在他十岁生日这一年煎了人生中前两个鸡蛋，他妹妹吃了一个，我吃了一个，感觉还不错。小男孩收到了一个手摇发电手电筒，没想到立马就派上用场了。他带着我这个从未见过苹果树的人前往他家花园深处，于是我看到了三个小小的青苹果，在树上挂着。</p>
+<center><br>    <img src="/img/in-post/6-30-Rennes/apple_tree.jpg" width="300" high="300"><br></center>
+
+<p>Fabiola的女儿是物理学的博士，我很奇怪，在一开始见面时，我们就聊起非常深入的话题——</p>
+<ul>
+<li>你们中国人眼里只有钱</li>
+<li>我能给你的唯一忠告就是不要只看重钱</li>
+<li>为什么你们在学术上一点诚信也没有</li>
+</ul>
+<p>当时很想为那些「只看中钱」的中国人说两句。但是我想了想，决定曲线救国——谈自由&amp;理想，最后我俩「很投缘」，她对中国学生应该也有一些改观吧。</p>
+<p>其实，我是认可西方这套价值观的，但是，相比较「只是埋怨国人价值观的单调性」，去理解为什么我们这么单调或许更有价值。并非为其找借口，毕竟「不太对」和「为什么不太对」是两回事。纵使你又非常多的缘由可以放弃原则，但是放弃就是放弃，对于旁观者而言，这就是两回事，而对于做出决定的人来说，则根据个体差异来定——愚昧的快乐也未尝不可。</p>
+<hr>
+<h4 id="Fabiola学校的小话剧"><a href="#Fabiola学校的小话剧" class="headerlink" title="Fabiola学校的小话剧"></a><strong>Fabiola学校的小话剧</strong></h4><p>30日傍晚，下了法语课后去Fabiola的学校观看她学生排练了很久的话剧。和家长们坐在一起，鼓掌拍照。我挺蛮受触动的。话剧的主角没几个，大部分孩子都是配角，但是呢~期间和各自的父母挤眉弄眼也很有趣；有两个男生扮演着在一旁玩牌的角色，恩，就是玩得很认真；好多小男生梳着花伦同学那样的刘海，帅得不要不要的。</p>
+<center><br>    <img src="/img/in-post/6-30-Rennes/play.jpg" width="300" high="300"><br></center>
+
+
+<p>话剧结束后，家长们张罗着桌椅摆上自己带来的草莓派、芝士饼、薯片饮料，给孩子分好，孩子吃饱后大人才开始开动，聊聊天，吃得非常随意。最后的善后工作也是家长自发进行的，整理好未吃完的零食放在孩子的教室里，擦干净桌子，放好椅子。孩子只需要负责开心，满是风一样的女子。</p>
+<center><br>    <img src="/img/in-post/6-30-Rennes/run_gilrs.jpg" width="300" high="300"><br></center>
+
+
+<p>我在想，若父母在互联网公司上班，工作常态为996，哪里能抽出时间参加周四晚上6点开始的话剧呢？若是抽空参加，也很难有这些家长的惬意吧~？</p>
+<center><br>    <img src="/img/in-post/6-30-Rennes/parents.jpg" width="300" high="300"><br></center>
+
+<hr>
+<h4 id="虽不体面，如何自处？"><a href="#虽不体面，如何自处？" class="headerlink" title="虽不体面，如何自处？"></a><strong>虽不体面，如何自处？</strong></h4><p>Fabiola和她的女儿，言语中都透露了很明显的「你们中国人不懂生活，也咩有素质」的论断。我也必须很客观地承认。我在学校每天早餐「一碗豆浆一个小红薯一杯酸奶」，中午晚上继续吃食堂，有时来得晚就更加随便毕竟也没有什么菜了，经常在实验室呆到实在困才回去的地步，周末有时活干不完连自己喜欢的电影都只能往后推找时间再看。</p>
+<p>日子过得不是很体面呢~但是，我想起我奶奶，爷爷去世后，她养着鸡种着青菜还做中国结赚点小外快，在外人看来日子很清贫，可是她挺开心，真的很开心，年纪越大越透着一种孩子的有趣，我还蛮喜欢和她聊天的。我的爸爸和姑姑都非常孝顺，叔叔神经大条这块就不指望他了。所以我奶奶在我看来，晚年真的蛮幸福的，在她自己看来，就更是如此了，她对生活的满足程度，让我惊叹，我喜欢这样的人生态度，本来日子就没有很复杂。</p>
+<p>所以，发达国家的居民或许正在惬意地享受生活，懂得追求自己的权利。例如，法国人很容易罢工，在雷恩一大吃午餐，有一次负责翻译的师兄远远看着人烟稀少分外担心「今儿食堂罢工」，还好最后只是虚惊一场。当时随行有个男生脱口而出「这太没有组织纪律了」，哈哈~有个女生接下他的话「这也是有组织有纪律的一种表现呀~」</p>
+<p>但是，作为发展中国家的一员，我们何尝没有在享受生活呢？更进一步，我们还在追求生活。</p>
+<p>有一点真的很重要，很早以前我和小胖谈起过「在身处低处时，要把自己当人；在身处高处时，要把别人当人。」</p>
+<p>随着对发达国家厨房的赞叹进入收尾阶段，外表只是外表，工具只是工具。最重要的，永远是人。我看着Fabiola厨房中偶尔爬动的几只蚂蚁；洗碗机没办法一次性清洁的勺子上的残余果酱；Fabiola开车去女儿家的途中迷了路；Fabiola与女儿不是很亲昵的互动。</p>
+<p>这些，隐藏在完美的厨具，体面的生活后的这些，渐渐浮出水面。很多老话都正确万分，例如，不以物喜，不以己悲。体面这个词，源于也只源于他人的看法。</p>
+<p>以上，写于2016年7月1日00：25，非常不巧，很晚了，此刻又有点饿呢😂</p>
+<hr>
+<h3 id="插播-100年纪念日🌹"><a href="#插播-100年纪念日🌹" class="headerlink" title="插播: 100年纪念日🌹"></a>插播: 100年纪念日🌹</h3><p>碰巧赶上与岛主的100天纪念日，那就在这篇博客的这个角落纪念下吧。已经这么久了，时间真的好快，我也很开心，想起他总有种淡淡的欣喜，恩，有的时候也「抚额感慨&amp;哭笑不得」。</p>
+<p>我俩之间隔了6个小时时差，再赶上他上班我上课，找个合适的时间通电话很不容易。更进一步，时间一短，很多原本想说的事就被归类到「要不等等」。虽说「两情若是长久时，又岂在朝朝暮暮」，但「若非朝朝暮暮，岂能称长久」，希望明年我们能离得近一点😉</p>
+<p>恩，今儿去看了一片小海，我蹲在沙滩上捡了好久的贝壳，我觉得如果是我一个人&amp;带着干粮，我能辛勤工作一整天。</p>
+<blockquote>
+<p>岛主，我从大海里拿到些礼物，到时放你岛上可好😌?</p>
+</blockquote>
+<hr>
+<h3 id="第一个周末"><a href="#第一个周末" class="headerlink" title="第一个周末"></a>第一个周末</h3><p>没想到一周的时间就这样过去了，昨天和今天是比较密集的参观活动，有些许疲惫也不想朝着游记方向好好努力，那就随手写点别的吧。</p>
+<p>中午和岛主聊天，聊到「很多Uber司机没有意识到他们在从事服务业，并没有把『客户感受』当一回事」，对此表示深深深的赞同。虽然「工作不仅仅是赚钱」更多的是那些不缺钱小伙伴的口头禅，但是如果一个国家浮躁到「打个的都要冒着被粗鲁对待的风险」，有些可悲。雷恩没有Uber，我也只见过1辆taxi，不知道巴黎的Uber司机是怎样的态度，经常大罢工的他们应该很看重自己的劳动成果吧。</p>
+<p>Fabiola的女儿问起我，「你的父母应该挺以你为傲的吧？」「恩，我也挺以我父母为傲的」。我小的时候爸爸挺以他工作为傲的，他很有干劲，后来吧，好像生活就是那么回事的感觉，我妈妈在这一点上就更令我感到遗憾了。这些是他们的感觉，对于我，真的觉得他们作为劳动者，是值得自我肯定的。</p>
+<p>观察发达国家的服务业是个很有趣的现象，让我深刻体会到「我真的只是从发展中国家来的」。发达国家因为最低工资高、工作间薪水差距小，所以他们眼里工作并无太强的高低之分，亦或者，这么说：</p>
+<blockquote>
+<p>「正因为他们觉得工作没有高低之分，所以工资之间的差距才不大」</p>
+</blockquote>
+<p>在雷恩：</p>
+<ul>
+<li><p>邮差小哥穿着笔挺的工作服背影迷人；</p>
+</li>
+<li><p>集市里，卖奶酪的小哥也很帅；</p>
+</li>
+<li><p>集市里，移动煎饼房的姑娘很漂亮工作时热情满格；</p>
+</li>
+<li><p>周日的早上有个姑娘扛着两捆竹子去布置场地（恩，当时我又迷路了，所以聊了一会儿😂）；</p>
+</li>
+<li><p>他们聚集在广场上抗议因为法国移民政策使得大批非法移民不正常死亡，一个好的社会总能通过帮助别人争取权利来确保我们权利的不被侵犯。</p>
+</li>
+<li><p>几百年前，渔民抗议政策改动放了一把大火，烧了7天7夜，木制建筑几乎都被毁坏，新建的街道参照路易国王的意见有巴黎风。但是仅存下来的木制老房子，斜着树立着，我觉得很Q~</p>
+</li>
+<li><p>带孩子的爸爸们好多，心里一暖。广场上很少人看手机，要么发呆，要么席地而坐看会书，如果没有手机，我们似乎会更惬意一点吧，至少能全身心逗孩子😌</p>
+</li>
+<li><p>9个城门目前只剩下1个，城市的扩张使得原先用作城门的石头有了新的用处。</p>
+</li>
+<li><p>市政厅，会议厅顶部的画作中有几位裸女，曾经有场激烈的辩论「这样是否会显得不严肃」，后来大家觉得并不会。我也觉得她们很美呀，或许因为正义加持。</p>
+</li>
+<li><p>去了海滩，看到一副特别喜欢的画，是个小孩子背着手面朝大海金发飞扬，这感觉很棒。</p>
+</li>
+<li><p>卖奶酪的大叔递给我一小块红色的奶酪，我一闻味道就决定和同学们分享，最后是翻译师兄非常豪爽地解决了它。</p>
+</li>
+</ul>
+<p><img src="/img/in-post/6-30-Rennes/cheese.jpeg" alt="cheese"></p>
+<p><img src="/img/in-post/6-30-Rennes/pancake.jpeg" alt="pancake"></p>
+<p><img src="/img/in-post/6-30-Rennes/helpful.png" alt="helpful"></p>
+<p><img src="/img/in-post/6-30-Rennes/fathers.jpg" alt="fathers"></p>
+<p><img src="/img/in-post/6-30-Rennes/kid.jpg" alt="kid"></p>
+<p>以上，写于2016年7月3日22：20</p>
+<hr>
+<h3 id="学术会议😎"><a href="#学术会议😎" class="headerlink" title="学术会议😎"></a>学术会议😎</h3><blockquote>
+<p><strong>不轻松的课程</strong></p>
+</blockquote>
+<p>法国果然是以分析概率论见长的，老师能不间断写三小时板书，之前听说澳大利亚、欧洲国家的博士培养目标相较于国内，很明确——为本校培养教授，所以「板书能力」是一个重头。</p>
+<p>这两天的课程听下来很累，我与岛主小抱怨的时候他反问我「为什么呢？」后来我认真想了一下，其实我之前上的课也不比这两节轻松，那个时候的心态是——嘿，赶紧抓紧时间把难的学会，所以斗志比较昂扬，也就没功夫感到累。但是来法国前，考完老板的那门课后，我心头深深一喜，总算可以暂时告别基础学点能用的&amp;轻松的啦，没想到来法国后，有种回到老板课堂的感觉😂</p>
+<p>那就既来之则安之吧，写点乐呵的，假装很开森！</p>
+<p>前两天看到奴隶社会的主创一诺的一篇文章，讲她生三个小孩同时职场进阶的经历，我很喜欢她提到的一点：</p>
+<blockquote>
+<p>有了孩子后的工作量会从2变成10，<strong>但是其中有5都是无意义的焦虑</strong>，一旦你克服焦虑，其实也就2-&gt;5</p>
+</blockquote>
+<ul>
+<li>你老公情商高的话，老公的工作能力能从1-&gt;1.2</li>
+<li>外界力量承担3——各种针对性的服务&amp;父母的支持</li>
+<li>so,你自身只需要从1-&gt;1.8就行😉</li>
+</ul>
+<p>贴张她公众号里的图：</p>
+<p><img src="/img/in-post/6-30-Rennes/will-road.jpg" alt="will-road"></p>
+<blockquote>
+<p><strong>初见学术会议展板环节</strong></p>
+</blockquote>
+<p>我还挺喜欢这种模式的，有点像菜市场，各种新鲜的蔬菜摆在那里，然后你瞅着自己喜欢的过去聊聊这菜怎么种的、怎么施肥的、多少钱呀、以后还卖嘛…</p>
+<p><img src="/img/in-post/6-30-Rennes/conference.jpg" alt="conference"></p>
+<p>非常有必要备注下，我这样并非不尊重。来法国后，我改掉了我身上发展中国家味儿最浓的一点。让我细细说一下，上周末去海滩的时候，我看到一副特别喜欢的画，折合人民币1000上下，这对我来说还挺贵的，当时下意识想——等回国后还喜欢的话就去淘宝上买幅差不多的。啧啧，说出来我都为自己感到汗颜了。</p>
+<p>我想起一诺提到的（最近看了好几篇她写的文章，满脑子都是她😅），她很感谢当时在清华工作的保洁阿姨啊，保安人员等，正是他们的辛勤劳动为清华学子做出有意义的事情提供了后方支持。「有意义」是个很主观的感觉，我相信一诺说得「有意义」是对于人类整体发展而言的，我非常欣赏这个定义。但是，对于很多个体而言，「有意义」的范围很广，色彩斑斓。</p>
+<p>所以，认为从事以下工作的人认为这些是有意义的：</p>
+<ul>
+<li>做煎饼</li>
+<li>卖奶酪</li>
+<li>清洁厕所</li>
+<li>画油画</li>
+<li>…</li>
+</ul>
+<p><strong>那么，面对这些服务「觉得小贵」并无不可，但是，我更希望我的第一感觉是「感谢辛勤劳动，我喜欢，等我也去做点有意义的事情赚点钱再来买😉」</strong>为「被认为有意义的劳动成果」买单，我想，这钱，还是值得花的。（当然咯，我还是很节俭的，在这里我买了一块0.5欧的香皂，我很喜欢这味道，想到它我都觉得开心。）</p>
+<blockquote>
+<p><strong>没想到跑题跑很远，赶紧跑回来。</strong></p>
+</blockquote>
+<p>我对两块展板很感兴趣：</p>
+<ul>
+<li>研究亲密关系之间的暴力和儿童欺辱</li>
+<li>一个针对Lasso的优化算法</li>
+</ul>
+<p>也和他们聊了一会儿，恩，深聊了一会儿，主要是我听不懂他们的法国口音，我觉得很有意思啊，而且也不是很理论，确实除了最基础的理论研究外像我这种天赋一般的，做点有用的简单的比较实在。</p>
+<p>还有个小事值得纪念下，在茶歇的时候我一下子喝了三杯果汁🍹感觉很多VC呢～</p>
+<p>哦，还有个小事，我很为自个儿感到骄傲，在我看到题还没啥想法的时候，老师邀我上黑板做题，然后我就去了。第一次是因为我迟到，本来坐在最后，但是看黑板最下方有些吃力，于是搬东西上第一排，正巧老师说「谁来做下这道题，不会不要紧我会指导你的，然后他真的指导了我很久，主要是他期望中的思路很奇特，或者说，我学得比我想象中还要差😅」</p>
+<p>下面是我做的两道题，恩，纪念下，第一道题写了又擦历经坎坷；第二道题就比较轻松，只是分类讨论下。</p>
+<p><img src="\img\in-post\6-30-Rennes\problem1.jpg" alt="problem1"><br><img src="\img\in-post\6-30-Rennes\problem2.jpg" alt="problem2"></p>
+<p>以上<br>写于2016.7.6</p>
+<hr>
+<h3 id="非常舒服的晚餐😋"><a href="#非常舒服的晚餐😋" class="headerlink" title="非常舒服的晚餐😋"></a>非常舒服的晚餐😋</h3><p>今天晚上翻译师兄带我们出去改善伙食，没想到「热乎乎的汤」能如此提升幸福感，哦，还有西兰花。我们最后小玩了一把狼人游戏，我一向不擅长这种类型的游戏，不过今天还蛮顺利的至少没有坑队友，也很开心，觉得和国人相处分外惬意。</p>
+<p>我这三言两语尽是吃吃喝喝，那接下来就说点「有意境」的吧。</p>
+<p>昨天晚上7点Fabiola带我去其朋友家共聚晚餐，瞅着5点下课后的这段时间与佳旭聊了一会儿电话，大家好久不见都分外想念对方。不过电话中，我听着她与男友相处的点滴，心中很是不舍。这个男生吧，也挺优秀，就是在感情上一直被老天眷顾不用付出什么就能收获她人心意，所以不懂珍惜和感恩。</p>
+<p>可是，仅凭运气可不好，好女孩真的不多，我运气好，遇到过几个，不过，佳旭这么好的，只此一个。我很珍惜这段友情，这点上面她很有自信——对于「我这辈子最好的朋友就是她不会变」深信不疑，我呢，也挺有成就感的，我让我的好朋友对我俩的感情如此笃定。希望她别忘她的好，忘了也没事，我多夸夸她就好啦~😉</p>
+<p>Fabiola的朋友家住着两个印度尼西亚的女孩，一个偏黑另一个就是普通黄种人的长相，两个女生都很直爽，我还挺喜欢和她们聊天的，问及来法国读本科的原因，她们说，国内的就业要求一直停留在「女生长得漂亮就行」&amp;「出国过就有高优先级」，而且法国的学费很便宜，比国内还便宜一些。她们通常自己做晚餐，因为今天寄宿家庭招待客人，所以晚餐非常丰盛，最后她们都吃撑了。我想起佳旭和我提过，在国外的会议自助餐很棒，她和同学经常去，在异国他乡生活，体谅父母赚钱不易不铺张浪费的她们，真的不容易。但是，应该都会有比较好的结果吧，就像前两天翻译师兄说起他博士毕业回国工作的待遇，挺为他高兴的，博士不好读呢，刚到巴黎有个中年阿姨主动与我攀谈说「我跟着你，等下一起取行李吧」，她来巴黎看他孩子，她孩子在竺院读的本科，目前快完成博士学业了，每次回国养得圆圆的，下次再见时感觉又瘦了20斤。</p>
+<p>好像谁的日子都不轻松呢~或者说，通往轻松自由的道路都有些坎坷呢~那我也就做做心理准备，不轻松是一回事，我乐意是另一回事——我累我乐呵😁</p>
+<p>以上<br>写于2016.7.7</p>
+<hr>
+<h3 id="我下厨比下海惨😅"><a href="#我下厨比下海惨😅" class="headerlink" title="我下厨比下海惨😅"></a>我下厨比下海惨😅</h3><p>又是周五，明天早晨要起早去海边山边闲逛一天，思量再三还是不舍得错过周日的城堡之行，主要是很喜欢和两朵小雪花一起玩呢~于是只能今晚多多干会儿活，例如：</p>
+<ul>
+<li>杭马会6月份的跑步报告；</li>
+<li>准备好明儿的推送；</li>
+<li>稍微复习下今天上课讲的东西，这么短暂的暑期学校还要交作业呢~老师们真认真😅</li>
+</ul>
+<p>今天晚上为什么时间这么紧凑呢？因为我时隔好几个月又做了一顿饭，唉，之前我脑子一热要给Fabiola做晚餐，买食材的时候我对自己也不是很有自信，就买了一株大白菜、2个西红柿、6个鸡蛋、6个蘑菇，我觉得一个西红柿炒蛋、一个白菜汤应该不会出什么问题吧，恩，还是高估自己了。</p>
+<p>哈哈~正巧今天小泰发了奶奶做菜的视频，我想起上次清明回老家，她摘了一根自己种的西葫芦，我说我来吧，这个很简单，结果我连皮都忘记削了就直接放到大锅里煮😅。</p>
+<p>今天在Fabiola的厨房捣鼓的时候，我非常尴尬，满脑子「你在干什么呢？丧权辱国嘛？」</p>
+<ul>
+<li>我对粗盐没有概念，给放多了；</li>
+<li>我想着多点鸡蛋吧，结果4个也太多了；</li>
+</ul>
+<p>唉。还好Fabiola真的很给面子没有直说，主要是开动前我用我的破口语很坦诚地阐述了好几遍我不太「精通厨艺」。</p>
+<p>之前向岛主抱怨老太太说话太拐弯，我不该这样的，如果她今晚很直接的话，我估计满晚都会忙着找能把自己塞进去的大地缝了。</p>
+<blockquote>
+<p>当时，我有了一个美好的愿望——<strong>希望外卖事业蓬勃发展！</strong><br>此刻，我想，我应该不是普通的女性吧，厨房的事我不太擅长。。。</p>
+</blockquote>
+<p>以上<br>写于7.8日晚11：50 @巴黎时间</p>
+<hr>
+<h3 id="铁塔下的烟火"><a href="#铁塔下的烟火" class="headerlink" title="铁塔下的烟火"></a>铁塔下的烟火</h3><blockquote>
+<p>大姐与我</p>
+</blockquote>
+<p>晚上8:00不到的时候，我们一行人在木屑地上坐定等11点多天黑法国国庆的烟火展，也无拍照的冲动，想着，写点东西吧～</p>
+<p>旁边坐着大姐，大姐特别逗，让我把腿往右前方伸展，她说「我们慢慢占领别人的领地，你看这样我就可以把腿移过来了」😂我表现好，大姐赏了我一个0.3欧的小面包，她说「这折合人民币两块呢，在国内都能买个大面包了」</p>
+<p>我们的现场情况:</p>
+<p><img src="/img/in-post/6-30-Rennes/fire.jpg" alt="firework"></p>
+<p>席间我们还有这样的对话：<br>「我腿好麻」<br>「咱俩姿势差不多为什么我没有感觉」<br>「因为你把手肘放在我腿上😌…」<br>「是吗😺？！我不是放自己腿上嘛？！」<br>「你连你自己的腿都不认得？」我：😅😅😅</p>
+<p>后来大家站起来时，大姐又向我传授小秘诀「你看哦，我现在是不是和你一样高了，你也从周围刨一点木屑然后堆起来站在上面…」</p>
+<p>大姐在暑期学校里挑起了纪律的大梁「那个谁谁谁，我两分钟没说他他就给迟到了…大家注意哦，等下人齐我要说话…那个，注意啊，说什么时间到就什么时候到，不要等了这个等那个，浪费的是大家的时间」</p>
+<blockquote>
+<p>住在法国这几周的感悟</p>
+</blockquote>
+<p>来巴黎的火车上上，旁边坐了班中很喜欢历史的男生，自由活动那天就是和他&amp;大姐一起去凡尔赛宫。他俩的四川话贯穿整个暑期学校，我特爱这调调～哈哈</p>
+<p>我们俩交流了下对寄宿家庭的感悟，顺便聊了下拿破仑和希特勒之间最大的差异。他的寄宿家庭是一家四口人，这是他的几点感悟：</p>
+<ol>
+<li><p>平等的意识深入人心。<br>男主人谈及他与孩子曾经有过一段沟通不太顺利的时期（这点很让我们动容，他并没有像很多中国家长直接把矛头指向孩子）。</p>
+</li>
+<li><p>做事果断，很愿意表达自己的想法。<br>不光是大人，连孩子也是如此，一旦有未解问题，就会立刻着手解决——翻字典、查地图、Google… （我对这点非常感慨，为什么他们没有拖延症，我好想知道深层的原因，待我放心上思考几月～）有次女主人烧的肉非常好吃，我同学想再吃一块，被拒绝了，女主人说还要给老公孩子留下他们的。</p>
+</li>
+<li><p>对独立性的尊重&amp;非常鲜明的一致性。<br>他们家曾经有过一个中途离开的寄宿学生，这令他们家感到很遗憾。他们家是什么态度呢？就是你有什么需要他们会尽力满足你，如果你什么都不说，那他们也不会打扰你。他们对待正在伦敦读书的女儿也是这样的：每周只和女儿通话两次，他们认为既然去往英国，该做的就是多多融入当地社会，少讲法语。<br>我同学的做法就很好：<br>「我很喜欢历史，想出去看看，你们有什么建议吗？」（就被推荐博物馆，被邀请看纪录片全程提供翻译…）；<br>「我很想了解法国文化」被邀请去学当地舞蹈参加小舞会；<br>「我想了解你们的饮食」然后每天都可以在厨房现场教学；</p>
+</li>
+<li><p>被问及「30年前的生活和今天有什么特别大的改变吗？」<br>答曰「饮食上基本没有，生活上只是多了电脑和手机」但是这问题随便问一个中国人，都会得到截然不同的回答。<br>的确，达到一定程度的生活水准后，社会会进入一个稳定的状态——<br>服务业被广泛接受一致对待达到劳动无贵贱（在法国他们说喝得起依云上不起公共厕所） 家庭聚会、好友聚会占据了工作外的大部分时间，再有闲暇就翻报纸看节目安排，打理打理自家花园<br>一周购物一次洗衣一次，三天洗一次碗<br>每顿饭三个阶段，no phone, only talking，情感交流很重要</p>
+</li>
+</ol>
+<hr>
+<p>讲真，生活这样也没什么不好，人人素质高，不物质，懂礼节。</p>
+<p>不过,总觉得发达国家缺了点什么，在咖啡屋和法语课老师聊天被问及还会来雷恩嘛？</p>
+<p>-应该不会，雷恩不是一个适合20+年轻人的地方太没有活力了。<br>-是不是你住宿家庭生活比较规律，雷恩的夜晚很有活力呢～<br>-我不是这个意思，我觉得雷恩这样的发达城市太安逸，太被自己原先充足的设施和服务所拖累，没有看看外面世界的意识。（嗯，我本来是想表达这层意思的，但是我俩都在用非母语交流，所以实际效果不知道如何😅）<br>-那你是从哪里发现的呢？<br>-大家用的手机都不是很高级，这座城市没有赶上这波移动化浪潮（此处觉得老师有些尴尬，我大力赞美了下雷恩的美景和人文情怀）</p>
+<hr>
+<blockquote>
+<p>回到正题，对于发达国家中的非国际大都市，初步的感觉是：</p>
+</blockquote>
+<p>缺了更深层次的好奇心；对变革的欢迎对变化的无畏。在想，<strong>中国也会进入发达国家的行列，我们如何应对来自那时候社会的惰性？</strong>（嗯，此刻我有点尴尬，作为一名还挣扎在温饱线上的学生，我竟然已思考起党和国家领导人几十年后所需要解决的问题。）</p>
+<p>这是个好问题，我写下它的时候已是法国时间9:20（7.14 是法国国庆），埃菲尔铁塔的灯亮了下，我这没见过市面的小家伙从一个多小时前，开始用围巾蒙住头写感悟。刚响应了群众的欢呼探出头看了眼，继续蒙头（大姐在旁边我很安心😉～不过她刚刚为了和塔儿合照非常嫌弃我这么大个儿😅）</p>
+<p>我想着这个好问题的解决方法也很简单，就是大家要意识到会有个这样的问题。（继续写前我查了下踩踏事件逃生指南）</p>
+<hr>
+<blockquote>
+<p>与佳旭闲聊</p>
+</blockquote>
+<p>昨天和佳旭聊感情之余顺便聊了下南海问题再引申到爱国注意，佳旭还表扬我觉悟很高（自豪😉～）</p>
+<p>我俩都觉得，现在对于发达国家而言最可怕的一点是，他们对于我们的了解远远少于我们对于他们的了解，不过，这也是可以理解的。丢弃优越感好难，我面对那些东南亚国家时也是这样——也不太愿意去了解这些国家。唉，真的就只是一枚普通人。但是，要尽量要做到的是「要意识到自己并非很了解」。</p>
+<p>我与她聊及我奶奶与Fabiola之间的差异，她表示「嗯，国人身上那种带着谦卑的努力是很可怕的，我们那种苦日子能自得其乐的能力也是很可怕的」</p>
+<p>嗯，此刻我发现，其实太阳还是自己祖国的比较圆😉～真幸运我这么早就意识到这一点。竟然拿手机写了这么多，好辛苦😌～那我去玩咯！</p>
+<p>以上，写于7.14 @埃菲尔铁塔下的草地</p>
+<hr>
+<h3 id="画上个小句号"><a href="#画上个小句号" class="headerlink" title="画上个小句号"></a>画上个小句号</h3><p>岛主说，任何地方都有其好坏，随着我们对一个地方了解的深入，不应该一直在好坏这种简单的标准之间肆意转换，太无意义了。了解然后欣赏或理解即可。哈哈～我还蛮惊喜的他有这么好一个观念，所以我「夫唱妇随」地跟了下，被他发觉「你很喜欢做这种总结性的陈词」。是呢，因为遇上好观点呀😉～</p>
+<p>在凡尔赛时，我觉得「金碧辉煌」这种生活，感受个几十分钟就好，多了我这种俗人竟然觉得有些累，撇开「我过不起奢华生活这个事实」，我好像更喜欢一种颜色的墙，白色也可，更喜欢没有装饰的光滑的柱子涂着环保漆，更喜欢天空中cute的小云朵。</p>
+<p>这是凡尔赛的小花园和门口做生意的黑人大哥：</p>
+<p><img src="/img/in-post/6-30-Rennes/cloud.jpg" alt="cloud"></p>
+<p><img src="/img/in-post/6-30-Rennes/business.jpg" alt="business"></p>
+<p>The end.<br>这趟晒黑好多的旅程.</p>
+<p>7.19 @杭州家中</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在班内同学进军杭城各大互联网公司实习的这个暑假，我参加了法国雷恩一大承办的统计学夏令营。不过我也因此错过了一个医药公司关于数据科学家的夏令营&amp;amp;华师大一个非常棒的夏令营。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;日子总是有得有失的，好好享受得到的部分就好啦~&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;雷恩是个地处法国西北部的城市，很有欧洲特色，夏天气候宜人，只有20多度。我将在这里上大约3周的课，住在当地居民家里，享受一个欧洲旅游城市的美景和缓慢的生活节奏，其中，缓慢的生活节奏对于我而言，蛮新奇的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="小日子一朵朵" scheme="http://yoursite.com/categories/%E5%B0%8F%E6%97%A5%E5%AD%90%E4%B8%80%E6%9C%B5%E6%9C%B5/"/>
+    
+    
+      <category term="游记" scheme="http://yoursite.com/tags/%E6%B8%B8%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线性模型往深讲——Trade-off between accuracy and precision</title>
+    <link href="http://yoursite.com/2016-06-27-translate-biasvariance/"/>
+    <id>http://yoursite.com/2016-06-27-translate-biasvariance/</id>
+    <published>2016-06-26T16:00:00.000Z</published>
+    <updated>2017-05-26T15:39:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>此文初衷&amp;构架</p>
+<p>在Udacicy论坛上看到有位导师贴出了<a href="http://scott.fortmann-roe.com/docs/BiasVariance.html" target="_blank" rel="external">这篇文章:《Understanding the Bias-Variance Tradeoff》</a>，希望感兴趣的同学能够翻译下。我想了下，那我就试试吧。既是试试，那就不藏拙了，也想介绍一些模型背后的智慧。</p>
+<a id="more"></a>
+<p>我的这篇文章主要由下述三块构成：</p>
+<ul>
+<li><p><strong>解释一句话「所有的模型都是错的，只是其中有些很有用罢了」</strong> </p>
+<p>  决定在翻译前这部分作为「导读」，是觉得网上很多写这块的大部分作者，功底还是不够扎实，或者太注重应用，我之所以觉得理论的东西很重要，是因为它——<strong>「既出生，即永生」</strong></p>
+</li>
+<li><p><strong>翻译上面提到的文章<a href="http://scott.fortmann-roe.com/docs/BiasVariance.html" target="_blank" rel="external">《Understanding the Bias-Variance Tradeoff》</a></strong></p>
+</li>
+<li><strong>既然正事已干完，那就闲聊两句吧</strong>~😀</li>
+</ul>
+<blockquote>
+<p>ps: 希望我写完后不会心生如下的感慨——我的功底呢？ ⊂( ˆ - ˆ )⊃ </p>
+</blockquote>
+<p>哦，容我贴张非常无关的小黄人的图放松下</p>
+<p><img src="/img/in-post/6-27-bias-variance/fun.jpg" alt="fun"></p>
+<hr>
+<h3 id="Why「真相无法用模型描述」"><a href="#Why「真相无法用模型描述」" class="headerlink" title="Why「真相无法用模型描述」"></a><strong>Why「真相无法用模型描述」</strong></h3><h4 id="Data浮出水面"><a href="#Data浮出水面" class="headerlink" title="Data浮出水面"></a><strong>Data浮出水面</strong></h4><p>在大脑一片空白的情况下，我们遇到了一堆数据。假设这是堆有自变量x和因变量y的数据，比如说，商品销售额是y，广告预算是x，我们要研究的是y怎样被x所影响。</p>
+<p>此时你要意识到，这些数据只是<strong>「观测值」</strong>，而不是<strong>「真实值」</strong>。真实值加上随机生成的&amp;无法观测的误差，然后变成了观测值。因为随机误差不可测，所以真实值也被掩藏起来了。</p>
+<ul>
+<li><p>乐观一点 如果随机误差在0附近波动，那么多次观测取平均，其平均值几乎可以代表真实值，这也是很多模型假设「随机误差项服从均值为零的正态分布」的美好愿景，亦或者「好累，来个假设让问题简单化吧」。</p>
+</li>
+<li><p>更加感性&amp;悲观些的话<br>  作为人类，你永远不会得到「真实值」，更别提被「苍茫现实世界」所掩盖的真实模型。 就好像那句<strong>老话</strong>说的「所有的模型都是错的，但是其中有一些<strong>非常有用</strong>」。</p>
+</li>
+</ul>
+<blockquote>
+<p>不过现在，让我们忽略前半句话吧（眨眼~）从「非常有用」这个主观概念入手吧。</p>
+</blockquote>
+<h4 id="定义「好的模型」"><a href="#定义「好的模型」" class="headerlink" title="定义「好的模型」"></a><strong>定义「好的模型」</strong></h4><p>从直观感觉入手，然后慢慢将其进行抽象化。</p>
+<blockquote>
+<p><strong>直观上</strong>，好的模型通常有以下两个特点：</p>
+</blockquote>
+<ul>
+<li><p><strong>预测准确</strong><br>  预测值和真实值之间的差距要足够小，但是因为真实值不可知，所以退而求其次，预测值与观察值之间的差距足够小就可以了。</p>
+</li>
+<li><p><strong>可被理解</strong></p>
+<ul>
+<li>模型中的自变量都非常重要「模型足够简洁」  </li>
+<li>自变量之间的相关性较低「模型冗余度低，更精简」  </li>
+<li>能体现自变量是如何影响因变量的「参数的意义」<br>  但是这一点的重要性越来越低，唉，关于这个心中满是感慨，先压下。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>抽象化</strong>，如何量化一个模型的好坏呢？</p>
+</blockquote>
+<ul>
+<li><p>在工程领域的小伙伴看来，好坏=预测准确与否。<br>  即，对于每一个自变量x，模型会给出一个预测值，同时我们会有一个观测值，预测值和观测值之间的距离可以被定义。如果距离够近，那就足够好。当然，怎么定义距离，又是后话了。</p>
+</li>
+<li><p>在统计专业的小伙伴看来，模型的整体表现是最重要的。<br>  例如无偏性、渐进性等统计术语喷薄而出，保证这个模型是稳定的，不会被大西洋彼岸的蝴蝶的一次翅膀扇动而受海啸冲击飞灰湮灭。</p>
+</li>
+</ul>
+<blockquote>
+<p>以上，我们都没有谈及真实模型，why？因为我们对其一无所知呀。不过，虽然真实模型无法企及，但是有所追求始终是好事😄~接下来就谈谈真实模型吧。</p>
+</blockquote>
+<h4 id="真实模型"><a href="#真实模型" class="headerlink" title="真实模型"></a><strong>真实模型</strong></h4><p>这世界纷繁复杂得很，观测值围绕着真实值随机产生，二者之间的误差不是模型所能减少的，这个误差就叫做<strong>irreducible error</strong>（ps：同时模型也不是为了减少这个误差而存在的）。</p>
+<p>退很多步讲，即使我们知道真实模型，在预测的时候，我们得到的预测值依旧与观测值不一致（好愁人，那岛主的完美主义该怎么办呢（眨眼~）。</p>
+<p>so，「所有模型都是错的」趋近真理了。</p>
+<blockquote>
+<p>那么，就从真实模型退一步</p>
+</blockquote>
+<h4 id="真实模型-gt-最优模型"><a href="#真实模型-gt-最优模型" class="headerlink" title="真实模型-&gt;最优模型"></a><strong>真实模型-&gt;最优模型</strong></h4><p>两个问题：</p>
+<ul>
+<li><p>Q：看到「最优」两字后，我知道接下来该讲讲「这个『优』背后的衡量指标是什么？」</p>
+<p>  A：取<strong>均方误差MSE</strong>作为模型衡量指标后，在$X=x$这点取何值，才能使得均方误差最小？<br>   可以在理论上得到证明，当模型f(x)取值为<strong>E(Y| X=x)</strong>时，均方误差达到最小。</p>
+</li>
+<li><p>Q：<strong>E(Y| X=x)</strong>是何方神圣呢？<br>   A：如下图，在x=4这一点，取在「这一点<strong>所有观测值</strong>（各种灰色的点）的平均数（红色的那个点）」作为「最优模型在这点的值」</p>
+</li>
+</ul>
+<p>ok，然后又出问题，「所有观测值」听上去也很遥远呢~没错呀，我们也做不到这点。</p>
+<p>先停下来回顾下：</p>
+<ol>
+<li>真实模型肯定搞不定</li>
+<li>加上一个衡量标准「均方误差」</li>
+<li>得到最优模型$f(x)=E(Y|X=x)$</li>
+<li>这个最优模型还有一个美丽的名字——回归模型（向均值回归）</li>
+<li>但是最优模型也不好搞定呢——无法弄到所有的观测值</li>
+<li>那就试试向最优模型靠近吧——随着观测值数量的增多，这个靠近是可行的</li>
+<li>终于可以做点什么了</li>
+</ol>
+<blockquote>
+<p>从真实模型退两步: 真实模型-最优模型(回归方程)-我们的模型</p>
+</blockquote>
+<h4 id="我们的模型"><a href="#我们的模型" class="headerlink" title="我们的模型"></a><strong>我们的模型</strong></h4><p>ok，再回顾下：</p>
+<ul>
+<li>$Y$：观测值</li>
+<li>$…$：真实值（完全不知道）</li>
+<li>$f(x)$：最优模型（回归方程）给出的值，最优模型使得$E[(Y-f(x))^{2}]$最小</li>
+<li>$\hat{f}(x)$：我们的模型给出的值</li>
+</ul>
+<p>当有了<strong>「我们的模型」</strong>后，此时应该衡量的就是，「观测值」与「我们的的模型给出的值」之间的差距。</p>
+<p>$$\varepsilon = y-f(x)$$</p>
+<p>$$E[(Y-\hat{f}(X))^{2}|X=x] = [f(x)-\hat{f}(x)]^{2} + Var(\varepsilon)$$</p>
+<p>其中，$Var(\varepsilon)$ is irreducible, while $[f(x)-\hat{f}(x)]^{2}$ is reducible</p>
+<p>看得更清楚些，在特定的点 $x_{0}$ 处:</p>
+<ul>
+<li>我们的观测值是: $y_{0}$</li>
+<li>估计值是: $\hat{f}(x_{0})$</li>
+<li>偏差: $Bias(\hat{f}(x_{0})) = E[\hat{f}(x_{0})] - \hat{f}(x_{0})$</li>
+</ul>
+<hr>
+<p>ok，接下来再贴翻译稿我觉得好多啦！</p>
+<hr>
+<h3 id="译-Understanding-the-Bias-Variance-Tradeoff"><a href="#译-Understanding-the-Bias-Variance-Tradeoff" class="headerlink" title="译| Understanding the Bias-Variance Tradeoff"></a>译| Understanding the Bias-Variance Tradeoff</h3><h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h4><p>当我们讨论预测模型的时候，预测误差可以被分解成两个部分：</p>
+<ul>
+<li>偏差，即预测值偏离真实值的部分</li>
+<li>波动，即预测的稳定性</li>
+</ul>
+<p>但是对于一个模型而言，上述两部分是此消彼长的关系，所以就需要对其二者进行权衡。理解这两类误差可以帮助我们诊断模型，从而更好地避免过拟合及欠拟合。</p>
+<h4 id="1-Bias-and-Variance"><a href="#1-Bias-and-Variance" class="headerlink" title="1. Bias and Variance"></a>1. Bias and Variance</h4><p>理解误差组成部分——<strong>预测偏差</strong>&amp;<strong>预测波动</strong>产生的机制，能够帮助我们优化数据拟合的过程，从而得到更加准确的模型。接下来，我们将从直观概念、图形和数学，这三个角度解释偏差和波动。</p>
+<h5 id="1-1-直观上的定义"><a href="#1-1-直观上的定义" class="headerlink" title="1.1 直观上的定义"></a>1.1 直观上的定义</h5><ul>
+<li><strong>由偏差导致的误差</strong>：预测的目标和模型给出的<strong>平均预测值</strong>之间的差距。当只有一个模型时就去谈论平均预测值有些奇怪。然而，想象下你可以多次重复模型构建的过程：收集到新的数据，开始分析，得到一个模型。由于数据集产生时所暗含的随机性，每一个数据集对应一个模型，每个模型给出一个预测值。偏差衡量的是这些模型的预测值与正确值之间的距离。</li>
+</ul>
+<ul>
+<li><strong>由波动导致的误差</strong>：预测给定点的值时，由不同数据集得到的的模型会分别给出值，这些值的波动性就代表了此类误差。再一次，想象下，多次重复构建模型的过程。此时，方差衡量了「不同的模型所给出的预测值之间的差异是否很大」。</li>
+</ul>
+<h5 id="1-2-图形表示"><a href="#1-2-图形表示" class="headerlink" title="1.2 图形表示"></a>1.2 图形表示</h5><p>利用靶心图可以很好地用图形解释偏差-波动。想象靶的中心代表了一个模型，它可以准确预测真实值。离中心越远，预测的效果越差。重复模型构建的过程（新数据-新模型），我们得到了靶上的很多点（hits，恩，我们射了好多飞镖😉）.当可以多次获取训练集时，我们同时也触及了数据中暗含的可变性，此时，每个点代表了基于新的训练集数据所得到的模型给出的预测值。</p>
+<blockquote>
+<p>注：恩，此时有很多点分布在靶上，接下来可以做的工作还有很多。举个例子🌰，就好像「有了」后可以带着眼镜细细推敲下「孩子聪明不？孩子会不会是小迷糊」这类问题😀</p>
+</blockquote>
+<p>有时，各个训练集中的数据都非常棒，使得基于这些训练集得到的模型，基于模型得到的预测值都在靶心附近；有时，训练集中会包含异常值或者是一些不标准的数据，导致了非常惨烈的预测。上述两种情况导致了靶上飞镖的不同分布。</p>
+<p>下面👇这张图代表了预测的偏差与波动不同表现之间的组合。</p>
+<h5 id="1-3-数学解释"><a href="#1-3-数学解释" class="headerlink" title="1.3 数学解释"></a>1.3 数学解释</h5><p>after Hastie, et al. 2009 《The Elements of Statistical Learning》</p>
+<p>Y是一个我们希望去预测的变量，而X是可以帮助我们预测的变量(covariate).我们可以假设这里存在一个关系式$Y = f(X)+\varepsilon$ 误差项$\varepsilon \sim N(0,\sigma_{\varepsilon})$</p>
+<p>利用线性回归或者其它的构建模型的方法，我们用$\hat{f}(x)$去估计$f(x)$.并且计算在$x$这一点的误差：</p>
+<p>$$Err(x) = E[(Y-\hat{f}(x))^{2}]$$</p>
+<p>此时上述误差可以被分解为两个部分：</p>
+<p>$$Err(x) = (E[\hat{f}(x)] - f(x))^{2} + E[(\hat{f}(x)-E[\hat{f}(x)])^{2}] + \sigma_{\varepsilon}^{2}$$</p>
+<p>$$Err(x) = Bias^{2} + Variance + Irreducible Error$$</p>
+<p>上述公式的第三项，不可约误差，是X与Y的真实关系中带有的，不能被任何模型所减少。在给定真实模型下，看起来，无限的数据能够使得我们通过减少偏差和波动至0来校准模型。但是，在现实中，最小化偏差和最小化方差之间有个博弈关系，使得二者不能同时减少。</p>
+<h4 id="2-一个例子：投票中的紧张局势"><a href="#2-一个例子：投票中的紧张局势" class="headerlink" title="2. 一个例子：投票中的紧张局势"></a>2. 一个例子：投票中的紧张局势</h4><p>让我们着手开始构建一个简单的模型。目标是构建一个模型来预测，有多少人会在下一次总统选举中投票给共和党。这个模型比人们通常提及建模时所设想的过程要简单得多，但是这对于解释偏差和波动的。</p>
+<hr>
+<p>未完，争取早日完成！💪</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;此文初衷&amp;amp;构架&lt;/p&gt;
+&lt;p&gt;在Udacicy论坛上看到有位导师贴出了&lt;a href=&quot;http://scott.fortmann-roe.com/docs/BiasVariance.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这篇文章:《Understanding the Bias-Variance Tradeoff》&lt;/a&gt;，希望感兴趣的同学能够翻译下。我想了下，那我就试试吧。既是试试，那就不藏拙了，也想介绍一些模型背后的智慧。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据科学实践" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%AE%9E%E8%B7%B5/"/>
+    
+    
+      <category term="Statistics" scheme="http://yoursite.com/tags/Statistics/"/>
+    
+      <category term="译文" scheme="http://yoursite.com/tags/%E8%AF%91%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>再听神经网络 From BNN to CNN</title>
+    <link href="http://yoursite.com/2016-06-18-ANN-to-CNN/"/>
+    <id>http://yoursite.com/2016-06-18-ANN-to-CNN/</id>
+    <published>2016-06-17T16:00:00.000Z</published>
+    <updated>2016-08-13T15:39:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>What’s in common between artists and statisticians?</li>
+<li>Models😻</li>
+</ul>
+<p>此讲座由<br><a href="http://www.math.ust.hk/~majing/" target="_blank" rel="external">©Bingyi Jing, @香港科技大学</a>主讲，我整理而已。</p>
+<a id="more"></a>
+<hr>
+<p>讲座开始前:</p>
+<blockquote>
+<p>荆老师问了句「西班牙几比几？」😅</p>
+<p>女神张奕教授🙋🏻「3：0」</p>
+</blockquote>
+<hr>
+<h2 id="随便聊聊神经网络"><a href="#随便聊聊神经网络" class="headerlink" title="随便聊聊神经网络"></a>随便聊聊神经网络</h2><p>最近几年对机器学习充满了无穷的乐趣。Alpha Go通过深度学习&amp;加强学习「动态编程」打败了李世石。</p>
+<p>机器打败人是早晚的事，因为计算机的速度越来越快。当人也有机会向机器学习的时候，人才能打败机器。机器的确会取代人，例如常规新闻的撰写。</p>
+<p>目前深度学习很多人不相信，因为没有理论。统计人对此了解很少，但是计算机的人只需要它work就可以。如果能在理论上理解它为什么这么神奇，那么也能更进一步帮助计算机更好地实现。</p>
+<p>斯坦福的那些统计学家在ESL这本书的第十一章谈到ANN的时候，轻描淡写，它认为ANN认为是PPR的特例，但是ANN(Artificial Neural Network<br>)远不止于此。</p>
+<blockquote>
+<p>注，为了这句话，我复习了下<a href="https://book.douban.com/subject/3294335/" target="_blank" rel="external">ESL</a>的第十一章，写点感想吧。</p>
+</blockquote>
+<p>统计学家们发明了一个模型PPR——Projection Pursuit Regression，从几何的角度进行解释，参杂了线性可加与非参光滑的思想。</p>
+<p>基于这个模型的好效果，他们还起了一个名字——Universal Approximator.</p>
+<p>它在统计学中之所以没有得到非常广的应用，按照作者的言外之意，大概是「这个模型过于灵活丧失了可解释性，而可解释性对于统计而言，是深入骨髓不能丢弃的」。</p>
+<p>但是，我原先也是对照实验的信徒，欣赏这种明明白白的智慧，但是我们也可以，或者说，更应该。把部分目光转向：</p>
+<blockquote>
+<p><strong>「这个方法竟然work得这么好！虽然不知道原理，但是我不能只因为我不知道原理而自认为有了批判它的权利。」</strong></p>
+</blockquote>
+<hr>
+<h2 id="题外话：统计学的失败"><a href="#题外话：统计学的失败" class="headerlink" title="题外话：统计学的失败"></a>题外话：统计学的失败</h2><p>我们讨论了半天为什么统计学的术语这么绕？</p>
+<p>例如：<br>why logistic？<br>regression vs supervised learning<br>coefficient vs weight<br>covariates vs input&amp;output</p>
+<p>结论：<br>你们统计学有今天，真的起名字上太失败了。</p>
+<hr>
+<h2 id="BNN和一些历史"><a href="#BNN和一些历史" class="headerlink" title="BNN和一些历史"></a>BNN和一些历史</h2><p>一切都从生物上的神经网络开始，Neuroscience都是在模仿神经网络的东西。<strong>domain knowledge</strong>非常重要的，例如computational biologist是一个巨大的学科。</p>
+<p>八十年代人工智能已经很火了，但是九十年代有一个低潮，但是这一切都还早着呢。不要担心太多事情，关电源即可。95年的时候支持向量机出来了。老师94年去科大的时候做的是bootstrap，后来MCMC取代了Bootstrap，做了近十年大偏差，感慨如果那个时候学机器学习，现在的我们就不是这样了。机会大于能力，有的时候赶不上就赶不上了。</p>
+<blockquote>
+<p>笑着感慨：<br>机会还是存在的，就好像我们在十年前错过了买房一样，不能因为这样就去跳楼啊！<br>去年大数据火起来后，这对于我们而言，又是一次机会。</p>
+</blockquote>
+<h3 id="一个Neuron："><a href="#一个Neuron：" class="headerlink" title="一个Neuron："></a>一个Neuron：</h3><p>信息<br>总结 $\sum$ input function<br>处理 activation function </p>
+<p><strong>the simplest one：</strong><br>perceptron: activation function</p>
+<p>非0-1的情况下，用sigmoid/logistic transform function, 因为人对信号反应的强弱是不一样的</p>
+<h3 id="多于一个Neuron："><a href="#多于一个Neuron：" class="headerlink" title="多于一个Neuron："></a>多于一个Neuron：</h3><p>用两个就可以解决「无法用一条直线进行分类的问题」</p>
+<p>所以，增加neurons 和 layers（到底需要多少，是需要学习的）</p>
+<p>一般神经网络都有很多层，hidden nodes之间没有关系</p>
+<ul>
+<li><p>小n大p 生物</p>
+</li>
+<li><p>大n大p 神经网络</p>
+</li>
+</ul>
+<p>它在处理图像的时候特别有帮助，因为图片的数量是海量的，有庞大的数据量可以支持。统计之所以不做这件事是因为我们没有这样的n来支持我们的工作。</p>
+<hr>
+<h2 id="Back-Propagation-Algorithm"><a href="#Back-Propagation-Algorithm" class="headerlink" title="Back-Propagation Algorithm"></a>Back-Propagation Algorithm</h2><p>从ESL中找到了这个算法，还是很有趣的：</p>
+<p><img src="/img/in-post/6-18-ANN-CNN/5.png" alt="fun"></p>
+<p>nothing but <strong>gradient descent</strong> </p>
+<p>刚开始weights near zero, increasingly non-linear as training goes</p>
+<p>两个node就可以弄出抛物线，更多的node可能会出现overfit。<br>但是可以调到testing比较好的地步就可以啦！</p>
+<p>ps: 凸函数解是存在唯一的，非凸只有local optimal, but enough &amp; 也能避免过拟合。</p>
+<hr>
+<h2 id="CNN-卷积神经网络"><a href="#CNN-卷积神经网络" class="headerlink" title="CNN 卷积神经网络"></a>CNN 卷积神经网络</h2><p>98年做digit recognition大家就已经用上了这个啦！但是因为SVM也可以干，所以卷积神经网络还是被渐渐遗忘了。后来SVM渐渐不神秘了，CNN之前的缺点也一一被克服了。</p>
+<p>CNN为什么work这么好的原因还是可以去挖掘一下的。不要在别人专心用的时候去嘲讽其工具没有理论支撑。发现不同，找出相似，例如卷积神经网络和逻辑回归也非常有关系。</p>
+<p>CNN是深度学习中目前最重要的，也是研究的最为成熟的一个方法。无人驾驶、语音识别这类方法，都对机器学习、人工智能有着非常大的帮助。</p>
+<p>原先的神经网络是fully connected<br>现在的CNN是local connected</p>
+<p>数学上的本质都是：</p>
+<p>$$y = E(Y|X) + E(Y-E(Y|X))$$</p>
+<p>$m(x)$高维的时候，是一个曲面，学习的目标就是这个曲面——highly non-linear</p>
+<p>总结：模型不是最重要的，只需要足够地flexible就可以啦。数据量是关键。</p>
+<p><strong>一些前辈：</strong></p>
+<ul>
+<li><p>Hinton @ Google<br>  八十年代做到瓶颈的时候坚持下来了</p>
+</li>
+<li><p>LeCun @ Facebook</p>
+</li>
+</ul>
+<h3 id="再来闲话统计"><a href="#再来闲话统计" class="headerlink" title="再来闲话统计"></a>再来闲话统计</h3><p>有的时候我们过分强调统计的作用。但是实际上，统计太辅助了，只在别人需要我们的时候才能派上用场。</p>
+<p>现在大陆金融刚开始，发展很快。但是，北美不缺钱了，做生物的比做金融的要抢手得多。但是大陆做金融的还是很抢手的。</p>
+<p><strong>现在是互联网金融的大好时机</strong></p>
+<p>Internet Finance在中国是最火的，结合了金融和机器学习。</p>
+<p>ps：岛主夫人我今天早上还完信用卡账单后，把支付宝的默认顺序改变了一下，把「花呗」放在了第一位，这估计也是因为我看重互联网金融多于传统信用卡服务吧。</p>
+<h3 id="CNN-Application"><a href="#CNN-Application" class="headerlink" title="CNN Application"></a>CNN Application</h3><ul>
+<li>NLP</li>
+<li>Finance</li>
+<li>Speech</li>
+<li>Image</li>
+</ul>
+<h4 id="e-g-zip-code-recognition"><a href="#e-g-zip-code-recognition" class="headerlink" title="e.g. zip code recognition"></a>e.g. zip code recognition</h4><p>有很多办法去做这个问题，神经网络也发挥了它的作用，每一个图像是一个16*16的矩阵。</p>
+<p>五种不同的方法去处理这个图像👇：</p>
+<p><img src="/img/in-post/6-18-ANN-CNN/3.png" alt="fun"></p>
+<p><img src="/img/in-post/6-18-ANN-CNN/4.png" alt="fun"></p>
+<p>👆🏻6万的数据去train，5194 links，1060weights，correct 98.4%。</p>
+<p>虽然很高，但还是不够。例如现在的快递行业，2%的错误率还是不可以接受的。</p>
+<p>解决方法或许是：</p>
+<ul>
+<li>把错误的分出来，作为一类去学习。</li>
+<li>在数据量一定的情况下，如何提高精度呢？<br>  任何方法嵌入boosting后都可以在一定程度上得到提高。</li>
+</ul>
+<h4 id="e-g-Start-a-Business"><a href="#e-g-Start-a-Business" class="headerlink" title="e.g. Start a Business"></a>e.g. Start a Business</h4><p>又闲聊好久：</p>
+<ul>
+<li><p>很多大数据有限公司的「大」是属于前面的。<br>  例如：<strong>岛主夫人大数据有限公司</strong>实际上是<strong>岛主夫人大</strong>开的😹</p>
+</li>
+<li><p>BI实际上是”Beauty Index”</p>
+</li>
+</ul>
+<p>讲正事，当把决策模型抽象到神经元的程度，就有一种「万物皆神经网络」的感觉。</p>
+<p>招人时，我们大脑实际上在用一个模型，抽象出来就是一个多层神经网络的模型。</p>
+<ul>
+<li><p>筛选简历，input -&gt; feature I<br>  所用的模型实际上是一个locally connected的模型。</p>
+</li>
+<li><p>面试，feature I -&gt; feature II</p>
+</li>
+<li><p>结果，输出yes or no</p>
+</li>
+</ul>
+<h3 id="How-does-it-work"><a href="#How-does-it-work" class="headerlink" title="How does it work?"></a>How does it work?</h3><p>深度学习得到的效果比一般的要高5%左右的精度。一开始所有的点都对结点有刺激作用，后来变成了partially work。事实上，后者更符合我们认知过程，我们就是一块一块看待图像的。</p>
+<p>input -&gt; feature map</p>
+<p>convolution kernel is actually a similarity, 作用不同矩阵在提取不同的feature–实际上就是滤波器，computer vision: filter </p>
+<p><strong>CNN利用了这些性质，把图像识别的精度提高了很大一块。</strong></p>
+<ul>
+<li><p>找变化即求导求差分（一维时的离散化的求导）<br>  即与(-1,1)相乘一阶导数<br>  (-1,2,-1)是二阶导数</p>
+</li>
+<li><p>在找边缘，中间的点与边缘的点到底差距多大？<br>  这种距离的定义方式千奇百怪。</p>
+</li>
+<li><p>每一个矩阵都是在二维里面进行求导。</p>
+</li>
+<li><p>图像处理CNN与之前的BNN有本质的区别：<br>  后者拉成一个向量，损失了行与行之间的信息</p>
+</li>
+<li><p>以上都是模仿人看东西的方式，人看东西还是有很大的随机性的。</p>
+</li>
+</ul>
+<p>苏老师说:</p>
+<blockquote>
+<p>我没建立过任何一个模型，但我见过很多人建立的模型，都太理性了，不如计算机接人性，懂人性。</p>
+</blockquote>
+<p>👆🏻有趣的小对话：</p>
+<blockquote>
+<p>统计学：你不知道Lasso吗？<br>计算机：你不知道SVM吗？</p>
+</blockquote>
+<h2 id="稀疏网络社区识别"><a href="#稀疏网络社区识别" class="headerlink" title="稀疏网络社区识别"></a>稀疏网络社区识别</h2><p>Community Detection for Sparse Networks(A review and two methods)</p>
+<h3 id="再次闲聊"><a href="#再次闲聊" class="headerlink" title="再次闲聊"></a>再次闲聊</h3><p>要么高大上，要么接地气，不能在中间晃动。</p>
+<p>统计统计，通通忘记。任何问题要从实际出发，而不是有一个方法再去考虑怎么用它。</p>
+<p>networks相关的内容现在已经很成熟了，收集了上百篇，已经看了几十篇了，从计算机、物理领域开始，渐渐的在Annals of Statistics也有发表的。nature 和 Science上的一些文章考虑的问题很有趣，解释起来也很直观<br>看到最后，这块的水还是很深的，而且最终还是概率，可以用概率的模型去描述它。</p>
+<p>网络其实就是一个大的矩阵，最终关注的就是一个矩阵。</p>
+<p>现在很多的算法都是likelihood based，但是它也有劣势，处理不了特别大的数据量。</p>
+<h3 id="Application-of-Community-Detection"><a href="#Application-of-Community-Detection" class="headerlink" title="Application of Community Detection"></a>Application of Community Detection</h3><ul>
+<li>广告</li>
+<li>P2P金融，通过网络预测违约风险</li>
+<li><strong>推荐系统</strong> link probability </li>
+</ul>
+<h3 id="一些学术上的研究进展"><a href="#一些学术上的研究进展" class="headerlink" title="一些学术上的研究进展"></a>一些学术上的研究进展</h3><p>Bhattacharyya, Sharmodeep, and Peter J.Bickel </p>
+<p>Karate club network:<br>如何坎损失的边数最少</p>
+<p>方法：Spectral Method to Detect Communities<br>代数中有很多定理，SVD是老师认为最重要的定理。</p>
+<p>网络最终的形状，<strong>phase transition</strong>来自于物理，水加热到100度会从液体到固体，这种转变是突然发生的，是跳跃的。网络中也有这种性质。</p>
+<p>随着p的变化，网络：</p>
+<ul>
+<li>从<strong>fully connected</strong>直接👉🏻<strong>基本能连起来</strong></li>
+<li>从<strong>基本能连起来</strong>直接👉🏻<strong>一点都连不起来</strong></li>
+</ul>
+<p>以上的分类用数学术语表达出来就是这样：</p>
+<ul>
+<li>E(degress)/log(n)-&gt;无穷 </li>
+<li>E(degress)/log(n)=无穷</li>
+<li>E(degress)/log(n)=O(1)</li>
+</ul>
+<p>ps:<br> 高校里学生之间的恋爱关系就是「基本能连起来」——有一个大的树形结构其余的都是分散的，所以遇见真爱首先是个概率问题。这个大的树形结构中的人，关系相对混乱，或许颜值颇高或许有着「普世」人生观。</p>
+<p>现实当中的network实际上是非常sparse的network，facebook的网络就是一个sparse network。找最大的那个再去细分，此时已经趋于树状了。</p>
+<p>两篇文献：</p>
+<ul>
+<li>Consider the network of edges</li>
+<li>Graph distance based, multi-demensional scaling, consistency</li>
+</ul>
+<p>新的思路：</p>
+<ul>
+<li>Markov链，考虑带权重的随机游动，用游动到另一个点的概率来衡量两点之间的距离。图论中的Laplace，Google的page rank都有类似的思想在里面。</li>
+</ul>
+<h2 id="我的一些小感悟"><a href="#我的一些小感悟" class="headerlink" title="我的一些小感悟"></a>我的一些小感悟</h2><p>在讲座内容之余，想再说几点。很多数学院的老师本性极纯很有慧根，我老板就是这样，他笑起来有种我见到小学同学的亲切感，我还是很庆幸能当他的学生的。</p>
+<p>但是荆老师，还有点不一样。似乎他是认识到他本身的智慧和聪明程度的，同时也在运用着这份才华：</p>
+<ul>
+<li>他提出的问题不深，获得回答后，会有一种「感谢对方解答」&amp;「对方其实更厉害」的信息被传达出来，由此活跃了现场气氛</li>
+<li>他懂得如何打趣数学院的老师，这个度掌握得极好</li>
+<li>这场会议，他分享的是他才刚开始研究的神经网络。他有着其它的渠道获得专业认可（他的论文均发表在统计领域最顶尖的杂志上），很多学者在场的会议中，他更愿意把自己放到一个学习者的角色中。</li>
+</ul>
+<p>恩，他好乐呵！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;What’s in common between artists and statisticians?&lt;/li&gt;
+&lt;li&gt;Models😻&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;此讲座由&lt;br&gt;&lt;a href=&quot;http://www.math.ust.hk/~majing/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;©Bingyi Jing, @香港科技大学&lt;/a&gt;主讲，我整理而已。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="偶遇新事物" scheme="http://yoursite.com/categories/%E5%81%B6%E9%81%87%E6%96%B0%E4%BA%8B%E7%89%A9/"/>
+    
+    
+      <category term="Lecture" scheme="http://yoursite.com/tags/Lecture/"/>
+    
+      <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>也谈谈期末考，或许是最后一次了</title>
+    <link href="http://yoursite.com/2016-06-17-final-test/"/>
+    <id>http://yoursite.com/2016-06-17-final-test/</id>
+    <published>2016-06-16T16:00:00.000Z</published>
+    <updated>2016-08-13T15:41:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>不想抬起腿又必须要迈过这道坎的时光里，<br>你总比自己想象中更容易走神。</p>
+</blockquote>
+<p>刚给某人发短信，结果他好长时间都没有回，我洗衣服时想着那就自个儿乐一会儿顺便写个博客😋名字叫做「当男朋友不理我时干什么？ps:写博客咯😀！」</p>
+<p>自从看到朱赟前辈每天只睡5，6个小时还不间断更新微信公众号后，我觉得我也应该多写写，至少不要把「自以为的忙碌」作为借口。</p>
+<a id="more"></a>
+<p>中午和小胖聊天，谈及人生的很多可能性，谈及任何决定都需与幸福相关，最后遐想了下我俩在美国农村的生活：</p>
+<ul>
+<li>一边搞研究</li>
+<li>一边相依为命</li>
+<li>用厨具弥补厨艺</li>
+<li>养1只金毛2只猫</li>
+</ul>
+<p>所以，生活想想总是很美好哒！</p>
+<p><img src="/img/in-post/6-17-final-test/1.jpg" alt="fun"></p>
+<h3 id="关于期末考"><a href="#关于期末考" class="headerlink" title="关于期末考"></a>关于期末考</h3><p>这应该是我学生阶段的最后一场考试，每次期末考都觉得压力浩浩荡荡，以前我总是借由和父母说「我挂科了拿不到学位了」来缓解压力，我爹总是笑着说「那我们养你好啦」，真是太有安全感了。知道这道坎得自己过，这样说说抱怨下，感觉好很多😋</p>
+<p>这次的期末呢，真的感受到了很大的压力。但是回顾我之前的考试，比这个更惨的比比皆是，那些我都过来了，应该不会「晚节不保」吧😊就算是，那我退学直接去河坊街找份包吃包住的工作吧~</p>
+<blockquote>
+<p>有几点感悟：</p>
+</blockquote>
+<ul>
+<li>真的不止眼前的苟且，基础学科的广大智慧，能有时间浸润要满怀感激。以后或许都没有人再对我说<strong>「给你来场考试，你好好看书，看看几百年前的智慧」</strong></li>
+<li>感知压力时，寻求帮助，与他人一起合作</li>
+<li>可以感知压力，但不可产生焦虑（这个目标进度较缓，慢慢前行）</li>
+</ul>
+<p><img src="/img/in-post/6-17-final-test/2.jpg" alt="fun"></p>
+<h3 id="和计算机舍友的聊天感悟"><a href="#和计算机舍友的聊天感悟" class="headerlink" title="和计算机舍友的聊天感悟"></a>和计算机舍友的聊天感悟</h3><p>昨儿本来早早地就准备睡了，以为可以在11点前入眠，可谁知道最后还是12点后。</p>
+<p>但是，收获很多，我今儿还细细回想了下，昨儿聊天中我们所体现的各种人生态度。</p>
+<h4 id="本科的遗憾"><a href="#本科的遗憾" class="headerlink" title="本科的遗憾"></a>本科的遗憾</h4><p>谈及本科，赟感慨很多，她粗粗描述了下本科的时光：</p>
+<blockquote>
+<p>你们知道吗？那时候我每次都会预习，是预习！<br>课后还会复习好多次，期末阶段也会很认真地复习。<br>那时候我觉得我数学好得飞起来了，但是现在我什么都不记得了😒。<br>非常后悔当时使劲泡在图书管，没有享受大学生活。艺术团有几个姑娘，舞跳得很好，后来一问，才知道她们都是在本科才开始学的。</p>
+</blockquote>
+<p>赟研一上的时候，有段时间很认真地考虑了从浙大退学这件事。来浙大上研究生对她而言，似乎配不上她在本科阶段付出的努力，亦或者，青春？</p>
+<p>我们自然会如此宽慰她：</p>
+<blockquote>
+<p>若没有本科这样的生活，或许你现在正在遗憾的，就是相反的事情了「为什么我本科阶段不好好泡图书馆呢😭」</p>
+</blockquote>
+<p>但是，上述的逻辑，根本经不住推敲——<br><strong>怎么能用「可能为另一种可能性感到遗憾」来自我安慰呢？</strong></p>
+<hr>
+<p>我粗粗回想了下我的本科生活，开森和不开森的事情都有哪些呢？</p>
+<ol>
+<li><p>很喜欢坐在第一排听定理证明，但是不喜欢做题，交作业前一晚去会佳旭那里拿她在布置作业的当天就已经写完的小本本，抄作业的感觉还是很棒的，有时我也会闲来无聊就随手写下我的做法。</p>
+</li>
+<li><p>和好几个小伙伴一起看「致命ID」期间数次😱🙈；和当时的舍友看一部法国妓院的影片很是春心萌动；和梦雨同睡晚起跳过早餐看「入俭师」哭得稀里哗啦；和佳旭看好多好多。最不喜欢的是听一些人讲一些言过其实的话。</p>
+</li>
+</ol>
+<p>还有好多我回想起来也很开心的事。包括每次期末考，我都强忍「老师我不考了你直接把我挂了吧我回杭州去了」而慢慢地有效率地接受一些朴素的智慧。</p>
+<p>我喜欢的生活是：</p>
+<blockquote>
+<p><strong>拎得清楚最重要的事，不忘自己开心。如果前者必然会有焦虑，那也不让焦虑作为主角上场，毕竟，凭啥呢？我的小乐观小积极向上演技好着呢😌</strong></p>
+</blockquote>
+<p>前两天我和岛主随口说了句「<strong>你不是你的职业，你是你的秉赋</strong>」。于我，不愿「<strong>非初心所向，而渐近平庸</strong>」。</p>
+<h4 id="从工程到科研"><a href="#从工程到科研" class="headerlink" title="从工程到科研"></a>从工程到科研</h4><p>缘和师兄坦白「想转科研了，就不能帮着你做项目了」。她想得很清楚「寻着读研初衷做点有意思的」。这让作为旁观者的我也觉得有活力——喜欢这种调整方向的勇气，祝福她！</p>
+<p>这两天邀请她一起听讲座，聊聊SVM、神经网络，沾沾她身上工程的地气，于我帮助很大。</p>
+<p>我们还聊了一些比较现实的问题，很感激她纠正了我浸润在理论中太长时间而带出的「似乎这样」，其实，是这样的：</p>
+<ul>
+<li>刷题能找到好工作，一般的paper、项目帮助不大</li>
+<li>一份工作占据你60%左右的时间为佳，高效有成就感</li>
+<li>随意抛弃自身优势不可取，敬畏其它领域的门槛</li>
+<li>找份好工作是读书的最大目标，另外，嫁个有钱人也是~（from 她师兄）</li>
+</ul>
+<hr>
+<p>以上，挺碎碎念的，留着，自己看下：）</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;不想抬起腿又必须要迈过这道坎的时光里，&lt;br&gt;你总比自己想象中更容易走神。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;刚给某人发短信，结果他好长时间都没有回，我洗衣服时想着那就自个儿乐一会儿顺便写个博客😋名字叫做「当男朋友不理我时干什么？ps:写博客咯😀！」&lt;/p&gt;
+&lt;p&gt;自从看到朱赟前辈每天只睡5，6个小时还不间断更新微信公众号后，我觉得我也应该多写写，至少不要把「自以为的忙碌」作为借口。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="小日子一朵朵" scheme="http://yoursite.com/categories/%E5%B0%8F%E6%97%A5%E5%AD%90%E4%B8%80%E6%9C%B5%E6%9C%B5/"/>
+    
+    
+      <category term="发会呆" scheme="http://yoursite.com/tags/%E5%8F%91%E4%BC%9A%E5%91%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线性模型得出的参数到底该如何分析</title>
+    <link href="http://yoursite.com/2016-06-14-statlear-fun/"/>
+    <id>http://yoursite.com/2016-06-14-statlear-fun/</id>
+    <published>2016-06-13T16:00:00.000Z</published>
+    <updated>2016-08-13T15:48:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="闲聊是个好传统"><a href="#闲聊是个好传统" class="headerlink" title="闲聊是个好传统"></a>闲聊是个好传统</h3><p>我大白天时常走神，关键时刻还迷路；但是，有时会有一些小恩赐，比如说：</p>
+<ul>
+<li>突然变聪明，想清楚一些事</li>
+<li>突然与智慧零接触，也有些小感悟</li>
+<li>突然有了「拾金不昧」「扶起倒下自行车」这类展现人品的机会😉</li>
+</ul>
+<center><br>    <img src="/img/in-post/StatLear-fun/can't find sth.jpg" title="很随意~" width="300" high="300"><br></center>
+
+<p>开这个系列，是因为，我时常想写一些长长的、细致的、靠谱的文章，但是呢，我发现并没有这个时间和精力，对了，我还没有💰。嗯，还有一样我好像也没有，不过大庭广众的，就不献丑了。</p>
+<p>鉴于此，我又不想错过这些宝贵的瞬间，怎么办呢？只有拿出<strong>「先写下最简洁」</strong>版本的勇气，待日后有缘慢慢补上。这不，今儿我和数据挖掘的老师闲聊，要到了Peter Song的讲义，就可以把之前一个博客好好完善下咯！</p>
+<p>ps: 岛主夫人期末阶段的承诺纯属虚构，请勿当真</p>
+<a id="more"></a>
+<hr>
+<p>答应某人整理下最近非常有感触的一个点，既然答应了，就要全力以赴不食言😉～</p>
+<p>here we go～</p>
+<p>《An Introduction to Statistical Learning》第四章，讲的是分类模型。模型的细节这里就不展开了，直接跳到例子和结论。</p>
+<h3 id="数据集介绍"><a href="#数据集介绍" class="headerlink" title="数据集介绍"></a>数据集介绍</h3><p>这个例子的数据Default在R语言的ISLR包里，安装好后输入如下代码即可查看数据集</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">library(ISLR)</div><div class="line">\\查看ISLR中内置的数据集</div><div class="line">data(package = &quot;ISLR&quot;)</div><div class="line"></div><div class="line">\\此次讨论的是Default数据集</div><div class="line">help(Default)</div></pre></td></tr></table></figure>
+<p>这个数据集给出了1000条信用记录，每条记录有四个变量：</p>
+<ul>
+<li><p>default<br>  顾客是否违约</p>
+</li>
+<li><p>student<br>  顾客是否学生</p>
+</li>
+<li><p>balance<br>  每月出账单时，顾客信用卡的平均余额</p>
+</li>
+<li><p>income<br>   顾客的收入</p>
+</li>
+</ul>
+<h3 id="模型的目标"><a href="#模型的目标" class="headerlink" title="模型的目标"></a>模型的目标</h3><p>模型的目标是<strong>预测一个顾客是否会违约</strong>，更精确一点地说，是预测一个顾客违约的可能性。例如，如果模型说一个客户违约的可能性大于0.5，我们便觉得他会违约（当然，这个临界值可以小于0.5，如果该银行最近需要特别谨慎的话）。</p>
+<h3 id="三个小模型的结果"><a href="#三个小模型的结果" class="headerlink" title="三个小模型的结果"></a>三个小模型的结果</h3><h4 id="模型1-default-balance"><a href="#模型1-default-balance" class="headerlink" title="模型1: default~balance"></a>模型1: default~balance</h4><p>第一个模型想要用<strong>balance</strong>这1⃣️个变量来预测客户的违约情况。<br>结果如下table 4.1👇，balance是一个对预测非常有用的变量，而且它们是<strong>正相关</strong>的。</p>
+<p><img src="/img/in-post/StatLear-fun/table4.1.png" alt="fun"></p>
+<h4 id="模型2-default-student"><a href="#模型2-default-student" class="headerlink" title="模型2: default~student"></a>模型2: default~student</h4><p>第二个模型想要用<strong>student</strong>这1⃣️个变量来预测客户的违约情况。<br>结果如下table 4.2👇，student也是一个对预测非常有用的变量，而且它们也是<strong>正相关</strong>的。</p>
+<p><img src="/img/in-post/StatLear-fun/table4.2.png" alt="fun"></p>
+<h4 id="模型3-default-student-balance-income"><a href="#模型3-default-student-balance-income" class="headerlink" title="模型3: default~student+balance+income"></a>模型3: default~student+balance+income</h4><p>第三个模型想要用<strong>student</strong>、<strong>income</strong>、<strong>balance</strong>这3⃣️个变量来预测客户的违约情况。<br>结果如下table 4.3👇</p>
+<p><img src="/img/in-post/StatLear-fun/table4.3.png" alt="fun"></p>
+<ul>
+<li><p>student、balance都是对预测非常有用的变量，但是income不是。所以，income就可以忽略了。当然，为了我的玻璃心，我自己模拟了不含有income的模型，结果基本一致，所以可以直接用第三个模型给出的结论进行继续。</p>
+</li>
+<li><p>与模型1的结论一致，balance和违约是正相关的，balance越大，越容易违约（有购物欲的人会希望有更多的信用额度，虽然他们无法用完所有额度的，但是他们也经常换不了他们用掉的，觉得有些牵强，但愿是我理解错了，愁人~）</p>
+</li>
+<li><p>与模型2的结论相反！模型2说的是，<strong>学生更容易违约</strong>；但是模型3中学生这个变量前的系数是负数，就是说，<strong>学生的身份会降低违约率</strong>。</p>
+</li>
+</ul>
+<blockquote>
+<p>so，到底是为什么？明明在统计意义上，模型2与3都通过了显著性检验。其实还挺感谢这个例子的，让我捡回了对线性模型的信心。</p>
+</blockquote>
+<h3 id="为何结论相反？"><a href="#为何结论相反？" class="headerlink" title="为何结论相反？"></a>为何结论相反？</h3><p>为什么模型2和模型3得出的结论为何是相反的？</p>
+<p>ok，先说结论——<strong>表面相反，实则内涵丰富。</strong></p>
+<p>先来更细致、更直观地看下模型2和3的结论到底是什么意思。</p>
+<p>书中给出了一幅很漂亮的图👇 （不得不说这幅图的构架真有智慧，赞一个🌺）</p>
+<p><img src="/img/in-post/StatLear-fun/figure4.3.png" alt="fun"></p>
+<p>👆图的右边👉</p>
+<ul>
+<li>横坐标是student变量，纵坐标是balance变量，可以看到，学生（橙色）的balance，在整体上要高于非学生（蓝色）。更近一步，这说明了student与balance之间是有关系的。</li>
+</ul>
+<blockquote>
+<p>也正是他们的关系导致了之前使我们感到困惑的结论。</p>
+</blockquote>
+<p>👆图的左边👈</p>
+<ul>
+<li><p>横坐标是balance，纵坐标是违约率，可以看到，有两条在1500之后异军突起的曲线，分别代表学生（橙色）与非学生（蓝色）群体，他们的balance与违约率之间的关系。</p>
+</li>
+<li><p>在相同balance的情况下，学生不太违约呢（橙色的线条在蓝色线条的下面），所以，在模型3中，student变量前的系数是负数。</p>
+</li>
+</ul>
+<h3 id="再看一眼数据和结论"><a href="#再看一眼数据和结论" class="headerlink" title="再看一眼数据和结论"></a>再看一眼数据和结论</h3><blockquote>
+<p>在对数据有了更多的了解后，再来对照着模型的结论</p>
+</blockquote>
+<p>对数据的了解：</p>
+<ul>
+<li>相关性：<strong>学生群体</strong>的balance，高于<strong>非学生群体</strong>的balance</li>
+</ul>
+<p>模型的结论实际上是：</p>
+<ul>
+<li>balance越高，越容易违约（模型1得出的结论）</li>
+<li>学生群体更容易违约是因为其balance更多（模型2的结论）</li>
+<li>在给定的balance的情况下，学生又比非学生还贷要及时得多（模型3的结论）</li>
+</ul>
+<p>也不知道有没有讲清楚😅</p>
+<h3 id="实在的：模型-决策"><a href="#实在的：模型-决策" class="headerlink" title="实在的：模型-决策"></a>实在的：模型-决策</h3><p>BTW，这份洞见可以帮助生成如下决策：</p>
+<ul>
+<li>没有balance信息时，不要贷款给学生，因为他们会有更多的balance，从而更容易违约。</li>
+<li>有了balance信息后，面对具有相同balance的学生A和非学生B，那就选择A吧~</li>
+</ul>
+<blockquote>
+<p>ps: 以上内容整理自《An Introduction to Statistical Learning》</p>
+</blockquote>
+<p>岛主夫人<br>2016.06 研一下期末</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;闲聊是个好传统&quot;&gt;&lt;a href=&quot;#闲聊是个好传统&quot; class=&quot;headerlink&quot; title=&quot;闲聊是个好传统&quot;&gt;&lt;/a&gt;闲聊是个好传统&lt;/h3&gt;&lt;p&gt;我大白天时常走神，关键时刻还迷路；但是，有时会有一些小恩赐，比如说：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;突然变聪明，想清楚一些事&lt;/li&gt;
+&lt;li&gt;突然与智慧零接触，也有些小感悟&lt;/li&gt;
+&lt;li&gt;突然有了「拾金不昧」「扶起倒下自行车」这类展现人品的机会😉&lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;&lt;br&gt;    &lt;img src=&quot;/img/in-post/StatLear-fun/can&#39;t find sth.jpg&quot; title=&quot;很随意~&quot; width=&quot;300&quot; high=&quot;300&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;p&gt;开这个系列，是因为，我时常想写一些长长的、细致的、靠谱的文章，但是呢，我发现并没有这个时间和精力，对了，我还没有💰。嗯，还有一样我好像也没有，不过大庭广众的，就不献丑了。&lt;/p&gt;
+&lt;p&gt;鉴于此，我又不想错过这些宝贵的瞬间，怎么办呢？只有拿出&lt;strong&gt;「先写下最简洁」&lt;/strong&gt;版本的勇气，待日后有缘慢慢补上。这不，今儿我和数据挖掘的老师闲聊，要到了Peter Song的讲义，就可以把之前一个博客好好完善下咯！&lt;/p&gt;
+&lt;p&gt;ps: 岛主夫人期末阶段的承诺纯属虚构，请勿当真&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据科学实践" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%AE%9E%E8%B7%B5/"/>
+    
+    
+      <category term="Statistics" scheme="http://yoursite.com/tags/Statistics/"/>
+    
+      <category term="R" scheme="http://yoursite.com/tags/R/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>长得朴素但是很有效率的K-NN</title>
+    <link href="http://yoursite.com/2016-06-10-statlear-KNN/"/>
+    <id>http://yoursite.com/2016-06-10-statlear-KNN/</id>
+    <published>2016-06-09T16:00:00.000Z</published>
+    <updated>2016-08-13T15:43:58.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="听说，干正事前闲聊是个好传统😉"><a href="#听说，干正事前闲聊是个好传统😉" class="headerlink" title="听说，干正事前闲聊是个好传统😉"></a>听说，干正事前闲聊是个好传统😉</h3><p>这篇文章写了好几天，断断续续，夹杂着数理统计的复习和回家看爸妈的过意不去。代码部分是在粽子节那天写的，回想起来还挺开心的。</p>
+<p>那天，出门就带一张校园卡，穿白T黑色短裤人字拖，手机也不带，校园里相比以往人少了很多，由此鸟声凸显，清脆得引我抬头看，树叶得颜色真漂亮啊，有夏日即将来临的活力却非燥热难耐。</p>
+<p>发布完就洗洗睡，我的勤奋似乎要使我在岛主那儿的信用破产了，写完这句话，好像听到了电影的话外音——这个人脸皮好厚。可是我又不聪明，只能勤快些呀😉～</p>
+<a id="more"></a>
+<p>注：在「作业部落」里放了一个<a href="https://www.zybuluo.com/KathyKim/note/403716" target="_blank" rel="external">简约版本</a>。主要是因为jekyll的LaTex时不时出问题让我觉得有些心痛，就放上这个版本作为plan B咯！</p>
+<p><img src="/img/in-post/StatLearning-KNN/fun3.jpg" alt="have fun"></p>
+<h3 id="文章源起"><a href="#文章源起" class="headerlink" title="文章源起"></a>文章源起</h3><p>我的导师老板，目前有10个学生，大部分都是智商高高的博士，有次他搬办公室，我们一群人全副出动流水操作，效率很高，当时我还想了下，工作后我肯定会<strong>怀念</strong>「学术圈纯粹&amp;都是聪明人的环境😉」。</p>
+<p>每周二我们会有一个讨论班，由于我现在挺水的，每次只能领悟到论文的中心思想和思路，知道行文逻辑背景，不过对于定理证明的细节上，基本就是看两行卡一会儿，不过，也正常，而且知道自己被什么卡住了感觉就成功了一半呢。</p>
+<p>昨晚讨论班，罗师兄花了2个半小时讲了一篇2016年刚发表的文章《Classification in general finite dimensional spaces with the k-nearest neighbor rule》，目前统计学比较火的方向是为流行&amp;有效的算法补上理论基础，并非很容易，因为现实世界太复杂，而很多理论上的结果所需要的前提条件又太苛刻。</p>
+<p>这篇文章比较新的一个点就是，在之前的k-NN算法中，我们k是全局的，但当k是局部时（随着给定点的经验密度进行调整），此时这个算法的结果表现<strong>在理论上</strong>会有一个飞跃。</p>
+<p>想着就趁着这个契机写写K-NN.</p>
+<p><a href="https://book.douban.com/subject/21706191/" target="_blank" rel="external">An Introduction to Statistical Learning》</a> 这本书在好多章节提到了K-NN，按照作者的逻辑整理下。So,  <strong>© Gareth James / Daniela Witten / Trevor Hastie / Robert Tibshirani</strong> ,我只是个知识搬运工，BUT，苦力活也是活呢~不知道能不能瘦😉</p>
+<p>ps：最底层的知识介绍就不搬运了，搬运点细细思考才能有所感悟的点。</p>
+<h3 id="关于K-NN算法"><a href="#关于K-NN算法" class="headerlink" title="关于K-NN算法"></a>关于K-NN算法</h3><h4 id="从Bayes分类器讲起"><a href="#从Bayes分类器讲起" class="headerlink" title="从Bayes分类器讲起"></a>从Bayes分类器讲起</h4><p>page 37 有一个例子</p>
+<p><img src="/img/in-post/StatLearning-KNN/1.jpg" alt="Fugure 2.13"></p>
+<blockquote>
+<p>图释如下：</p>
+</blockquote>
+<ul>
+<li><p>图中有蓝色和橘色的点各100个，是计算机模拟产生的数据</p>
+</li>
+<li><p>数据是基于我们设定好的<strong>随机模型</strong>产生的，随机模型给定了平面中任何一个点取蓝色和橘色的概率，例如，$P((1,1)这个点是蓝色)=0.3$&amp;$P((1,1)这个点是橘色)=0.7$，此时$(1,1)$虽然有更大的概率是橘色，但是，蓝色也不是不可能的。</p>
+</li>
+<li><p>基于上述那个随机模型（它就是真实模型），把平面上蓝色概率和橘色概率都为0.5的点用虚线连起来，这个时候，就有了传说中的三八线。</p>
+</li>
+<li><p>Bayes分类器有着「全对不可能，因为随机性无法对抗」无法对抗，那我就聪明地傻一点「以三八线为『<strong>Bayes decision boundary</strong>』」，给定一个点，颜色就取为概率大于0.5的那个颜色呗，与真实观测到的不一样也是没办法的，因为只有这样做才总体最优（还有理论证明哦！）</p>
+</li>
+<li><p>这个时候，再回到这张图，出现在橙色区域的蓝色的点代表什么？代表，这个点有更大的可能性取成橙色，但是最终我们观察到的是蓝色，Bayes分类器出错了。</p>
+</li>
+<li><p>所幸，出错的点并不多。</p>
+</li>
+</ul>
+<blockquote>
+<p>The Bayes Classifier produces the lowest possible test error rate, called the Bayes error rate. Since the Bayes classifier will always choose the class for which $Pr(Y=j|X=x_0)$ is largest, the error rate at $X = x<em>0$ will be $1- max</em>{j}Pr(Y = j|X = x<em>0)$. In general, the overall Bayes error rate is given by<br>$1 - E{max</em>{j}Pr(Y = j |X)}$, where the expectation averages the probability over all possible values of X, because the classes overlap in the true population so $max<em>{j} Pr(Y = j|X = x</em>{0}) &lt; 1$ for some values of $x_0$. <strong>The Bayes error rate is analogous to the irreducible error</strong>, discussed earlier.</p>
+</blockquote>
+<p>这段话写得很经典，有几处值得再讲一下：</p>
+<ol>
+<li><p>公式 $Error=1 - E{max_{j}Pr(Y = j |X)}$ 是对$X$求期望，后半部分的期望展开就是</p>
+<p> $ E{max<em>{j}Pr(Y = j |X)} = \int</em>{x \in X} max_{j}Pr(Y = j|X=x)P(X=x)dx$</p>
+</li>
+<li><p>多看几眼就知道这个式子很直观，我们对于每个点都取它最有可能取得的值，作为我们给出的预测值，那么在最优可能之外的那些可能性就是我们犯错的可能性。样本空间中的点$x_0$「出现的概率」*「在这点我们『犯错的可能性』」，也可看做是「犯错可能性」的权重。</p>
+</li>
+<li><p><strong>例如</strong>，如果一个点非常非常容易被取到，那么在这一点上犯错的可能性占整体犯错比重就更大。最后，遍历所有点加在一起。</p>
+</li>
+<li><p>总之，任何期望本质不离<strong>加权平均</strong>。</p>
+</li>
+</ol>
+<h4 id="从Bayes分类器到K-NN"><a href="#从Bayes分类器到K-NN" class="headerlink" title="从Bayes分类器到K-NN"></a>从Bayes分类器到K-NN</h4><p>刚培养了点对Bayes分类器的好感，没想到就迎来噩耗——</p>
+<blockquote>
+<p>But for real data, we <strong>do not know </strong>the conditional distribution of $Y$ given $X$, and so computing the Bayes classifier is impossible. Therefore, the Bayes classifier serves as an <strong>unattainable gold standard</strong> against which to compare other methods.</p>
+</blockquote>
+<p>在接受了「就是不知道真实的条件分布」这个现实后，没关系，抹把眼泪继续看。</p>
+<p>虽然我们不知道真实的条件分布，但是数据中还是有很多信息的，基于数据中给出的信息，可以去<strong>估计</strong>其条件分布，然后再将一个给定的观测分类到「估计的分布概率」最大的类别中。</p>
+<p>此处眼泪应该已风干😉</p>
+<p>休息一下吧～</p>
+<p><img src="/img/in-post/StatLearning-KNN/fun2.jpg" alt="have fun"></p>
+<p>☝️公式</p>
+<p>$Pr(Y = k |X = x<em>{0}) = \frac{1}{K}\sum</em>{i \in N<em>{0}} {I(y</em>{i}=j})$</p>
+<p>几句解释</p>
+<ul>
+<li><p>在$x_{0}$这一点，我们并不知道$Y$取到各个类别的真实概率，也就无法了解「其在哪个类别的可能性最大」</p>
+</li>
+<li><p>BUT, 我们知道离它最近的$K$个点到底属于哪些类，如果离它最近的哪些点中最大的群体是类别1，好嘞，那我也站到类别1中吧！</p>
+</li>
+</ul>
+<p>☝️案例 详见图中中文字</p>
+<p><img src="/img/in-post/StatLearning-KNN/2.png" alt="e.g."></p>
+<h4 id="K-NN，效果几何？"><a href="#K-NN，效果几何？" class="headerlink" title="K-NN，效果几何？"></a>K-NN，效果几何？</h4><blockquote>
+<p>下面👇这张图说明了<br>原来K－NN(K=10)得出的结果和最优的Bayes是如此接近呢～😉</p>
+</blockquote>
+<p><img src="/img/in-post/StatLearning-KNN/3.png" alt="efficiency"></p>
+<blockquote>
+<p>下面👇这张图的意思是：恩，那K取其它值的表现。可以看到左边的图（K＝1）比较崎岖，但是与Bayes分类器相对右图（K＝100）而言要更接近些。但是二者都不及上图👆（K＝10）</p>
+</blockquote>
+<p><img src="/img/in-post/StatLearning-KNN/4.png" alt="about K"></p>
+<blockquote>
+<p>下面👇这张图中</p>
+<ol>
+<li>测试误差是一个U型，说明模型过度光滑&amp;过渡拟合都不是好事<ol>
+<li>K=1时测试误差和训练误差差距非常大！当然咯！K=1时，所有训练点都没错呢，最近的就是自己呀。</li>
+<li>其实测试误差更值得关注。</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<p><img src="/img/in-post/StatLearning-KNN/5.png" alt="about K"></p>
+<h3 id="Trade-off-between-Linear-Regression-and-K-NN"><a href="#Trade-off-between-Linear-Regression-and-K-NN" class="headerlink" title="Trade-off between Linear Regression and K-NN"></a>Trade-off between Linear Regression and K-NN</h3><p>page 104</p>
+<p>线性回归是参数结构，K-NN是非参结构。参数结构对模型有着很强的假设，如果假设与实际相差很远，则会导致不尽如人意的拟合。</p>
+<blockquote>
+<p>下面👇这张图说明了：K-NN方法选择K时：小的K值提供了较为灵活的拟合但是付出的代价是<strong>高方差</strong>；大的K值提供的拟合平滑，<strong>方差小</strong>，其对一个区域的拟合是几个点的均值，所以改变一个点对于结果来说影响不大，但是较大的K值可能会错过真实模型的结构而导致<strong>较大的偏差</strong>。</p>
+</blockquote>
+<p><img src="/img/in-post/StatLearning-KNN/6.png" alt="about K"></p>
+<blockquote>
+<p><code>在一维的情况下，结果非常符合直观见解（暂时的）：</code></p>
+</blockquote>
+<h4 id="一维时，真实模型为线性时，线性回归表现灰常好，但是K-NN也不差"><a href="#一维时，真实模型为线性时，线性回归表现灰常好，但是K-NN也不差" class="headerlink" title="一维时，真实模型为线性时，线性回归表现灰常好，但是K-NN也不差"></a>一维时，真实模型为线性时，线性回归表现灰常好，但是K-NN也不差</h4><blockquote>
+<p>下图中👇 红色的点代表由<strong>真实的模型</strong>「线性」随机生成的点，用这些点中的信息得到拟合直线$\hat{f}(X)$和$K=9, 1$时的K-NN曲线。简而言之，线性回归模型较好，但是K-NN在比较合适的K值下也不差。</p>
+</blockquote>
+<p><img src="/img/in-post/StatLearning-KNN/7.png" alt="about K"></p>
+<blockquote>
+<p>下图👇是从MSE来看的，虚线是由最小二乘方法得到的回归直线，实线是真实模型，可以看到，在数据量为100的情况下，当假设与真实相近时，哪怕得到的信息有偏差，但是还是可以越过偏差得到正确的见解。下图👇中的右图👉表示了K-NN与线性回归的MSE，可以看到，合适的K会使得K-NN的MSE与线性回归的MSE相差不多，在这幅图中，估摸了下，粉色线上面的那个点比较合适：）此时的K是3. </p>
+</blockquote>
+<p><img src="/img/in-post/StatLearning-KNN/9.png" alt="about K"></p>
+<h4 id="一维时，真实模型为非线性时，线性回归表现灰常不好，但是K-NN依旧稳定（这不很显然嘛？）"><a href="#一维时，真实模型为非线性时，线性回归表现灰常不好，但是K-NN依旧稳定（这不很显然嘛？）" class="headerlink" title="一维时，真实模型为非线性时，线性回归表现灰常不好，但是K-NN依旧稳定（这不很显然嘛？）"></a>一维时，真实模型为非线性时，线性回归表现灰常不好，但是K-NN依旧稳定（这不很显然嘛？）</h4><blockquote>
+<p>下图👇中的真实模型（粗粗的黑线）的弯曲程度依次增大，代表真实模型与线性假设渐行渐远。<br>下图👇中两幅右图👉的<strong>黑色虚线</strong>对应的MSE分别是0.06与0.14（毛估估哒），也就是说，线性模型在测试集上产生的误差，随着真实模型非线性的增强而不断变大。<br>下图👇中两幅右图👉的<strong>绿色虚线</strong>对应的最小MSE分别是0.55与0.05（毛估估哒），也就是说，K-NN在测试集上产生的误差，基本不变。<br>下图👇中两幅左图👈也很直观滴体现了，K-NN有着「你变弯曲我也变弯曲」的随和品质😉</p>
+</blockquote>
+<p><img src="/img/in-post/StatLearning-KNN/10.png" alt="about K"></p>
+<blockquote>
+<p><code>此处有个大大的BUT</code></p>
+</blockquote>
+<p>大家自然会觉得，天呐，那我随时用K-NN不就好啦，不管线性还是非线性，它都表现得如此之好！</p>
+<p>注意，上述模拟有着非常大的前提<strong>「X是一维的变量」</strong>，当X的维读增大时，情况就有了惊天的变化！详见下图👇</p>
+<p><img src="/img/in-post/StatLearning-KNN/11.png" alt="about K"></p>
+<blockquote>
+<p>When p=1 or p=2, KNN outperforms linear regression. But for p=3 the results are mixed, and for p &gt;=4 linear regression is superior to KNN. In fact, the increase in dimension has only caused a small deterioration in linear regression test set MSE, but it has caused more than a ten-fold increase in the MSE for KNN. </p>
+</blockquote>
+<p>简而言之，就是维数灾难，在高维情况下，给定的观测附近没有邻点，与$x_0$最为接近的K个观测值在p维空间中距离$x<em>0$很远，导致其对$f(x</em>{0})$的预测非常差。</p>
+<p>举个小栗子吧~每个人都非常非常不一样，如果用很多维度的数据来描述一群人，那么这群人中的每两个都会显著不同（在很多维度都不同），那么用离A最近的K个人的特点取平均来描述A，肯定与A本身差别很大。</p>
+<p>不过，穷穷的统计学家的电脑中模拟的结果得出的结论必定是支持线性回归的，但是，真正的海量数据又是另外一回事咯！</p>
+<blockquote>
+<p>As a general rule, parametric methods will tend to outperform non-parametric approaches when there is <strong>a small number of observations</strong> per predictor.</p>
+</blockquote>
+<h3 id="一些数据模拟-基于R"><a href="#一些数据模拟-基于R" class="headerlink" title="一些数据模拟-基于R"></a>一些数据模拟-基于R</h3><p>用Rmarkdown运行并输出了书后的配套尝试，截图放在后面（这样的阅读感受感觉好一些）</p>
+<p><img src="/img/in-post/StatLearning-KNN/12.png" alt="simulation"></p>
+<p><img src="/img/in-post/StatLearning-KNN/13.png" alt="simulation"></p>
+<p><img src="/img/in-post/StatLearning-KNN/14.png" alt="simulation"></p>
+<p><img src="/img/in-post/StatLearning-KNN/15.png" alt="simulation"></p>
+<p><img src="/img/in-post/StatLearning-KNN/16.png" alt="simulation"></p>
+<p>可以看到，准确率才53%多一点，只比随机预测好辣么一丁点。。。当然咯！本金充足的情况下这一点就不容小觑了。</p>
+<p>BUT，我觉得这个效果不够好在于features太少，不过feature太多似乎就不能用K-NN了。看来，预测股市还是值得一做的，模型足够正确的话，妥妥滴跑赢随机买卖呢~</p>
+<hr>
+<p>考虑另外一个数据集Caravan，这个数据集维度比较高，另外，数据中的imbalance现象灰常严重，如果要降低imbalance势必要减少数据量，这对于高维数据的处理而言风险比较大。</p>
+<p>但还是尝试了一下，将购买与不购买的比例从1:15提升到了1:3，然后用了下统计中re-sample的思想重复抽样100次，得到100个小模型的结果，汇集再得出预测的结论。100次中，如果95次的预测结果是不买，另外5次的预测结果是购买，那么，在利润非常高的情况下，也是值得一试的。总的来说，我做的优化还太少，结果只改善了一点点，还是以撒大网为代价的。</p>
+<p>由此，深觉高维的问题果然是个难点。不知道下次先用lasso进行下变量选择再用K-NN加上Boostrap的思想会如何。值得一试的赶脚。</p>
+<hr>
+<p>以下就是在粽子节那天写的代码，刚出生的小孩，都听难看的不是嘛？</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">attach</span>(Caravan)</div><div class="line">n &lt;- dim(Caravan)[<span class="number">1</span>]</div><div class="line">p &lt;- dim(Caravan)[<span class="number">2</span>]</div><div class="line"></div><div class="line">//总数据中，<span class="number">348</span>人买，<span class="number">5474</span>人不买，购买率为<span class="number">0.06</span></div><div class="line"></div><div class="line">sum.Purchase &lt;- table(Purchase)</div><div class="line">sum.buy &lt;- sum.Purchase[<span class="number">2</span>]</div><div class="line">sum.nobuy &lt;- sum.Purchase[<span class="number">1</span>]</div><div class="line">ratio.buy &lt;- sum.buy/sum.nobuy</div><div class="line"></div><div class="line">//选取<span class="number">20</span>%的数据集当做测试集，一共是<span class="number">1164</span>个，另外的作为训练集，<span class="number">4685</span>个数据</div><div class="line">test.index &lt;- sample(<span class="number">1</span>:length(Purchase), floor(length(Purchase)*<span class="number">0.2</span>))</div><div class="line">test.X &lt;- Caravan[test.index, ]</div><div class="line">test.X$result.positive &lt;- rep(<span class="number">0</span>,length(test.X$MOSTYPE))</div><div class="line">test.X$result.negative &lt;- rep(<span class="number">0</span>,length(test.X$MOSTYPE))</div><div class="line"></div><div class="line">test.Y &lt;- Caravan[test.index, <span class="number">86</span>]</div><div class="line">train.all &lt;- Caravan[-test.index,-<span class="number">86</span>]</div><div class="line"></div><div class="line">//训练集中<span class="number">281</span>人买，<span class="number">4377</span>人不买，购买率为<span class="number">0.642</span>,次数据依赖抽样，每次会发生变化</div><div class="line">train.sum.Purchase &lt;- table(Caravan[-test.index, <span class="string">"Purchase"</span>])</div><div class="line">train.sum.buy &lt;- sum.Purchase[<span class="number">2</span>]</div><div class="line">train.sum.nobuy &lt;- sum.Purchase[<span class="number">1</span>]</div><div class="line">train.ratio.buy &lt;- train.sum.buy/train.sum.nobuy</div><div class="line">times.rep &lt;- floor(train.sum.nobuy/train.sum.buy)</div><div class="line"></div><div class="line">cat(<span class="string">"训练集中购买人数："</span>,as.numeric(train.sum.buy), </div><div class="line">    <span class="string">"不购买的人数："</span>,as.numeric(train.sum.nobuy),</div><div class="line">    <span class="string">"购买率："</span>,as.numeric(train.ratio.buy),</div><div class="line">    <span class="string">"为了平衡数据而确定的小袋子数量："</span>,as.numeric(times.rep),<span class="string">"\n"</span>)</div><div class="line"></div><div class="line">//每次从训练集的不购买的人数中挑选（train.sum.buy*<span class="number">3</span>)的人。</div><div class="line">//完全一样的话，数据太少，维数灾难恐现江湖</div><div class="line">train.size &lt;- train.sum.buy*<span class="number">3</span></div><div class="line"></div><div class="line"></div><div class="line">//每次迭代取训练集中全部的购买与数量相等的不购买</div><div class="line"></div><div class="line">//训练集中所有购买的数据</div><div class="line">train.buy.index &lt;- which(Caravan[-test.index,<span class="string">"Purchase"</span>]==<span class="string">"Yes"</span>)</div><div class="line">train.nobuy.index &lt;- which(Caravan[-test.index,<span class="string">"Purchase"</span>]==<span class="string">"No"</span>)</div><div class="line"></div><div class="line">train.buy.sum &lt;- length(train.buy.index)</div><div class="line">a &lt;- sample(train.buy.index, train.buy.sum, replace = <span class="literal">FALSE</span>)</div><div class="line">b &lt;- sample(train.buy.index, train.buy.sum, replace = <span class="literal">FALSE</span>)</div><div class="line"></div><div class="line">set.seed(<span class="number">1</span>)</div><div class="line"><span class="keyword">for</span>(K <span class="keyword">in</span> c(<span class="number">1</span>,<span class="number">3</span>))&#123;</div><div class="line">  <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:<span class="number">100</span>)&#123;</div><div class="line">    train.X.index &lt;- sample(train.nobuy.index, train.size, replace = <span class="literal">FALSE</span>)</div><div class="line">    train.X &lt;- train.all[train.X.index,]</div><div class="line">    train.Y &lt;- Caravan[train.X.index,<span class="string">"Purchase"</span>]</div><div class="line">    </div><div class="line">    knn.pred &lt;- knn(train.X,test.X[,-c(<span class="number">86</span>,<span class="number">87</span>,<span class="number">88</span>)],train.Y,k=<span class="number">3</span>)</div><div class="line">    cat(<span class="string">"k="</span>,K,<span class="string">"第"</span>,j,<span class="string">"次抽样"</span>,<span class="string">"结果列联表为："</span>,table(knn.pred, test.Y),<span class="string">"\n"</span>)</div><div class="line">    correct.index &lt;- which(test.Y==knn.pred&amp;test.Y==<span class="string">"Yes"</span>)</div><div class="line">    false.index &lt;- which(test.Y==knn.pred&amp;test.Y==<span class="string">"No"</span>)</div><div class="line">    </div><div class="line">    test.X[correct.index,<span class="number">87</span>]&lt;-test.X[correct.index,<span class="number">87</span>]+<span class="number">1</span></div><div class="line">    test.X[false.index,<span class="number">88</span>]&lt;-test.X[false.index,<span class="number">88</span>]+<span class="number">1</span></div><div class="line">  &#125;</div><div class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> c(<span class="number">90</span>:<span class="number">99</span>))&#123;</div><div class="line">    <span class="comment">#这个点被模型发现过是被购买的点</span></div><div class="line">    positive.index &lt;-which (test.X$result.positive &gt;<span class="number">0</span>)</div><div class="line">    <span class="comment">#被模型发现是购买的点实际上被购买的概率,大部分情况都是1吧</span></div><div class="line">    length(which(test.X$Purchase[positive.index]==<span class="string">"Yes"</span>))/length(positive.index)</div><div class="line">    </div><div class="line">    <span class="comment">#被模型判断为不购买的次数小于98、97、96的情况下</span></div><div class="line">    test.X$result.negative[positive.index]</div><div class="line">    melt.positive.index &lt;- which(test.X$result.negative&lt;i)</div><div class="line">    melt.negtive.index &lt;- which(test.X$result.negative&gt;=i)</div><div class="line">    </div><div class="line">    melt.correct.ratio1 &lt;- length(which(test.buy$Purchase[melt.positive.index] ==<span class="string">"Yes"</span>))/length(melt.positive.index)</div><div class="line">    <span class="comment">#</span></div><div class="line">    cat(<span class="string">"降低要求为：被模型判断为不购买的次数小于"</span>,i, <span class="string">"就归类到购买类别"</span>,<span class="string">"\n"</span>)</div><div class="line">    cat(<span class="string">"Test集合中melt.positive的个数为:"</span>,length(melt.positive.index),<span class="string">"\n"</span>)</div><div class="line">    cat(<span class="string">"Test集合中实际购买的个数为:"</span>,length(which(test.X$Purchase==<span class="string">"Yes"</span>)),<span class="string">"\n"</span>,<span class="string">"\n"</span>)</div><div class="line">    </div><div class="line">    test.buy &lt;- test.X[which(test.X$Purchase==<span class="string">"Yes"</span>),]</div><div class="line">    melt.correct.ratio2 &lt;- length(which(test.buy$Purchase[melt.positive.index] ==<span class="string">"Yes"</span>))/length(which(test.X$Purchase==<span class="string">"Yes"</span>))</div><div class="line">    </div><div class="line">    cat( <span class="string">"模型识别出的"</span>,length(melt.positive.index),<span class="string">"中，一共有"</span>,length(which(test.buy$Purchase[melt.positive.index] ==<span class="string">"Yes"</span>)),<span class="string">"购买了"</span>,<span class="string">"正确率:"</span>,melt.correct.ratio1,<span class="string">"\n"</span>)</div><div class="line">    cat( <span class="string">"实际购买的"</span>,length(which(test.X$Purchase==<span class="string">"Yes"</span>)),<span class="string">"人中，一共有"</span>,length(which(test.buy$Purchase[melt.positive.index] ==<span class="string">"Yes"</span>)),<span class="string">"被模型识别出来了"</span>,<span class="string">"正确率:"</span>, melt.correct.ratio2,<span class="string">"\n"</span>,<span class="string">"\n"</span>)</div><div class="line">    </div><div class="line">    </div><div class="line">    cat(<span class="string">"Test集合中melt.negtive的个数为:"</span>,length(melt.negtive.index),<span class="string">"\n"</span>)</div><div class="line">    cat(<span class="string">"Test集合中实际不购买的个数为:"</span>,length(which(test.X$Purchase==<span class="string">"No"</span>)),<span class="string">"\n"</span>,<span class="string">"\n"</span>,<span class="string">"\n"</span>)</div><div class="line">    </div><div class="line">    melt.false.ratio &lt;- length(which(test.X$Purchase[melt.negtive.index] ==<span class="string">"No"</span>))/length(melt.negtive.index)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;听说，干正事前闲聊是个好传统😉&quot;&gt;&lt;a href=&quot;#听说，干正事前闲聊是个好传统😉&quot; class=&quot;headerlink&quot; title=&quot;听说，干正事前闲聊是个好传统😉&quot;&gt;&lt;/a&gt;听说，干正事前闲聊是个好传统😉&lt;/h3&gt;&lt;p&gt;这篇文章写了好几天，断断续续，夹杂着数理统计的复习和回家看爸妈的过意不去。代码部分是在粽子节那天写的，回想起来还挺开心的。&lt;/p&gt;
+&lt;p&gt;那天，出门就带一张校园卡，穿白T黑色短裤人字拖，手机也不带，校园里相比以往人少了很多，由此鸟声凸显，清脆得引我抬头看，树叶得颜色真漂亮啊，有夏日即将来临的活力却非燥热难耐。&lt;/p&gt;
+&lt;p&gt;发布完就洗洗睡，我的勤奋似乎要使我在岛主那儿的信用破产了，写完这句话，好像听到了电影的话外音——这个人脸皮好厚。可是我又不聪明，只能勤快些呀😉～&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据科学实践" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%AE%9E%E8%B7%B5/"/>
+    
+    
+      <category term="Statistics" scheme="http://yoursite.com/tags/Statistics/"/>
+    
+      <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
+    
+      <category term="R" scheme="http://yoursite.com/tags/R/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数理统计复习笔记 假设检验</title>
+    <link href="http://yoursite.com/2016-06-05-hypotest/"/>
+    <id>http://yoursite.com/2016-06-05-hypotest/</id>
+    <published>2016-06-04T16:00:00.000Z</published>
+    <updated>2017-05-26T16:16:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="在干正事前絮絮叨😉"><a href="#在干正事前絮絮叨😉" class="headerlink" title="在干正事前絮絮叨😉"></a>在干正事前絮絮叨😉</h2><p>突然想到自己大三的时候，那时还住在本科院校一个四面环山的校区，突然想到一个事「我们单身的时候都会非常羡慕他人有陪伴，但是单身这种状态本身也是值得享受的呢，而且它持续的时间也不会很长，假设30岁结婚，最多也只有10年。」</p>
+<p>比较幸运的是，我在自己单身的时候就明白了这一点，而且充分享受了一个人&amp;无牵绊&amp;宅宅的&amp;简单纯粹&amp;看似孤独实则轻松得想要偷笑的生活。</p>
+<p>面对考试前的二十天，虽然不可免俗地要和身边的人共同「抱怨期末考」，但是，如同我对待「一个人的日子」那般，我也会好好享受这段「一支笔&amp;一张纸」就是全部生产力的日子。</p>
+<a id="more"></a>
+<h2 id="写在最前面"><a href="#写在最前面" class="headerlink" title="写在最前面"></a>写在最前面</h2><p>Statistics很火，但是Mathematical Statistical一直以来都不温不火——太优雅门槛高变现不容易。<br>若心浮浮躁躁，想来也是学不下去的。<br>但是，在期末考试的大压力下，心有点浮躁的我，还是学下去啦~</p>
+<blockquote class="blockquote-center"><p>那么以下就是我的复习笔记了<br>纪念下这段时光</p>
+</blockquote>
+<h2 id="关于博客内容来源"><a href="#关于博客内容来源" class="headerlink" title="关于博客内容来源"></a>关于博客内容来源</h2><p>以下内容并非原创哦！整理自三本参考书：</p>
+<ul>
+<li><a href="https://book.douban.com/subject/4102672/" target="_blank" rel="external">《高等数理统计学》</a></li>
+<li><a href="https://book.douban.com/subject/1832818/" target="_blank" rel="external">《高等数理统计(第二版)》 </a></li>
+<li><a href="https://book.douban.com/subject/1522839/" target="_blank" rel="external">《数理统计学简史》</a></li>
+<li><a href="https://book.douban.com/subject/24316364/" target="_blank" rel="external">《统计学：从数据到结论》</a></li>
+</ul>
+<p>关于这三本参考书，难度或者说抽象程度，由高到低。</p>
+<ul>
+<li><a href="https://book.douban.com/subject/4102672/" target="_blank" rel="external">《高等数理统计学》》</a>是陈希孺前辈的著作，定位是「基于测度论的数理统计学基础教科书，主体是几种基本统计推断形式：点估计、区间估计、假设检验的理论与方法。」这本书中习题以及提示占了50%的篇幅，的确，基础学科若不以做题加深功底，就如同「入宝山而空返」。</li>
+<li><a href="https://book.douban.com/subject/1832818/" target="_blank" rel="external">《高等数理统计(第二版)》 </a>是陈希孺的学生们基于教学工作写就的，理论讲解和习题举例结合得比较好，通俗地讲就是比较简单，但是这个简单是相对于《高等数理统计学》而言的哦！</li>
+<li><a href="https://book.douban.com/subject/1522839/" target="_blank" rel="external">《数理统计学简史》</a>也是陈希孺为大众写的一本书，侧重的是统计学的艺术性，其强调人的见解和灵感的部分，这四本书中，唯有这一本阅读人数&gt;100，评分高于9.0, 看来广大豆友们还是偏爱自己能看懂的书（眨眼&amp;不置可否）</li>
+<li><a href="https://book.douban.com/subject/24316364/" target="_blank" rel="external">《统计学：从数据到结论》</a>是吴喜之老先生的著作，比较难能可贵的一点是这本书兼顾统计见解&amp;实用性——书中附有R的代码。看上去非常舒服：）</li>
+</ul>
+<hr>
+<h2 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h2><h3 id="从几个问题入手"><a href="#从几个问题入手" class="headerlink" title="从几个问题入手"></a>从几个问题入手</h3><p>常用的U检验、t检验、F检验都有足够的直观性和可信感。再往深处想：</p>
+<ul>
+<li>一个好的检验究竟「好」在哪里？</li>
+<li>对于给定的「好坏」标准，是否存在最优的检验方法？</li>
+<li>如果有，如何找到？</li>
+</ul>
+<h3 id="假设检验问题的基本概念"><a href="#假设检验问题的基本概念" class="headerlink" title="假设检验问题的基本概念"></a>假设检验问题的基本概念</h3><p>统计结构 $(X, B, P)$ </p>
+<p><strong>假设</strong>：原假设为 $H_{0}$ , 备择假设为$H_{1}$ ,都是 P 的非空子集，且不相交或者更广义地说，是可以用样本点——「我们的观测值」，来进行检验的「任何说法」。所以啊，样本点身兼两大重任——「参数估计」&amp;「假设检验」。</p>
+<p><strong>检验法则</strong> $\leftrightarrow$ 拒绝域 $\rightarrow$ 统计量：检验法则将样本空间划分为互不相交的两个可测集 $X=W \oplus \overline W$ ，当样本点 $x \in W$  时就拒绝原假设 $H_0$ 。</p>
+<p><strong>检验统计量</strong>：从另一个角度来看，确定拒绝域也就确定了检验法则，进一步，通常利用一个在$W$和 $\overline W$上表现得非常不一致的统计量来确定拒绝域。</p>
+<p><strong>势函数</strong>：样本观察值X落在拒绝域W中的概率，即：</p>
+<p>$g(\theta) = P_{\theta}(X \in W), \theta \in \Theta$ </p>
+<p>   其中:</p>
+<p>   第一类错误 $\alpha(\theta) = g(\theta), \theta \in \Theta_{0}$ </p>
+<p>   第二类错误 $\beta(\theta) = 1 - g(\theta), \theta \in \Theta_{1}$  </p>
+<p>   唉，忘了怎么写不属于的符号，就只能连式子都改一下了。所以，不同的检验法则会有不同的拒绝域，也就有不同的势函数，不同的犯第一类错误以及第二类错误的可能性</p>
+<p><strong>检验的水平</strong>$\alpha$：犯第一类错误概率小于$\alpha$</p>
+<p><strong>随机化检验</strong>：为了充分利用检验水平，引入随机化检验作为检验函数$\phi(x)$，此时势函数:</p>
+<p>$g(\theta) = P_{\theta}(X \in W)=E_{\theta}(\phi(x))$</p>
+<p><strong>最优势检验（Most Powerful Test，MPT）</strong>：在大家犯第一类错误的概率都小于$\alpha$的基础上，犯第二类错误最小的检验函数$\phi(x)$即为最优势检验</p>
+<blockquote>
+<p>从MPT到<strong>Uniformly Most Powerful Test——UMPT</strong></p>
+</blockquote>
+<p>MPT是在简单原假设Vs简单备择假设的情况下得出的，但是面对复合假设时，如何定义最优？能否找到最优呢？这个问题一下子变得有些复杂。且看之~</p>
+<p><strong>定义UMPT</strong> $\phi(x)$是水平为$\alpha$的检验，如果对于任意一个水平为$\alpha$的检验$\phi_{1}(x)$，都有$E_{\theta_1}[\phi(X)] &gt; E_{\theta_1}(\phi_{1}(X)),  \forall \theta_1 \in \Theta_1$，则$\phi(X)$就是水平为$\alpha$的UMPT.  (「一致性」表现在随着$ \theta_1 \in \Theta_1$不停地变换，「我」都是最好的哦！)</p>
+<p><strong>借由MPT得到UMPT</strong></p>
+<p>在一些特殊的情况下，可以通过MPT推导出UMPT。例如：当简单原假设对简单备择假设的检验问题的MPT不依赖于备择假设的具体数值，则可以适当扩大备择假设；当势函数是单调函数时，可以扩大<strong>原假设</strong>。BUT，但是在大部分情况下都无法将复杂假设还原到简单原假设.</p>
+<p><strong>单调似然比</strong>，概率密度族${p(x; \theta): \theta \in \Theta}$关于统计量$T(X)$有单调似然比$\lambda(x) = \frac{p(x;\theta_2)}{p(x;\theta_1)}, \theta_{2} &gt; \theta_1$</p>
+<p><strong>单参数指数族</strong>，$p(x; \theta) = c(\theta)*exp{Q(\theta)T(x)}\cdot h(x)$，常见的有二项分布族、Poisson分布族、有1参数已知的正态分布族</p>
+<p>从一致最优检验到<strong>一致最优势无偏检验 Uniformly Most Powerful Unbiased Test UMPUT</strong>，无偏检验满足：<br>    $E_{\theta}[\phi(X)] \leqslant \alpha, \forall \theta \in \Theta_{0}$<br>    $E_{\theta}[\phi(X)] \geqslant \alpha, \forall \theta \in \Theta_{1}$<br>    一致最优说的就是:<br>    $E_{\theta}[\phi(X)] \geqslant E_{\theta}[\phi’(X)] , \forall \theta \in \Theta_{1}$</p>
+<p>从UMPUT到<strong>相似检验</strong>，在$\Theta_{0}$和$\Theta_{1}$的公共边界上势函数相等的检验函数是边界相似检验。构造边界相似检验比构造无偏检验更方便（前者束缚更小），如果$\phi(x)$是边界相似检验中的UMPT，则$\phi(x)$是水平为$\alpha$的UMPUT</p>
+<h3 id="漂亮的定理证明"><a href="#漂亮的定理证明" class="headerlink" title="漂亮的定理证明"></a>漂亮的定理证明</h3><h4 id="随机化检验的优良性「充分性原则」"><a href="#随机化检验的优良性「充分性原则」" class="headerlink" title="随机化检验的优良性「充分性原则」"></a>随机化检验的优良性「充分性原则」</h4><p>检验函数$\Leftrightarrow$ 势函数。对于任何一个检验函数，存在一个只依赖于$\theta$的充分统计量$T(x)$的另一个检验函数$\varphi(t) = E[\phi(X)|T=t]$，与之等价。</p>
+<p> <code>证明非常漂亮:</code><br> $$E_{\theta}[\phi(T(X))] = E_{\theta}{E[\phi(X)|T]} = E_{\theta}[\varphi(T)]$$</p>
+<h4 id="Neyman-Pearson-基本引理"><a href="#Neyman-Pearson-基本引理" class="headerlink" title="Neyman-Pearson 基本引理"></a>Neyman-Pearson 基本引理</h4><p>ok，首先考虑简单原假设对简单备择假设，简而言之就是参数$\theta$到底是$\theta_0$呢？还是$\theta_1$？</p>
+<p>在这种最简单的情形下，N-P引理给出了非常漂亮的结果。</p>
+<blockquote>
+<p>MPT一定存在，且可以具体地构造出MPT的检验函数。</p>
+</blockquote>
+<p>原假设$\theta = \theta_0$<br>备择假设$\theta = \theta<em>1$<br>分别对应两个不同的概率测度$P\</em>{\theta_0}$与$P_{\theta_1}$</p>
+<p>证明思路：</p>
+<ul>
+<li>对于每个给定的检验水平，都存在一个具有<strong>特定形式</strong>的检验函数；</li>
+<li>由上述检验水平和<strong>特定形式</strong>确定的检验函数，其是MPT；</li>
+<li><p>如果一个检验函数是上述检验水平下的MPT，则其一定在「几乎处处」的意义下具有<strong>特定形式</strong>。</p>
+<p>这个特定形式就是：<br>$\phi(x) = 1, p(x;\theta_1) &gt; k * p(x; \theta_0)$<br>$\phi(x) = r, p(x;\theta_1) = k * p(x; \theta_0)$<br>$\phi(x) = 0, p(x;\theta_1) &lt; k * p(x; \theta_0)$</p>
+</li>
+</ul>
+<p><code>e.g. 依赖充分统计量的三个MPT检验函数</code></p>
+<h4 id="MPT的一个性质"><a href="#MPT的一个性质" class="headerlink" title="MPT的一个性质"></a>MPT的一个性质</h4><p>如果$\phi(x)$是水平为$\alpha$的最优势检验函数，则$E_{\theta_1}\phi(X) \geqslant \alpha$. 且，当$\alpha \in (0,1)$时，除了$p(x; \theta_1) = p(x; \theta_0) a.e. [\mu]$外，必有$E_{\theta_1}\phi(X) &gt; \alpha$.</p>
+<p>这个结论很显然呀~就是说，在「备择假设为真」时，拒绝原假设的的概率，肯定要大于原假设为真的情况下的拒绝概率。</p>
+<h4 id="过渡：-从「不能更简单」到「简单」"><a href="#过渡：-从「不能更简单」到「简单」" class="headerlink" title="过渡：   从「不能更简单」到「简单」"></a><strong>过渡：</strong>   从「不能更简单」到「简单」</h4><p>一般来说，对于复合假设的检验问题，MPT的$\phi(x)$依赖备择假设中的$\theta$值，此时，UMPT不一定存在。（恩，就是，凭啥有个东西对于所有变量都是最优的呢~？（眨下眼：）</p>
+<p>那么，什么情况下存在，什么情况下不存在呢？接下来，引入了<strong>单调似然比&amp;单参数指数型分布族</strong>后，我们可以讨论下以下几种情况(1&amp;2是单边假设检验问题，3-5为双边假设检验问题)：</p>
+<ul>
+<li>no.1 $H_{0}: \theta \leqslant \theta_0 \leftrightarrow H_{1}: \theta &gt;\theta_0$</li>
+<li>no.2 $H_{0}: \theta \geqslant \theta_0 \leftrightarrow H_{1}: \theta &lt;\theta_0$</li>
+<li>no.3 $H_{0}: \theta = \theta_0 \leftrightarrow H_{1}: \theta \neq \theta_0$</li>
+<li>no.4 $H_{0}: \theta_{1} \leqslant \theta \leqslant \theta_{2} \leftrightarrow H_{1}: \theta &lt;\theta_1 or  \theta &gt; \theta_{2}$</li>
+<li>no.5 $H_{0}: \theta  \leqslant \theta_{1}  or  \theta \geqslant \theta_{2} \leftrightarrow H_{1}: \theta_1 &lt; \theta &lt; \theta_{2}$</li>
+</ul>
+<h4 id="单调性的力量——单调似然比-统计量-势函数"><a href="#单调性的力量——单调似然比-统计量-势函数" class="headerlink" title="单调性的力量——单调似然比-统计量-势函数"></a>单调性的力量——单调似然比-统计量-势函数</h4><p>如果概率密度族${p(x;\theta): \theta \in \Theta \subseteq R}$关于$T(x)$具有非降的MLR，若$\psi(t)$是t的一个非降函数，则$E_{\theta}\psi (T(X))$是$\theta$的一个非降函数</p>
+<blockquote>
+<p>接下来的定理要证明的其实<strong>很直观</strong>——在概率密度族关于$T(x)$具有非降MLR时，如果考虑单边假设检验问题no.1，不应该在$T(x)$比较大的时候拒绝原假设嘛？</p>
+</blockquote>
+<h4 id="单边假设检验问题的UMPT"><a href="#单边假设检验问题的UMPT" class="headerlink" title="单边假设检验问题的UMPT"></a>单边假设检验问题的UMPT</h4><p>单参数概率密度族${p(x;\theta): \theta \in \Theta \subseteq R}$关于实值统计量$T(x)$具有非降MLR，则关于单边假设检验问题no.1 $H_{0}: \theta \leqslant \theta_0 \leftrightarrow H_{1}: \theta &gt;\theta_0$：</p>
+<ol>
+<li>存在水平为$\alpha$的UMPT的检验函数<br> $\phi(x) = 1, T(x) &gt; c$<br>  $\phi(x) = r, T(x) = c$<br> $\phi(x) = 0, T(x) &lt; c$<br>  其中常数r与c由$E<em>{\theta</em>{0}}\phi(T(x)) = \alpha$确定</li>
+<li>这个检验的势函数非降且在集合${\theta: 0&lt; g(\theta) &lt;1}$上严格增加</li>
+<li>在一切使得$E_{\theta_{0}}\phi(X) = \alpha$的检验函数中，由1确定的检验函数$\phi(T(x))$使得对任意的$\theta &lt; \theta_{0}$，$E_{\theta}\phi(X)$都达到最小。</li>
+</ol>
+<h4 id="用人话说复述以上三点："><a href="#用人话说复述以上三点：" class="headerlink" title="用人话说复述以上三点："></a>用人话说复述以上三点：</h4><p><code>第一点「真的存在UMPT呢，我就是，我长这样」</code><br><code>第二点「长这样的我，随着参数的变大，我会越来越严厉的，一不开心呢就把原假设拒绝了哦」</code><br><code>我最喜欢这些定理的第三点，很傲娇哦「没错，在单调性的帮助下，落在原假设的参数们，如果你们是真的，我犯错的可能性最小哦！所向披靡！」</code></p>
+<p>有没有觉得很熟悉，在简单假设vs简单假设时，MPT长这样哦！在我们引入MLR后，就可以同统计量来代替单调似然比了，也更方便操作，更能借鉴统计量中蕴含的智慧：）</p>
+<p> $\phi(x) = 1, p(x;\theta_1) &gt; k * p(x; \theta_0)$<br> $\phi(x) = r, p(x;\theta_1) = k * p(x; \theta_0)$<br> $\phi(x) = 0, p(x;\theta_1) &lt; k * p(x; \theta_0)$</p>
+<h4 id="过渡-：终于从单边假设到了双边假设了"><a href="#过渡-：终于从单边假设到了双边假设了" class="headerlink" title="过渡 ：终于从单边假设到了双边假设了"></a>过渡 ：终于从单边假设到了双边假设了</h4><p>双边假设检验问题no.5 $H_{0}: \theta  \leqslant \theta_{1}  or  \theta \geqslant \theta_{2} \leftrightarrow H_{1}: \theta_1 &lt; \theta &lt; \theta_{2}$的UMPT是存在的，但是no.3&amp;no.4都是不存在的。<br>一个一个来，先解决no.5的存在性问题吧：）</p>
+<h4 id="N-P基本引理的推广（一）"><a href="#N-P基本引理的推广（一）" class="headerlink" title="N-P基本引理的推广（一）"></a>N-P基本引理的推广（一）</h4><p> $k_1 … k_m$, 且其非负<br> $\alpha_{1} … \alpha_m$<br> $p_1 … p_m$</p>
+<p>设$\mu$是可测空间$X, B$上的测度，$p_{0}, p_{1}, …, p_{m}$为该测度空间上$m+1$个实可测且$\mu$可积的函数. $\alpha_{1}, \alpha_{m}$为给定的m个实常数，如果存在检验函数$\phi(x)$满足以下两个条件：</p>
+<ol>
+<li><p>有m个非负常数$k_{1},\ldots,k_{m}$使得</p>
+<p> $\phi(x)=1, p_{0}(x) &gt; \sum_{i=1}^{m}k_{i}*p_{i}(x)$<br> $\phi(x)=0, p_{0}(x) &lt; \sum_{i=1}^{m}k_{i}*p_{i}(x)$</p>
+</li>
+<li><p>$\int\phi(x)*p_{i}(x)d\mu(x) =\alpha_{i}$</p>
+<p> 则对任意满足下式的检验函数<br> $$\phi’(x)$, $\int\phi’(x)*p_{i}(x)d\mu(x) \leqslant\alpha_{i}, i=1,\ldots,m$$<br> 都有<br> $$\int\phi(x)*p_{0}(x)d\mu(x) \geqslant\int\phi’(x)*p_{i}(x)d\mu(x)$$</p>
+</li>
+</ol>
+<h4 id="闲聊两句"><a href="#闲聊两句" class="headerlink" title="闲聊两句"></a><code>闲聊两句</code></h4><p>N-P基本引理和N-P基本引理的推广，实际上主要的思想都一样「犯第一类错误的概率小于$\alpha$的情况下，存在最好的检验函数——犯第二类的错误最小，它有特定的形式，特定形式的参数是在下述条件时得出的——充分利用了我们对于第一类错误的『包容度』，即势函数等于给定的$\alpha$. </p>
+<p>引理的推广，可以看做，我们有不止一个原假设，对于每个原假设的参数$\theta_{i}$，我们有不同的第一类错误的包容度$\alpha_{i}$，然后我们希望检验函数犯第二类错误的概率最小，即当参数的真实值为$p_{0}$时，我们会雄赳赳气昂昂地拒绝原假设，其最优性就表现在<br>$$\int\phi(x)*p_{0}(x)d\mu(x) \geqslant\int\phi’(x)*p_{i}(x)d\mu(x)$$</p>
+<p>真是喜欢这样的质朴纯粹的结论啊:</p>
+<ul>
+<li>「最好的，就是长这样的，你只要解几个参数就可以啦」</li>
+<li>「长这样的，就是最好的，与其它表现最好的，差异可忽略不计」</li>
+</ul>
+<h4 id="单参数指数型分布族的双边假设检验问题（一）"><a href="#单参数指数型分布族的双边假设检验问题（一）" class="headerlink" title="单参数指数型分布族的双边假设检验问题（一）"></a>单参数指数型分布族的双边假设检验问题（一）</h4><p>设样本服从单参数指数族分布，其中$\theta$为实参数，$Q(\theta)$是严增函数，则关于双边假设检验问题no.5-  no.5 $H_{0}: \theta  \leqslant \theta_{1}  or  \theta \geqslant \theta_{2} \leftrightarrow H_{1}: \theta_1 &lt; \theta &lt; \theta_{2}$, 存在水平为$\alpha$的UMPT，其检验函数仅依赖于充分统计量$T(x)$，形如：</p>
+<p> $\phi(x) = 1, c_{1}&lt; T(x) &lt; c_{2}$<br> $\phi(x) = r_i, T(x) = c_{i}, i=1, 2$<br> $\phi(x) = 0, T(x) &lt; c_{1} or T(x) &gt; c_{2}$</p>
+<p>其中常数$r_i$与$c_{i}$由$E<em>{\theta\</em>{i}}\phi(T(x)) = \alpha$确定</p>
+<h4 id="证明要点"><a href="#证明要点" class="headerlink" title="证明要点"></a><code>证明要点</code></h4><p>从N-P基本引理的推广（一）到单指数型分布族的双边假设检验问题的推论，结果的差异只在于用$T(x)$代替$p_{i}(x)$，这一步的转换与讨论需要借助单参数指数型分布族一个非常好的性质「指数型分布族的充分统计量还是单参数指数型分布族」，况且，我们还有$Q(x)$的单调性呢~</p>
+<h4 id="过渡"><a href="#过渡" class="headerlink" title="过渡"></a>过渡</h4><p>N-P基本引理的推广（一）帮助我们解决了no.5$H_{0}: \theta  \leqslant \theta_{1}  or  \theta \geqslant \theta_{2} \leftrightarrow H_{1}: \theta_1 &lt; \theta &lt; \theta_{2}$，为了解决双边假设检验no.3和no.4（备择假设区间不连续）</p>
+<p>我们需要把N-P再推广一下，N-P基本引理的推广（二）与（一）的不同在于常数$k_1, \ldots,k_m$可以取为负数。同时，我们降低一下要求，从寻找「一致最优检验」降低到「一致最优无偏检验」</p>
+<h4 id="单参数指数型分布族的双边假设检验问题（二）"><a href="#单参数指数型分布族的双边假设检验问题（二）" class="headerlink" title="单参数指数型分布族的双边假设检验问题（二）"></a>单参数指数型分布族的双边假设检验问题（二）</h4><h4 id="待解决的问题1："><a href="#待解决的问题1：" class="headerlink" title="待解决的问题1："></a>待解决的问题1：</h4><p>no.3 $H_{0}: \theta = \theta_0 \leftrightarrow H_{1}: \theta \neq \theta_0$</p>
+<p>嗯~这里有个小定理：<br>设样本服从单参数指数族分布，其中$\theta$为实参数，$Q(\theta)$是严增函数。关于no.3的双边假设检验问题，存在水平为$\alpha$的UMPUT，其检验函数为：</p>
+<p> $\phi(x) = 1, T(x) &lt; c_{1} or T(x) &gt; c_{2}$<br> $\phi(x) = r, T(x) = c_{i}, i=1, 2$<br> $\phi(x) = 0, c_{1}&lt; T(x) &lt; c_{2}$</p>
+<p>其中常数$r<em>i$与$c</em>{i}$由以下两个式子确定：</p>
+<p>$E_{\theta_{0}}\phi(T(X)) = \alpha$<br>$E_{\theta_{0}}[T(X)\phi(T(X)) = \alpha*E_{\theta_{0}} T(X)$</p>
+<h4 id="待解决的问题2："><a href="#待解决的问题2：" class="headerlink" title="待解决的问题2："></a>待解决的问题2：</h4><p>no.4 $H_{0}: \theta_{1} \leqslant \theta \leqslant \theta_{2} \leftrightarrow H_{1}: \theta &lt;\theta_1 or  \theta &gt; \theta_{2}$</p>
+<h4 id="嘿-这里还有个小定理："><a href="#嘿-这里还有个小定理：" class="headerlink" title="嘿~这里还有个小定理："></a>嘿~这里还有个小定理：</h4><p>设样本服从单参数指数族分布，其中$\theta$为实参数，$Q(\theta)$是严增函数。关于no.4的双边假设检验问题，存在水平为$\alpha$的UMPUT，其检验函数为：</p>
+<p> $\phi(x) = 1, T(x) &lt; c_{1} or T(x) &gt; c_{2}$<br> $\phi(x) = r_i, T(x) = c_{i}, i=1, 2$<br> $\phi(x) = 0, c_{1}&lt; T(x) &lt; c_{2}$</p>
+<p>其中常数$r_i$与$c_{i}$由$E_{\theta_{i}}\phi(T(X)) = \alpha$确定</p>
+<blockquote>
+<p>在周六的早晨，绕着西湖跑了久违的5km后，回到宿舍把继续写了写复习笔记，感觉很好呢～<br>但是，假设检验内容也太多了（委屈一秒钟）</p>
+<p>以上 2016.06.04</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;在干正事前絮絮叨😉&quot;&gt;&lt;a href=&quot;#在干正事前絮絮叨😉&quot; class=&quot;headerlink&quot; title=&quot;在干正事前絮絮叨😉&quot;&gt;&lt;/a&gt;在干正事前絮絮叨😉&lt;/h2&gt;&lt;p&gt;突然想到自己大三的时候，那时还住在本科院校一个四面环山的校区，突然想到一个事「我们单身的时候都会非常羡慕他人有陪伴，但是单身这种状态本身也是值得享受的呢，而且它持续的时间也不会很长，假设30岁结婚，最多也只有10年。」&lt;/p&gt;
+&lt;p&gt;比较幸运的是，我在自己单身的时候就明白了这一点，而且充分享受了一个人&amp;amp;无牵绊&amp;amp;宅宅的&amp;amp;简单纯粹&amp;amp;看似孤独实则轻松得想要偷笑的生活。&lt;/p&gt;
+&lt;p&gt;面对考试前的二十天，虽然不可免俗地要和身边的人共同「抱怨期末考」，但是，如同我对待「一个人的日子」那般，我也会好好享受这段「一支笔&amp;amp;一张纸」就是全部生产力的日子。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数据科学实践" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%AE%9E%E8%B7%B5/"/>
+    
+    
+      <category term="Statistics" scheme="http://yoursite.com/tags/Statistics/"/>
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,879 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Statistics,Algorithm,R," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="岛主夫人的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="听说，干正事前闲聊是个好传统😉这篇文章写了好几天，断断续续，夹杂着数理统计的复习和回家看爸妈的过意不去。代码部分是在粽子节那天写的，回想起来还挺开心的。 那天，出门就带一张校园卡，穿白T黑色短裤人字拖，手机也不带，校园里相比以往人少了很多，由此鸟声凸显，清脆得引我抬头看，树叶得颜色真漂亮啊，有夏日即将来临的活力却非燥热难耐。 发布完就洗洗睡，我的勤奋似乎要使我在岛主那儿的信用破产了，写完这句话，">
+<meta name="keywords" content="Statistics,Algorithm,R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="长得朴素但是很有效率的K-NN">
+<meta property="og:url" content="http://yoursite.com/2016-06-10-statlear-KNN/index.html">
+<meta property="og:site_name" content="岛主夫人的博客">
+<meta property="og:description" content="听说，干正事前闲聊是个好传统😉这篇文章写了好几天，断断续续，夹杂着数理统计的复习和回家看爸妈的过意不去。代码部分是在粽子节那天写的，回想起来还挺开心的。 那天，出门就带一张校园卡，穿白T黑色短裤人字拖，手机也不带，校园里相比以往人少了很多，由此鸟声凸显，清脆得引我抬头看，树叶得颜色真漂亮啊，有夏日即将来临的活力却非燥热难耐。 发布完就洗洗睡，我的勤奋似乎要使我在岛主那儿的信用破产了，写完这句话，">
+<meta property="og:image" content="http://yoursite.com/img/in-post/StatLearning-KNN/fun3.jpg">
+<meta property="og:image" content="http://yoursite.com/img/in-post/StatLearning-KNN/1.jpg">
+<meta property="og:image" content="http://yoursite.com/img/in-post/StatLearning-KNN/fun2.jpg">
+<meta property="og:image" content="http://yoursite.com/img/in-post/StatLearning-KNN/2.png">
+<meta property="og:image" content="http://yoursite.com/img/in-post/StatLearning-KNN/3.png">
+<meta property="og:image" content="http://yoursite.com/img/in-post/StatLearning-KNN/4.png">
+<meta property="og:image" content="http://yoursite.com/img/in-post/StatLearning-KNN/5.png">
+<meta property="og:image" content="http://yoursite.com/img/in-post/StatLearning-KNN/6.png">
+<meta property="og:image" content="http://yoursite.com/img/in-post/StatLearning-KNN/7.png">
+<meta property="og:image" content="http://yoursite.com/img/in-post/StatLearning-KNN/9.png">
+<meta property="og:image" content="http://yoursite.com/img/in-post/StatLearning-KNN/10.png">
+<meta property="og:image" content="http://yoursite.com/img/in-post/StatLearning-KNN/11.png">
+<meta property="og:image" content="http://yoursite.com/img/in-post/StatLearning-KNN/12.png">
+<meta property="og:image" content="http://yoursite.com/img/in-post/StatLearning-KNN/13.png">
+<meta property="og:image" content="http://yoursite.com/img/in-post/StatLearning-KNN/14.png">
+<meta property="og:image" content="http://yoursite.com/img/in-post/StatLearning-KNN/15.png">
+<meta property="og:image" content="http://yoursite.com/img/in-post/StatLearning-KNN/16.png">
+<meta property="og:updated_time" content="2016-08-13T15:43:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="长得朴素但是很有效率的K-NN">
+<meta name="twitter:description" content="听说，干正事前闲聊是个好传统😉这篇文章写了好几天，断断续续，夹杂着数理统计的复习和回家看爸妈的过意不去。代码部分是在粽子节那天写的，回想起来还挺开心的。 那天，出门就带一张校园卡，穿白T黑色短裤人字拖，手机也不带，校园里相比以往人少了很多，由此鸟声凸显，清脆得引我抬头看，树叶得颜色真漂亮啊，有夏日即将来临的活力却非燥热难耐。 发布完就洗洗睡，我的勤奋似乎要使我在岛主那儿的信用破产了，写完这句话，">
+<meta name="twitter:image" content="http://yoursite.com/img/in-post/StatLearning-KNN/fun3.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6292665083919074000,
+      author: 'Kathy'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016-06-10-statlear-KNN/"/>
+
+  <title> 长得朴素但是很有效率的K-NN | 岛主夫人的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+    <div class="site-meta-headline">
+      <a>
+        <img class="custom-logo-image" src="http://obrxj270y.bkt.clouddn.com/hold%20on.jpg"
+             alt="岛主夫人的博客"/>
+      </a>
+    </div>
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">岛主夫人的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">带点小追求过日子</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                长得朴素但是很有效率的K-NN
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-10T00:00:00+08:00" content="2016-06-10">
+              2016-06-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/数据科学实践/" itemprop="url" rel="index">
+                    <span itemprop="name">数据科学实践</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016-06-10-statlear-KNN/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016-06-10-statlear-KNN/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="听说，干正事前闲聊是个好传统😉"><a href="#听说，干正事前闲聊是个好传统😉" class="headerlink" title="听说，干正事前闲聊是个好传统😉"></a>听说，干正事前闲聊是个好传统😉</h3><p>这篇文章写了好几天，断断续续，夹杂着数理统计的复习和回家看爸妈的过意不去。代码部分是在粽子节那天写的，回想起来还挺开心的。</p>
+<p>那天，出门就带一张校园卡，穿白T黑色短裤人字拖，手机也不带，校园里相比以往人少了很多，由此鸟声凸显，清脆得引我抬头看，树叶得颜色真漂亮啊，有夏日即将来临的活力却非燥热难耐。</p>
+<p>发布完就洗洗睡，我的勤奋似乎要使我在岛主那儿的信用破产了，写完这句话，好像听到了电影的话外音——这个人脸皮好厚。可是我又不聪明，只能勤快些呀😉～</p>
+<a id="more"></a>
+<p>注：在「作业部落」里放了一个<a href="https://www.zybuluo.com/KathyKim/note/403716" target="_blank" rel="external">简约版本</a>。主要是因为jekyll的LaTex时不时出问题让我觉得有些心痛，就放上这个版本作为plan B咯！</p>
+<p><img src="/img/in-post/StatLearning-KNN/fun3.jpg" alt="have fun"></p>
+<h3 id="文章源起"><a href="#文章源起" class="headerlink" title="文章源起"></a>文章源起</h3><p>我的导师老板，目前有10个学生，大部分都是智商高高的博士，有次他搬办公室，我们一群人全副出动流水操作，效率很高，当时我还想了下，工作后我肯定会<strong>怀念</strong>「学术圈纯粹&amp;都是聪明人的环境😉」。</p>
+<p>每周二我们会有一个讨论班，由于我现在挺水的，每次只能领悟到论文的中心思想和思路，知道行文逻辑背景，不过对于定理证明的细节上，基本就是看两行卡一会儿，不过，也正常，而且知道自己被什么卡住了感觉就成功了一半呢。</p>
+<p>昨晚讨论班，罗师兄花了2个半小时讲了一篇2016年刚发表的文章《Classification in general finite dimensional spaces with the k-nearest neighbor rule》，目前统计学比较火的方向是为流行&amp;有效的算法补上理论基础，并非很容易，因为现实世界太复杂，而很多理论上的结果所需要的前提条件又太苛刻。</p>
+<p>这篇文章比较新的一个点就是，在之前的k-NN算法中，我们k是全局的，但当k是局部时（随着给定点的经验密度进行调整），此时这个算法的结果表现<strong>在理论上</strong>会有一个飞跃。</p>
+<p>想着就趁着这个契机写写K-NN.</p>
+<p><a href="https://book.douban.com/subject/21706191/" target="_blank" rel="external">An Introduction to Statistical Learning》</a> 这本书在好多章节提到了K-NN，按照作者的逻辑整理下。So,  <strong>© Gareth James / Daniela Witten / Trevor Hastie / Robert Tibshirani</strong> ,我只是个知识搬运工，BUT，苦力活也是活呢~不知道能不能瘦😉</p>
+<p>ps：最底层的知识介绍就不搬运了，搬运点细细思考才能有所感悟的点。</p>
+<h3 id="关于K-NN算法"><a href="#关于K-NN算法" class="headerlink" title="关于K-NN算法"></a>关于K-NN算法</h3><h4 id="从Bayes分类器讲起"><a href="#从Bayes分类器讲起" class="headerlink" title="从Bayes分类器讲起"></a>从Bayes分类器讲起</h4><p>page 37 有一个例子</p>
+<p><img src="/img/in-post/StatLearning-KNN/1.jpg" alt="Fugure 2.13"></p>
+<blockquote>
+<p>图释如下：</p>
+</blockquote>
+<ul>
+<li><p>图中有蓝色和橘色的点各100个，是计算机模拟产生的数据</p>
+</li>
+<li><p>数据是基于我们设定好的<strong>随机模型</strong>产生的，随机模型给定了平面中任何一个点取蓝色和橘色的概率，例如，$P((1,1)这个点是蓝色)=0.3$&amp;$P((1,1)这个点是橘色)=0.7$，此时$(1,1)$虽然有更大的概率是橘色，但是，蓝色也不是不可能的。</p>
+</li>
+<li><p>基于上述那个随机模型（它就是真实模型），把平面上蓝色概率和橘色概率都为0.5的点用虚线连起来，这个时候，就有了传说中的三八线。</p>
+</li>
+<li><p>Bayes分类器有着「全对不可能，因为随机性无法对抗」无法对抗，那我就聪明地傻一点「以三八线为『<strong>Bayes decision boundary</strong>』」，给定一个点，颜色就取为概率大于0.5的那个颜色呗，与真实观测到的不一样也是没办法的，因为只有这样做才总体最优（还有理论证明哦！）</p>
+</li>
+<li><p>这个时候，再回到这张图，出现在橙色区域的蓝色的点代表什么？代表，这个点有更大的可能性取成橙色，但是最终我们观察到的是蓝色，Bayes分类器出错了。</p>
+</li>
+<li><p>所幸，出错的点并不多。</p>
+</li>
+</ul>
+<blockquote>
+<p>The Bayes Classifier produces the lowest possible test error rate, called the Bayes error rate. Since the Bayes classifier will always choose the class for which $Pr(Y=j|X=x_0)$ is largest, the error rate at $X = x<em>0$ will be $1- max</em>{j}Pr(Y = j|X = x<em>0)$. In general, the overall Bayes error rate is given by<br>$1 - E{max</em>{j}Pr(Y = j |X)}$, where the expectation averages the probability over all possible values of X, because the classes overlap in the true population so $max<em>{j} Pr(Y = j|X = x</em>{0}) &lt; 1$ for some values of $x_0$. <strong>The Bayes error rate is analogous to the irreducible error</strong>, discussed earlier.</p>
+</blockquote>
+<p>这段话写得很经典，有几处值得再讲一下：</p>
+<ol>
+<li><p>公式 $Error=1 - E{max_{j}Pr(Y = j |X)}$ 是对$X$求期望，后半部分的期望展开就是</p>
+<p> $ E{max<em>{j}Pr(Y = j |X)} = \int</em>{x \in X} max_{j}Pr(Y = j|X=x)P(X=x)dx$</p>
+</li>
+<li><p>多看几眼就知道这个式子很直观，我们对于每个点都取它最有可能取得的值，作为我们给出的预测值，那么在最优可能之外的那些可能性就是我们犯错的可能性。样本空间中的点$x_0$「出现的概率」*「在这点我们『犯错的可能性』」，也可看做是「犯错可能性」的权重。</p>
+</li>
+<li><p><strong>例如</strong>，如果一个点非常非常容易被取到，那么在这一点上犯错的可能性占整体犯错比重就更大。最后，遍历所有点加在一起。</p>
+</li>
+<li><p>总之，任何期望本质不离<strong>加权平均</strong>。</p>
+</li>
+</ol>
+<h4 id="从Bayes分类器到K-NN"><a href="#从Bayes分类器到K-NN" class="headerlink" title="从Bayes分类器到K-NN"></a>从Bayes分类器到K-NN</h4><p>刚培养了点对Bayes分类器的好感，没想到就迎来噩耗——</p>
+<blockquote>
+<p>But for real data, we <strong>do not know </strong>the conditional distribution of $Y$ given $X$, and so computing the Bayes classifier is impossible. Therefore, the Bayes classifier serves as an <strong>unattainable gold standard</strong> against which to compare other methods.</p>
+</blockquote>
+<p>在接受了「就是不知道真实的条件分布」这个现实后，没关系，抹把眼泪继续看。</p>
+<p>虽然我们不知道真实的条件分布，但是数据中还是有很多信息的，基于数据中给出的信息，可以去<strong>估计</strong>其条件分布，然后再将一个给定的观测分类到「估计的分布概率」最大的类别中。</p>
+<p>此处眼泪应该已风干😉</p>
+<p>休息一下吧～</p>
+<p><img src="/img/in-post/StatLearning-KNN/fun2.jpg" alt="have fun"></p>
+<p>☝️公式</p>
+<p>$Pr(Y = k |X = x<em>{0}) = \frac{1}{K}\sum</em>{i \in N<em>{0}} {I(y</em>{i}=j})$</p>
+<p>几句解释</p>
+<ul>
+<li><p>在$x_{0}$这一点，我们并不知道$Y$取到各个类别的真实概率，也就无法了解「其在哪个类别的可能性最大」</p>
+</li>
+<li><p>BUT, 我们知道离它最近的$K$个点到底属于哪些类，如果离它最近的哪些点中最大的群体是类别1，好嘞，那我也站到类别1中吧！</p>
+</li>
+</ul>
+<p>☝️案例 详见图中中文字</p>
+<p><img src="/img/in-post/StatLearning-KNN/2.png" alt="e.g."></p>
+<h4 id="K-NN，效果几何？"><a href="#K-NN，效果几何？" class="headerlink" title="K-NN，效果几何？"></a>K-NN，效果几何？</h4><blockquote>
+<p>下面👇这张图说明了<br>原来K－NN(K=10)得出的结果和最优的Bayes是如此接近呢～😉</p>
+</blockquote>
+<p><img src="/img/in-post/StatLearning-KNN/3.png" alt="efficiency"></p>
+<blockquote>
+<p>下面👇这张图的意思是：恩，那K取其它值的表现。可以看到左边的图（K＝1）比较崎岖，但是与Bayes分类器相对右图（K＝100）而言要更接近些。但是二者都不及上图👆（K＝10）</p>
+</blockquote>
+<p><img src="/img/in-post/StatLearning-KNN/4.png" alt="about K"></p>
+<blockquote>
+<p>下面👇这张图中</p>
+<ol>
+<li>测试误差是一个U型，说明模型过度光滑&amp;过渡拟合都不是好事<ol>
+<li>K=1时测试误差和训练误差差距非常大！当然咯！K=1时，所有训练点都没错呢，最近的就是自己呀。</li>
+<li>其实测试误差更值得关注。</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<p><img src="/img/in-post/StatLearning-KNN/5.png" alt="about K"></p>
+<h3 id="Trade-off-between-Linear-Regression-and-K-NN"><a href="#Trade-off-between-Linear-Regression-and-K-NN" class="headerlink" title="Trade-off between Linear Regression and K-NN"></a>Trade-off between Linear Regression and K-NN</h3><p>page 104</p>
+<p>线性回归是参数结构，K-NN是非参结构。参数结构对模型有着很强的假设，如果假设与实际相差很远，则会导致不尽如人意的拟合。</p>
+<blockquote>
+<p>下面👇这张图说明了：K-NN方法选择K时：小的K值提供了较为灵活的拟合但是付出的代价是<strong>高方差</strong>；大的K值提供的拟合平滑，<strong>方差小</strong>，其对一个区域的拟合是几个点的均值，所以改变一个点对于结果来说影响不大，但是较大的K值可能会错过真实模型的结构而导致<strong>较大的偏差</strong>。</p>
+</blockquote>
+<p><img src="/img/in-post/StatLearning-KNN/6.png" alt="about K"></p>
+<blockquote>
+<p><code>在一维的情况下，结果非常符合直观见解（暂时的）：</code></p>
+</blockquote>
+<h4 id="一维时，真实模型为线性时，线性回归表现灰常好，但是K-NN也不差"><a href="#一维时，真实模型为线性时，线性回归表现灰常好，但是K-NN也不差" class="headerlink" title="一维时，真实模型为线性时，线性回归表现灰常好，但是K-NN也不差"></a>一维时，真实模型为线性时，线性回归表现灰常好，但是K-NN也不差</h4><blockquote>
+<p>下图中👇 红色的点代表由<strong>真实的模型</strong>「线性」随机生成的点，用这些点中的信息得到拟合直线$\hat{f}(X)$和$K=9, 1$时的K-NN曲线。简而言之，线性回归模型较好，但是K-NN在比较合适的K值下也不差。</p>
+</blockquote>
+<p><img src="/img/in-post/StatLearning-KNN/7.png" alt="about K"></p>
+<blockquote>
+<p>下图👇是从MSE来看的，虚线是由最小二乘方法得到的回归直线，实线是真实模型，可以看到，在数据量为100的情况下，当假设与真实相近时，哪怕得到的信息有偏差，但是还是可以越过偏差得到正确的见解。下图👇中的右图👉表示了K-NN与线性回归的MSE，可以看到，合适的K会使得K-NN的MSE与线性回归的MSE相差不多，在这幅图中，估摸了下，粉色线上面的那个点比较合适：）此时的K是3. </p>
+</blockquote>
+<p><img src="/img/in-post/StatLearning-KNN/9.png" alt="about K"></p>
+<h4 id="一维时，真实模型为非线性时，线性回归表现灰常不好，但是K-NN依旧稳定（这不很显然嘛？）"><a href="#一维时，真实模型为非线性时，线性回归表现灰常不好，但是K-NN依旧稳定（这不很显然嘛？）" class="headerlink" title="一维时，真实模型为非线性时，线性回归表现灰常不好，但是K-NN依旧稳定（这不很显然嘛？）"></a>一维时，真实模型为非线性时，线性回归表现灰常不好，但是K-NN依旧稳定（这不很显然嘛？）</h4><blockquote>
+<p>下图👇中的真实模型（粗粗的黑线）的弯曲程度依次增大，代表真实模型与线性假设渐行渐远。<br>下图👇中两幅右图👉的<strong>黑色虚线</strong>对应的MSE分别是0.06与0.14（毛估估哒），也就是说，线性模型在测试集上产生的误差，随着真实模型非线性的增强而不断变大。<br>下图👇中两幅右图👉的<strong>绿色虚线</strong>对应的最小MSE分别是0.55与0.05（毛估估哒），也就是说，K-NN在测试集上产生的误差，基本不变。<br>下图👇中两幅左图👈也很直观滴体现了，K-NN有着「你变弯曲我也变弯曲」的随和品质😉</p>
+</blockquote>
+<p><img src="/img/in-post/StatLearning-KNN/10.png" alt="about K"></p>
+<blockquote>
+<p><code>此处有个大大的BUT</code></p>
+</blockquote>
+<p>大家自然会觉得，天呐，那我随时用K-NN不就好啦，不管线性还是非线性，它都表现得如此之好！</p>
+<p>注意，上述模拟有着非常大的前提<strong>「X是一维的变量」</strong>，当X的维读增大时，情况就有了惊天的变化！详见下图👇</p>
+<p><img src="/img/in-post/StatLearning-KNN/11.png" alt="about K"></p>
+<blockquote>
+<p>When p=1 or p=2, KNN outperforms linear regression. But for p=3 the results are mixed, and for p &gt;=4 linear regression is superior to KNN. In fact, the increase in dimension has only caused a small deterioration in linear regression test set MSE, but it has caused more than a ten-fold increase in the MSE for KNN. </p>
+</blockquote>
+<p>简而言之，就是维数灾难，在高维情况下，给定的观测附近没有邻点，与$x_0$最为接近的K个观测值在p维空间中距离$x<em>0$很远，导致其对$f(x</em>{0})$的预测非常差。</p>
+<p>举个小栗子吧~每个人都非常非常不一样，如果用很多维度的数据来描述一群人，那么这群人中的每两个都会显著不同（在很多维度都不同），那么用离A最近的K个人的特点取平均来描述A，肯定与A本身差别很大。</p>
+<p>不过，穷穷的统计学家的电脑中模拟的结果得出的结论必定是支持线性回归的，但是，真正的海量数据又是另外一回事咯！</p>
+<blockquote>
+<p>As a general rule, parametric methods will tend to outperform non-parametric approaches when there is <strong>a small number of observations</strong> per predictor.</p>
+</blockquote>
+<h3 id="一些数据模拟-基于R"><a href="#一些数据模拟-基于R" class="headerlink" title="一些数据模拟-基于R"></a>一些数据模拟-基于R</h3><p>用Rmarkdown运行并输出了书后的配套尝试，截图放在后面（这样的阅读感受感觉好一些）</p>
+<p><img src="/img/in-post/StatLearning-KNN/12.png" alt="simulation"></p>
+<p><img src="/img/in-post/StatLearning-KNN/13.png" alt="simulation"></p>
+<p><img src="/img/in-post/StatLearning-KNN/14.png" alt="simulation"></p>
+<p><img src="/img/in-post/StatLearning-KNN/15.png" alt="simulation"></p>
+<p><img src="/img/in-post/StatLearning-KNN/16.png" alt="simulation"></p>
+<p>可以看到，准确率才53%多一点，只比随机预测好辣么一丁点。。。当然咯！本金充足的情况下这一点就不容小觑了。</p>
+<p>BUT，我觉得这个效果不够好在于features太少，不过feature太多似乎就不能用K-NN了。看来，预测股市还是值得一做的，模型足够正确的话，妥妥滴跑赢随机买卖呢~</p>
+<hr>
+<p>考虑另外一个数据集Caravan，这个数据集维度比较高，另外，数据中的imbalance现象灰常严重，如果要降低imbalance势必要减少数据量，这对于高维数据的处理而言风险比较大。</p>
+<p>但还是尝试了一下，将购买与不购买的比例从1:15提升到了1:3，然后用了下统计中re-sample的思想重复抽样100次，得到100个小模型的结果，汇集再得出预测的结论。100次中，如果95次的预测结果是不买，另外5次的预测结果是购买，那么，在利润非常高的情况下，也是值得一试的。总的来说，我做的优化还太少，结果只改善了一点点，还是以撒大网为代价的。</p>
+<p>由此，深觉高维的问题果然是个难点。不知道下次先用lasso进行下变量选择再用K-NN加上Boostrap的思想会如何。值得一试的赶脚。</p>
+<hr>
+<p>以下就是在粽子节那天写的代码，刚出生的小孩，都听难看的不是嘛？</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">attach</span>(Caravan)</div><div class="line">n &lt;- dim(Caravan)[<span class="number">1</span>]</div><div class="line">p &lt;- dim(Caravan)[<span class="number">2</span>]</div><div class="line"></div><div class="line">//总数据中，<span class="number">348</span>人买，<span class="number">5474</span>人不买，购买率为<span class="number">0.06</span></div><div class="line"></div><div class="line">sum.Purchase &lt;- table(Purchase)</div><div class="line">sum.buy &lt;- sum.Purchase[<span class="number">2</span>]</div><div class="line">sum.nobuy &lt;- sum.Purchase[<span class="number">1</span>]</div><div class="line">ratio.buy &lt;- sum.buy/sum.nobuy</div><div class="line"></div><div class="line">//选取<span class="number">20</span>%的数据集当做测试集，一共是<span class="number">1164</span>个，另外的作为训练集，<span class="number">4685</span>个数据</div><div class="line">test.index &lt;- sample(<span class="number">1</span>:length(Purchase), floor(length(Purchase)*<span class="number">0.2</span>))</div><div class="line">test.X &lt;- Caravan[test.index, ]</div><div class="line">test.X$result.positive &lt;- rep(<span class="number">0</span>,length(test.X$MOSTYPE))</div><div class="line">test.X$result.negative &lt;- rep(<span class="number">0</span>,length(test.X$MOSTYPE))</div><div class="line"></div><div class="line">test.Y &lt;- Caravan[test.index, <span class="number">86</span>]</div><div class="line">train.all &lt;- Caravan[-test.index,-<span class="number">86</span>]</div><div class="line"></div><div class="line">//训练集中<span class="number">281</span>人买，<span class="number">4377</span>人不买，购买率为<span class="number">0.642</span>,次数据依赖抽样，每次会发生变化</div><div class="line">train.sum.Purchase &lt;- table(Caravan[-test.index, <span class="string">"Purchase"</span>])</div><div class="line">train.sum.buy &lt;- sum.Purchase[<span class="number">2</span>]</div><div class="line">train.sum.nobuy &lt;- sum.Purchase[<span class="number">1</span>]</div><div class="line">train.ratio.buy &lt;- train.sum.buy/train.sum.nobuy</div><div class="line">times.rep &lt;- floor(train.sum.nobuy/train.sum.buy)</div><div class="line"></div><div class="line">cat(<span class="string">"训练集中购买人数："</span>,as.numeric(train.sum.buy), </div><div class="line">    <span class="string">"不购买的人数："</span>,as.numeric(train.sum.nobuy),</div><div class="line">    <span class="string">"购买率："</span>,as.numeric(train.ratio.buy),</div><div class="line">    <span class="string">"为了平衡数据而确定的小袋子数量："</span>,as.numeric(times.rep),<span class="string">"\n"</span>)</div><div class="line"></div><div class="line">//每次从训练集的不购买的人数中挑选（train.sum.buy*<span class="number">3</span>)的人。</div><div class="line">//完全一样的话，数据太少，维数灾难恐现江湖</div><div class="line">train.size &lt;- train.sum.buy*<span class="number">3</span></div><div class="line"></div><div class="line"></div><div class="line">//每次迭代取训练集中全部的购买与数量相等的不购买</div><div class="line"></div><div class="line">//训练集中所有购买的数据</div><div class="line">train.buy.index &lt;- which(Caravan[-test.index,<span class="string">"Purchase"</span>]==<span class="string">"Yes"</span>)</div><div class="line">train.nobuy.index &lt;- which(Caravan[-test.index,<span class="string">"Purchase"</span>]==<span class="string">"No"</span>)</div><div class="line"></div><div class="line">train.buy.sum &lt;- length(train.buy.index)</div><div class="line">a &lt;- sample(train.buy.index, train.buy.sum, replace = <span class="literal">FALSE</span>)</div><div class="line">b &lt;- sample(train.buy.index, train.buy.sum, replace = <span class="literal">FALSE</span>)</div><div class="line"></div><div class="line">set.seed(<span class="number">1</span>)</div><div class="line"><span class="keyword">for</span>(K <span class="keyword">in</span> c(<span class="number">1</span>,<span class="number">3</span>))&#123;</div><div class="line">  <span class="keyword">for</span> (j <span class="keyword">in</span> <span class="number">1</span>:<span class="number">100</span>)&#123;</div><div class="line">    train.X.index &lt;- sample(train.nobuy.index, train.size, replace = <span class="literal">FALSE</span>)</div><div class="line">    train.X &lt;- train.all[train.X.index,]</div><div class="line">    train.Y &lt;- Caravan[train.X.index,<span class="string">"Purchase"</span>]</div><div class="line">    </div><div class="line">    knn.pred &lt;- knn(train.X,test.X[,-c(<span class="number">86</span>,<span class="number">87</span>,<span class="number">88</span>)],train.Y,k=<span class="number">3</span>)</div><div class="line">    cat(<span class="string">"k="</span>,K,<span class="string">"第"</span>,j,<span class="string">"次抽样"</span>,<span class="string">"结果列联表为："</span>,table(knn.pred, test.Y),<span class="string">"\n"</span>)</div><div class="line">    correct.index &lt;- which(test.Y==knn.pred&amp;test.Y==<span class="string">"Yes"</span>)</div><div class="line">    false.index &lt;- which(test.Y==knn.pred&amp;test.Y==<span class="string">"No"</span>)</div><div class="line">    </div><div class="line">    test.X[correct.index,<span class="number">87</span>]&lt;-test.X[correct.index,<span class="number">87</span>]+<span class="number">1</span></div><div class="line">    test.X[false.index,<span class="number">88</span>]&lt;-test.X[false.index,<span class="number">88</span>]+<span class="number">1</span></div><div class="line">  &#125;</div><div class="line">  <span class="keyword">for</span> (i <span class="keyword">in</span> c(<span class="number">90</span>:<span class="number">99</span>))&#123;</div><div class="line">    <span class="comment">#这个点被模型发现过是被购买的点</span></div><div class="line">    positive.index &lt;-which (test.X$result.positive &gt;<span class="number">0</span>)</div><div class="line">    <span class="comment">#被模型发现是购买的点实际上被购买的概率,大部分情况都是1吧</span></div><div class="line">    length(which(test.X$Purchase[positive.index]==<span class="string">"Yes"</span>))/length(positive.index)</div><div class="line">    </div><div class="line">    <span class="comment">#被模型判断为不购买的次数小于98、97、96的情况下</span></div><div class="line">    test.X$result.negative[positive.index]</div><div class="line">    melt.positive.index &lt;- which(test.X$result.negative&lt;i)</div><div class="line">    melt.negtive.index &lt;- which(test.X$result.negative&gt;=i)</div><div class="line">    </div><div class="line">    melt.correct.ratio1 &lt;- length(which(test.buy$Purchase[melt.positive.index] ==<span class="string">"Yes"</span>))/length(melt.positive.index)</div><div class="line">    <span class="comment">#</span></div><div class="line">    cat(<span class="string">"降低要求为：被模型判断为不购买的次数小于"</span>,i, <span class="string">"就归类到购买类别"</span>,<span class="string">"\n"</span>)</div><div class="line">    cat(<span class="string">"Test集合中melt.positive的个数为:"</span>,length(melt.positive.index),<span class="string">"\n"</span>)</div><div class="line">    cat(<span class="string">"Test集合中实际购买的个数为:"</span>,length(which(test.X$Purchase==<span class="string">"Yes"</span>)),<span class="string">"\n"</span>,<span class="string">"\n"</span>)</div><div class="line">    </div><div class="line">    test.buy &lt;- test.X[which(test.X$Purchase==<span class="string">"Yes"</span>),]</div><div class="line">    melt.correct.ratio2 &lt;- length(which(test.buy$Purchase[melt.positive.index] ==<span class="string">"Yes"</span>))/length(which(test.X$Purchase==<span class="string">"Yes"</span>))</div><div class="line">    </div><div class="line">    cat( <span class="string">"模型识别出的"</span>,length(melt.positive.index),<span class="string">"中，一共有"</span>,length(which(test.buy$Purchase[melt.positive.index] ==<span class="string">"Yes"</span>)),<span class="string">"购买了"</span>,<span class="string">"正确率:"</span>,melt.correct.ratio1,<span class="string">"\n"</span>)</div><div class="line">    cat( <span class="string">"实际购买的"</span>,length(which(test.X$Purchase==<span class="string">"Yes"</span>)),<span class="string">"人中，一共有"</span>,length(which(test.buy$Purchase[melt.positive.index] ==<span class="string">"Yes"</span>)),<span class="string">"被模型识别出来了"</span>,<span class="string">"正确率:"</span>, melt.correct.ratio2,<span class="string">"\n"</span>,<span class="string">"\n"</span>)</div><div class="line">    </div><div class="line">    </div><div class="line">    cat(<span class="string">"Test集合中melt.negtive的个数为:"</span>,length(melt.negtive.index),<span class="string">"\n"</span>)</div><div class="line">    cat(<span class="string">"Test集合中实际不购买的个数为:"</span>,length(which(test.X$Purchase==<span class="string">"No"</span>)),<span class="string">"\n"</span>,<span class="string">"\n"</span>,<span class="string">"\n"</span>)</div><div class="line">    </div><div class="line">    melt.false.ratio &lt;- length(which(test.X$Purchase[melt.negtive.index] ==<span class="string">"No"</span>))/length(melt.negtive.index)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Statistics/" rel="tag">#Statistics</a>
+          
+            <a href="/tags/Algorithm/" rel="tag">#Algorithm</a>
+          
+            <a href="/tags/R/" rel="tag">#R</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016-06-05-hypotest/" rel="next" title="数理统计复习笔记 假设检验">
+                <i class="fa fa-chevron-left"></i> 数理统计复习笔记 假设检验
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016-06-14-statlear-fun/" rel="prev" title="线性模型得出的参数到底该如何分析">
+                线性模型得出的参数到底该如何分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://oqk9k7f97.bkt.clouddn.com/header.jpg"
+               alt="Kathy" />
+          <p class="site-author-name" itemprop="name">Kathy</p>
+          <p class="site-description motion-element" itemprop="description">统计姑娘 | 漫威小粉 | 小黄人挚友</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/MissIslander" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/55447115/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/nothing-kathy" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              什么值得点😀
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://onebaiyi.github.io" title="岛主的博客" target="_blank">岛主的博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#听说，干正事前闲聊是个好传统😉"><span class="nav-number">1.</span> <span class="nav-text">听说，干正事前闲聊是个好传统😉</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章源起"><span class="nav-number">2.</span> <span class="nav-text">文章源起</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于K-NN算法"><span class="nav-number">3.</span> <span class="nav-text">关于K-NN算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#从Bayes分类器讲起"><span class="nav-number">3.1.</span> <span class="nav-text">从Bayes分类器讲起</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从Bayes分类器到K-NN"><span class="nav-number">3.2.</span> <span class="nav-text">从Bayes分类器到K-NN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#K-NN，效果几何？"><span class="nav-number">3.3.</span> <span class="nav-text">K-NN，效果几何？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Trade-off-between-Linear-Regression-and-K-NN"><span class="nav-number">4.</span> <span class="nav-text">Trade-off between Linear Regression and K-NN</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一维时，真实模型为线性时，线性回归表现灰常好，但是K-NN也不差"><span class="nav-number">4.1.</span> <span class="nav-text">一维时，真实模型为线性时，线性回归表现灰常好，但是K-NN也不差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一维时，真实模型为非线性时，线性回归表现灰常不好，但是K-NN依旧稳定（这不很显然嘛？）"><span class="nav-number">4.2.</span> <span class="nav-text">一维时，真实模型为非线性时，线性回归表现灰常不好，但是K-NN依旧稳定（这不很显然嘛？）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些数据模拟-基于R"><span class="nav-number">5.</span> <span class="nav-text">一些数据模拟-基于R</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kathy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'missislander';
+      var disqus_identifier = '2016-06-10-statlear-KNN/';
+      var disqus_title = "长得朴素但是很有效率的K-NN";
+      var disqus_url = 'http://yoursite.com/2016-06-10-statlear-KNN/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>

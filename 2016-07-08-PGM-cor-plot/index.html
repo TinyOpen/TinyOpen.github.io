@@ -1,0 +1,839 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Statistics,R," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="岛主夫人的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="写在最开头 犹豫了一会儿是否要在标签中写Statistics &amp;amp; Algorithm，最后还是决定不写，因为这篇文章非常「随意溜达」，有很大的可能性我会写一篇比较正经的概率图的文章，那么这篇，就熬一会儿夜编辑下直接放在这里咯！ 这应该算是法国暑期学校的一个番外了。上了两节概率图模型的课，还挺有意思的，深挖下去肯定会牵扯很多底层的知识分外难啃，但至少乍一看「挺漂亮」&amp;amp;「挺有用」。 接">
+<meta name="keywords" content="Statistics,R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何优雅地表示变量之间的相关性——从图开始">
+<meta property="og:url" content="http://yoursite.com/2016-07-08-PGM-cor-plot/index.html">
+<meta property="og:site_name" content="岛主夫人的博客">
+<meta property="og:description" content="写在最开头 犹豫了一会儿是否要在标签中写Statistics &amp;amp; Algorithm，最后还是决定不写，因为这篇文章非常「随意溜达」，有很大的可能性我会写一篇比较正经的概率图的文章，那么这篇，就熬一会儿夜编辑下直接放在这里咯！ 这应该算是法国暑期学校的一个番外了。上了两节概率图模型的课，还挺有意思的，深挖下去肯定会牵扯很多底层的知识分外难啃，但至少乍一看「挺漂亮」&amp;amp;「挺有用」。 接">
+<meta property="og:image" content="http://yoursite.com/img/in-post/7-08-PGM1/pairs.png">
+<meta property="og:image" content="http://yoursite.com/img/in-post/7-08-PGM1/PCA1.png">
+<meta property="og:image" content="http://yoursite.com/img/in-post/7-08-PGM1/PCA2.png">
+<meta property="og:image" content="http://yoursite.com/img/in-post/7-08-PGM1/matrix-plot.png">
+<meta property="og:image" content="http://yoursite.com/img/in-post/7-08-PGM1/precision-matrix.png">
+<meta property="og:image" content="http://yoursite.com/img/in-post/7-08-PGM1/note.jpg">
+<meta property="og:image" content="http://yoursite.com/img/in-post/7-08-PGM1/precision-hard.png">
+<meta property="og:image" content="http://yoursite.com/img/in-post/7-08-PGM1/AIC-for-hard-threshold.png">
+<meta property="og:image" content="http://yoursite.com/img/in-post/7-08-PGM1/best-hard-threshold.png">
+<meta property="og:image" content="http://yoursite.com/img/in-post/7-08-PGM1/cv-for-soft-threshold.png">
+<meta property="og:updated_time" content="2017-05-26T15:35:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何优雅地表示变量之间的相关性——从图开始">
+<meta name="twitter:description" content="写在最开头 犹豫了一会儿是否要在标签中写Statistics &amp;amp; Algorithm，最后还是决定不写，因为这篇文章非常「随意溜达」，有很大的可能性我会写一篇比较正经的概率图的文章，那么这篇，就熬一会儿夜编辑下直接放在这里咯！ 这应该算是法国暑期学校的一个番外了。上了两节概率图模型的课，还挺有意思的，深挖下去肯定会牵扯很多底层的知识分外难啃，但至少乍一看「挺漂亮」&amp;amp;「挺有用」。 接">
+<meta name="twitter:image" content="http://yoursite.com/img/in-post/7-08-PGM1/pairs.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6292665083919074000,
+      author: 'Kathy'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016-07-08-PGM-cor-plot/"/>
+
+  <title> 如何优雅地表示变量之间的相关性——从图开始 | 岛主夫人的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+    <div class="site-meta-headline">
+      <a>
+        <img class="custom-logo-image" src="http://obrxj270y.bkt.clouddn.com/hold%20on.jpg"
+             alt="岛主夫人的博客"/>
+      </a>
+    </div>
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">岛主夫人的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">带点小追求过日子</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                如何优雅地表示变量之间的相关性——从图开始
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-08T00:00:00+08:00" content="2016-07-08">
+              2016-07-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/数据科学实践/" itemprop="url" rel="index">
+                    <span itemprop="name">数据科学实践</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016-07-08-PGM-cor-plot/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016-07-08-PGM-cor-plot/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>写在最开头</p>
+<p>犹豫了一会儿是否要在标签中写Statistics &amp; Algorithm，最后还是决定不写，因为这篇文章非常「随意溜达」，有很大的可能性我会写一篇比较正经的概率图的文章，那么这篇，就熬一会儿夜编辑下直接放在这里咯！</p>
+<p>这应该算是<a href="http://tinyopen.github.io/2016/06/30/Rennes/" target="_blank" rel="external">法国暑期学校</a>的一个番外了。上了两节概率图模型的课，还挺有意思的，深挖下去肯定会牵扯很多底层的知识分外难啃，但至少乍一看「挺漂亮」&amp;「挺有用」。</p>
+<p>接下来，我就现学现卖&amp;借刀卖钱了。</p>
+<a id="more"></a>
+<p>注：</p>
+<ol>
+<li><p>以下代码大部分是雷恩一大的V.Monbet教授写的，我只是加了些注释理了下逻辑，我就是个开心的小搬运工( -_・)</p>
+</li>
+<li><p>另外，这篇文章尝试了下小赵的黑魔法，直接用rmd的html代码，恩，效果真的挺不错的，感谢！不过Rmd的输出太多warning和文本提示，不知道如何去掉，最后还是结合了笨办法，保存图片~</p>
+</li>
+</ol>
+<hr>
+<h3 id="正事"><a href="#正事" class="headerlink" title="正事"></a>正事</h3><h4 id="分析初衷"><a href="#分析初衷" class="headerlink" title="分析初衷"></a>分析初衷</h4><p>我们需要分析的这个数据集中中有104个同学9门课的成绩，希望探究下这9门课成绩之间的相关关系。更准确地说，我们其实是想探究其独立性的问题以更好地在概率图模型中进行后续工作(而只有对正态分布而言，相关和独立是等价的，所以模型的前提假设很多都是随机变量服从正态分布。)</p>
+<blockquote>
+<p>如何表示这9门课之间的相关关系呢？ok，这也是以下代码的逻辑——</p>
+</blockquote>
+<p><strong>不断优化视觉体验</strong>：</p>
+<ul>
+<li>step1: pairs图，两两变量之间的散点图（我什么都看不出来。。。）</li>
+<li>step2: 用主成分分析（我觉得这个还不错，但是用作交流的话，解释起来要费很久）</li>
+<li>step3: 协方差矩阵（依旧好累）</li>
+<li>step4: 色彩化的协方差矩阵（恩，有点感觉了）</li>
+<li>图模型：变量为点，相关性较强的变量之间连上线，颜色代表正相关or负相关，连线的粗细颜色的深浅代表相关性的强弱    <ul>
+<li>step5: hard threshold 所生成的图模型</li>
+<li>step6: soft threshold 所生成的图模型</li>
+</ul>
+</li>
+</ul>
+<h4 id="视觉效果"><a href="#视觉效果" class="headerlink" title="视觉效果"></a>视觉效果</h4><h4 id="pairs"><a href="#pairs" class="headerlink" title="pairs"></a>pairs</h4><p>用pairs将高维数据，用「两两之间的相关性」代替「整体之间千丝万缕的相关性」，得到二维空间进行相关性表示。满世界都是红色&amp;噪音很多的情况下，找到具有比较清晰主要的变化曲线似乎有些奢求，而且变量之间的协同作用能因为均无法体现，但是，比较幸运的是，这只是第一步。</p>
+<p><img src="\img\in-post\7-08-PGM1\pairs.png" alt="pairs"></p>
+<hr>
+<h4 id="主成分分析"><a href="#主成分分析" class="headerlink" title="主成分分析"></a>主成分分析</h4><p>网上有很多讲主成分的文章，那我也就随意点吧，主成分现在越来越偏向于辅助算法的角色，就是说我要用其它算法前会先用下主成分看下通过「代数意义上的拉伸旋转」，数据集是否可以降维。</p>
+<p>其中心思想就是，找到高维空间中，数据波动最大的正交的<strong>方向们</strong>作为新的基向量。</p>
+<p>9个成绩变量若用两个主成分来表示，就是下图。但是图中的数据显示，第一主成分加上第二主成分，这两个维度上的波动就可以解释50%原先数据集的波动。</p>
+<ul>
+<li>第一主成分的系数都大于0，其可以看做一个学生成绩的加权平均，以这样的方式加权平均所得到的值，在解释学生之间的成绩差异上，可以起到大约35%的效果，35%略小，但是请注意，此时用的是1维的数据，而原先的数据维度，为9.</li>
+<li>第二主成分的系数开始出现负值，最大的负系数$\beta_{Analysis} = -0.46$，较大的正系数$\beta_{Economy} = 0.627, \beta_{English} = 0.67$. 能解释约15%原先数据中的波动，不过这里有个博弈：<ul>
+<li>一位同学的English和Economy成绩较好的话，其Analysis成绩一般不太好，在9维空间中，这两类课程数据的方向是相背离的，体现在第二主成分上就是系数之间的差异较大。</li>
+<li>（让我再尝试下能否更为直观些）主成分分析为了以最小的<strong>信息损失</strong>实现降维目的，所以希望原先差异较大的观测点（每个学生9门功课的的成绩）在新的基坐标下也能有最大的差异。原先的数据显示，English、Economy较好的学生其Analysis较差，第二主成分是这样体现这点的——如果一个学生Analysis成绩较高，那么在第二主成分上的值将会是一个<strong>较大的负数</strong>($\beta_{Analysis} &lt;0$)；如果一个同学的English成绩或者Economy成绩较高，那么此时它在第二主成分上的值会是一个<strong>较大的正数</strong>.</li>
+<li><strong>And it’s the difference.</strong></li>
+</ul>
+</li>
+</ul>
+<pre><code>
+#维度1与维度2的系数
+
+## Variables     Dim.1   Dim.2 
+## Algebra    |  0.792  | -0.092 
+## Analysis   |  0.653  | -0.463 
+## Proba      |  0.741  | -0.242 
+## Informatic |  0.529  | -0.281 
+## Economy    |  0.554  |  0.627 
+## Option1    |  0.742  | -0.016  
+## Option2    |  0.334  |  0.376 
+## English    |  0.276  |  0.670 
+## Sport      |  0.417  |  0.140  
+</code></pre>
+
+
+
+<p><img src="\img\in-post\7-08-PGM1\PCA1.png" alt="PCA1"><br><img src="\img\in-post\7-08-PGM1\PCA2.png" alt="PCA2"></p>
+<hr>
+<h4 id="协方差矩阵以及热力图表示"><a href="#协方差矩阵以及热力图表示" class="headerlink" title="协方差矩阵以及热力图表示"></a>协方差矩阵以及热力图表示</h4><p>协方差矩阵真的很不直观，而且同pairs图，其完全忽视了变量之间的条件相依。在这里就不列出了，在后面的代码中有，协方差矩阵为”C”.</p>
+<p>至于热力图，恩，它应该不叫这个，我随便取的名字。。。相较于协方差矩阵动辄5位小数，它还是比较友好的，但是，缺点同上。</p>
+<p><img src="\img\in-post\7-08-PGM1\matrix-plot.png" alt="matrix-plot"></p>
+<hr>
+<h4 id="漂亮的图-hard"><a href="#漂亮的图-hard" class="headerlink" title="漂亮的图(hard)"></a>漂亮的图(hard)</h4><blockquote>
+<p>从precision matrix谈起</p>
+</blockquote>
+<p><img src="\img\in-post\7-08-PGM1\precision-matrix.png" alt="precision-matrix"></p>
+<p>上述的协方差矩阵求逆后，各元素的值都很有内涵，上图是其热力图👆🏻.<br>关于precision matrix，趁着老师给我开的小灶还热乎👇，随便讲几点：</p>
+<p><img src="\img\in-post\7-08-PGM1\note.jpg" alt="note"></p>
+<ul>
+<li>左边的图的意思是，如果想要构建一个线性模型来描述一个学生概率论课的成绩Proba是如何被其英语成绩A&amp;统计成绩S所决定的</li>
+<li>数据-&gt;相关矩阵-&gt;相关矩阵的逆矩阵，如果逆矩阵中Proba与S的对应元素值为0，那么这就代表了在给定A的前提下，Proba与S是条件独立的</li>
+<li><p>表现在图中就是Proba在S与A张成的平面中的投影与A平行</p>
+</li>
+<li><p>那这是否说明$\alpha<em>{2} = 0$？其实不然，因为A与S不是正交垂直的，所以Proba在S方向上的投影非零，即$\alpha\</em>{2} \neq 0$</p>
+</li>
+<li>所以现在就有个一个很有意思的结论，在线性模型中各有作用的变量，在考虑了条件变量后，有的变量竟然对因变量无关，这种关系，或者说，这种全局性的关系——非两两考虑，对于模型的简洁度有非常大的帮助，我向来不喜欢数据冗余，所以很开心概率图模型的出现。</li>
+<li>在这种情况下，图成了比数更好的表示手段。</li>
+</ul>
+<blockquote>
+<p>将precision matrix中暗含条件独立表现在图中</p>
+</blockquote>
+<p>此时学生9门功课之间的相关性如下👇，不过下图可能有些过了（用的是hard-thresholding方法，即把precision matrix中小于0.2的值都变为0.</p>
+<p><img src="\img\in-post\7-08-PGM1\precision-hard.png" alt="precision-hard"></p>
+<p>以Analysis为例，上图的意思是，给定Proba和English课的成绩后，其余的课的成绩对Analysis成绩无影响——不相关。可以从线性模型的参数估计来辅助解读上述图模型得出的结果，挺一致的，关注最后一列，*代表这个变量的重要程度。</p>
+<pre><code>lin.mod &lt;- lm(Analysis~., data = deug$tab)
+summary(lin.mod)$coef
+</code></pre><p>为了更科学，再折腾一下，选定AIC模型衡量指标，在一系列的hard-thresholding中选定使得AIC最好的那一个，再去画此时的precision matrix带来的相关图。</p>
+<blockquote>
+<p>AIC-for-hard-thresholding</p>
+</blockquote>
+<p><img src="\img\in-post\7-08-PGM1\AIC-for-hard-threshold.png" alt="AIC-for-hard-threshold"></p>
+<blockquote>
+<p>best-hard-thresholding</p>
+</blockquote>
+<p><img src="\img\in-post\7-08-PGM1\best-hard-threshold.png" alt="best-hard-threshold"></p>
+<h4 id="漂亮的图-soft"><a href="#漂亮的图-soft" class="headerlink" title="漂亮的图(soft)"></a>漂亮的图(soft)</h4><p>上述hard-thresholding有些过于武断，所以，接下来得到的结果是基于加了惩罚项来约束系数非零个数的算法——glasso得到的，最优的$\lambda$是根据cv指标来选取的。</p>
+<p>直接上图看效果，细节部分请参照下文代码部分。</p>
+<p><img src="\img\in-post\7-08-PGM1\cv-for-soft-threshold.png" alt="cv-for-soft-threshold"></p>
+<h3 id="代码部分"><a href="#代码部分" class="headerlink" title="代码部分"></a>代码部分</h3><p>那接下来，就把代码放这里啦！来日方长，今天不早了就先睡咯！</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment"># step1: pairs</span></div><div class="line"><span class="keyword">library</span>(ade4)</div><div class="line">data(deug)</div><div class="line">pairs(deug$tab,pch=<span class="number">1</span>,col=<span class="string">"red"</span>)</div><div class="line"></div><div class="line"><span class="comment">#step2: 主成分分析</span></div><div class="line"><span class="keyword">library</span>(FactoMineR)</div><div class="line">pca = PCA(deug$tab)<span class="comment"># for dimentions 1 and 2</span></div><div class="line">plot(pca, axes = c(<span class="number">3</span>,<span class="number">4</span>), choix = <span class="string">"var"</span>) <span class="comment"># plot correlation circle for dimensions 3 and 4</span></div><div class="line"></div><div class="line"><span class="comment">#step3&amp;4: 协方差矩阵以及热力图表示</span></div><div class="line"></div><div class="line"><span class="keyword">library</span>(fields)</div><div class="line"></div><div class="line">plot.mat &lt;- <span class="keyword">function</span>(A,zr=<span class="literal">NULL</span>,col = tim.colors(<span class="number">64</span>),main=<span class="literal">NULL</span>)&#123;</div><div class="line">  par(mar=c(<span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">5</span>) + <span class="number">0.1</span>)</div><div class="line">  <span class="keyword">if</span> (is.null(zr)) &#123;zr = range(A)&#125;</div><div class="line">  n1 = dim(A)[<span class="number">1</span>]</div><div class="line">  ticks = seq(<span class="number">0</span>,<span class="number">1</span>,length.out=dim(A)[<span class="number">1</span>])</div><div class="line">  image(t(A)[,rev(<span class="number">1</span>:n1)],zlim = zr,axes=<span class="literal">FALSE</span>,col=col,main=main)</div><div class="line">  box(col=<span class="string">"black"</span>)</div><div class="line">  axis(<span class="number">1</span>,at=ticks,labels=<span class="literal">FALSE</span>)</div><div class="line">  text(ticks, par(<span class="string">"usr"</span>)[<span class="number">3</span>] - <span class="number">.12</span>, labels = colnames(C), srt = <span class="number">30</span>,</div><div class="line">       pos = <span class="number">2</span>, xpd = <span class="literal">TRUE</span>)</div><div class="line">  image.plot( legend.only=<span class="literal">TRUE</span>, zlim= zr,col=col)</div><div class="line">&#125;<span class="comment">#老师自己编的生成相关关系热力图的函数，我觉得配色有点奇怪。。。</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">#协方差矩阵C</span></div><div class="line"></div><div class="line">C = cor(deug$tab[,-<span class="number">9</span>]) <span class="comment">#without sport variable</span></div><div class="line">plot.mat(C)</div><div class="line"></div><div class="line">C.inv = solve(C) <span class="comment">#求逆矩阵 -&gt; precision matrix 这个矩阵就是概率图中的精髓了，mark~</span></div><div class="line"></div><div class="line">plot.mat(C.inv)</div><div class="line">title(<span class="string">"precision matrix"</span>)</div><div class="line"></div><div class="line"><span class="comment"># step5&amp;6：漂亮的图</span></div><div class="line"></div><div class="line"><span class="keyword">library</span>(qgraph)</div><div class="line">qgraph(C, labels=colnames(C)) <span class="comment"># 这是体现变量之间全部相关性的图，有些复杂，而且洞见少，冗余多</span></div><div class="line"></div><div class="line">T0 &lt;- C.inv</div><div class="line">T0[abs(C.inv)&lt;<span class="number">.2</span>] &lt;- <span class="number">0</span> <span class="comment">#这就是hard threshold的精髓~</span></div><div class="line">qgraph(wi2net(T0), labels = colnames(C))</div><div class="line"></div><div class="line"></div><div class="line">lin.mod &lt;- lm(Analysis~., data = deug$tab)<span class="comment">#可以从以下这个线性模型的参数估计来辅助解读上述图模型得出的结果，挺一致的，关注最后一列，*代表这个变量的重要程度。</span></div><div class="line">summary(lin.mod)$coef</div><div class="line"></div><div class="line"><span class="comment"># log likelihood </span></div><div class="line">S = cov(deug$tab[,-<span class="number">9</span>])</div><div class="line">ll &lt;- log(det(T0))-sum(diag(S%*%T0))</div><div class="line"></div><div class="line">d &lt;- dim(C.inv)[<span class="number">1</span>]</div><div class="line">s.seq &lt;- seq(<span class="number">.01</span>, <span class="number">.5</span>, by = <span class="number">.01</span>) <span class="comment">#thresholds</span></div><div class="line"></div><div class="line">AIC = <span class="literal">NULL</span></div><div class="line">cnt &lt;- <span class="number">0</span></div><div class="line"><span class="keyword">for</span> (s <span class="keyword">in</span> s.seq)&#123;</div><div class="line">  cnt = cnt+<span class="number">1</span></div><div class="line">  T0 = C.inv</div><div class="line">  T0[abs(C.inv) &lt; s] = <span class="number">0</span></div><div class="line">  k = d+(sum(abs(T0)&gt;<span class="number">0</span>) - d)/<span class="number">2</span> + d</div><div class="line">  ll = log(det(T0)) - sum(diag(S%*%T0))</div><div class="line">  AIC[cnt] = -<span class="number">2</span>*ll + <span class="number">2</span>*k</div><div class="line">&#125;</div><div class="line"></div><div class="line">plot(s.seq, AIC, pch = <span class="number">20</span>)</div><div class="line">s = s.seq[which.min(AIC)]</div><div class="line"></div><div class="line">T0 = C.inv</div><div class="line">T0[abs(C.inv) &lt; s] = <span class="number">0</span></div><div class="line">qgraph(wi2net(T0), labels = colnames(C))<span class="comment"># 红色代表负相关，绿色代表正相关</span></div><div class="line"></div><div class="line"></div><div class="line">mod.eco = lm(Economy~Algebra+Analysis+Proba+Informatic+Option1+Option2+English, data = deug$tab)</div><div class="line"></div><div class="line">summary(mod.eco)</div><div class="line">step(mod.eco) <span class="comment"># stepwise selection according to AIC criteria</span></div><div class="line"></div><div class="line">mod.opt2 = lm(Option2~Algebra+Analysis+Proba+Informatic+Option1+Economy+English, data = deug$tab)</div><div class="line"></div><div class="line">summary(mod.opt2)</div><div class="line">step(mod.opt2) <span class="comment"># stepwise selection according to AIC criteria# 以上是在不同的s，用AIC准则下去评价的结果# combine the outcome of linear model and precision matrix to predict t</span></div><div class="line"></div><div class="line"><span class="comment"># soft theresholding</span></div><div class="line"><span class="keyword">library</span>(glmnet)</div><div class="line"></div><div class="line">cv.eco &lt;- cv.glmnet(as.matrix(deug$tab[, -c(<span class="number">5</span>,<span class="number">9</span>)]), </div><div class="line">                    deug$tab[,<span class="number">5</span>]) <span class="comment"># find the regularization constant lambda</span></div><div class="line">glm.eco &lt;- glmnet(as.matrix(deug$tab[,-c(<span class="number">5</span>,<span class="number">9</span>)]),</div><div class="line">                  deug$tab[,<span class="number">5</span>],</div><div class="line">                  lambda = cv.eco$lambda.1se)</div><div class="line">glm.eco$beta</div><div class="line"></div><div class="line"></div><div class="line">cv.opt2 &lt;- cv.glmnet(as.matrix(deug$tab[, -c(<span class="number">8</span>,<span class="number">9</span>)]), </div><div class="line">                     deug$tab[,<span class="number">8</span>]) </div><div class="line">glm.opt2 &lt;- glmnet(as.matrix(deug$tab[,-c(<span class="number">9</span>,<span class="number">9</span>)]),</div><div class="line">                  deug$tab[,<span class="number">8</span>],</div><div class="line">                  lambda = cv.opt2$lambda.1se)</div><div class="line">glm.opt2$beta</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">library</span>(glasso)</div><div class="line">a &lt;- glasso(C,rho = <span class="number">.01</span>) <span class="comment">#a regularization constant(same as lambda)# rho等于0.1与0.01所得到的图大不相同</span></div><div class="line">qgraph(wi2net(a$wi), labels=colnames(C))</div></pre></td></tr></table></figure>
+<p>2016年7月9日<br>@Rennes 唉，这都快两点了 碎觉~</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Statistics/" rel="tag">#Statistics</a>
+          
+            <a href="/tags/R/" rel="tag">#R</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016-06-30-Rennes/" rel="next" title="Rennes——法国暑期学校小记">
+                <i class="fa fa-chevron-left"></i> Rennes——法国暑期学校小记
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016-07-30-First-Year-Graduate/" rel="prev" title="写在研一结束时——不焦虑">
+                写在研一结束时——不焦虑 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://oqk9k7f97.bkt.clouddn.com/header.jpg"
+               alt="Kathy" />
+          <p class="site-author-name" itemprop="name">Kathy</p>
+          <p class="site-description motion-element" itemprop="description">统计姑娘 | 漫威小粉 | 小黄人挚友</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/MissIslander" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/55447115/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/nothing-kathy" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              什么值得点😀
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://onebaiyi.github.io" title="岛主的博客" target="_blank">岛主的博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#正事"><span class="nav-number">1.</span> <span class="nav-text">正事</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分析初衷"><span class="nav-number">1.1.</span> <span class="nav-text">分析初衷</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#视觉效果"><span class="nav-number">1.2.</span> <span class="nav-text">视觉效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pairs"><span class="nav-number">1.3.</span> <span class="nav-text">pairs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#主成分分析"><span class="nav-number">1.4.</span> <span class="nav-text">主成分分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#协方差矩阵以及热力图表示"><span class="nav-number">1.5.</span> <span class="nav-text">协方差矩阵以及热力图表示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#漂亮的图-hard"><span class="nav-number">1.6.</span> <span class="nav-text">漂亮的图(hard)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#漂亮的图-soft"><span class="nav-number">1.7.</span> <span class="nav-text">漂亮的图(soft)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码部分"><span class="nav-number">2.</span> <span class="nav-text">代码部分</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kathy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'missislander';
+      var disqus_identifier = '2016-07-08-PGM-cor-plot/';
+      var disqus_title = "如何优雅地表示变量之间的相关性——从图开始";
+      var disqus_url = 'http://yoursite.com/2016-07-08-PGM-cor-plot/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>

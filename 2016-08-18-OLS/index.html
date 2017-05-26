@@ -1,0 +1,798 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Statistics,Notes," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="岛主夫人的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="这几日在家中看书，重温之前粗粗看过的统计学书籍，不过，闲适之余想到未来难免有点小忧愁，于是今早去了浙图，沾沾人气。这段时间一直有在做一些笔记，不过手中几本书多有重叠，我又是很喜欢「求其同」的人，所以这段时间就只憋出这一篇。 最小二乘是一个转折点——这么长时间里我们都对「多次测量取平均值」深信不疑，可是在它经得起历史的检验背后，究竟是什么在支撑着它？看到最后我们会发现，是误差的本质在支撑着它，而误差">
+<meta name="keywords" content="Statistics,Notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性模型的开端——最小二乘&amp;误差分布">
+<meta property="og:url" content="http://yoursite.com/2016-08-18-OLS/index.html">
+<meta property="og:site_name" content="岛主夫人的博客">
+<meta property="og:description" content="这几日在家中看书，重温之前粗粗看过的统计学书籍，不过，闲适之余想到未来难免有点小忧愁，于是今早去了浙图，沾沾人气。这段时间一直有在做一些笔记，不过手中几本书多有重叠，我又是很喜欢「求其同」的人，所以这段时间就只憋出这一篇。 最小二乘是一个转折点——这么长时间里我们都对「多次测量取平均值」深信不疑，可是在它经得起历史的检验背后，究竟是什么在支撑着它？看到最后我们会发现，是误差的本质在支撑着它，而误差">
+<meta property="og:image" content="http://obrxj270y.bkt.clouddn.com/chair-book.jpg">
+<meta property="og:image" content="http://obrxj270y.bkt.clouddn.com/Legendre.jpg">
+<meta property="og:image" content="http://obrxj270y.bkt.clouddn.com/Gauss.jpg">
+<meta property="og:updated_time" content="2016-08-18T14:39:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="线性模型的开端——最小二乘&amp;误差分布">
+<meta name="twitter:description" content="这几日在家中看书，重温之前粗粗看过的统计学书籍，不过，闲适之余想到未来难免有点小忧愁，于是今早去了浙图，沾沾人气。这段时间一直有在做一些笔记，不过手中几本书多有重叠，我又是很喜欢「求其同」的人，所以这段时间就只憋出这一篇。 最小二乘是一个转折点——这么长时间里我们都对「多次测量取平均值」深信不疑，可是在它经得起历史的检验背后，究竟是什么在支撑着它？看到最后我们会发现，是误差的本质在支撑着它，而误差">
+<meta name="twitter:image" content="http://obrxj270y.bkt.clouddn.com/chair-book.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6292665083919074000,
+      author: 'Kathy'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016-08-18-OLS/"/>
+
+  <title> 线性模型的开端——最小二乘&误差分布 | 岛主夫人的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+    <div class="site-meta-headline">
+      <a>
+        <img class="custom-logo-image" src="http://obrxj270y.bkt.clouddn.com/hold%20on.jpg"
+             alt="岛主夫人的博客"/>
+      </a>
+    </div>
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">岛主夫人的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">带点小追求过日子</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                线性模型的开端——最小二乘&误差分布
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-18T09:31:52+08:00" content="2016-08-18">
+              2016-08-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/偶遇新事物/" itemprop="url" rel="index">
+                    <span itemprop="name">偶遇新事物</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016-08-18-OLS/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016-08-18-OLS/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这几日在家中看书，重温之前粗粗看过的统计学书籍，不过，闲适之余想到未来难免有点小忧愁，于是今早去了浙图，沾沾人气。这段时间一直有在做一些笔记，不过手中几本书多有重叠，我又是很喜欢「求其同」的人，所以这段时间就只憋出这一篇。</p>
+<p>最小二乘是一个转折点——这么长时间里我们都对「多次测量取平均值」深信不疑，可是在它经得起历史的检验背后，究竟是什么在支撑着它？看到最后我们会发现，是误差的本质在支撑着它，而误差本质的另一种表现则是正态分布。</p>
+<p>注：以下笔记主要基于<a href="https://book.douban.com/subject/1522839/" target="_blank" rel="external">《数理统计学简史》</a>，一本豆瓣评分9.2的著作，感谢陈希孺老先生。</p>
+<center><br>    <img src="http://obrxj270y.bkt.clouddn.com/chair-book.jpg" width="300" high="300" title="wonderful time"><br></center>
+
+
+<a id="more"></a>
+<blockquote>
+<p>如果我们从理论的角度走一点极端，则可以说，一部数理统计学的历史，就是从纵横两个方向对<strong>算术平均</strong>进行不断的深入的研究的历史。纵的方向在与平均值本身。众多大数定律、棣莫弗-拉普拉斯中心极限定理、高斯正态误差理论。同时，也因平均值精度研究的需要引进了方差。从横的方向来看，是指有许多统计方法，看似与算术平均很不同，但从某种意义上看，是算术平均思想的发展。其中最重要的一项就是——最小二乘法。</p>
+</blockquote>
+<p>所谓的最小二乘法，就是使得<strong>误差平方和达到最小</strong>以寻求估计值的方法。因为最小二乘法得到的最小二乘估计是算术平均，而算数平均又是一个「久经沙场」的方法，所以我们对于最小二乘法的合理性也增添了信心。这种推断在逻辑上似乎有些站不住脚，但确实是启发思维的好方法。高斯捣鼓出误差密度函数靠的也是类似的「勇往直前」😉~</p>
+<p>最小二乘法之所以与统计学关系密切的原因在于——<strong>观测值有随机误差</strong>&amp;<strong>随机误差服从正态分布</strong>。因此，最小二乘与误差论紧密相联。有的学者把最小二乘法称为「十九世纪统计学的中心主题」。</p>
+<blockquote class="blockquote-center"><p>Legendre的贡献</p>
+</blockquote>
+<h2 id="Legendre贡献：最小二乘法崭露头角"><a href="#Legendre贡献：最小二乘法崭露头角" class="headerlink" title="Legendre贡献：最小二乘法崭露头角"></a>Legendre贡献：最小二乘法崭露头角</h2><center><br>    <img src="http://obrxj270y.bkt.clouddn.com/Legendre.jpg" width="300" high="300" title="Legendre~"><br></center>
+
+
+<p>其实在Legendre之前，应该也有类似的问题，不过他将此真正抽象出来，并且赋予这个问题以新的高度。</p>
+<p>Legendre在研究天文和测地学中的一些数据分析问题时，将问题抽象成如下表述：</p>
+<p>有若干我们想要估计其值的量$\theta_{i}, i=1,2,…,k$, 另外有若干个可以测量的量$x_{j}, j=0,1,2,…,k$. <strong>理论上</strong>，这些量之间有线性关系：</p>
+<p>$$x_0 + \sum_{i=1}^{k} x_{i} \theta_{i} = 0$$</p>
+<p>但是实际得到的数据中有如下<strong>两道屏障</strong>：</p>
+<ol>
+<li>测量$x_i$时产生的误差</li>
+<li>上述等式可能只是数学上的近似而非严格成立</li>
+</ol>
+<p>面对着这两道屏障，我们得到了n个方程，线性代数的知识告诉我们，如果$k=n$未知数的数量和方程个数相等，那么方程有唯一解。但是现实是，在$n&gt;k$的情况下，在上式并非严格成立的情况下，从n个方程中挑选k个方程有$\binom{n}{k}$中结果，所以，如何从这些结果中进行选择呢？</p>
+<p>在Legendre之前，有过下述尝试：在3个未知数，27个观测值的情况下，把27个观测值分成3组，将各组9个方程相加得到一个方程。此时就变成了3个未知数3个方程的情况。（同时还降低了求解的误差）</p>
+<p>上述问题的本质是「解线性矛盾方程组」，这实际上是一个实用性的数据处理问题，需要一点<code>新思维</code>，而整合n个方程得到与未知数个数一致的解离「新思维」还差很多。最后，Legendre提出了如下的角度去解决这个问题：<strong>考虑误差在各个方程间的分布，考虑误差在整体上的平衡，使得误差均匀地分布于各个方程。</strong>例如，求解$\theta$的原则是使得:<br>$$ \sum_{i = 1}^{n}(x_{0i} + \sum_{j=1}^{k} x_{ji}\theta_{j})^2 = min $$</p>
+<p>再过一阵子，这个式子的身影就会出现在误差的分布函数中。</p>
+<blockquote>
+<p>这个例子也启发了我们，在科研中的<strong>观念上的革新和突破</strong>是多么得不容易，一经点破，我们会感到事情理所当然，但在没有发现之前，许多 大学者努力了几十年也无功而返。——by 陈希孺</p>
+</blockquote>
+<p>最小二乘法也因其只涉及线性方程组计算效率高而应用广泛，因其有非常优良的统计推断性质（在正态误差的假定下，它有着较为完善的小样本理论）而被统计学家喜爱。不过，Legendre的工作没有涉及最小二乘方法误差分析的问题（即，误差的本质是什么？K·Pearson的观点我一直很欣赏，数据的本质是分布，只有分布才是真实的），高斯在1809年发表的正态误差理论将之补足。</p>
+<blockquote class="blockquote-center"><p>Gauss的贡献 </p>
+</blockquote>
+<h2 id="Gauss贡献1：Gauss-Markov定理"><a href="#Gauss贡献1：Gauss-Markov定理" class="headerlink" title="Gauss贡献1：Gauss-Markov定理"></a>Gauss贡献1：Gauss-Markov定理</h2><p>它被奉为最小二乘法理论中最重要的结果，它从统计学的角度肯定了最小二乘估计的合法性。在此之前，最小二乘估计只是一种算法（使得误差平方和最小），尽管它看上去合理且有计算简单的有点，但还是不足以回答它在缩小误差这个根本点上，究竟有何出众之处。</p>
+<p>这个定理说的是，线性模型$y_{i} = x_{i}’\beta + e_{i}$基于最小二乘方法得到的估计$\hat{\beta} = (XX’)^{-1}XY$是$\beta$的线性无偏估计，且参数的任一线性函数$c’\beta$的最小二乘估计$c’\hat{\beta}$也是无偏的。</p>
+<p>首先要感谢Laplace, 他注意到，在一维的情况下，模型$y_i = x_i \beta +e_i$两边乘以常数再将n个方程相加后可以得到$\beta$的无偏估计：</p>
+<p>$$\widetilde{\beta} \equiv \frac{\sum_{i=1}^{n}c_{i}y_{i}}{\sum_{i=1}^{n}c_{i}x_{i}} = \beta + \frac{\sum_{i=1}^{n}c_{i}e_{i}}{\sum_{i=1}^{n}c_{i}x_{i}} \equiv \beta + \xi_{n}$$</p>
+<p>进一步，为了得到最好的无偏估计，只需要$Var( \xi_{n})$尽可能小即可，注意到(施瓦茨不等式):</p>
+<p>$$Var(\xi_{i}) = \frac{\sigma^{2}\sum_{i=1}^{n}c_{i}^{2}}{(\sum_{i=i}^{n}c_{i}x_{i})^2} \ge \frac{\sigma^{2}\sum_{i=1}^{n}c_{i}^{2}}{(\sum_{i=i}^{n}c_{i}^{2} \sum_{i=i}^{n}x_{i}^{2})}$$</p>
+<p>当且仅当$c_{i}与x_{i}$相等时等号取到，即最小方差达到时有最小二乘估计：<br>$$ \widetilde { \beta} = \frac{\sum_{i=1}^{n}x_{i}y_{i}}{\sum_{i=1}^{n}x_{i}^{2}}$$</p>
+<h2 id="Gauss贡献2：误差与正态分布"><a href="#Gauss贡献2：误差与正态分布" class="headerlink" title="Gauss贡献2：误差与正态分布"></a>Gauss贡献2：误差与正态分布</h2><p>19世纪的统计学可以说是由正态分布所引导的，这源头是1908年Gauss提出的「正态误差理论」.Laplace在Gauss之前做了一些很有意义的工作，首先他提出的问题是：</p>
+<ul>
+<li>应该取怎样的分布为误差分布？</li>
+<li>在决定了误差分布后，如何根据未知量$\theta$的多次测量值$x_{1},…,x_n$去估计$\theta$</li>
+</ul>
+<p>关于前一个问题，LapLace从这样的假定出发进行推导：</p>
+<ul>
+<li>误差密度函数关于0对称</li>
+<li>在0的右边($x&gt;0$)，随着$x\rightarrow\infty$, $f(x)\rightarrow 0$</li>
+<li>在0的右边($x&gt;0$)，$-f’(x), f(x)$随着$x$的增加都逐渐下降，且保持恒定的比例——$-f’(x)=mf(x)$</li>
+</ul>
+<p>随着Laplace得到了一个「误差密度函数」：</p>
+<p>$$f(x) = \frac{m}{2}e^{-m|x|}, -\infty &lt; x &lt; \infty$$</p>
+<p>在此基础上，Laplace解决第二个问题的时候，Laplace提出的假定是：在估计值$\hat{\theta}$两边，$\theta$的概率是相同——估计值「比真实值大」与「比真实值小」是差不多的。</p>
+<p>但是在这个假定/条件下求解$\hat{\theta}$灰常困难！于是Gauss接棒😉</p>
+<center><br>    <img src="http://obrxj270y.bkt.clouddn.com/Gauss.jpg" width="300" high="300" title="Gauss~"><br></center>
+
+<p>他老人家灰常干脆：</p>
+<ol>
+<li>把使得式子$L(\theta) = L(\theta; X_{1}, … ,X_{n})$达到最大的$\hat{\theta}$作为$\theta$的估计值, 即$L(\hat{\theta})=max(L(\theta))$</li>
+<li>我先认定$\hat{\theta} = \bar{X}$，再去找满足这个条件的误差密度函数，发现之前Laplace提出的$-f’(x)=mf(x)$实际上是$-f’(x)=mxf(x)$, 然后解出$f(x)$是正态分布的去曲线</li>
+</ol>
+<p>然后神奇的事情发生就发生咯！<br>如果正态分布是误差密度函数，则n次观测产生误差$(e_{1}, e_{2},…,e_{n})$的概率为：<br>$$ (\sqrt{2\pi h})^{-n}exp{-\frac{1}{2h^{2}}\sum_{i=1}^{n}(x_{oi}+x_{1i}\theta_{1}+…+x_{ki}\theta_{k})^{2}}$$</p>
+<p>使得这个概率最大的真实参数$\theta$的估计值为$\hat{\theta}$，同时还使得如下表达式达到最小，而这个表达式就是，最小二乘中我们遇到的那个（灰常神奇~😀）:</p>
+<p>$$ \sum_{i = 1}^{n}(x_{0i} + \sum_{j=1}^{k} x_{ji}\theta_{j})^2 = min $$</p>
+<p>高斯说法中虽然明显有循环论证的感觉：算术平均是优良的，所以误差分布是正态分布；因为误差分布是正态分布，所以算术平均和最小二乘估计的优良性也可以保证。</p>
+<p>此时，Laplace接了一棒帮了Gauss兄一把：若误差可以看作许多量的叠加，则根据中心极限定理，误差理应有高斯分布。</p>
+<hr>
+<p>8月18日 @浙江图书馆</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Statistics/" rel="tag">#Statistics</a>
+          
+            <a href="/tags/Notes/" rel="tag">#Notes</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016-08-12-blog-rethink/" rel="next" title="搭建博客的一些小感悟(Jekyll&Hexo)">
+                <i class="fa fa-chevron-left"></i> 搭建博客的一些小感悟(Jekyll&Hexo)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016-08-18-something-is-wrong-with-mathjax/" rel="prev" title="Something is Wrong with Mathjax😱">
+                Something is Wrong with Mathjax😱 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://oqk9k7f97.bkt.clouddn.com/header.jpg"
+               alt="Kathy" />
+          <p class="site-author-name" itemprop="name">Kathy</p>
+          <p class="site-description motion-element" itemprop="description">统计姑娘 | 漫威小粉 | 小黄人挚友</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/MissIslander" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/55447115/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/nothing-kathy" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              什么值得点😀
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://onebaiyi.github.io" title="岛主的博客" target="_blank">岛主的博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Legendre贡献：最小二乘法崭露头角"><span class="nav-number">1.</span> <span class="nav-text">Legendre贡献：最小二乘法崭露头角</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gauss贡献1：Gauss-Markov定理"><span class="nav-number">2.</span> <span class="nav-text">Gauss贡献1：Gauss-Markov定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gauss贡献2：误差与正态分布"><span class="nav-number">3.</span> <span class="nav-text">Gauss贡献2：误差与正态分布</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kathy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'missislander';
+      var disqus_identifier = '2016-08-18-OLS/';
+      var disqus_title = "线性模型的开端——最小二乘&误差分布";
+      var disqus_url = 'http://yoursite.com/2016-08-18-OLS/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>

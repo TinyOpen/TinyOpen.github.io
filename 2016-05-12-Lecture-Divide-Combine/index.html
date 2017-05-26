@@ -1,0 +1,841 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Lecture,Statistics," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="岛主夫人的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="不想结束和岛主的聊天，然后问了个傻问题「博客里能不能写下听讲座的感想？」岛主说「当然可以啦~」 然后我就开始敲字，因为是第一篇，虽然心存敬畏有些忐忑，但是也因为是「第一篇」，所以能找到能多理由安慰自己「你还有很大的进步空间…」">
+<meta name="keywords" content="Lecture,Statistics">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从统计推断的角度看Divide &amp; Combine">
+<meta property="og:url" content="http://yoursite.com/2016-05-12-Lecture-Divide-Combine/index.html">
+<meta property="og:site_name" content="岛主夫人的博客">
+<meta property="og:description" content="不想结束和岛主的聊天，然后问了个傻问题「博客里能不能写下听讲座的感想？」岛主说「当然可以啦~」 然后我就开始敲字，因为是第一篇，虽然心存敬畏有些忐忑，但是也因为是「第一篇」，所以能找到能多理由安慰自己「你还有很大的进步空间…」">
+<meta property="og:image" content="http://yoursite.com/img/in-post/5-12-Combine-Divide/summer.jpg">
+<meta property="og:image" content="http://yoursite.com/img/in-post/5-12-Combine-Divide/Rennes.jpg">
+<meta property="og:updated_time" content="2016-08-13T15:11:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从统计推断的角度看Divide &amp; Combine">
+<meta name="twitter:description" content="不想结束和岛主的聊天，然后问了个傻问题「博客里能不能写下听讲座的感想？」岛主说「当然可以啦~」 然后我就开始敲字，因为是第一篇，虽然心存敬畏有些忐忑，但是也因为是「第一篇」，所以能找到能多理由安慰自己「你还有很大的进步空间…」">
+<meta name="twitter:image" content="http://yoursite.com/img/in-post/5-12-Combine-Divide/summer.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6292665083919074000,
+      author: 'Kathy'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016-05-12-Lecture-Divide-Combine/"/>
+
+  <title> 从统计推断的角度看Divide & Combine | 岛主夫人的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+    <div class="site-meta-headline">
+      <a>
+        <img class="custom-logo-image" src="http://obrxj270y.bkt.clouddn.com/hold%20on.jpg"
+             alt="岛主夫人的博客"/>
+      </a>
+    </div>
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">岛主夫人的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">带点小追求过日子</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                从统计推断的角度看Divide & Combine
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-12T00:00:00+08:00" content="2016-05-12">
+              2016-05-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/偶遇新事物/" itemprop="url" rel="index">
+                    <span itemprop="name">偶遇新事物</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016-05-12-Lecture-Divide-Combine/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016-05-12-Lecture-Divide-Combine/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>不想结束和岛主的聊天，然后问了个傻问题「博客里能不能写下听讲座的感想？」岛主说「当然可以啦~」</p>
+<p>然后我就开始敲字，因为是第一篇，虽然心存敬畏有些忐忑，但是也因为是「第一篇」，所以能找到能多理由安慰自己「你还有很大的进步空间…」</p>
+<a id="more"></a>
+<center><br>    <img src="/img/in-post/5-12-Combine-Divide/summer.jpg" title="很随意~" width="300" high="300"><br></center>
+
+<blockquote class="blockquote-center"><p> 那就写吧<br>我每次干正事前扯这么多有的没的真是太没效率了<br>(U •́ .̫ •̀ U)</p>
+</blockquote>
+<hr>
+<h3 id="讲座背景"><a href="#讲座背景" class="headerlink" title="讲座背景"></a>讲座背景</h3><p>这两天院里十几场讲座，恩，这是我听的第一场，看到白发苍苍的林正炎教授坐在第一排时，有些触动——「老教授研究了一辈子底层的概率极限理论，成就斐然，晚年竟然还愿意参与到新兴领域中重新享受学生的感觉。」</p>
+<p>林师宗在讲座的最后说了一句「你这个方向很好啊，思路也很好，我们统计的确应该帮助那些『广为使用的大数据处理方法』打打理论基础了。」</p>
+<p>这个广为使用的大数据处理方法就是Divide-Combine.</p>
+<h3 id="初识Divide-Combine的一点思考"><a href="#初识Divide-Combine的一点思考" class="headerlink" title="初识Divide-Combine的一点思考"></a>初识Divide-Combine的一点思考</h3><h4 id="小栗子"><a href="#小栗子" class="headerlink" title="小栗子"></a>小栗子</h4><blockquote>
+<p>让岛主夫人发挥她聪明的小脑袋为你举个简单的例子：</p>
+</blockquote>
+<p>不靠谱的男生追求女生时只想感动自己，于是选择「折10000只千纸鹤去表白」的方式。找了10个平常相处「很好」的女同学拜托她们每人折1000只，这个时候任务就被Divide成10份了，最后那个男生把折好的10份1000只Combine起来送给想追求的那个女生。</p>
+<p> 对于计算机思维的小伙伴而言，这件事就这么了了，反正已经得到了所需要的结果「10,000只千纸鹤」。但是统计学家捋了捋白胡子，他想知道「男生自己折10,000只千纸鹤去表白」与「男生利用通过Divide-Combine的手段得到10,000只千纸鹤去表白」，会影响女生最后决定嘛？</p>
+<h4 id="讲正事"><a href="#讲正事" class="headerlink" title="讲正事"></a>讲正事</h4><p>忽略这个例子的局限性，其实想关注的问题是——利用Full Data一次性得到的结论和利用Divide-Combine手段得到结论的「一样」嘛？</p>
+<blockquote>
+<p><strong>在非常简单的问题上</strong></p>
+</blockquote>
+<p>肯定是一样的，例如求和，1000个数字的总和</p>
+<ul>
+<li>分成10组</li>
+<li>每组求和得到$$sum<em>{1}, …, sum</em>{10}$$</li>
+<li>再求$$\sum<em>{i=1}^{10}sum</em>{i}$$</li>
+<li>结果肯定和$$\sum_{i=1}^{100}j$$一致</li>
+</ul>
+<blockquote>
+<p><strong>但是在更为复杂的问题上，难说</strong></p>
+</blockquote>
+<ol>
+<li>复杂到什么程度？非线性太不容易分析&amp;解释，那就先考虑最简单的广义线性模型中的回归分析问题。例如：把全部的数据分成k个数据集分别进行建模最后把模型整合得到一个预测模型A，与一次性利用全部的数据进行建模得到预测模型B。</li>
+<li><p>然后要定义的是「一样的标准是什么」，姑且把它放在统计学的框架中去讨论，从几个统计指标入手。</p>
+</li>
+<li><p>定义了标准后，可以思考二者得出的结果：</p>
+<ul>
+<li>A与B在实际预测中的表现是否一致？</li>
+<li>到底A好还是B好『并不是说A一定好，因为计算机暂时无法做到无限可能，所以在数据量很大的情况下处理Full Data的效果会让人很无语』</li>
+<li>在什么前提下，其差异是可接受的？</li>
+<li>在什么条件下，其差异可以趋于0？</li>
+</ul>
+</li>
+</ol>
+<h4 id="小总结"><a href="#小总结" class="headerlink" title="小总结"></a>小总结</h4><p>总结下上面说了什么：</p>
+<ol>
+<li>用一个不太靠谱的例子解释了一下Divide-Combine思想</li>
+<li>将其从机械的应用引申到更细致的思考中——真的可以这么做吗？</li>
+</ol>
+<hr>
+<h3 id="粗略地进入正题"><a href="#粗略地进入正题" class="headerlink" title="粗略地进入正题"></a>粗略地进入正题</h3><p>接下来讲点理论层面的</p>
+<p>ps：由于还没收到讲座幻灯片，有很多推导的细节还需要确认，这个主题很新也无法查阅参考文献，先粗略地写下。</p>
+<h4 id="讲座的主题"><a href="#讲座的主题" class="headerlink" title="讲座的主题"></a>讲座的主题</h4><p><strong>Method of divide-and-combine in regularized generalized linear models for Big Data</strong>——广义线性模型在处理大数据方面上的应用。</p>
+<p>计算机中被广泛应用的Divide-Combine的方法在统计框架下的表现如何。从统计角度如何考虑大数据？特别是在回归分析领域，可以从理论上对其进行支持嘛？</p>
+<p>Peter Song教授的一个博士生提出了一个新的方法，MODAC，Method of Divide and Combine（唉，统计学就是因为不会起名字而输在起跑线上）。这个方法获得理论上的支持——Large-Sample Properties 在分割总和后，其结果对Statistical Inference没有影响。</p>
+<p>即，计算机提出的思想，用统计的知识去证明其可以达到高inference。</p>
+<h4 id="背景1：The-Data-Mining-Pipeline"><a href="#背景1：The-Data-Mining-Pipeline" class="headerlink" title="背景1：The Data Mining Pipeline"></a>背景1：The Data Mining Pipeline</h4><ul>
+<li>20 Years Ago</li>
+<li>Now: 大的cluster 云端、多线程读取。</li>
+<li>所以现在统计的发展也要随着数据结构的变化而变化——数据的清理-整合-建模-机器学习-结果解释。</li>
+</ul>
+<h4 id="背景2：Big-Data-Challenge"><a href="#背景2：Big-Data-Challenge" class="headerlink" title="背景2：Big Data Challenge"></a>背景2：Big Data Challenge</h4><ul>
+<li>The data size is extraordinarily large</li>
+<li>Lack of general and scalable big data programming model and parallel processing frameword</li>
+<li>One main idea of great popularity is to divide and combine</li>
+</ul>
+<h4 id="背景3：Divide-and-Combine"><a href="#背景3：Divide-and-Combine" class="headerlink" title="背景3：Divide and Combine"></a>背景3：Divide and Combine</h4><ul>
+<li>distributed storage</li>
+<li>centralized storage with random partition</li>
+<li>GLM regression analysis</li>
+</ul>
+<h4 id="背景4：Meta-analysis"><a href="#背景4：Meta-analysis" class="headerlink" title="背景4：Meta-analysis"></a>背景4：Meta-analysis</h4><ul>
+<li>Meta-analysis has been used to combine results「这是统计学领域与Divide-Combine相类似的思想」</li>
+<li>在2004-2015年，共有55000篇与Meta-analysis 有关的文章被发表</li>
+</ul>
+<h3 id="MODAC，Method-of-Divide-and-Combine"><a href="#MODAC，Method-of-Divide-and-Combine" class="headerlink" title="MODAC，Method of Divide and Combine"></a>MODAC，Method of Divide and Combine</h3><h4 id="困境"><a href="#困境" class="headerlink" title="困境"></a>困境</h4><ol>
+<li><p>在$n=10,000, p=300, s<em>{0}=10$的情况下<br>meta在处理logistic 部分出了问题，非常非常大的$St. err. of A</em>{0}$</p>
+</li>
+<li><p>分成K组，$V_{k}$是极大似然估计的方差矩阵–&gt;Fisher信息矩阵，在求逆的过程中结果非常不稳定。</p>
+</li>
+<li><p>Regularization</p>
+<ul>
+<li>Chen and Xie</li>
+<li>模型在运用中产生了高Bias, 丧失了Inference的能力</li>
+</ul>
+</li>
+</ol>
+<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><ol>
+<li><p>在做Lasso的问题时，结果是bias estimators，所以接下来要做一些bias-correction。解决的方法是通过一个扰动项的逆来得到正态分布的结果</p>
+</li>
+<li><p>在解决遇到多重线性相关导致结果很不稳定时，解决的方法是引入岭回归的思想。</p>
+</li>
+</ol>
+<h4 id="修正后的结果（理论上）"><a href="#修正后的结果（理论上）" class="headerlink" title="修正后的结果（理论上）"></a>修正后的结果（理论上）</h4><ul>
+<li>相合性</li>
+<li>渐近正态性</li>
+<li><strong>分开得到的结果和全部一起处理得到的结果是一致的</strong></li>
+</ul>
+<h4 id="修正后的结果（Simulation）"><a href="#修正后的结果（Simulation）" class="headerlink" title="修正后的结果（Simulation）"></a>修正后的结果（Simulation）</h4><p>$n=10,000, K=20,  n<em>{k}=500, p=300, s</em>{0}=10$</p>
+<ul>
+<li>R包glmet中的lasso在处理Poisson时的效率太差</li>
+<li>Computing Time并不随数据量数据集的级数增长而有很大的变化，即scalable</li>
+<li>MSE Ratio</li>
+<li>Coverage Probability 置信区间是95% </li>
+</ul>
+<h3 id="引申思考"><a href="#引申思考" class="headerlink" title="引申思考"></a>引申思考</h3><ul>
+<li>coverage probability</li>
+<li>我们所提出的方法真对的饿是$n &gt; p$的情况，但是对于$p &gt;&gt; n$ 的数据，未知的比已知的多，如何去做推算呢？这个时候Peter Song教授说了一句『在哲学上是不可能的』，让我很惊叹。现在的权宜之计是，一个一个去做呢，不知道会出什么样的问题</li>
+<li>2015, Zheng D On Random Effect Meta Analysis</li>
+<li>进一步，除了linear regression外，classification可以吗？</li>
+</ul>
+<h3 id="最后偷个懒"><a href="#最后偷个懒" class="headerlink" title="最后偷个懒"></a>最后偷个懒</h3><p>以上写于2016年5月12日，期末阶段收到了讲座的幻灯片，恩，幻灯片上显示的结论是各种算法对于Logistical Regression的情况都不容乐观。不过这也很直观~毕竟二分。</p>
+<p>另外，Meta Analysis是个大坑，暂时没有时间去填。那这个事就先画上一个句号咯！</p>
+<center><br><br>    <img src="/img/in-post/5-12-Combine-Divide/Rennes.jpg" title="Rennes Pic" width="300" high="300"><br><br>岛主夫人, 2016年7月2日, Rennes<br><br></center>
+
+
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Lecture/" rel="tag">#Lecture</a>
+          
+            <a href="/tags/Statistics/" rel="tag">#Statistics</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/" rel="next" title="岛主夫人的博客开张咯！">
+                <i class="fa fa-chevron-left"></i> 岛主夫人的博客开张咯！
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016-06-05-hypotest/" rel="prev" title="数理统计复习笔记 假设检验">
+                数理统计复习笔记 假设检验 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://oqk9k7f97.bkt.clouddn.com/header.jpg"
+               alt="Kathy" />
+          <p class="site-author-name" itemprop="name">Kathy</p>
+          <p class="site-description motion-element" itemprop="description">统计姑娘 | 漫威小粉 | 小黄人挚友</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/MissIslander" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/55447115/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/nothing-kathy" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              什么值得点😀
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://onebaiyi.github.io" title="岛主的博客" target="_blank">岛主的博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#讲座背景"><span class="nav-number">1.</span> <span class="nav-text">讲座背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初识Divide-Combine的一点思考"><span class="nav-number">2.</span> <span class="nav-text">初识Divide-Combine的一点思考</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#小栗子"><span class="nav-number">2.1.</span> <span class="nav-text">小栗子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#讲正事"><span class="nav-number">2.2.</span> <span class="nav-text">讲正事</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#小总结"><span class="nav-number">2.3.</span> <span class="nav-text">小总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#粗略地进入正题"><span class="nav-number">3.</span> <span class="nav-text">粗略地进入正题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#讲座的主题"><span class="nav-number">3.1.</span> <span class="nav-text">讲座的主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#背景1：The-Data-Mining-Pipeline"><span class="nav-number">3.2.</span> <span class="nav-text">背景1：The Data Mining Pipeline</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#背景2：Big-Data-Challenge"><span class="nav-number">3.3.</span> <span class="nav-text">背景2：Big Data Challenge</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#背景3：Divide-and-Combine"><span class="nav-number">3.4.</span> <span class="nav-text">背景3：Divide and Combine</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#背景4：Meta-analysis"><span class="nav-number">3.5.</span> <span class="nav-text">背景4：Meta-analysis</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MODAC，Method-of-Divide-and-Combine"><span class="nav-number">4.</span> <span class="nav-text">MODAC，Method of Divide and Combine</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#困境"><span class="nav-number">4.1.</span> <span class="nav-text">困境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决方法"><span class="nav-number">4.2.</span> <span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修正后的结果（理论上）"><span class="nav-number">4.3.</span> <span class="nav-text">修正后的结果（理论上）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修正后的结果（Simulation）"><span class="nav-number">4.4.</span> <span class="nav-text">修正后的结果（Simulation）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引申思考"><span class="nav-number">5.</span> <span class="nav-text">引申思考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后偷个懒"><span class="nav-number">6.</span> <span class="nav-text">最后偷个懒</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kathy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'missislander';
+      var disqus_identifier = '2016-05-12-Lecture-Divide-Combine/';
+      var disqus_title = "从统计推断的角度看Divide & Combine";
+      var disqus_url = 'http://yoursite.com/2016-05-12-Lecture-Divide-Combine/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>

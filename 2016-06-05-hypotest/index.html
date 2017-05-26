@@ -1,0 +1,851 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Statistics," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="岛主夫人的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="在干正事前絮絮叨😉突然想到自己大三的时候，那时还住在本科院校一个四面环山的校区，突然想到一个事「我们单身的时候都会非常羡慕他人有陪伴，但是单身这种状态本身也是值得享受的呢，而且它持续的时间也不会很长，假设30岁结婚，最多也只有10年。」 比较幸运的是，我在自己单身的时候就明白了这一点，而且充分享受了一个人&amp;amp;无牵绊&amp;amp;宅宅的&amp;amp;简单纯粹&amp;amp;看似孤独实则轻松得想要偷笑的生活">
+<meta name="keywords" content="Statistics">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数理统计复习笔记 假设检验">
+<meta property="og:url" content="http://yoursite.com/2016-06-05-hypotest/index.html">
+<meta property="og:site_name" content="岛主夫人的博客">
+<meta property="og:description" content="在干正事前絮絮叨😉突然想到自己大三的时候，那时还住在本科院校一个四面环山的校区，突然想到一个事「我们单身的时候都会非常羡慕他人有陪伴，但是单身这种状态本身也是值得享受的呢，而且它持续的时间也不会很长，假设30岁结婚，最多也只有10年。」 比较幸运的是，我在自己单身的时候就明白了这一点，而且充分享受了一个人&amp;amp;无牵绊&amp;amp;宅宅的&amp;amp;简单纯粹&amp;amp;看似孤独实则轻松得想要偷笑的生活">
+<meta property="og:updated_time" content="2017-05-26T16:16:13.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数理统计复习笔记 假设检验">
+<meta name="twitter:description" content="在干正事前絮絮叨😉突然想到自己大三的时候，那时还住在本科院校一个四面环山的校区，突然想到一个事「我们单身的时候都会非常羡慕他人有陪伴，但是单身这种状态本身也是值得享受的呢，而且它持续的时间也不会很长，假设30岁结婚，最多也只有10年。」 比较幸运的是，我在自己单身的时候就明白了这一点，而且充分享受了一个人&amp;amp;无牵绊&amp;amp;宅宅的&amp;amp;简单纯粹&amp;amp;看似孤独实则轻松得想要偷笑的生活">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6292665083919074000,
+      author: 'Kathy'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016-06-05-hypotest/"/>
+
+  <title> 数理统计复习笔记 假设检验 | 岛主夫人的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+    <div class="site-meta-headline">
+      <a>
+        <img class="custom-logo-image" src="http://obrxj270y.bkt.clouddn.com/hold%20on.jpg"
+             alt="岛主夫人的博客"/>
+      </a>
+    </div>
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">岛主夫人的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">带点小追求过日子</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                数理统计复习笔记 假设检验
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-05T00:00:00+08:00" content="2016-06-05">
+              2016-06-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/数据科学实践/" itemprop="url" rel="index">
+                    <span itemprop="name">数据科学实践</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016-06-05-hypotest/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016-06-05-hypotest/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="在干正事前絮絮叨😉"><a href="#在干正事前絮絮叨😉" class="headerlink" title="在干正事前絮絮叨😉"></a>在干正事前絮絮叨😉</h2><p>突然想到自己大三的时候，那时还住在本科院校一个四面环山的校区，突然想到一个事「我们单身的时候都会非常羡慕他人有陪伴，但是单身这种状态本身也是值得享受的呢，而且它持续的时间也不会很长，假设30岁结婚，最多也只有10年。」</p>
+<p>比较幸运的是，我在自己单身的时候就明白了这一点，而且充分享受了一个人&amp;无牵绊&amp;宅宅的&amp;简单纯粹&amp;看似孤独实则轻松得想要偷笑的生活。</p>
+<p>面对考试前的二十天，虽然不可免俗地要和身边的人共同「抱怨期末考」，但是，如同我对待「一个人的日子」那般，我也会好好享受这段「一支笔&amp;一张纸」就是全部生产力的日子。</p>
+<a id="more"></a>
+<h2 id="写在最前面"><a href="#写在最前面" class="headerlink" title="写在最前面"></a>写在最前面</h2><p>Statistics很火，但是Mathematical Statistical一直以来都不温不火——太优雅门槛高变现不容易。<br>若心浮浮躁躁，想来也是学不下去的。<br>但是，在期末考试的大压力下，心有点浮躁的我，还是学下去啦~</p>
+<blockquote class="blockquote-center"><p>那么以下就是我的复习笔记了<br>纪念下这段时光</p>
+</blockquote>
+<h2 id="关于博客内容来源"><a href="#关于博客内容来源" class="headerlink" title="关于博客内容来源"></a>关于博客内容来源</h2><p>以下内容并非原创哦！整理自三本参考书：</p>
+<ul>
+<li><a href="https://book.douban.com/subject/4102672/" target="_blank" rel="external">《高等数理统计学》</a></li>
+<li><a href="https://book.douban.com/subject/1832818/" target="_blank" rel="external">《高等数理统计(第二版)》 </a></li>
+<li><a href="https://book.douban.com/subject/1522839/" target="_blank" rel="external">《数理统计学简史》</a></li>
+<li><a href="https://book.douban.com/subject/24316364/" target="_blank" rel="external">《统计学：从数据到结论》</a></li>
+</ul>
+<p>关于这三本参考书，难度或者说抽象程度，由高到低。</p>
+<ul>
+<li><a href="https://book.douban.com/subject/4102672/" target="_blank" rel="external">《高等数理统计学》》</a>是陈希孺前辈的著作，定位是「基于测度论的数理统计学基础教科书，主体是几种基本统计推断形式：点估计、区间估计、假设检验的理论与方法。」这本书中习题以及提示占了50%的篇幅，的确，基础学科若不以做题加深功底，就如同「入宝山而空返」。</li>
+<li><a href="https://book.douban.com/subject/1832818/" target="_blank" rel="external">《高等数理统计(第二版)》 </a>是陈希孺的学生们基于教学工作写就的，理论讲解和习题举例结合得比较好，通俗地讲就是比较简单，但是这个简单是相对于《高等数理统计学》而言的哦！</li>
+<li><a href="https://book.douban.com/subject/1522839/" target="_blank" rel="external">《数理统计学简史》</a>也是陈希孺为大众写的一本书，侧重的是统计学的艺术性，其强调人的见解和灵感的部分，这四本书中，唯有这一本阅读人数&gt;100，评分高于9.0, 看来广大豆友们还是偏爱自己能看懂的书（眨眼&amp;不置可否）</li>
+<li><a href="https://book.douban.com/subject/24316364/" target="_blank" rel="external">《统计学：从数据到结论》</a>是吴喜之老先生的著作，比较难能可贵的一点是这本书兼顾统计见解&amp;实用性——书中附有R的代码。看上去非常舒服：）</li>
+</ul>
+<hr>
+<h2 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h2><h3 id="从几个问题入手"><a href="#从几个问题入手" class="headerlink" title="从几个问题入手"></a>从几个问题入手</h3><p>常用的U检验、t检验、F检验都有足够的直观性和可信感。再往深处想：</p>
+<ul>
+<li>一个好的检验究竟「好」在哪里？</li>
+<li>对于给定的「好坏」标准，是否存在最优的检验方法？</li>
+<li>如果有，如何找到？</li>
+</ul>
+<h3 id="假设检验问题的基本概念"><a href="#假设检验问题的基本概念" class="headerlink" title="假设检验问题的基本概念"></a>假设检验问题的基本概念</h3><p>统计结构 $(X, B, P)$ </p>
+<p><strong>假设</strong>：原假设为 $H_{0}$ , 备择假设为$H_{1}$ ,都是 P 的非空子集，且不相交或者更广义地说，是可以用样本点——「我们的观测值」，来进行检验的「任何说法」。所以啊，样本点身兼两大重任——「参数估计」&amp;「假设检验」。</p>
+<p><strong>检验法则</strong> $\leftrightarrow$ 拒绝域 $\rightarrow$ 统计量：检验法则将样本空间划分为互不相交的两个可测集 $X=W \oplus \overline W$ ，当样本点 $x \in W$  时就拒绝原假设 $H_0$ 。</p>
+<p><strong>检验统计量</strong>：从另一个角度来看，确定拒绝域也就确定了检验法则，进一步，通常利用一个在$W$和 $\overline W$上表现得非常不一致的统计量来确定拒绝域。</p>
+<p><strong>势函数</strong>：样本观察值X落在拒绝域W中的概率，即：</p>
+<p>$g(\theta) = P_{\theta}(X \in W), \theta \in \Theta$ </p>
+<p>   其中:</p>
+<p>   第一类错误 $\alpha(\theta) = g(\theta), \theta \in \Theta_{0}$ </p>
+<p>   第二类错误 $\beta(\theta) = 1 - g(\theta), \theta \in \Theta_{1}$  </p>
+<p>   唉，忘了怎么写不属于的符号，就只能连式子都改一下了。所以，不同的检验法则会有不同的拒绝域，也就有不同的势函数，不同的犯第一类错误以及第二类错误的可能性</p>
+<p><strong>检验的水平</strong>$\alpha$：犯第一类错误概率小于$\alpha$</p>
+<p><strong>随机化检验</strong>：为了充分利用检验水平，引入随机化检验作为检验函数$\phi(x)$，此时势函数:</p>
+<p>$g(\theta) = P_{\theta}(X \in W)=E_{\theta}(\phi(x))$</p>
+<p><strong>最优势检验（Most Powerful Test，MPT）</strong>：在大家犯第一类错误的概率都小于$\alpha$的基础上，犯第二类错误最小的检验函数$\phi(x)$即为最优势检验</p>
+<blockquote>
+<p>从MPT到<strong>Uniformly Most Powerful Test——UMPT</strong></p>
+</blockquote>
+<p>MPT是在简单原假设Vs简单备择假设的情况下得出的，但是面对复合假设时，如何定义最优？能否找到最优呢？这个问题一下子变得有些复杂。且看之~</p>
+<p><strong>定义UMPT</strong> $\phi(x)$是水平为$\alpha$的检验，如果对于任意一个水平为$\alpha$的检验$\phi_{1}(x)$，都有$E_{\theta_1}[\phi(X)] &gt; E_{\theta_1}(\phi_{1}(X)),  \forall \theta_1 \in \Theta_1$，则$\phi(X)$就是水平为$\alpha$的UMPT.  (「一致性」表现在随着$ \theta_1 \in \Theta_1$不停地变换，「我」都是最好的哦！)</p>
+<p><strong>借由MPT得到UMPT</strong></p>
+<p>在一些特殊的情况下，可以通过MPT推导出UMPT。例如：当简单原假设对简单备择假设的检验问题的MPT不依赖于备择假设的具体数值，则可以适当扩大备择假设；当势函数是单调函数时，可以扩大<strong>原假设</strong>。BUT，但是在大部分情况下都无法将复杂假设还原到简单原假设.</p>
+<p><strong>单调似然比</strong>，概率密度族${p(x; \theta): \theta \in \Theta}$关于统计量$T(X)$有单调似然比$\lambda(x) = \frac{p(x;\theta_2)}{p(x;\theta_1)}, \theta_{2} &gt; \theta_1$</p>
+<p><strong>单参数指数族</strong>，$p(x; \theta) = c(\theta)*exp{Q(\theta)T(x)}\cdot h(x)$，常见的有二项分布族、Poisson分布族、有1参数已知的正态分布族</p>
+<p>从一致最优检验到<strong>一致最优势无偏检验 Uniformly Most Powerful Unbiased Test UMPUT</strong>，无偏检验满足：<br>    $E_{\theta}[\phi(X)] \leqslant \alpha, \forall \theta \in \Theta_{0}$<br>    $E_{\theta}[\phi(X)] \geqslant \alpha, \forall \theta \in \Theta_{1}$<br>    一致最优说的就是:<br>    $E_{\theta}[\phi(X)] \geqslant E_{\theta}[\phi’(X)] , \forall \theta \in \Theta_{1}$</p>
+<p>从UMPUT到<strong>相似检验</strong>，在$\Theta_{0}$和$\Theta_{1}$的公共边界上势函数相等的检验函数是边界相似检验。构造边界相似检验比构造无偏检验更方便（前者束缚更小），如果$\phi(x)$是边界相似检验中的UMPT，则$\phi(x)$是水平为$\alpha$的UMPUT</p>
+<h3 id="漂亮的定理证明"><a href="#漂亮的定理证明" class="headerlink" title="漂亮的定理证明"></a>漂亮的定理证明</h3><h4 id="随机化检验的优良性「充分性原则」"><a href="#随机化检验的优良性「充分性原则」" class="headerlink" title="随机化检验的优良性「充分性原则」"></a>随机化检验的优良性「充分性原则」</h4><p>检验函数$\Leftrightarrow$ 势函数。对于任何一个检验函数，存在一个只依赖于$\theta$的充分统计量$T(x)$的另一个检验函数$\varphi(t) = E[\phi(X)|T=t]$，与之等价。</p>
+<p> <code>证明非常漂亮:</code><br> $$E_{\theta}[\phi(T(X))] = E_{\theta}{E[\phi(X)|T]} = E_{\theta}[\varphi(T)]$$</p>
+<h4 id="Neyman-Pearson-基本引理"><a href="#Neyman-Pearson-基本引理" class="headerlink" title="Neyman-Pearson 基本引理"></a>Neyman-Pearson 基本引理</h4><p>ok，首先考虑简单原假设对简单备择假设，简而言之就是参数$\theta$到底是$\theta_0$呢？还是$\theta_1$？</p>
+<p>在这种最简单的情形下，N-P引理给出了非常漂亮的结果。</p>
+<blockquote>
+<p>MPT一定存在，且可以具体地构造出MPT的检验函数。</p>
+</blockquote>
+<p>原假设$\theta = \theta_0$<br>备择假设$\theta = \theta<em>1$<br>分别对应两个不同的概率测度$P\</em>{\theta_0}$与$P_{\theta_1}$</p>
+<p>证明思路：</p>
+<ul>
+<li>对于每个给定的检验水平，都存在一个具有<strong>特定形式</strong>的检验函数；</li>
+<li>由上述检验水平和<strong>特定形式</strong>确定的检验函数，其是MPT；</li>
+<li><p>如果一个检验函数是上述检验水平下的MPT，则其一定在「几乎处处」的意义下具有<strong>特定形式</strong>。</p>
+<p>这个特定形式就是：<br>$\phi(x) = 1, p(x;\theta_1) &gt; k * p(x; \theta_0)$<br>$\phi(x) = r, p(x;\theta_1) = k * p(x; \theta_0)$<br>$\phi(x) = 0, p(x;\theta_1) &lt; k * p(x; \theta_0)$</p>
+</li>
+</ul>
+<p><code>e.g. 依赖充分统计量的三个MPT检验函数</code></p>
+<h4 id="MPT的一个性质"><a href="#MPT的一个性质" class="headerlink" title="MPT的一个性质"></a>MPT的一个性质</h4><p>如果$\phi(x)$是水平为$\alpha$的最优势检验函数，则$E_{\theta_1}\phi(X) \geqslant \alpha$. 且，当$\alpha \in (0,1)$时，除了$p(x; \theta_1) = p(x; \theta_0) a.e. [\mu]$外，必有$E_{\theta_1}\phi(X) &gt; \alpha$.</p>
+<p>这个结论很显然呀~就是说，在「备择假设为真」时，拒绝原假设的的概率，肯定要大于原假设为真的情况下的拒绝概率。</p>
+<h4 id="过渡：-从「不能更简单」到「简单」"><a href="#过渡：-从「不能更简单」到「简单」" class="headerlink" title="过渡：   从「不能更简单」到「简单」"></a><strong>过渡：</strong>   从「不能更简单」到「简单」</h4><p>一般来说，对于复合假设的检验问题，MPT的$\phi(x)$依赖备择假设中的$\theta$值，此时，UMPT不一定存在。（恩，就是，凭啥有个东西对于所有变量都是最优的呢~？（眨下眼：）</p>
+<p>那么，什么情况下存在，什么情况下不存在呢？接下来，引入了<strong>单调似然比&amp;单参数指数型分布族</strong>后，我们可以讨论下以下几种情况(1&amp;2是单边假设检验问题，3-5为双边假设检验问题)：</p>
+<ul>
+<li>no.1 $H_{0}: \theta \leqslant \theta_0 \leftrightarrow H_{1}: \theta &gt;\theta_0$</li>
+<li>no.2 $H_{0}: \theta \geqslant \theta_0 \leftrightarrow H_{1}: \theta &lt;\theta_0$</li>
+<li>no.3 $H_{0}: \theta = \theta_0 \leftrightarrow H_{1}: \theta \neq \theta_0$</li>
+<li>no.4 $H_{0}: \theta_{1} \leqslant \theta \leqslant \theta_{2} \leftrightarrow H_{1}: \theta &lt;\theta_1 or  \theta &gt; \theta_{2}$</li>
+<li>no.5 $H_{0}: \theta  \leqslant \theta_{1}  or  \theta \geqslant \theta_{2} \leftrightarrow H_{1}: \theta_1 &lt; \theta &lt; \theta_{2}$</li>
+</ul>
+<h4 id="单调性的力量——单调似然比-统计量-势函数"><a href="#单调性的力量——单调似然比-统计量-势函数" class="headerlink" title="单调性的力量——单调似然比-统计量-势函数"></a>单调性的力量——单调似然比-统计量-势函数</h4><p>如果概率密度族${p(x;\theta): \theta \in \Theta \subseteq R}$关于$T(x)$具有非降的MLR，若$\psi(t)$是t的一个非降函数，则$E_{\theta}\psi (T(X))$是$\theta$的一个非降函数</p>
+<blockquote>
+<p>接下来的定理要证明的其实<strong>很直观</strong>——在概率密度族关于$T(x)$具有非降MLR时，如果考虑单边假设检验问题no.1，不应该在$T(x)$比较大的时候拒绝原假设嘛？</p>
+</blockquote>
+<h4 id="单边假设检验问题的UMPT"><a href="#单边假设检验问题的UMPT" class="headerlink" title="单边假设检验问题的UMPT"></a>单边假设检验问题的UMPT</h4><p>单参数概率密度族${p(x;\theta): \theta \in \Theta \subseteq R}$关于实值统计量$T(x)$具有非降MLR，则关于单边假设检验问题no.1 $H_{0}: \theta \leqslant \theta_0 \leftrightarrow H_{1}: \theta &gt;\theta_0$：</p>
+<ol>
+<li>存在水平为$\alpha$的UMPT的检验函数<br> $\phi(x) = 1, T(x) &gt; c$<br>  $\phi(x) = r, T(x) = c$<br> $\phi(x) = 0, T(x) &lt; c$<br>  其中常数r与c由$E<em>{\theta</em>{0}}\phi(T(x)) = \alpha$确定</li>
+<li>这个检验的势函数非降且在集合${\theta: 0&lt; g(\theta) &lt;1}$上严格增加</li>
+<li>在一切使得$E_{\theta_{0}}\phi(X) = \alpha$的检验函数中，由1确定的检验函数$\phi(T(x))$使得对任意的$\theta &lt; \theta_{0}$，$E_{\theta}\phi(X)$都达到最小。</li>
+</ol>
+<h4 id="用人话说复述以上三点："><a href="#用人话说复述以上三点：" class="headerlink" title="用人话说复述以上三点："></a>用人话说复述以上三点：</h4><p><code>第一点「真的存在UMPT呢，我就是，我长这样」</code><br><code>第二点「长这样的我，随着参数的变大，我会越来越严厉的，一不开心呢就把原假设拒绝了哦」</code><br><code>我最喜欢这些定理的第三点，很傲娇哦「没错，在单调性的帮助下，落在原假设的参数们，如果你们是真的，我犯错的可能性最小哦！所向披靡！」</code></p>
+<p>有没有觉得很熟悉，在简单假设vs简单假设时，MPT长这样哦！在我们引入MLR后，就可以同统计量来代替单调似然比了，也更方便操作，更能借鉴统计量中蕴含的智慧：）</p>
+<p> $\phi(x) = 1, p(x;\theta_1) &gt; k * p(x; \theta_0)$<br> $\phi(x) = r, p(x;\theta_1) = k * p(x; \theta_0)$<br> $\phi(x) = 0, p(x;\theta_1) &lt; k * p(x; \theta_0)$</p>
+<h4 id="过渡-：终于从单边假设到了双边假设了"><a href="#过渡-：终于从单边假设到了双边假设了" class="headerlink" title="过渡 ：终于从单边假设到了双边假设了"></a>过渡 ：终于从单边假设到了双边假设了</h4><p>双边假设检验问题no.5 $H_{0}: \theta  \leqslant \theta_{1}  or  \theta \geqslant \theta_{2} \leftrightarrow H_{1}: \theta_1 &lt; \theta &lt; \theta_{2}$的UMPT是存在的，但是no.3&amp;no.4都是不存在的。<br>一个一个来，先解决no.5的存在性问题吧：）</p>
+<h4 id="N-P基本引理的推广（一）"><a href="#N-P基本引理的推广（一）" class="headerlink" title="N-P基本引理的推广（一）"></a>N-P基本引理的推广（一）</h4><p> $k_1 … k_m$, 且其非负<br> $\alpha_{1} … \alpha_m$<br> $p_1 … p_m$</p>
+<p>设$\mu$是可测空间$X, B$上的测度，$p_{0}, p_{1}, …, p_{m}$为该测度空间上$m+1$个实可测且$\mu$可积的函数. $\alpha_{1}, \alpha_{m}$为给定的m个实常数，如果存在检验函数$\phi(x)$满足以下两个条件：</p>
+<ol>
+<li><p>有m个非负常数$k_{1},\ldots,k_{m}$使得</p>
+<p> $\phi(x)=1, p_{0}(x) &gt; \sum_{i=1}^{m}k_{i}*p_{i}(x)$<br> $\phi(x)=0, p_{0}(x) &lt; \sum_{i=1}^{m}k_{i}*p_{i}(x)$</p>
+</li>
+<li><p>$\int\phi(x)*p_{i}(x)d\mu(x) =\alpha_{i}$</p>
+<p> 则对任意满足下式的检验函数<br> $$\phi’(x)$, $\int\phi’(x)*p_{i}(x)d\mu(x) \leqslant\alpha_{i}, i=1,\ldots,m$$<br> 都有<br> $$\int\phi(x)*p_{0}(x)d\mu(x) \geqslant\int\phi’(x)*p_{i}(x)d\mu(x)$$</p>
+</li>
+</ol>
+<h4 id="闲聊两句"><a href="#闲聊两句" class="headerlink" title="闲聊两句"></a><code>闲聊两句</code></h4><p>N-P基本引理和N-P基本引理的推广，实际上主要的思想都一样「犯第一类错误的概率小于$\alpha$的情况下，存在最好的检验函数——犯第二类的错误最小，它有特定的形式，特定形式的参数是在下述条件时得出的——充分利用了我们对于第一类错误的『包容度』，即势函数等于给定的$\alpha$. </p>
+<p>引理的推广，可以看做，我们有不止一个原假设，对于每个原假设的参数$\theta_{i}$，我们有不同的第一类错误的包容度$\alpha_{i}$，然后我们希望检验函数犯第二类错误的概率最小，即当参数的真实值为$p_{0}$时，我们会雄赳赳气昂昂地拒绝原假设，其最优性就表现在<br>$$\int\phi(x)*p_{0}(x)d\mu(x) \geqslant\int\phi’(x)*p_{i}(x)d\mu(x)$$</p>
+<p>真是喜欢这样的质朴纯粹的结论啊:</p>
+<ul>
+<li>「最好的，就是长这样的，你只要解几个参数就可以啦」</li>
+<li>「长这样的，就是最好的，与其它表现最好的，差异可忽略不计」</li>
+</ul>
+<h4 id="单参数指数型分布族的双边假设检验问题（一）"><a href="#单参数指数型分布族的双边假设检验问题（一）" class="headerlink" title="单参数指数型分布族的双边假设检验问题（一）"></a>单参数指数型分布族的双边假设检验问题（一）</h4><p>设样本服从单参数指数族分布，其中$\theta$为实参数，$Q(\theta)$是严增函数，则关于双边假设检验问题no.5-  no.5 $H_{0}: \theta  \leqslant \theta_{1}  or  \theta \geqslant \theta_{2} \leftrightarrow H_{1}: \theta_1 &lt; \theta &lt; \theta_{2}$, 存在水平为$\alpha$的UMPT，其检验函数仅依赖于充分统计量$T(x)$，形如：</p>
+<p> $\phi(x) = 1, c_{1}&lt; T(x) &lt; c_{2}$<br> $\phi(x) = r_i, T(x) = c_{i}, i=1, 2$<br> $\phi(x) = 0, T(x) &lt; c_{1} or T(x) &gt; c_{2}$</p>
+<p>其中常数$r_i$与$c_{i}$由$E<em>{\theta\</em>{i}}\phi(T(x)) = \alpha$确定</p>
+<h4 id="证明要点"><a href="#证明要点" class="headerlink" title="证明要点"></a><code>证明要点</code></h4><p>从N-P基本引理的推广（一）到单指数型分布族的双边假设检验问题的推论，结果的差异只在于用$T(x)$代替$p_{i}(x)$，这一步的转换与讨论需要借助单参数指数型分布族一个非常好的性质「指数型分布族的充分统计量还是单参数指数型分布族」，况且，我们还有$Q(x)$的单调性呢~</p>
+<h4 id="过渡"><a href="#过渡" class="headerlink" title="过渡"></a>过渡</h4><p>N-P基本引理的推广（一）帮助我们解决了no.5$H_{0}: \theta  \leqslant \theta_{1}  or  \theta \geqslant \theta_{2} \leftrightarrow H_{1}: \theta_1 &lt; \theta &lt; \theta_{2}$，为了解决双边假设检验no.3和no.4（备择假设区间不连续）</p>
+<p>我们需要把N-P再推广一下，N-P基本引理的推广（二）与（一）的不同在于常数$k_1, \ldots,k_m$可以取为负数。同时，我们降低一下要求，从寻找「一致最优检验」降低到「一致最优无偏检验」</p>
+<h4 id="单参数指数型分布族的双边假设检验问题（二）"><a href="#单参数指数型分布族的双边假设检验问题（二）" class="headerlink" title="单参数指数型分布族的双边假设检验问题（二）"></a>单参数指数型分布族的双边假设检验问题（二）</h4><h4 id="待解决的问题1："><a href="#待解决的问题1：" class="headerlink" title="待解决的问题1："></a>待解决的问题1：</h4><p>no.3 $H_{0}: \theta = \theta_0 \leftrightarrow H_{1}: \theta \neq \theta_0$</p>
+<p>嗯~这里有个小定理：<br>设样本服从单参数指数族分布，其中$\theta$为实参数，$Q(\theta)$是严增函数。关于no.3的双边假设检验问题，存在水平为$\alpha$的UMPUT，其检验函数为：</p>
+<p> $\phi(x) = 1, T(x) &lt; c_{1} or T(x) &gt; c_{2}$<br> $\phi(x) = r, T(x) = c_{i}, i=1, 2$<br> $\phi(x) = 0, c_{1}&lt; T(x) &lt; c_{2}$</p>
+<p>其中常数$r<em>i$与$c</em>{i}$由以下两个式子确定：</p>
+<p>$E_{\theta_{0}}\phi(T(X)) = \alpha$<br>$E_{\theta_{0}}[T(X)\phi(T(X)) = \alpha*E_{\theta_{0}} T(X)$</p>
+<h4 id="待解决的问题2："><a href="#待解决的问题2：" class="headerlink" title="待解决的问题2："></a>待解决的问题2：</h4><p>no.4 $H_{0}: \theta_{1} \leqslant \theta \leqslant \theta_{2} \leftrightarrow H_{1}: \theta &lt;\theta_1 or  \theta &gt; \theta_{2}$</p>
+<h4 id="嘿-这里还有个小定理："><a href="#嘿-这里还有个小定理：" class="headerlink" title="嘿~这里还有个小定理："></a>嘿~这里还有个小定理：</h4><p>设样本服从单参数指数族分布，其中$\theta$为实参数，$Q(\theta)$是严增函数。关于no.4的双边假设检验问题，存在水平为$\alpha$的UMPUT，其检验函数为：</p>
+<p> $\phi(x) = 1, T(x) &lt; c_{1} or T(x) &gt; c_{2}$<br> $\phi(x) = r_i, T(x) = c_{i}, i=1, 2$<br> $\phi(x) = 0, c_{1}&lt; T(x) &lt; c_{2}$</p>
+<p>其中常数$r_i$与$c_{i}$由$E_{\theta_{i}}\phi(T(X)) = \alpha$确定</p>
+<blockquote>
+<p>在周六的早晨，绕着西湖跑了久违的5km后，回到宿舍把继续写了写复习笔记，感觉很好呢～<br>但是，假设检验内容也太多了（委屈一秒钟）</p>
+<p>以上 2016.06.04</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Statistics/" rel="tag">#Statistics</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016-05-12-Lecture-Divide-Combine/" rel="next" title="从统计推断的角度看Divide & Combine">
+                <i class="fa fa-chevron-left"></i> 从统计推断的角度看Divide & Combine
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016-06-10-statlear-KNN/" rel="prev" title="长得朴素但是很有效率的K-NN">
+                长得朴素但是很有效率的K-NN <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://oqk9k7f97.bkt.clouddn.com/header.jpg"
+               alt="Kathy" />
+          <p class="site-author-name" itemprop="name">Kathy</p>
+          <p class="site-description motion-element" itemprop="description">统计姑娘 | 漫威小粉 | 小黄人挚友</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/MissIslander" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/55447115/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/nothing-kathy" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              什么值得点😀
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://onebaiyi.github.io" title="岛主的博客" target="_blank">岛主的博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#在干正事前絮絮叨😉"><span class="nav-number">1.</span> <span class="nav-text">在干正事前絮絮叨😉</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写在最前面"><span class="nav-number">2.</span> <span class="nav-text">写在最前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于博客内容来源"><span class="nav-number">3.</span> <span class="nav-text">关于博客内容来源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#假设检验"><span class="nav-number">4.</span> <span class="nav-text">假设检验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#从几个问题入手"><span class="nav-number">4.1.</span> <span class="nav-text">从几个问题入手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#假设检验问题的基本概念"><span class="nav-number">4.2.</span> <span class="nav-text">假设检验问题的基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#漂亮的定理证明"><span class="nav-number">4.3.</span> <span class="nav-text">漂亮的定理证明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#随机化检验的优良性「充分性原则」"><span class="nav-number">4.3.1.</span> <span class="nav-text">随机化检验的优良性「充分性原则」</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Neyman-Pearson-基本引理"><span class="nav-number">4.3.2.</span> <span class="nav-text">Neyman-Pearson 基本引理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MPT的一个性质"><span class="nav-number">4.3.3.</span> <span class="nav-text">MPT的一个性质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过渡：-从「不能更简单」到「简单」"><span class="nav-number">4.3.4.</span> <span class="nav-text">过渡：   从「不能更简单」到「简单」</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单调性的力量——单调似然比-统计量-势函数"><span class="nav-number">4.3.5.</span> <span class="nav-text">单调性的力量——单调似然比-统计量-势函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单边假设检验问题的UMPT"><span class="nav-number">4.3.6.</span> <span class="nav-text">单边假设检验问题的UMPT</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用人话说复述以上三点："><span class="nav-number">4.3.7.</span> <span class="nav-text">用人话说复述以上三点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过渡-：终于从单边假设到了双边假设了"><span class="nav-number">4.3.8.</span> <span class="nav-text">过渡 ：终于从单边假设到了双边假设了</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#N-P基本引理的推广（一）"><span class="nav-number">4.3.9.</span> <span class="nav-text">N-P基本引理的推广（一）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#闲聊两句"><span class="nav-number">4.3.10.</span> <span class="nav-text">闲聊两句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单参数指数型分布族的双边假设检验问题（一）"><span class="nav-number">4.3.11.</span> <span class="nav-text">单参数指数型分布族的双边假设检验问题（一）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#证明要点"><span class="nav-number">4.3.12.</span> <span class="nav-text">证明要点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过渡"><span class="nav-number">4.3.13.</span> <span class="nav-text">过渡</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单参数指数型分布族的双边假设检验问题（二）"><span class="nav-number">4.3.14.</span> <span class="nav-text">单参数指数型分布族的双边假设检验问题（二）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#待解决的问题1："><span class="nav-number">4.3.15.</span> <span class="nav-text">待解决的问题1：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#待解决的问题2："><span class="nav-number">4.3.16.</span> <span class="nav-text">待解决的问题2：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#嘿-这里还有个小定理："><span class="nav-number">4.3.17.</span> <span class="nav-text">嘿~这里还有个小定理：</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kathy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'missislander';
+      var disqus_identifier = '2016-06-05-hypotest/';
+      var disqus_title = "数理统计复习笔记 假设检验";
+      var disqus_url = 'http://yoursite.com/2016-06-05-hypotest/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,868 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="岛主夫人,统计" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="岛主夫人的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="用Jekyll时掉进坑去好多次；用Hexo时少了些。这两次，好事多磨，也学到一点东西，在这里记录下~ 同时，趁此开始我的「爬出坑后写清单」系列。 这要感谢岛主，他不经意间提起过，做事还是要有清单意识，我觉得非常有道理。例如：上手一个不熟悉的事物——搭建博客时如何应对错误。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建博客的一些小感悟(Jekyll&amp;Hexo)">
+<meta property="og:url" content="http://yoursite.com/2016-08-12-blog-rethink/index.html">
+<meta property="og:site_name" content="岛主夫人的博客">
+<meta property="og:description" content="用Jekyll时掉进坑去好多次；用Hexo时少了些。这两次，好事多磨，也学到一点东西，在这里记录下~ 同时，趁此开始我的「爬出坑后写清单」系列。 这要感谢岛主，他不经意间提起过，做事还是要有清单意识，我觉得非常有道理。例如：上手一个不熟悉的事物——搭建博客时如何应对错误。">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/005BXWnJgw1f509pimq6ej30dw0e83z9.jpg">
+<meta property="og:image" content="http://obrxj270y.bkt.clouddn.com/leave%20footprint.jpg">
+<meta property="og:image" content="http://obrxj270y.bkt.clouddn.com/overthink.jpg">
+<meta property="og:image" content="http://obrxj270y.bkt.clouddn.com/hold%20on.jpg">
+<meta property="og:updated_time" content="2016-09-01T12:42:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="搭建博客的一些小感悟(Jekyll&amp;Hexo)">
+<meta name="twitter:description" content="用Jekyll时掉进坑去好多次；用Hexo时少了些。这两次，好事多磨，也学到一点东西，在这里记录下~ 同时，趁此开始我的「爬出坑后写清单」系列。 这要感谢岛主，他不经意间提起过，做事还是要有清单意识，我觉得非常有道理。例如：上手一个不熟悉的事物——搭建博客时如何应对错误。">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/005BXWnJgw1f509pimq6ej30dw0e83z9.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6292665083919074000,
+      author: 'Kathy'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016-08-12-blog-rethink/"/>
+
+  <title> 搭建博客的一些小感悟(Jekyll&Hexo) | 岛主夫人的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+    <div class="site-meta-headline">
+      <a>
+        <img class="custom-logo-image" src="http://obrxj270y.bkt.clouddn.com/hold%20on.jpg"
+             alt="岛主夫人的博客"/>
+      </a>
+    </div>
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">岛主夫人的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">带点小追求过日子</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                搭建博客的一些小感悟(Jekyll&Hexo)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-12T00:00:00+08:00" content="2016-08-12">
+              2016-08-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/爬出坑后写清单/" itemprop="url" rel="index">
+                    <span itemprop="name">爬出坑后写清单</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016-08-12-blog-rethink/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016-08-12-blog-rethink/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>用Jekyll时掉进坑去好多次；用Hexo时少了些。这两次，好事多磨，也学到一点东西，在这里记录下~</p>
+<p>同时，趁此开始我的「爬出坑后写清单」系列。</p>
+<p>这要感谢岛主，他不经意间提起过，做事还是要有清单意识，我觉得非常有道理。例如：上手一个不熟悉的事物——<strong>搭建博客</strong>时如何应对错误。</p>
+<a id="more"></a>
+<p>这篇文章分为三块：</p>
+<ul>
+<li>清单of上手一个不熟悉的事物时如何应对错误</li>
+<li>用Hexo搭建博客的感悟(2016.08)</li>
+<li>用Jekyll搭建博客的感悟（2016.06）</li>
+</ul>
+<h2 id="清单-上手一个不熟悉的事物时如何应对错误"><a href="#清单-上手一个不熟悉的事物时如何应对错误" class="headerlink" title="清单: 上手一个不熟悉的事物时如何应对错误"></a>清单: 上手一个不熟悉的事物时如何应对错误</h2><center><br>    <img src="http://ww4.sinaimg.cn/large/005BXWnJgw1f509pimq6ej30dw0e83z9.jpg" width="300" high="300"><br></center>
+
+<p>先问自己几个问题：</p>
+<ul>
+<li>这件事后效如何？如果持续地对你有影响，那么一开始对其多多了解肯定没有错。</li>
+<li>前期资料收集得如何？资料的共通处是哪些？合上资料后你对其了解还剩多少？<br>  1.从经验撰写人的文笔推断其靠谱程度作第一步筛选；<br>  2.用纸和笔做些笔记，而非网页一个个全打开，关键的网页收藏在临时的一个文件夹中；<br>  3.如果这件事很重要，至少花15分钟吧~</li>
+<li>网速怎么样？如遇到下载相关的任务，请保证网速，这样在后期遇到问题时，网络问题即可排除。</li>
+</ul>
+<p>遇到报错：</p>
+<ul>
+<li>错误的源头在哪里？是哪个组件/步骤出错？</li>
+<li>如何应对？</li>
+</ul>
+<p>然而事实是，面对着不是很熟悉的事物，上述问题很难回答。比较有可行性的应对措施是：</p>
+<ul>
+<li>要一直记得：我本来想干什么？我的目的是什么？</li>
+<li>自问：我已经做了什么？<br>  我已经做了哪些工作，这些工作能确保没问题嘛？如果不能，再确认下。至于如何确认，比如说可以先实现一个小案例。</li>
+<li>收集信息：<br>  搜索错误提示得到相关网页，依旧不能只开着网页，列出「出错的原因，根据可能性从高到低排列」，并保存网页至临时文件夹，同时尽量看懂应对措施的原理。<br>  这个过程中，除非找到「就是这个原因啦~」的解答，否则不能贸然行动，因为贸然行动容易造成新问题，非常惨。至少10分钟吧~</li>
+<li>尝试解决问题：<br>  如果问题未解决&amp;还是原先的问题，那么更新笔记，排除这个原因。<br>  如果问题未解决&amp;有了新的问题，此时停下来，细细想下再行动，可以针对新问题再重复之前的思考。</li>
+</ul>
+<blockquote>
+<p>总的原则是</p>
+</blockquote>
+<ul>
+<li>带着做实验的思想，有效率地处理错误，同时做好笔记。</li>
+<li>如果能对网上给出的解决方法的原理有所了解再行动，那是再好不过了。</li>
+<li>心态：<br>  不抱侥幸心理，连问题都不知道就想解决，基本是不可能的~<br>  多学点总是好的——做不到五分钟搭建好Hexo博客也没关系，至少对Github又熟悉了一些</li>
+</ul>
+<hr>
+<h2 id="Hexo后的感悟-2016-08"><a href="#Hexo后的感悟-2016-08" class="headerlink" title="Hexo后的感悟(2016.08)"></a>Hexo后的感悟(2016.08)</h2><p>刚换了博客的模板，比上次稍微轻松些，谢谢Hexo的开发者。</p>
+<p>之前用Jekyll搭建过一个博客，捣鼓好久，遇到各种坑，在坑内兜兜转转时经常对自己哑然失笑——你日子怎么过得这么苦，后来，也写了一篇搭建感言，觉得挺有纪念意义的，就还是放在这里。后来由于半路出家（直接拷贝他人的模板），我对底层的设计也没有了解的欲望（或者说能力🙂）。正好岛主也开了博客，我觉得他挑选的主题非常漂亮，所以我也夫唱妇随地换了😋。</p>
+<blockquote class="blockquote-center"><p>不过这一次，我又掉进坑里了.</p>
+</blockquote>
+<p>在这里稍微说一下。</p>
+<p>我用的是苹果系统，钥匙串中保存了很早以前一个Github帐号的信息。hexo同步本地文件至github上时是默认采取的是老帐号的信息，老帐号自然没有git push的权限，所以就有了如下的报错：</p>
+<pre><code>remote: Permission to MissIslander/MissIslander.github.io.git denied to KathyKim.
+# KathyKim是之前Github帐号名
+</code></pre><p>解决方法很简单，<a href="https://stackoverflow.com/questions/5335197/gits-famous-error-permission-to-git-denied-to-user/31005094#31005094" target="_blank" rel="external">在这里</a>。</p>
+<p>解决后，我很感慨「不知道问题出在哪里的迷茫状态」与「解决方法的易操作性」形成的鲜明对比。</p>
+<p>之前岛主曾提起过，做事还是要有清单意识，也就是被励志书籍说烂的「习惯决定一切」。我觉得非常有道理。例如：</p>
+<ul>
+<li>上手一个不熟悉的事物时如何应对错误</li>
+<li>买机票时要如何进行比价</li>
+<li>增添生活小物时要如何避免「始乱终弃」</li>
+<li>说出一个目标后要做哪些准备避免自己「言而无信」&amp;「出言不逊」</li>
+<li>……</li>
+</ul>
+<p>所以，借由这两次搭博客付出的学费——没时间看神盾局特工第三季，我在一开始设想的分类中增添了一个「爬出坑后写清单」，恩，感觉很好~</p>
+<hr>
+<h2 id="Jekyll后的感悟-2016-06"><a href="#Jekyll后的感悟-2016-06" class="headerlink" title="Jekyll后的感悟(2016.06)"></a>Jekyll后的感悟(2016.06)</h2><p>上着政治课，一心二用，顺便理一理印象笔记。</p>
+<p>思来想去，还是应该放一下这篇文章的。</p>
+<ul>
+<li>一方面是因为自己真的折腾了学费付得比较多，和大家分享下，至少让别人知道「还有个人这么惨啊」；</li>
+<li>另外一方面也想正式感谢下在这个模版上付出心血的Hux和Sugarole，感谢！</li>
+</ul>
+<center><br>    <img src="http://obrxj270y.bkt.clouddn.com/leave%20footprint.jpg" width="300" high="300"><br></center>
+
+<h3 id="准备非常非常重要"><a href="#准备非常非常重要" class="headerlink" title="准备非常非常重要"></a>准备非常非常重要</h3><p>做一件事情之前，如果这件事会影响很多东西，那么它的确值得好好做准备工作。不是说要把所有都准备好了再去做，而是说，要预见其价值并且在思想上给予足够多的重视。</p>
+<p>这件事和订机票一样，都受了上次成功经验的影响，<strong>以至于掉以轻心</strong>，分外不可取。</p>
+<blockquote>
+<p>列张清单吧，如果你要干一件影响比较长久的事情：</p>
+</blockquote>
+<ul>
+<li><strong>至少看3个比较全的攻略</strong>，并且标明异同，心中有数这件事大概要干多久。    也可以看下别人失败的经验，很多人的失败后会写一篇「xxx与yyy的比较」，他们会觉得能够胜任的是好的。<br>  可以同时搜索关键词「终于」&amp;「你的目标」</li>
+<li><strong>遇到问题时不要急着去试搜到的解决办法</strong><br>  在尝试solution前，不妨先弄懂问题是什么，solution也同上，要筛选后再尝试</li>
+<li><strong>想清楚这件事的意义</strong><br>  并告诉自己「如果不太顺利的话，我可能会出现放弃的想法，这个很正常，忽略即可」</li>
+</ul>
+<h3 id="循序渐进，一次只解决一个问题"><a href="#循序渐进，一次只解决一个问题" class="headerlink" title="循序渐进，一次只解决一个问题"></a>循序渐进，一次只解决一个问题</h3><p>要有目标性，该解决的问题不能拖，不能逃避，不要幻想计算机系统有天傻了你做错了它还给出特别正确的结果。</p>
+<p>不过这个是基于第一步的，所以你知道第一步很重要了吧😉～</p>
+<p><strong>心思要单纯，效率才能高。</strong></p>
+<center><br>    <img src="http://obrxj270y.bkt.clouddn.com/overthink.jpg" width="300" high="300"><br></center>
+
+
+<hr>
+<h3 id="6-7日清晨随手一写"><a href="#6-7日清晨随手一写" class="headerlink" title="6.7日清晨随手一写"></a>6.7日清晨随手一写</h3><blockquote>
+<p>积极的心理&amp;勇于尝试才能获得通向幸福的心力</p>
+</blockquote>
+<p>现在是2016年6月7日早晨7点钟，昨天晚上调试好了最终的_config然后将近1点半才睡觉，今早6点多一点就起床了，想着自己也真的很拼，但是很有成就感！</p>
+<p>结合看到的改变自己翻译的一篇文章<a href="http://mp.weixin.qq.com/s?__biz=MjM5NDg2NjA4MQ==&amp;mid=2650936104&amp;idx=1&amp;sn=cb1e14d62cf98ce340e8496a21604b0a&amp;scene=1&amp;srcid=0606n4SKFcEzHORiuxkvtnFo#rd" target="_blank" rel="external">今天你失败了嘛？</a>，我觉得我过去三天都在用实际行动回答这个问题，没错，今天我又失败了，但是至少我比昨天更成功了一点。</p>
+<p>不过话说回来了，不成功时真的有打脸的感觉，但是呢~没关系，还有一边没肿哦。</p>
+<p>乐呵呵地苦干好几天，也没抱怨，最多自己和自己开玩笑「啧啧啧，你再这么折腾，估计要去测下智商看看有没有问题了」</p>
+<hr>
+<h3 id="6月15日回顾"><a href="#6月15日回顾" class="headerlink" title="6月15日回顾"></a>6月15日回顾</h3><p>想再提下BLOG这件事，让我非常非常有成就感。之前由于弄BLOG，落下一些工作，写得很不接地气。</p>
+<p>今天，补上一些细节。</p>
+<blockquote>
+<p>现在我搞定了本地的环境：</p>
+</blockquote>
+<ul>
+<li>可以用Jekyll进行本地预览</li>
+<li>熟练使用Github Desktop，因为我中途用sudo改了一个系统隐藏的文件，结果用不了终端写git…后来就和Github桌面版交上了朋友</li>
+<li>后来我又把终端弄好了，这使得我有了两个好朋友</li>
+</ul>
+<blockquote>
+<p><strong>我具体是这样做的：</strong></p>
+</blockquote>
+<ul>
+<li>找到一个做设计出生的人的博客模板，在知乎的一个回答中找到了<a href="http://huangxuan.me" target="_blank" rel="external">Hux的博客</a>真的很有设计感，感谢！</li>
+<li>在对于这个模板比较有贡献的人当中，选了一个与我同样需要写公式的<a href="http://voleking.me" target="_blank" rel="external">Sugarole的博客</a>相必他已经加上支持公式的板块了，感谢！</li>
+<li><p>Fork Sugarole的博客代码到本地</p>
+</li>
+<li><p>中途各种着急地折腾，部署本地环境，解决终端突然之间不能用的问题。</p>
+</li>
+<li>解决后，发现我误删了一些代码or文件，使得about me这个页面不见了，出现了404。。。同时，由于代码提交时不注意写ps使得版本回溯也很困难（恩，这也是一课）</li>
+</ul>
+<blockquote>
+<p>这个时候，我面对一团文件，如何找到问题的源头呢？</p>
+<center><br>    <img src="http://obrxj270y.bkt.clouddn.com/hold%20on.jpg" width="300" high="300"><br></center>
+
+
+<p><strong>这个问题是这么解决的</strong></p>
+</blockquote>
+<p>🙈说来惭愧，我一开始的办法特别笨，感慨了「天呐这可怎么办」，然后一个个打开文件，在源代码里搜索「about」——找已经删除的东西找了好久，好辛苦😂半天无所获后，开始采用文件夹替换的方法。</p>
+<ul>
+<li>打开Jekyll 本地预览</li>
+<li>重新下载Sugarole的博客</li>
+<li>在文件夹高度，逐一替换我的，直到替换了<strong>_site</strong>这个文件夹发现about me出现了问题。</li>
+</ul>
+<blockquote>
+<p><strong>总结下</strong></p>
+</blockquote>
+<ul>
+<li>就是，一步一步缩小范围。<strong>穷举法</strong>的确是有朴素大智慧的。</li>
+<li>在不知道问题到底出在哪里的时候，一定要逐一假设、逐一排除、有条有理、<strong>避免在排除过程中产生新的问题</strong>。</li>
+</ul>
+<blockquote>
+<p><strong>至于我为什么会误删这些关键字符，这个问题很有价值。</strong></p>
+</blockquote>
+<ul>
+<li>我对错误一知半解，由于Jekyll的配置一直不成功，提示中有「about」等字符，于是我想当然地开始删有关about的文件。</li>
+<li>我对Jekyll的基本元素一知半解。后来回顾时，感慨「与其一个个🔍，不妨直接去了解其骨架，然后去对应的地方细细找」。这才是终极手段，才是真正有价值的。</li>
+</ul>
+<blockquote>
+<p><strong>如何避免踏入我所踏入的坑呢？</strong></p>
+</blockquote>
+<p>有个非常棒的心得：不妨细细分析fork了Hux设计模板的人，在一开始修改的参数😉</p>
+<h3 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h3><ul>
+<li>感谢<a href="http://huangxuan.me" target="_blank" rel="external">Hux</a>制作了这么漂亮的博客模板</li>
+<li>感谢<a href="http://voleking.me" target="_blank" rel="external">Sugarole</a>添加了公式等功能</li>
+</ul>
+<p>版面设计的成果属于他们，感谢身处开源的时代。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016-07-30-First-Year-Graduate/" rel="next" title="写在研一结束时——不焦虑">
+                <i class="fa fa-chevron-left"></i> 写在研一结束时——不焦虑
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016-08-18-OLS/" rel="prev" title="线性模型的开端——最小二乘&误差分布">
+                线性模型的开端——最小二乘&误差分布 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://oqk9k7f97.bkt.clouddn.com/header.jpg"
+               alt="Kathy" />
+          <p class="site-author-name" itemprop="name">Kathy</p>
+          <p class="site-description motion-element" itemprop="description">统计姑娘 | 漫威小粉 | 小黄人挚友</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/MissIslander" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/55447115/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/nothing-kathy" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              什么值得点😀
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://onebaiyi.github.io" title="岛主的博客" target="_blank">岛主的博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#清单-上手一个不熟悉的事物时如何应对错误"><span class="nav-number">1.</span> <span class="nav-text">清单: 上手一个不熟悉的事物时如何应对错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo后的感悟-2016-08"><span class="nav-number">2.</span> <span class="nav-text">Hexo后的感悟(2016.08)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jekyll后的感悟-2016-06"><span class="nav-number">3.</span> <span class="nav-text">Jekyll后的感悟(2016.06)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备非常非常重要"><span class="nav-number">3.1.</span> <span class="nav-text">准备非常非常重要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循序渐进，一次只解决一个问题"><span class="nav-number">3.2.</span> <span class="nav-text">循序渐进，一次只解决一个问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-7日清晨随手一写"><span class="nav-number">3.3.</span> <span class="nav-text">6.7日清晨随手一写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6月15日回顾"><span class="nav-number">3.4.</span> <span class="nav-text">6月15日回顾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#感谢"><span class="nav-number">3.5.</span> <span class="nav-text">感谢</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kathy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'missislander';
+      var disqus_identifier = '2016-08-12-blog-rethink/';
+      var disqus_title = "搭建博客的一些小感悟(Jekyll&Hexo)";
+      var disqus_url = 'http://yoursite.com/2016-08-12-blog-rethink/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>

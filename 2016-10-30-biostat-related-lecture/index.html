@@ -1,0 +1,840 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Lecture,Biostatistics," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="岛主夫人的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="转眼一个月又要过去了，正巧最近听了几场生物相关的讲座，就趁着周日的晚上写篇博客。顺便重温了一把研究生初入学时的两场讲座。 三场讲座的主题分别是：Lecture 1: What Do Statisticians Do?Lecture 2: Analysis of Integrated DataLecture 3: 数理统计在药物临床试验中的应用">
+<meta name="keywords" content="Lecture,Biostatistics">
+<meta property="og:type" content="article">
+<meta property="og:title" content="生物统计相关的几场讲座随笔">
+<meta property="og:url" content="http://yoursite.com/2016-10-30-biostat-related-lecture/index.html">
+<meta property="og:site_name" content="岛主夫人的博客">
+<meta property="og:description" content="转眼一个月又要过去了，正巧最近听了几场生物相关的讲座，就趁着周日的晚上写篇博客。顺便重温了一把研究生初入学时的两场讲座。 三场讲座的主题分别是：Lecture 1: What Do Statisticians Do?Lecture 2: Analysis of Integrated DataLecture 3: 数理统计在药物临床试验中的应用">
+<meta property="og:image" content="http://obrwm9a7w.bkt.clouddn.com/tighter.jpg">
+<meta property="og:updated_time" content="2016-11-10T07:12:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="生物统计相关的几场讲座随笔">
+<meta name="twitter:description" content="转眼一个月又要过去了，正巧最近听了几场生物相关的讲座，就趁着周日的晚上写篇博客。顺便重温了一把研究生初入学时的两场讲座。 三场讲座的主题分别是：Lecture 1: What Do Statisticians Do?Lecture 2: Analysis of Integrated DataLecture 3: 数理统计在药物临床试验中的应用">
+<meta name="twitter:image" content="http://obrwm9a7w.bkt.clouddn.com/tighter.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6292665083919074000,
+      author: 'Kathy'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016-10-30-biostat-related-lecture/"/>
+
+  <title> 生物统计相关的几场讲座随笔 | 岛主夫人的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta custom-logo">
+  
+    <div class="site-meta-headline">
+      <a>
+        <img class="custom-logo-image" src="http://obrxj270y.bkt.clouddn.com/hold%20on.jpg"
+             alt="岛主夫人的博客"/>
+      </a>
+    </div>
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">岛主夫人的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">带点小追求过日子</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                生物统计相关的几场讲座随笔
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-30T23:34:12+08:00" content="2016-10-30">
+              2016-10-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/偶遇新事物/" itemprop="url" rel="index">
+                    <span itemprop="name">偶遇新事物</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016-10-30-biostat-related-lecture/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016-10-30-biostat-related-lecture/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>转眼一个月又要过去了，正巧最近听了几场生物相关的讲座，就趁着周日的晚上写篇博客。顺便重温了一把研究生初入学时的两场讲座。</p>
+<blockquote class="blockquote-center"><p>三场讲座的主题分别是：<br>Lecture 1: What Do Statisticians Do?<br>Lecture 2: Analysis of Integrated Data<br>Lecture 3: 数理统计在药物临床试验中的应用</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="Lecture-1-What-Do-Statisticians-Do"><a href="#Lecture-1-What-Do-Statisticians-Do" class="headerlink" title="Lecture 1: What Do Statisticians Do?"></a>Lecture 1: What Do Statisticians Do?</h1><p>by 胡飞芳教授<br>2015.10.23 </p>
+<h2 id="Uncertainty-amp-Statistics"><a href="#Uncertainty-amp-Statistics" class="headerlink" title="Uncertainty &amp; Statistics"></a>Uncertainty &amp; Statistics</h2><p>现在社会中关键词是uncertainty, 其中最大的一块就是金融市场中的Uncertainty—— financial market come up because of uncertainty. 另外，之所以要谈恋爱也是因为不确定性😏</p>
+<blockquote>
+<p>对于不确定性，概率使用数学的方式去描述他，而统计是用数学的方法去理解它，理解不确定背后的确定性——Statistics is a “GAME” between human and nature.</p>
+</blockquote>
+<h2 id="统计学家的定义"><a href="#统计学家的定义" class="headerlink" title="统计学家的定义"></a>统计学家的定义</h2><p><strong>Statisticians are experts in:</strong></p>
+<ul>
+<li>Producing useful data<br>  survey sampling; experiment designs</li>
+<li>Analyzing data to make meaningful results<br>  statistical methods</li>
+<li>Drawing practical conclusions</li>
+</ul>
+<p><strong>A Good Applied Statistician require a combination of four types of knowledge：</strong></p>
+<ul>
+<li>Scientific: 学科背景需要快速掌握</li>
+<li>Statistical: Needs to have the knowledge and experience to be able to apply appropriate procedures for design and analysis. 哪怕不会，也要能快速上手</li>
+<li>Computational: Sufficient proficiency to perform the actual data using software.</li>
+<li>Communication: 语言能力在实验室里至关重要。</li>
+</ul>
+<h2 id="以试验设计为例"><a href="#以试验设计为例" class="headerlink" title="以试验设计为例"></a>以试验设计为例</h2><p><strong>试验设计：</strong></p>
+<ul>
+<li>如何得到有用的数据？</li>
+<li>如何在任何给定的情况下，都优化结果——统计学所追求的是方法上的进步而不是技术上的进步。</li>
+<li>Good design of experiment must be realistic and efficient</li>
+</ul>
+<p><strong>判读AZT对艾滋病是否真的有效果？</strong></p>
+<ul>
+<li>传统做法：实验组&amp;安慰剂 历史5年，最后发表在顶尖医学杂志上</li>
+<li>最后结果：AZT Group 20/239；安慰剂组 60/238，所以这个药非常有效</li>
+<li>反思，在实验过程中逐渐看出AZT的确是很有效的，所以这个实验组人员的比例就应该逐渐升高。自适应设计的思想被引入的话，如果用DBCB试验方法的话，可以拯救20个艾滋病小孩。（张教授2004年发表的文献中得出的结果）</li>
+</ul>
+<h2 id="Work-Environment"><a href="#Work-Environment" class="headerlink" title="Work Environment"></a>Work Environment</h2><ol>
+<li><p>Pharmaceutical Industries<br> 美国的医疗行业占GDP的比重为17%-18%，中国平均6％-7%，在北京占到10%。<br> 新药研发非常烧钱，辉瑞最近使几年，花了200亿美元，产生了3种新药。<br> 利益背后时生物统计系雇的教授超过了统计系。</p>
+</li>
+<li><p>IT<br> 例如Google的搜索引擎的Algorithm<br> Research and business decision</p>
+</li>
+<li><p>Business<br> Government<br> Census Bureau<br> Investment Bank：美国最好的本科生已经不去投行，而是去Facebook这类的公司。</p>
+</li>
+<li><p>生物统计在中国的发展会怎样？<br> 跨国制药公司来华开设研究院（但是目前规模并不大，同时中国的制药公司也还没有进入新药研发阶段，随着合成药研发的难度越来越大，不知中国是否会直接跳过这一步🤔）<br> 做研究的医院需要生物统计的人才（这点还是很靠谱的，这学期参加的一个讨论班，其成立的初衷就是为了解决一个实际问题）</p>
+</li>
+</ol>
+<p>Data Science 来势汹汹，美国院校动力十足。大数据的核心还是统计，Data science has become a forth approach to scientific discovery, in addition to experimentation, modeling, and computation.（对这点持怀疑态度，除了生物领域，统计能做的，还太少，也不太受重视）</p>
+<h1 id="Lecture-2-Analysis-of-Integrated-Data"><a href="#Lecture-2-Analysis-of-Integrated-Data" class="headerlink" title="Lecture 2: Analysis of Integrated Data"></a>Lecture 2: Analysis of Integrated Data</h1><p>2015.11.30 by Peter Song</p>
+<p>有一类大数据的一种特征是，它是由小数据合并而来的，这个时候统计工作应该如何展开呢？</p>
+<p>大约100年前，似然估计的发明者R.A.Fisher就已经开始着手处理这一类的问题，meta analysis, 现在如何在大数据领域推广古典的meta analysis呢？最近这个话题的文章很容易发表，统计的人可以从meta analysis到大数据这个思路上去考虑。</p>
+<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>现在很多的数据库来源于不同的渠道——不同的地点、时间、人群。考虑到统计的两大原则：数据的随机性&amp;采样的代表性——Blocking is the principle to handle potential heterogeneities. 但是，差异性不仅仅是由于study population造成的。例如，杭州和北京的家庭调查问卷得出的结果之间的差异不仅仅是因为两地家庭的差异，还因为这两个调查问卷，一份中有10个问题，另一份中有15个问题，所以这25个变量如何进行融合得到更广范围内的结论呢？</p>
+<p>在基因研究中，DNA测序是一项很昂贵的实验，而比较好的实验需要1000个个体。这个时候如果能把不同研究的DNA的数据融合在一起就好了。</p>
+<p><strong>数据融合适用领域</strong></p>
+<ul>
+<li>combining genetic studies</li>
+<li>multi-center clinical trial 多中心的临床实验</li>
+<li><p>survey data sets from different regions and from times 社会调查</p>
+</li>
+<li><p>hope to increase sample size and thus improve statistical power</p>
+</li>
+<li>hope to increase coverage of data diversity and thus improve the representativeness of data and generality of statistics results</li>
+</ul>
+<p><strong>BUT, Inter-study heterogeneity is one of the major trouble makers:</strong></p>
+<ul>
+<li>study goals</li>
+<li>study population 很多实验本来就是基于人种差异去进行的</li>
+<li>experimental protocols 实验测试的方法</li>
+<li>study coordination 病人每三个月要回访，但是有些地方的人比较懒散（例如迈阿密的小伙伴）</li>
+</ul>
+<h2 id="成功融合的案例"><a href="#成功融合的案例" class="headerlink" title="成功融合的案例"></a>成功融合的案例</h2><p>此时，我们的优势是在study population上的，而非数据结构上的。凡是由政府资助的研究课题需要在2年后完全公开数据，以此来防止数据造假问题。</p>
+<p><strong>e.g.1: Longitudinal Data Asthma PACE Study</strong></p>
+<p>考虑个体之间的差异性，哮喘病在美国医疗上的开销是第三名，因为小孩子气喘不过来时家长在没有常识的情况下都会打911，警车、救护车、救火车都会前来，但是哮喘实际上是一个慢性病。而利用100+哮喘儿科医生提供的800+份档案，让家长学会如何处理。</p>
+<p><strong>e.g.2: 家庭的收入和美国小孩的BMI之间的关系</strong></p>
+<p>美国第一大的慢性病是忧郁症depression，第二大就是obesity。肥胖症对后续的生育、cancer都有很大的影响。数据来自纵向调查，1997、2002、2007年，4个地区年龄在18岁下的1880个小孩。目的是探究”How social economic status can impact the children and adolescence’s BMI.” 如果k个study是高度homogeneous，则数据可以看作从同一个study population中来的。如果k个study中的数据是heterogeneous，那么就分开来做呗；如果某些数据集是homogeneous的，那么就可以分组合并进行回归分析。</p>
+<p>现在要问的问题是，哪些数据是一样的可以合并以增加量本容量从而增加统计的power。虽然所有的数据都不一样，数据收集的过程中肯定有一些相似性。Meta Analysis——不需要原始数据也能估计共同的参数不能检验假设，这一定很糟糕。(Meta Analysis： data are summary statistics from different data sets; Integrated-Data Analysis: subject-level data of individual studies)</p>
+<p>然后就有了从Meta Analysis👉🏻Integrated Analysis，Confidence Distribution 也是很新的一个领域。后面记了一堆现在也不知道是什么意思的东西（嗯，估计是听的时候已经晕了～😅）</p>
+<h1 id="Lecture-3-数理统计在药物临床试验中的应用"><a href="#Lecture-3-数理统计在药物临床试验中的应用" class="headerlink" title="Lecture 3: 数理统计在药物临床试验中的应用"></a>Lecture 3: 数理统计在药物临床试验中的应用</h1><p>2016.10.29 by 龚坚坚</p>
+<blockquote>
+<p>利用最近完成的心脏衰竭药物试验来展示数理统计学在临床试验设计，数据分析及药物有效性和安全性结论形成中的应用。</p>
+</blockquote>
+<h2 id="Clinical-trials"><a href="#Clinical-trials" class="headerlink" title="Clinical trials"></a>Clinical trials</h2><ul>
+<li>non- clinical: 动物身上做实验</li>
+<li>pre-clinical dose tolerability 最大剂量（西方的制药思想是：大家都能用（是一种平均数的概念），不过奥巴马卸任前提出了「精准医疗」的概念，恐怕会改变这个大方向）</li>
+<li>phase I drug mechanism</li>
+<li>phase II 建立假设 -dose finding/proof of concept</li>
+<li>phase III 检验（model base）confirmatory for efficacy and safety</li>
+<li>phase IV post-marketing surveillance</li>
+</ul>
+<h2 id="Key-items-related-to-Statistics-in-clinical-trials"><a href="#Key-items-related-to-Statistics-in-clinical-trials" class="headerlink" title="Key items related to Statistics in clinical trials"></a>Key items related to Statistics in clinical trials</h2><blockquote>
+<p>统计工作者在药厂的职责所在</p>
+</blockquote>
+<ul>
+<li>protocol and statistical analysis plan(不可以看了数据后再去改变实验方法，所以Plan非常重要）</li>
+<li>design of the study 试验如何设计、如何招募病人、如何进行比较</li>
+<li>randomization 如何进行随机化(使得性别等因素不成为 cofounder)</li>
+<li>primary objective 帮助团队定义</li>
+<li>primary endpoint </li>
+<li>primary analysis variable</li>
+<li>secondary objectives</li>
+<li>exploratory objectives</li>
+<li>Study patient population 依据的是 inclusion criteria and exclusion criteria - Analysis Set</li>
+<li>统计量的势 &amp; 样本量 （找90%的势所需要的sample size）</li>
+<li>interim analysis (有些study很大，上千病人，需要进行好几年的跟踪，药的有效性比预期要早地显现的话）</li>
+<li>Statistical analysis methods（不同的endpoint需要用不同的方法）</li>
+</ul>
+<h2 id="与统计相关的关键点："><a href="#与统计相关的关键点：" class="headerlink" title="与统计相关的关键点："></a>与统计相关的关键点：</h2><p><strong>实验流程</strong><br>心脏衰竭的病人对药物很敏感，所以先用standard药，先单盲，再双盲。</p>
+<p><strong>Multiplicity adjustment</strong><br>每一个比较不能用原先的显著性水平来做，要提高显著性水平，才能控制overall的p</p>
+<p>所以需要设计方案，在药厂必须控制type I error的情况下，很多统计学的知识就很重要了。</p>
+<p><strong>Interim analysis</strong><br>可以在中间的时候看看显著性水平有没有达到。8400人的study需要花费2-3亿美元，这个新药的研发，中途显著性就已经达到。</p>
+<p><strong>Selected exploratory objective</strong><br>负二项分布 Poisson被用来建模count type的variable<br>找出对应于不同类型data的分析方法。</p>
+<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><p>有很多case也会没有一个显著性的结果的，所以，有很多的运气成分在其中。</p>
+<p>此外，还需要做很多其它的Analysis，例如，因为对比的对象（目前主流药物）已经在市场上存在了20年，所以也有可能是由于抗药性的使得新药效果好于原先的药物。所以还要把新药数据和20年前的安慰剂组做对比，相当于检验下新研发的药如果在20年前进行的话，是否有效。</p>
+<p>统计的发展历史很奇特，麦迪森学校的农学很强，需要处理很多数据的人，所以一开始统计学家是帮着农学，但是，渐渐地生物统计开始发展了，这也是一个国家走向发达的标志。</p>
+<p>大型医药公司现在有100-200个统计的phd在工作。包括试验设计、数据分析，还有制定如何回答药监部门的质疑策略。中国一旦开始发展新药，就会需要大量的人。</p>
+<hr>
+<center><br><img src="http://obrwm9a7w.bkt.clouddn.com/tighter.jpg" width="200" high="200" title="照例放一张小黄人的图"><br></center>
+
+<p>2016.10.31凌晨</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Lecture/" rel="tag">#Lecture</a>
+          
+            <a href="/tags/Biostatistics/" rel="tag">#Biostatistics</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016-09-29-Startday-whole-grain-toast/" rel="next" title="该认真聊聊🍞全麦吐司啦！">
+                <i class="fa fa-chevron-left"></i> 该认真聊聊🍞全麦吐司啦！
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016-11-10-counting-process-and-survival-analysis/" rel="prev" title="期中复习惯性之计数过程与生存分析">
+                期中复习惯性之计数过程与生存分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://oqk9k7f97.bkt.clouddn.com/header.jpg"
+               alt="Kathy" />
+          <p class="site-author-name" itemprop="name">Kathy</p>
+          <p class="site-description motion-element" itemprop="description">统计姑娘 | 漫威小粉 | 小黄人挚友</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/MissIslander" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.douban.com/people/55447115/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/nothing-kathy" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              什么值得点😀
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://onebaiyi.github.io" title="岛主的博客" target="_blank">岛主的博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-1-What-Do-Statisticians-Do"><span class="nav-number">1.</span> <span class="nav-text">Lecture 1: What Do Statisticians Do?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Uncertainty-amp-Statistics"><span class="nav-number">1.1.</span> <span class="nav-text">Uncertainty & Statistics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计学家的定义"><span class="nav-number">1.2.</span> <span class="nav-text">统计学家的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以试验设计为例"><span class="nav-number">1.3.</span> <span class="nav-text">以试验设计为例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Work-Environment"><span class="nav-number">1.4.</span> <span class="nav-text">Work Environment</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-2-Analysis-of-Integrated-Data"><span class="nav-number">2.</span> <span class="nav-text">Lecture 2: Analysis of Integrated Data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Background"><span class="nav-number">2.1.</span> <span class="nav-text">Background</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#成功融合的案例"><span class="nav-number">2.2.</span> <span class="nav-text">成功融合的案例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lecture-3-数理统计在药物临床试验中的应用"><span class="nav-number">3.</span> <span class="nav-text">Lecture 3: 数理统计在药物临床试验中的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Clinical-trials"><span class="nav-number">3.1.</span> <span class="nav-text">Clinical trials</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Key-items-related-to-Statistics-in-clinical-trials"><span class="nav-number">3.2.</span> <span class="nav-text">Key items related to Statistics in clinical trials</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与统计相关的关键点："><span class="nav-number">3.3.</span> <span class="nav-text">与统计相关的关键点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Results"><span class="nav-number">3.4.</span> <span class="nav-text">Results</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kathy</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'missislander';
+      var disqus_identifier = '2016-10-30-biostat-related-lecture/';
+      var disqus_title = "生物统计相关的几场讲座随笔";
+      var disqus_url = 'http://yoursite.com/2016-10-30-biostat-related-lecture/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+
+  
+  
+
+  
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>
