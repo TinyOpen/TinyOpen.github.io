@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-26T14:45:11.000Z</updated>
+  <updated>2016-11-11T02:07:39.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,118 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>标签测试文章</title>
-    <link href="http://yoursite.com/%E6%A0%87%E7%AD%BE/"/>
-    <id>http://yoursite.com/标签/</id>
-    <published>2017-05-26T14:44:37.000Z</published>
-    <updated>2017-05-26T14:45:11.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>hi tags</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;hi tags&lt;/p&gt;
-
-    
-    </summary>
-    
-    
-      <category term="Testing" scheme="http://yoursite.com/tags/Testing/"/>
-    
-      <category term="Another Tag" scheme="http://yoursite.com/tags/Another-Tag/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://yoursite.com/Mathematics%20in%20Data%20Science/"/>
-    <id>http://yoursite.com/Mathematics in Data Science/</id>
-    <published>2016-12-16T01:02:15.000Z</published>
-    <updated>2016-12-16T01:02:15.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Mathematics-in-Data-Science"><a href="#Mathematics-in-Data-Science" class="headerlink" title="Mathematics in Data Science"></a>Mathematics in Data Science</h1><p>#讲座</p>
-<p>Zuowei Shen 新加坡国立大学理学院院长</p>
-<p>数据科学目前遇到很多瓶颈，是软件的不足，也就是数学的不足。牛顿时代，数学和物理相互促进都有了十足的发展，而现在，接下去的时代里，数据和数学也将相互促进。</p>
-<h2 id="什么是数据科学？"><a href="#什么是数据科学？" class="headerlink" title="什么是数据科学？"></a>什么是数据科学？</h2><p>Data science is science</p>
-<ul>
-<li>数据推动科学：rules</li>
-</ul>
-<ul>
-<li>科学推动数据：methods to acquire and process </li>
-</ul>
-<h2 id="对数据科学的兴趣源头"><a href="#对数据科学的兴趣源头" class="headerlink" title="对数据科学的兴趣源头"></a>对数据科学的兴趣源头</h2><ul>
-<li>数据量和维数</li>
-</ul>
-<ul>
-<li>我们想做的是现在的方法所力所不能及的</li>
-<li>想要得到信息，想要获得知识，想要预测未来</li>
-</ul>
-<h2 id="数据对社会的作用"><a href="#数据对社会的作用" class="headerlink" title="数据对社会的作用"></a>数据对社会的作用</h2><p>Science - Industry (中间的连接是Technology）<br>through translational research<br>Industry leads to application-driven research</p>
-<p>数据科学，从科学和工业，是通过软件来实现的。大大缩小了科学和工业之间的鸿沟。因为之前的Gap是硬件造成的。</p>
-<p>So the cycle in time is short, competition is very intense.</p>
-<p>computer vision 在deep learning 的发展下逐渐变成了现实，那些大牛都走了。</p>
-<p>工业界的优势：</p>
-<ul>
-<li>真问题</li>
-</ul>
-<ul>
-<li>真数据</li>
-<li>真的计算能力<br>工业界对Data Science有了巨大的推动。</li>
-</ul>
-<p>学校很像招Data Science 的人才，结果招的只是numerical analyse.</p>
-<h2 id="一些例子"><a href="#一些例子" class="headerlink" title="一些例子"></a>一些例子</h2><ul>
-<li>Data Compression<br>其中的技术就是小波，使得图像压缩后图片似乎不变<br>100年前某位学生的phd论文<br>20年前，Daubechies的一个光滑的小波，4-5年后，FBI用小波压缩了指纹的数据<br>JPEG-2000 the new standard for digital picture compression </li>
-</ul>
-<p>能够压缩的原理是：稀疏逼近，基函数；</p>
-<ul>
-<li>Compressed Sensing<br>压缩感知，两位斯坦福的统计学家和UCLA的陶哲轩。<br>工业界的人每天早上起床的第一件事就是去Donaho和Candes的网页上看看他们有没有新的进展。学术界本该如此，这就是它对Data Science 的贡献。</li>
-</ul>
-<p>矮胖子矩阵得到了f，如何把u重构回来。三年前这个理论非常hot，但现在已经过去了。所以，不可能一个问题做一辈子。</p>
-<ul>
-<li><p>Low Rank Matrix Completion<br>有很多问题，很多人都在寻求答案。</p>
-</li>
-<li><p>Removal of unknown noise from Data<br>很多噪音在实际中根本不是高斯那回事。所以，如何在不知道噪音的情况下去燥音呢？</p>
-</li>
-<li><p>The LA Riot in 1992<br>video看不清楚，去UCLA找了数学家，没有找计算机系的教授——有现成方法找计算机系，没有现成问题找数学系。这是美国法庭第一次接受经过处理的图像。<br>simulating fire</p>
-</li>
-<li><p>Google search engine<br>20年前发明了page rank，最初的思想很简单，但是实际处理起来不容易，因为这是一个网络。最终抽象成一个算奇异值的问题。那篇问题的专利属于斯坦福，然后斯坦福靠这个专利发了一笔。所以Gap越来越窄了。</p>
-</li>
-<li><p>AlphaGo<br>AlphaGo has the ability to learn while Deep Blue cannot.</p>
-<ul>
-<li>根据现有竞赛中的棋谱学习</li>
-<li>自己下</li>
-<li>search solution</li>
-</ul>
-</li>
-</ul>
-<h2 id="Features-of-Data-Science-Research"><a href="#Features-of-Data-Science-Research" class="headerlink" title="Features of Data Science Research"></a>Features of Data Science Research</h2><p>这个时代已经来了，但是谁都不知道，如果你不进去，时代会把你推进去。牛顿时代的科学给人们带来了工业革命，将人类从体力劳动中解放出来了。下一次工业发展will leberate human beings from heavy, tedious “brain work”.  </p>
-<blockquote>
-<p>你们可能没到退休就淘汰了，反正我已经不在了。但是，创新的需求还在。  </p>
-</blockquote>
-<p>30年前一篇phd论文做一辈子，但现在已经不是这样了，没有一个题目你能做好几年，现实中的问题太多了。</p>
-<p>我们很多脑力功能都已经丧失了，例如心算，例如记电话号码；<br>怎么办，脑力和体力都不行了。</p>
-<pre><code>- no clear boundary in between fundamental research, translational research and industrial application.
-- Real life driven research
-</code></pre><p>40‘ 重新👂</p>
-<p>对个人：兼顾广和深，问题驱动创新为主，真正深入原始的问题。<br>对机构：大学是鼓励个人创新，大多数人的研究目标不是为了工业界，只是为人类的知识宝库做贡献（创新的源泉）。大学给予学术自由&amp;经济支持。</p>
-<h2 id="我的提问"><a href="#我的提问" class="headerlink" title="我的提问"></a>我的提问</h2><p>Q：您的很多观点都很好，您本人也获得了很大的成就，我很感兴趣，是什么观念，是什么您年轻的时候就有的观念，让你获得今天的这些思想和成就的呢？</p>
-<p>A：我没有什么成就，但是有这三点是我一直在坚持的✊</p>
-<pre><code>- 思想要自由，不要一直活在别人的光环下，我看论文的习惯就是，不细读，读的不做，做的不读；
-- 要创新——创新才是一个NP问题，看懂问题只是有限时间就可以；
-- 要有用，高维数据低维流行逼近，现在只有PCA，PCA只是在二维世界中的线性逼近，所以现实世界是多么需要有理论研究者在这块干点什么呀～
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Mathematics-in-Data-Science&quot;&gt;&lt;a href=&quot;#Mathematics-in-Data-Science&quot; class=&quot;headerlink&quot; title=&quot;Mathematics in Data Science&quot;&gt;&lt;/a&gt;Mathe
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>感谢Trump🤓, 让我们在中国接受民主训练</title>
@@ -1858,9 +1746,9 @@ summary(lin.mod)$coef
       <category term="偶遇新事物" scheme="http://yoursite.com/categories/%E5%81%B6%E9%81%87%E6%96%B0%E4%BA%8B%E7%89%A9/"/>
     
     
-      <category term="Lecture" scheme="http://yoursite.com/tags/Lecture/"/>
-    
       <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
+    
+      <category term="Lecture" scheme="http://yoursite.com/tags/Lecture/"/>
     
   </entry>
   
@@ -2233,9 +2121,9 @@ summary(lin.mod)$coef
       <category term="数据科学实践" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%AE%9E%E8%B7%B5/"/>
     
     
-      <category term="Statistics" scheme="http://yoursite.com/tags/Statistics/"/>
-    
       <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
+    
+      <category term="Statistics" scheme="http://yoursite.com/tags/Statistics/"/>
     
       <category term="R" scheme="http://yoursite.com/tags/R/"/>
     
@@ -2393,6 +2281,193 @@ summary(lin.mod)$coef
     
     
       <category term="Statistics" scheme="http://yoursite.com/tags/Statistics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从统计推断的角度看Divide &amp; Combine</title>
+    <link href="http://yoursite.com/2016-05-12-Lecture-Divide-Combine/"/>
+    <id>http://yoursite.com/2016-05-12-Lecture-Divide-Combine/</id>
+    <published>2016-05-11T16:00:00.000Z</published>
+    <updated>2016-08-13T15:11:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>不想结束和岛主的聊天，然后问了个傻问题「博客里能不能写下听讲座的感想？」岛主说「当然可以啦~」</p>
+<p>然后我就开始敲字，因为是第一篇，虽然心存敬畏有些忐忑，但是也因为是「第一篇」，所以能找到能多理由安慰自己「你还有很大的进步空间…」</p>
+<a id="more"></a>
+<center><br>    <img src="/img/in-post/5-12-Combine-Divide/summer.jpg" title="很随意~" width="300" high="300"><br></center>
+
+<blockquote class="blockquote-center"><p> 那就写吧<br>我每次干正事前扯这么多有的没的真是太没效率了<br>(U •́ .̫ •̀ U)</p>
+</blockquote>
+<hr>
+<h3 id="讲座背景"><a href="#讲座背景" class="headerlink" title="讲座背景"></a>讲座背景</h3><p>这两天院里十几场讲座，恩，这是我听的第一场，看到白发苍苍的林正炎教授坐在第一排时，有些触动——「老教授研究了一辈子底层的概率极限理论，成就斐然，晚年竟然还愿意参与到新兴领域中重新享受学生的感觉。」</p>
+<p>林师宗在讲座的最后说了一句「你这个方向很好啊，思路也很好，我们统计的确应该帮助那些『广为使用的大数据处理方法』打打理论基础了。」</p>
+<p>这个广为使用的大数据处理方法就是Divide-Combine.</p>
+<h3 id="初识Divide-Combine的一点思考"><a href="#初识Divide-Combine的一点思考" class="headerlink" title="初识Divide-Combine的一点思考"></a>初识Divide-Combine的一点思考</h3><h4 id="小栗子"><a href="#小栗子" class="headerlink" title="小栗子"></a>小栗子</h4><blockquote>
+<p>让岛主夫人发挥她聪明的小脑袋为你举个简单的例子：</p>
+</blockquote>
+<p>不靠谱的男生追求女生时只想感动自己，于是选择「折10000只千纸鹤去表白」的方式。找了10个平常相处「很好」的女同学拜托她们每人折1000只，这个时候任务就被Divide成10份了，最后那个男生把折好的10份1000只Combine起来送给想追求的那个女生。</p>
+<p> 对于计算机思维的小伙伴而言，这件事就这么了了，反正已经得到了所需要的结果「10,000只千纸鹤」。但是统计学家捋了捋白胡子，他想知道「男生自己折10,000只千纸鹤去表白」与「男生利用通过Divide-Combine的手段得到10,000只千纸鹤去表白」，会影响女生最后决定嘛？</p>
+<h4 id="讲正事"><a href="#讲正事" class="headerlink" title="讲正事"></a>讲正事</h4><p>忽略这个例子的局限性，其实想关注的问题是——利用Full Data一次性得到的结论和利用Divide-Combine手段得到结论的「一样」嘛？</p>
+<blockquote>
+<p><strong>在非常简单的问题上</strong></p>
+</blockquote>
+<p>肯定是一样的，例如求和，1000个数字的总和</p>
+<ul>
+<li>分成10组</li>
+<li>每组求和得到$$sum<em>{1}, …, sum</em>{10}$$</li>
+<li>再求$$\sum<em>{i=1}^{10}sum</em>{i}$$</li>
+<li>结果肯定和$$\sum_{i=1}^{100}j$$一致</li>
+</ul>
+<blockquote>
+<p><strong>但是在更为复杂的问题上，难说</strong></p>
+</blockquote>
+<ol>
+<li>复杂到什么程度？非线性太不容易分析&amp;解释，那就先考虑最简单的广义线性模型中的回归分析问题。例如：把全部的数据分成k个数据集分别进行建模最后把模型整合得到一个预测模型A，与一次性利用全部的数据进行建模得到预测模型B。</li>
+<li><p>然后要定义的是「一样的标准是什么」，姑且把它放在统计学的框架中去讨论，从几个统计指标入手。</p>
+</li>
+<li><p>定义了标准后，可以思考二者得出的结果：</p>
+<ul>
+<li>A与B在实际预测中的表现是否一致？</li>
+<li>到底A好还是B好『并不是说A一定好，因为计算机暂时无法做到无限可能，所以在数据量很大的情况下处理Full Data的效果会让人很无语』</li>
+<li>在什么前提下，其差异是可接受的？</li>
+<li>在什么条件下，其差异可以趋于0？</li>
+</ul>
+</li>
+</ol>
+<h4 id="小总结"><a href="#小总结" class="headerlink" title="小总结"></a>小总结</h4><p>总结下上面说了什么：</p>
+<ol>
+<li>用一个不太靠谱的例子解释了一下Divide-Combine思想</li>
+<li>将其从机械的应用引申到更细致的思考中——真的可以这么做吗？</li>
+</ol>
+<hr>
+<h3 id="粗略地进入正题"><a href="#粗略地进入正题" class="headerlink" title="粗略地进入正题"></a>粗略地进入正题</h3><p>接下来讲点理论层面的</p>
+<p>ps：由于还没收到讲座幻灯片，有很多推导的细节还需要确认，这个主题很新也无法查阅参考文献，先粗略地写下。</p>
+<h4 id="讲座的主题"><a href="#讲座的主题" class="headerlink" title="讲座的主题"></a>讲座的主题</h4><p><strong>Method of divide-and-combine in regularized generalized linear models for Big Data</strong>——广义线性模型在处理大数据方面上的应用。</p>
+<p>计算机中被广泛应用的Divide-Combine的方法在统计框架下的表现如何。从统计角度如何考虑大数据？特别是在回归分析领域，可以从理论上对其进行支持嘛？</p>
+<p>Peter Song教授的一个博士生提出了一个新的方法，MODAC，Method of Divide and Combine（唉，统计学就是因为不会起名字而输在起跑线上）。这个方法获得理论上的支持——Large-Sample Properties 在分割总和后，其结果对Statistical Inference没有影响。</p>
+<p>即，计算机提出的思想，用统计的知识去证明其可以达到高inference。</p>
+<h4 id="背景1：The-Data-Mining-Pipeline"><a href="#背景1：The-Data-Mining-Pipeline" class="headerlink" title="背景1：The Data Mining Pipeline"></a>背景1：The Data Mining Pipeline</h4><ul>
+<li>20 Years Ago</li>
+<li>Now: 大的cluster 云端、多线程读取。</li>
+<li>所以现在统计的发展也要随着数据结构的变化而变化——数据的清理-整合-建模-机器学习-结果解释。</li>
+</ul>
+<h4 id="背景2：Big-Data-Challenge"><a href="#背景2：Big-Data-Challenge" class="headerlink" title="背景2：Big Data Challenge"></a>背景2：Big Data Challenge</h4><ul>
+<li>The data size is extraordinarily large</li>
+<li>Lack of general and scalable big data programming model and parallel processing frameword</li>
+<li>One main idea of great popularity is to divide and combine</li>
+</ul>
+<h4 id="背景3：Divide-and-Combine"><a href="#背景3：Divide-and-Combine" class="headerlink" title="背景3：Divide and Combine"></a>背景3：Divide and Combine</h4><ul>
+<li>distributed storage</li>
+<li>centralized storage with random partition</li>
+<li>GLM regression analysis</li>
+</ul>
+<h4 id="背景4：Meta-analysis"><a href="#背景4：Meta-analysis" class="headerlink" title="背景4：Meta-analysis"></a>背景4：Meta-analysis</h4><ul>
+<li>Meta-analysis has been used to combine results「这是统计学领域与Divide-Combine相类似的思想」</li>
+<li>在2004-2015年，共有55000篇与Meta-analysis 有关的文章被发表</li>
+</ul>
+<h3 id="MODAC，Method-of-Divide-and-Combine"><a href="#MODAC，Method-of-Divide-and-Combine" class="headerlink" title="MODAC，Method of Divide and Combine"></a>MODAC，Method of Divide and Combine</h3><h4 id="困境"><a href="#困境" class="headerlink" title="困境"></a>困境</h4><ol>
+<li><p>在$n=10,000, p=300, s<em>{0}=10$的情况下<br>meta在处理logistic 部分出了问题，非常非常大的$St. err. of A</em>{0}$</p>
+</li>
+<li><p>分成K组，$V_{k}$是极大似然估计的方差矩阵–&gt;Fisher信息矩阵，在求逆的过程中结果非常不稳定。</p>
+</li>
+<li><p>Regularization</p>
+<ul>
+<li>Chen and Xie</li>
+<li>模型在运用中产生了高Bias, 丧失了Inference的能力</li>
+</ul>
+</li>
+</ol>
+<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><ol>
+<li><p>在做Lasso的问题时，结果是bias estimators，所以接下来要做一些bias-correction。解决的方法是通过一个扰动项的逆来得到正态分布的结果</p>
+</li>
+<li><p>在解决遇到多重线性相关导致结果很不稳定时，解决的方法是引入岭回归的思想。</p>
+</li>
+</ol>
+<h4 id="修正后的结果（理论上）"><a href="#修正后的结果（理论上）" class="headerlink" title="修正后的结果（理论上）"></a>修正后的结果（理论上）</h4><ul>
+<li>相合性</li>
+<li>渐近正态性</li>
+<li><strong>分开得到的结果和全部一起处理得到的结果是一致的</strong></li>
+</ul>
+<h4 id="修正后的结果（Simulation）"><a href="#修正后的结果（Simulation）" class="headerlink" title="修正后的结果（Simulation）"></a>修正后的结果（Simulation）</h4><p>$n=10,000, K=20,  n<em>{k}=500, p=300, s</em>{0}=10$</p>
+<ul>
+<li>R包glmet中的lasso在处理Poisson时的效率太差</li>
+<li>Computing Time并不随数据量数据集的级数增长而有很大的变化，即scalable</li>
+<li>MSE Ratio</li>
+<li>Coverage Probability 置信区间是95% </li>
+</ul>
+<h3 id="引申思考"><a href="#引申思考" class="headerlink" title="引申思考"></a>引申思考</h3><ul>
+<li>coverage probability</li>
+<li>我们所提出的方法真对的饿是$n &gt; p$的情况，但是对于$p &gt;&gt; n$ 的数据，未知的比已知的多，如何去做推算呢？这个时候Peter Song教授说了一句『在哲学上是不可能的』，让我很惊叹。现在的权宜之计是，一个一个去做呢，不知道会出什么样的问题</li>
+<li>2015, Zheng D On Random Effect Meta Analysis</li>
+<li>进一步，除了linear regression外，classification可以吗？</li>
+</ul>
+<h3 id="最后偷个懒"><a href="#最后偷个懒" class="headerlink" title="最后偷个懒"></a>最后偷个懒</h3><p>以上写于2016年5月12日，期末阶段收到了讲座的幻灯片，恩，幻灯片上显示的结论是各种算法对于Logistical Regression的情况都不容乐观。不过这也很直观~毕竟二分。</p>
+<p>另外，Meta Analysis是个大坑，暂时没有时间去填。那这个事就先画上一个句号咯！</p>
+<center><br><br>    <img src="/img/in-post/5-12-Combine-Divide/Rennes.jpg" title="Rennes Pic" width="300" high="300"><br><br>岛主夫人, 2016年7月2日, Rennes<br><br></center>
+
+
+
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;不想结束和岛主的聊天，然后问了个傻问题「博客里能不能写下听讲座的感想？」岛主说「当然可以啦~」&lt;/p&gt;
+&lt;p&gt;然后我就开始敲字，因为是第一篇，虽然心存敬畏有些忐忑，但是也因为是「第一篇」，所以能找到能多理由安慰自己「你还有很大的进步空间…」&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="偶遇新事物" scheme="http://yoursite.com/categories/%E5%81%B6%E9%81%87%E6%96%B0%E4%BA%8B%E7%89%A9/"/>
+    
+    
+      <category term="Statistics" scheme="http://yoursite.com/tags/Statistics/"/>
+    
+      <category term="Lecture" scheme="http://yoursite.com/tags/Lecture/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>岛主夫人的博客开张咯！</title>
+    <link href="http://yoursite.com/2016-05-05-BlogOpen-2016/"/>
+    <id>http://yoursite.com/2016-05-05-BlogOpen-2016/</id>
+    <published>2016-05-04T16:00:00.000Z</published>
+    <updated>2017-05-26T15:00:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>这个博客的开张要感谢岛主！<br>所以，请让我短暂地秀下恩爱吧~</p>
+</blockquote>
+<a id="more"></a>
+<p><strong>岛</strong></p>
+<p>那日去岛主家乡玩，他说他家在岛上，虽然偏僻但他有岛哦，如果我不坚持让他的女儿取名为「懿」，可以分我一点岛屿，恩，我家岛主好大方。</p>
+<p><strong>多么想写一句</strong></p>
+<blockquote>
+<p>从此，岛主和岛主夫人在岛上过上了幸福平和的生活。<br>The End.<br>😊 </p>
+</blockquote>
+<hr>
+<p><strong>现实是</strong></p>
+<ul>
+<li>岛主与岛主夫人大部分时间还是出岛而居的</li>
+<li>岛主夫人是个学理论数学很认真，但是计算能力稍有欠缺的统计小硕。</li>
+</ul>
+<p><strong>那就听岛主夫人来讲讲：</strong></p>
+<ul>
+<li>模型小理论</li>
+<li>各种为了接地气💰的准备</li>
+<li>不靠谱又开心的事</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;这个博客的开张要感谢岛主！&lt;br&gt;所以，请让我短暂地秀下恩爱吧~&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="小日子一朵朵" scheme="http://yoursite.com/categories/%E5%B0%8F%E6%97%A5%E5%AD%90%E4%B8%80%E6%9C%B5%E6%9C%B5/"/>
+    
+    
+      <category term="发会呆" scheme="http://yoursite.com/tags/%E5%8F%91%E4%BC%9A%E5%91%86/"/>
     
   </entry>
   
