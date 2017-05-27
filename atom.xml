@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>岛主夫人的博客</title>
+  <title>TinyOpen</title>
   <subtitle>带点小追求过日子</subtitle>
   <link href="/atom.xml" rel="self"/>
   
@@ -1746,9 +1746,9 @@ summary(lin.mod)$coef
       <category term="偶遇新事物" scheme="http://yoursite.com/categories/%E5%81%B6%E9%81%87%E6%96%B0%E4%BA%8B%E7%89%A9/"/>
     
     
-      <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
-    
       <category term="Lecture" scheme="http://yoursite.com/tags/Lecture/"/>
+    
+      <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
     
   </entry>
   
@@ -2419,9 +2419,9 @@ summary(lin.mod)$coef
       <category term="偶遇新事物" scheme="http://yoursite.com/categories/%E5%81%B6%E9%81%87%E6%96%B0%E4%BA%8B%E7%89%A9/"/>
     
     
-      <category term="Statistics" scheme="http://yoursite.com/tags/Statistics/"/>
-    
       <category term="Lecture" scheme="http://yoursite.com/tags/Lecture/"/>
+    
+      <category term="Statistics" scheme="http://yoursite.com/tags/Statistics/"/>
     
   </entry>
   
