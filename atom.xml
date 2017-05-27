@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-27T02:48:50.000Z</updated>
+  <updated>2017-05-27T02:02:34.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,27 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test</title>
-    <link href="http://yoursite.com/test/"/>
-    <id>http://yoursite.com/test/</id>
-    <published>2017-05-27T02:48:50.000Z</published>
-    <updated>2017-05-27T02:48:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<center><br><br><img src="http://oqk9k7f97.bkt.clouddn.com/so-nice.jpg" width="300" high="300" title="🤓"><br></center>
-
-
-<a id="more"></a>]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;http://oqk9k7f97.bkt.clouddn.com/so-nice.jpg&quot; width=&quot;300&quot; high=&quot;300&quot; title=&quot;🤓&quot;&gt;&lt;br&gt;&lt;/center&gt;
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>省了800元宿舍费的我，遇见了超棒的计算机舍友们</title>
@@ -669,6 +648,84 @@
     
     
       <category term="小聚" scheme="http://yoursite.com/tags/%E5%B0%8F%E8%81%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Something is Wrong with Hexo-NexT-Music😱</title>
+    <link href="http://yoursite.com/2016-08-19-test-music/"/>
+    <id>http://yoursite.com/2016-08-19-test-music/</id>
+    <published>2016-08-19T05:15:26.000Z</published>
+    <updated>2016-09-18T05:43:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote class="blockquote-center"><p><strong>写给2016年6月后的博主</strong></p>
+</blockquote>
+<p>岛主搭建博客时遇到一个小问题，他怀疑是markdown编辑器的问题，所以发邮件予我拜托我试一下，正巧我吃完中饭休息一会儿，对照着他找的一份很棒的<a href="http://www.jianshu.com/p/a52b68794a6b" target="_blank" rel="external">经验帖</a>，贴了代码本地预览立即听到了音乐🎵，觉得好有成就感，但是部署到github page上后在网页端预览时，音乐无法显示。</p>
+<center><br><img src="http://obrxj270y.bkt.clouddn.com/really.jpg" width="200" high="200" title="really?"><br>大热天的这盆凉水把午后的倦意一下子冲走了。<br>不午睡的人生就干点活呗~<br>以下算是清单的一次小实践😋<br>感谢岛主提出的好问题~<br></center>
+
+<a id="more"></a>
+<hr>
+<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>按照<a href="http://www.jianshu.com/p/a52b68794a6b" target="_blank" rel="external">hexo创建博客（附加插入音乐）</a>中的指导，插入的代码：</p>
+<p><code>&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=330 height=86 src=&quot;http://music.163.com/outchain/player?type=2&amp;id=424262521&amp;auto=1&amp;height=66&quot;&gt;&lt;/iframe&gt;</code></p>
+<p>发现，本地运行ok，音乐很好听<br>BUT, 网页端无法显示👇</p>
+<center><br><img src="http://obrxj270y.bkt.clouddn.com/invisible.png" width="400" high="400" title="invisible"><br></center>
+
+<hr>
+<h3 id="排除插件问题"><a href="#排除插件问题" class="headerlink" title="排除插件问题"></a>排除插件问题</h3><p>不过，这个时候还有个可能是因为插件的问题，毕竟网易云音乐有这样一段提醒：</p>
+<center><br><img src="http://obrxj270y.bkt.clouddn.com/notation.png" width="400" high="400" title="flash and iframe"><br></center>
+
+<p>所以这个时候有个很自然的假设：</p>
+<blockquote>
+<p>因为上述代码是iframe插件，本地预览没有问题，但是同步后网页版无法显示。flash插件的代码应该更保险吧~</p>
+</blockquote>
+<p>所以继续试验，在上述基础上插入下列代码：</p>
+<p><code>&lt;embed src=&quot;http://music.163.com/style/swf/widget.swf?sid=424262521&amp;type=2&amp;auto=1&amp;width=320&amp;height=66&quot; width=&quot;340&quot; height=&quot;86&quot;  allowNetworking=&quot;all&quot;&gt;&lt;/embed&gt;</code></p>
+<p>谷歌浏览器上和Safiri游览器上它们的表现本质上是一致的：</p>
+<blockquote>
+<p>这两个插件在本地都可以正常显示，但是flash插件的速度明显要快一些。同时Safiri浏览器不会默认直接播放flash的音乐（它要省电😂）</p>
+<p>但是网页端，他们都失败了。<br>至此，排除插件问题。</p>
+</blockquote>
+<center><br><img src="http://obrxj270y.bkt.clouddn.com/flash%20adn%20iframe.png" width="400" high="400" title="本地预览二者都ok"><br></center>
+
+
+<hr>
+<h3 id="似乎找到问题所在"><a href="#似乎找到问题所在" class="headerlink" title="似乎找到问题所在"></a>似乎找到问题所在</h3><p>在网上搜了下这个问题，这个<a href="https://segmentfault.com/q/1010000002526920" target="_blank" rel="external">链接</a>中的回答还挺靠谱的。灰常有可能是以下原因：</p>
+<ul>
+<li>网易提供的外部链接都是<code>http://</code>打头的</li>
+<li>github的博客是<code>https://</code>打头的，所以不行</li>
+<li>本地预览链接为<code>http://localhost:4000/</code>, 是<code>http://</code>打头的，所以米有问题~</li>
+</ul>
+<hr>
+<h3 id="确定问题所在"><a href="#确定问题所在" class="headerlink" title="确定问题所在"></a>确定问题所在</h3><p>恩，然后我找了一些用NexT主题引进音乐的博客，进一步看了下这个问题：</p>
+<p>博客一：<a href="http://www.qiuchengjia.cn/" target="_blank" rel="external">http://www.qiuchengjia.cn/</a><br>NexT主题，一进去就有音乐~绑定了自己的域名，写了篇灰常简洁的嵌入音乐经验帖，之所以这么简单应该就是多亏绑定域名上述问题不存在了吧~😏</p>
+<p>博客二：<a href="http://login926.github.io/2016/07/20/HexoMedia/" target="_blank" rel="external">http://login926.github.io/2016/07/20/HexoMedia/</a><br>NexT主题，为了插入音乐，博文以及评论描述了<strong>这段坎坷的旅程</strong>，有一句话很关键<code>APlayer 与 DPlayer 均支持https</code>。</p>
+<p>不过，我也很好奇为什么它的博客是<code>http://</code>打头的，原来2016年6月后新创立的博客，Github官方才会支持<code>https://</code>,具体通知<a href="https://konklone.com/post/github-pages-now-sorta-supports-https-so-use-it" target="_blank" rel="external">在这里</a>。</p>
+<p>所以目前这个问题，还是很新颖哒！值得解决下~</p>
+<hr>
+<h3 id="结论来咯！"><a href="#结论来咯！" class="headerlink" title="结论来咯！"></a>结论来咯！</h3><p>综上，要解决这问题，有两个手段：</p>
+<ol>
+<li>买一个域名进行绑定~(岛主你若买，那帮我也买一个吧~😋mua~)</li>
+<li>按照博客二提供的解决方法去尝试</li>
+</ol>
+<center><br><img src="http://obrxj270y.bkt.clouddn.com/so%20cute~.jpg" width="200" high="200" title="so cute~"><br></center>
+
+<p>这下应该没问题了吧~继续看书去咯！</p>
+<p>@浙江图书馆大学路分馆</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;&lt;strong&gt;写给2016年6月后的博主&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;岛主搭建博客时遇到一个小问题，他怀疑是markdown编辑器的问题，所以发邮件予我拜托我试一下，正巧我吃完中饭休息一会儿，对照着他找的一份很棒的&lt;a href=&quot;http://www.jianshu.com/p/a52b68794a6b&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;经验帖&lt;/a&gt;，贴了代码本地预览立即听到了音乐🎵，觉得好有成就感，但是部署到github page上后在网页端预览时，音乐无法显示。&lt;/p&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://obrxj270y.bkt.clouddn.com/really.jpg&quot; width=&quot;200&quot; high=&quot;200&quot; title=&quot;really?&quot;&gt;&lt;br&gt;大热天的这盆凉水把午后的倦意一下子冲走了。&lt;br&gt;不午睡的人生就干点活呗~&lt;br&gt;以下算是清单的一次小实践😋&lt;br&gt;感谢岛主提出的好问题~&lt;br&gt;&lt;/center&gt;
+    
+    </summary>
+    
+      <category term="爬出坑后写清单" scheme="http://yoursite.com/categories/%E7%88%AC%E5%87%BA%E5%9D%91%E5%90%8E%E5%86%99%E6%B8%85%E5%8D%95/"/>
+    
+    
+      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
     
   </entry>
   
