@@ -1957,9 +1957,9 @@ summary(lin.mod)$coef
       <category term="偶遇新事物" scheme="http://yoursite.com/categories/%E5%81%B6%E9%81%87%E6%96%B0%E4%BA%8B%E7%89%A9/"/>
     
     
-      <category term="Lecture" scheme="http://yoursite.com/tags/Lecture/"/>
-    
       <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
+    
+      <category term="Lecture" scheme="http://yoursite.com/tags/Lecture/"/>
     
   </entry>
   
