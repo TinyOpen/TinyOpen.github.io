@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-27T02:02:34.000Z</updated>
+  <updated>2017-06-02T13:53:04.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,104 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>个人化全基因测序时代的帷幕，正在拉开</title>
+    <link href="http://yoursite.com/2017-06-01-Lecture-about-GWAS/"/>
+    <id>http://yoursite.com/2017-06-01-Lecture-about-GWAS/</id>
+    <published>2017-05-31T16:00:00.000Z</published>
+    <updated>2017-06-02T13:53:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<center><br><br><img src="http://oqk9k7f97.bkt.clouddn.com/2017-06-02-3.jpg" width="300" high="300" title="医疗未来"><br></center>
+
+<p>基因可以联系病情，基因也可以代表组织，于是，基因作为桥梁，我们可以看下疾病和组织之间有什么关系。<br>结果很有趣：</p>
+<ul>
+<li>对于身材，一个人身材的好坏（哈哈~有一些衡量指标，例如男生的倒三角，女性的 S 曲线😏），如果他是男生，那么和肌肉组织比较相关，如果是女生，是和消化器官比较相关。</li>
+<li>对于BMI，无论男女，都与大脑最为相关，而非我们平常所想的消化组织。也就是说，吃了消化快慢和肥胖不是最相关的，最相关的是，你的大脑有多么想吃东西。</li>
+</ul>
+<p>题图来自于<a href="https://directorsblog.nih.gov/2015/03/24/precision-medicine-who-benefits-from-aspirin-to-prevent-colorectal-cancer/" target="_blank" rel="external">NIH</a></p>
+<p>以上是摘要，正文如下。</p>
+<a id="more"></a>
+<p>6月1号，我拿到了驾照小本本，从此心中多了一个愿望，不要成为马路杀手。中午时分，看到群里说紫金港下午两点有个讲座，是耶鲁公共卫生学院的一位教授，数学 &amp; 统计学背景，分外心动。紧赶慢赶，从50公里外的富养考场回到了紫金港，收获挺多，特来记一记。讲座的题目是： <strong>Understanding the Genetic Basis of Complex Diseases through Genome Wide Association Studies</strong>，主讲人:©️<a href="https://publichealth.yale.edu/people/hongyu_zhao.profile" target="_blank" rel="external">Hongyu Zhao</a>.</p>
+<p>1995年，人类发现了染色体，在当时的显微镜下，甚至数不清楚到底有多少条染色体；<br>2001年，人类基因组草图被公布，那时候就知道人类的DNA中大约有 $30$ 亿个碱基对；<br>然后，我们发现，在 $30$ 亿个碱基对中，与遗传变异有关的位点大概有 $5,000-6,000$ 万个，通俗地讲，”我漂亮，你竟然比我还漂亮“这种个体之间的差异，正是由于这 $5,000-6,000$ 万个位置上碱基之间的差异造成的。<br>现在，我们可以用一个小小的芯片，去测量每一个人的遗传变异情况，由此便有了一种新的研究——GWAS（Genome Wide Association Studies）.</p>
+<h2 id="GWAS案例"><a href="#GWAS案例" class="headerlink" title="GWAS案例"></a>GWAS案例</h2><p>已有的研究表明：<br>身高：$250,000$的数据(SNPs)显示，人身高上的差距很有可能与 $700$ 个遗传变异的位点有关。<br>精神分裂：$37,000$(精神分裂病人) &amp; $113,075$(对照组)的数据(SNPs)显示， 精神分裂疾病大约与 $108$ 位点相关。</p>
+<p>以上这些案例，都是基于传统的统计学，在超级多的变量里面挑，要确保整体错误率不太高的话，只能鸡蛋里挑骨头，p-value 都小到 $10\^{-8}$了。后来的提问环节，有个老师问道，精挑细选的 p-value 极地的往往无法验证，而那些在统计上的表现稍微差一点的，还挺行，这问题怎么解决呢？（嗯，这是一个非常现实的问题，现实==难😉～）</p>
+<h2 id="Heritability-遗传因素的解释能力"><a href="#Heritability-遗传因素的解释能力" class="headerlink" title="Heritability 遗传因素的解释能力"></a>Heritability 遗传因素的解释能力</h2><p>顺着统计的思路，还可以继续问下去：</p>
+<ul>
+<li>How much heritability can be explained by the identified variants? ($R^2$)</li>
+<li>How much heritability can be explained by the studied SNPs?</li>
+<li>Which tissue/cell types are relevant to a disease </li>
+<li>Are there share genetics between two traits, if yes, how much?</li>
+</ul>
+<p>可以用一个简单的等式$表型的方差 = 基因的方差 + 环境的方差$ 表示基因和环境共同造就了表象。面对一组分外庞大的数据时，如果我们研究的是身高，想要看一下，基因有关的那些变量能够在多大程度上解释身高之间的差异。</p>
+<p>当采取的策略的第一步是变量选择（几十万 ➡️ 几十个）时，用经过选择后的变量建立预测模型大概可以解释3.7%身高之间的差异。遗传本应该可以解释 80%以上，但是我们只能解释 4%😺.</p>
+<p>当掠过变量选择这一步时，直接用所有的 SNPs 时($4000$个人的 $294,831$个SNPs) ，此时，能解释 $45$%. 这也就是主讲人所提出的 <strong>Random Effect Model</strong>: 从全基因组的相似性去辅助解释身高的相似性$y_j = \mu + g_j + \epsilon$, 这个模型当然有 mis-specified 的缺陷，但是模拟显示，它的稳健型非常高。</p>
+<p>上述两种情况表明：</p>
+<blockquote>
+<p>即使同一个数据，不同的统计方法，有完全不一样的解释程度🤔</p>
+</blockquote>
+<h2 id="案例：病情与组织"><a href="#案例：病情与组织" class="headerlink" title="案例：病情与组织"></a>案例：病情与组织</h2><p>基因可以联系病情，基因也可以代表组织，于是，基因作为桥梁，我们可以看下疾病和组织之间有什么关系。<br>结果很有趣：</p>
+<ul>
+<li>对于身材，一个人身材的好坏（哈哈~有一些衡量指标，例如男生的倒三角，女性的 S 曲线😏），如果他是男生，那么和肌肉组织比较相关，如果是女生，是和消化器官比较相关。</li>
+<li>对于BMI，无论男女，都与大脑最为相关，而非我们平常所想的消化组织。也就是说，吃了消化快慢和肥胖不是最相关的，最相关的是，你的大脑有多么想吃东西。</li>
+<li>对于老年痴呆，实际上是与免疫系统关系最大，并非大脑。</li>
+<li>对于帕金森，先是免疫，再是表皮，然后是心血管，很后面才是大脑。</li>
+</ul>
+<h2 id="也谈预测"><a href="#也谈预测" class="headerlink" title="也谈预测"></a>也谈预测</h2><p>其实吧，就算是糖尿病，根据基因来预测的准确性也只有 $18%$，而市面上大张旗鼓的公司这么多这么多…</p>
+<p>The end.</p>
+<center><br><br><img src="http://oqk9k7f97.bkt.clouddn.com/2017-06-02-2.jpg" width="300" high="300" title="🎈祝自己儿童节快乐"><br></center>
+
+
+
+
+
+
+
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;http://oqk9k7f97.bkt.clouddn.com/2017-06-02-3.jpg&quot; width=&quot;300&quot; high=&quot;300&quot; title=&quot;医疗未来&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;p&gt;基因可以联系病情，基因也可以代表组织，于是，基因作为桥梁，我们可以看下疾病和组织之间有什么关系。&lt;br&gt;结果很有趣：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对于身材，一个人身材的好坏（哈哈~有一些衡量指标，例如男生的倒三角，女性的 S 曲线😏），如果他是男生，那么和肌肉组织比较相关，如果是女生，是和消化器官比较相关。&lt;/li&gt;
+&lt;li&gt;对于BMI，无论男女，都与大脑最为相关，而非我们平常所想的消化组织。也就是说，吃了消化快慢和肥胖不是最相关的，最相关的是，你的大脑有多么想吃东西。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;题图来自于&lt;a href=&quot;https://directorsblog.nih.gov/2015/03/24/precision-medicine-who-benefits-from-aspirin-to-prevent-colorectal-cancer/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;NIH&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;以上是摘要，正文如下。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="偶遇新事物" scheme="http://yoursite.com/categories/%E5%81%B6%E9%81%87%E6%96%B0%E4%BA%8B%E7%89%A9/"/>
+    
+    
+      <category term="Lecture" scheme="http://yoursite.com/tags/Lecture/"/>
+    
+      <category term="Biostatistics" scheme="http://yoursite.com/tags/Biostatistics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2017-05-27-Reopen-the-Blog</title>
+    <link href="http://yoursite.com/2017-05-27-Reopen-the-Blog/"/>
+    <id>http://yoursite.com/2017-05-27-Reopen-the-Blog/</id>
+    <published>2017-05-27T05:54:57.000Z</published>
+    <updated>2017-05-27T05:54:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<center><br><br><img src="http://oqk9k7f97.bkt.clouddn.com/so-nice.jpg" width="300" high="300" title="🤓"><br></center>
+
+
+<a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;http://oqk9k7f97.bkt.clouddn.com/so-nice.jpg&quot; width=&quot;300&quot; high=&quot;300&quot; title=&quot;🤓&quot;&gt;&lt;br&gt;&lt;/center&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>省了800元宿舍费的我，遇见了超棒的计算机舍友们</title>
@@ -1957,221 +2055,9 @@ summary(lin.mod)$coef
       <category term="偶遇新事物" scheme="http://yoursite.com/categories/%E5%81%B6%E9%81%87%E6%96%B0%E4%BA%8B%E7%89%A9/"/>
     
     
-      <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
-    
       <category term="Lecture" scheme="http://yoursite.com/tags/Lecture/"/>
     
-  </entry>
-  
-  <entry>
-    <title>也谈谈期末考，或许是最后一次了</title>
-    <link href="http://yoursite.com/2016-06-17-final-test/"/>
-    <id>http://yoursite.com/2016-06-17-final-test/</id>
-    <published>2016-06-16T16:00:00.000Z</published>
-    <updated>2017-05-26T16:46:15.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
-<p>不想抬起腿又必须要迈过这道坎的时光里，<br>你总比自己想象中更容易走神。</p>
-</blockquote>
-<p>刚给某人发短信，结果他好长时间都没有回，我洗衣服时想着那就自个儿乐一会儿顺便写个博客😋名字叫做「当男朋友不理我时干什么？ps:写博客咯😀！」</p>
-<p>自从看到朱赟前辈每天只睡5，6个小时还不间断更新微信公众号后，我觉得我也应该多写写，至少不要把「自以为的忙碌」作为借口。</p>
-<a id="more"></a>
-<p>中午和小胖聊天，谈及人生的很多可能性，谈及任何决定都需与幸福相关，最后遐想了下我俩在美国农村的生活：</p>
-<ul>
-<li>一边搞研究</li>
-<li>一边相依为命</li>
-<li>用厨具弥补厨艺</li>
-<li>养1只金毛2只猫</li>
-</ul>
-<p>所以，生活想想总是很美好哒！</p>
-<p><img src="/img/in-post/6-17-final-test/1.jpg" alt="fun"></p>
-<h3 id="关于期末考"><a href="#关于期末考" class="headerlink" title="关于期末考"></a>关于期末考</h3><p>这应该是我学生阶段的最后一场考试，每次期末考都觉得压力浩浩荡荡，以前我总是借由和父母说「我挂科了拿不到学位了」来缓解压力，我爹总是笑着说「那我们养你好啦」，真是太有安全感了。知道这道坎得自己过，这样说说抱怨下，感觉好很多😋</p>
-<p>这次的期末呢，真的感受到了很大的压力。但是回顾我之前的考试，比这个更惨的比比皆是，那些我都过来了，应该不会「晚节不保」吧😊就算是，那我退学直接去河坊街找份包吃包住的工作吧~</p>
-<blockquote>
-<p>有几点感悟：</p>
-</blockquote>
-<ul>
-<li>真的不止眼前的苟且，基础学科的广大智慧，能有时间浸润要满怀感激。以后或许都没有人再对我说<strong>「给你来场考试，你好好看书，看看几百年前的智慧」</strong></li>
-<li>感知压力时，寻求帮助，与他人一起合作</li>
-<li>可以感知压力，但不可产生焦虑（这个目标进度较缓，慢慢前行）</li>
-</ul>
-<p><img src="/img/in-post/6-17-final-test/2.jpg" alt="fun"></p>
-<h3 id="和计算机舍友的聊天感悟"><a href="#和计算机舍友的聊天感悟" class="headerlink" title="和计算机舍友的聊天感悟"></a>和计算机舍友的聊天感悟</h3><p>昨儿本来早早地就准备睡了，以为可以在11点前入眠，可谁知道最后还是12点后。</p>
-<p>但是，收获很多，我今儿还细细回想了下，昨儿聊天中我们所体现的各种人生态度。</p>
-<h4 id="本科的遗憾"><a href="#本科的遗憾" class="headerlink" title="本科的遗憾"></a>本科的遗憾</h4><p>谈及本科，赟感慨很多，她粗粗描述了下本科的时光：</p>
-<blockquote>
-<p>你们知道吗？那时候我每次都会预习，是预习！<br>课后还会复习好多次，期末阶段也会很认真地复习。<br>那时候我觉得我数学好得飞起来了，但是现在我什么都不记得了😒。<br>非常后悔当时使劲泡在图书管，没有享受大学生活。艺术团有几个姑娘，舞跳得很好，后来一问，才知道她们都是在本科才开始学的。</p>
-</blockquote>
-<p>赟研一上的时候，有段时间很认真地考虑了从浙大退学这件事。来浙大上研究生对她而言，似乎配不上她在本科阶段付出的努力，亦或者，青春？</p>
-<p>我们自然会如此宽慰她：</p>
-<blockquote>
-<p>若没有本科这样的生活，或许你现在正在遗憾的，就是相反的事情了「为什么我本科阶段不好好泡图书馆呢😭」</p>
-</blockquote>
-<p>但是，上述的逻辑，根本经不住推敲——<br><strong>怎么能用「可能为另一种可能性感到遗憾」来自我安慰呢？</strong></p>
-<hr>
-<p>我粗粗回想了下我的本科生活，开森和不开森的事情都有哪些呢？</p>
-<ol>
-<li><p>很喜欢坐在第一排听定理证明，但是不喜欢做题，交作业前一晚去会佳旭那里拿她在布置作业的当天就已经写完的小本本，抄作业的感觉还是很棒的，有时我也会闲来无聊就随手写下我的做法。</p>
-</li>
-<li><p>和好几个小伙伴一起看「致命ID」期间数次😱🙈；和当时的舍友看一部法国妓院的影片很是春心萌动；和梦雨同睡晚起跳过早餐看「入俭师」哭得稀里哗啦；和佳旭看好多好多。最不喜欢的是听一些人讲一些言过其实的话。</p>
-</li>
-</ol>
-<p>还有好多我回想起来也很开心的事。包括每次期末考，我都强忍「老师我不考了你直接把我挂了吧我回杭州去了」而慢慢地有效率地接受一些朴素的智慧。</p>
-<p>我喜欢的生活是：</p>
-<blockquote>
-<p><strong>拎得清楚最重要的事，不忘自己开心。如果前者必然会有焦虑，那也不让焦虑作为主角上场，毕竟，凭啥呢？我的小乐观小积极向上演技好着呢😌</strong></p>
-</blockquote>
-<p>前两天我和岛主随口说了句「<strong>你不是你的职业，你是你的秉赋</strong>」。于我，不愿「<strong>非初心所向，而渐近平庸</strong>」。</p>
-<h4 id="从工程到科研"><a href="#从工程到科研" class="headerlink" title="从工程到科研"></a>从工程到科研</h4><p>缘和师兄坦白「想转科研了，就不能帮着你做项目了」。她想得很清楚「寻着读研初衷做点有意思的」。这让作为旁观者的我也觉得有活力——喜欢这种调整方向的勇气，祝福她！</p>
-<p>这两天邀请她一起听讲座，聊聊SVM、神经网络，沾沾她身上工程的地气，于我帮助很大。</p>
-<p>我们还聊了一些比较现实的问题，很感激她纠正了我浸润在理论中太长时间而带出的「似乎这样」，其实，是这样的：</p>
-<ul>
-<li>刷题能找到好工作，一般的paper、项目帮助不大</li>
-<li>一份工作占据你60%左右的时间为佳，高效有成就感</li>
-<li>随意抛弃自身优势不可取，敬畏其它领域的门槛</li>
-<li>找份好工作是读书的最大目标，另外，嫁个有钱人也是~（from 她师兄）</li>
-</ul>
-<hr>
-<p>以上，挺碎碎念的，留着，自己看下：）</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;不想抬起腿又必须要迈过这道坎的时光里，&lt;br&gt;你总比自己想象中更容易走神。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;刚给某人发短信，结果他好长时间都没有回，我洗衣服时想着那就自个儿乐一会儿顺便写个博客😋名字叫做「当男朋友不理我时干什么？ps:写博客咯😀！」&lt;/p&gt;
-&lt;p&gt;自从看到朱赟前辈每天只睡5，6个小时还不间断更新微信公众号后，我觉得我也应该多写写，至少不要把「自以为的忙碌」作为借口。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="小日子一朵朵" scheme="http://yoursite.com/categories/%E5%B0%8F%E6%97%A5%E5%AD%90%E4%B8%80%E6%9C%B5%E6%9C%B5/"/>
-    
-    
-      <category term="发会呆" scheme="http://yoursite.com/tags/%E5%8F%91%E4%BC%9A%E5%91%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>线性模型得出的参数到底该如何分析</title>
-    <link href="http://yoursite.com/2016-06-14-statlear-fun/"/>
-    <id>http://yoursite.com/2016-06-14-statlear-fun/</id>
-    <published>2016-06-13T16:00:00.000Z</published>
-    <updated>2016-08-13T15:48:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="闲聊是个好传统"><a href="#闲聊是个好传统" class="headerlink" title="闲聊是个好传统"></a>闲聊是个好传统</h3><p>我大白天时常走神，关键时刻还迷路；但是，有时会有一些小恩赐，比如说：</p>
-<ul>
-<li>突然变聪明，想清楚一些事</li>
-<li>突然与智慧零接触，也有些小感悟</li>
-<li>突然有了「拾金不昧」「扶起倒下自行车」这类展现人品的机会😉</li>
-</ul>
-<center><br>    <img src="/img/in-post/StatLear-fun/can't find sth.jpg" title="很随意~" width="300" high="300"><br></center>
-
-<p>开这个系列，是因为，我时常想写一些长长的、细致的、靠谱的文章，但是呢，我发现并没有这个时间和精力，对了，我还没有💰。嗯，还有一样我好像也没有，不过大庭广众的，就不献丑了。</p>
-<p>鉴于此，我又不想错过这些宝贵的瞬间，怎么办呢？只有拿出<strong>「先写下最简洁」</strong>版本的勇气，待日后有缘慢慢补上。这不，今儿我和数据挖掘的老师闲聊，要到了Peter Song的讲义，就可以把之前一个博客好好完善下咯！</p>
-<p>ps: 岛主夫人期末阶段的承诺纯属虚构，请勿当真</p>
-<a id="more"></a>
-<hr>
-<p>答应某人整理下最近非常有感触的一个点，既然答应了，就要全力以赴不食言😉～</p>
-<p>here we go～</p>
-<p>《An Introduction to Statistical Learning》第四章，讲的是分类模型。模型的细节这里就不展开了，直接跳到例子和结论。</p>
-<h3 id="数据集介绍"><a href="#数据集介绍" class="headerlink" title="数据集介绍"></a>数据集介绍</h3><p>这个例子的数据Default在R语言的ISLR包里，安装好后输入如下代码即可查看数据集</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">library(ISLR)</div><div class="line">\\查看ISLR中内置的数据集</div><div class="line">data(package = &quot;ISLR&quot;)</div><div class="line"></div><div class="line">\\此次讨论的是Default数据集</div><div class="line">help(Default)</div></pre></td></tr></table></figure>
-<p>这个数据集给出了1000条信用记录，每条记录有四个变量：</p>
-<ul>
-<li><p>default<br>  顾客是否违约</p>
-</li>
-<li><p>student<br>  顾客是否学生</p>
-</li>
-<li><p>balance<br>  每月出账单时，顾客信用卡的平均余额</p>
-</li>
-<li><p>income<br>   顾客的收入</p>
-</li>
-</ul>
-<h3 id="模型的目标"><a href="#模型的目标" class="headerlink" title="模型的目标"></a>模型的目标</h3><p>模型的目标是<strong>预测一个顾客是否会违约</strong>，更精确一点地说，是预测一个顾客违约的可能性。例如，如果模型说一个客户违约的可能性大于0.5，我们便觉得他会违约（当然，这个临界值可以小于0.5，如果该银行最近需要特别谨慎的话）。</p>
-<h3 id="三个小模型的结果"><a href="#三个小模型的结果" class="headerlink" title="三个小模型的结果"></a>三个小模型的结果</h3><h4 id="模型1-default-balance"><a href="#模型1-default-balance" class="headerlink" title="模型1: default~balance"></a>模型1: default~balance</h4><p>第一个模型想要用<strong>balance</strong>这1⃣️个变量来预测客户的违约情况。<br>结果如下table 4.1👇，balance是一个对预测非常有用的变量，而且它们是<strong>正相关</strong>的。</p>
-<p><img src="/img/in-post/StatLear-fun/table4.1.png" alt="fun"></p>
-<h4 id="模型2-default-student"><a href="#模型2-default-student" class="headerlink" title="模型2: default~student"></a>模型2: default~student</h4><p>第二个模型想要用<strong>student</strong>这1⃣️个变量来预测客户的违约情况。<br>结果如下table 4.2👇，student也是一个对预测非常有用的变量，而且它们也是<strong>正相关</strong>的。</p>
-<p><img src="/img/in-post/StatLear-fun/table4.2.png" alt="fun"></p>
-<h4 id="模型3-default-student-balance-income"><a href="#模型3-default-student-balance-income" class="headerlink" title="模型3: default~student+balance+income"></a>模型3: default~student+balance+income</h4><p>第三个模型想要用<strong>student</strong>、<strong>income</strong>、<strong>balance</strong>这3⃣️个变量来预测客户的违约情况。<br>结果如下table 4.3👇</p>
-<p><img src="/img/in-post/StatLear-fun/table4.3.png" alt="fun"></p>
-<ul>
-<li><p>student、balance都是对预测非常有用的变量，但是income不是。所以，income就可以忽略了。当然，为了我的玻璃心，我自己模拟了不含有income的模型，结果基本一致，所以可以直接用第三个模型给出的结论进行继续。</p>
-</li>
-<li><p>与模型1的结论一致，balance和违约是正相关的，balance越大，越容易违约（有购物欲的人会希望有更多的信用额度，虽然他们无法用完所有额度的，但是他们也经常换不了他们用掉的，觉得有些牵强，但愿是我理解错了，愁人~）</p>
-</li>
-<li><p>与模型2的结论相反！模型2说的是，<strong>学生更容易违约</strong>；但是模型3中学生这个变量前的系数是负数，就是说，<strong>学生的身份会降低违约率</strong>。</p>
-</li>
-</ul>
-<blockquote>
-<p>so，到底是为什么？明明在统计意义上，模型2与3都通过了显著性检验。其实还挺感谢这个例子的，让我捡回了对线性模型的信心。</p>
-</blockquote>
-<h3 id="为何结论相反？"><a href="#为何结论相反？" class="headerlink" title="为何结论相反？"></a>为何结论相反？</h3><p>为什么模型2和模型3得出的结论为何是相反的？</p>
-<p>ok，先说结论——<strong>表面相反，实则内涵丰富。</strong></p>
-<p>先来更细致、更直观地看下模型2和3的结论到底是什么意思。</p>
-<p>书中给出了一幅很漂亮的图👇 （不得不说这幅图的构架真有智慧，赞一个🌺）</p>
-<p><img src="/img/in-post/StatLear-fun/figure4.3.png" alt="fun"></p>
-<p>👆图的右边👉</p>
-<ul>
-<li>横坐标是student变量，纵坐标是balance变量，可以看到，学生（橙色）的balance，在整体上要高于非学生（蓝色）。更近一步，这说明了student与balance之间是有关系的。</li>
-</ul>
-<blockquote>
-<p>也正是他们的关系导致了之前使我们感到困惑的结论。</p>
-</blockquote>
-<p>👆图的左边👈</p>
-<ul>
-<li><p>横坐标是balance，纵坐标是违约率，可以看到，有两条在1500之后异军突起的曲线，分别代表学生（橙色）与非学生（蓝色）群体，他们的balance与违约率之间的关系。</p>
-</li>
-<li><p>在相同balance的情况下，学生不太违约呢（橙色的线条在蓝色线条的下面），所以，在模型3中，student变量前的系数是负数。</p>
-</li>
-</ul>
-<h3 id="再看一眼数据和结论"><a href="#再看一眼数据和结论" class="headerlink" title="再看一眼数据和结论"></a>再看一眼数据和结论</h3><blockquote>
-<p>在对数据有了更多的了解后，再来对照着模型的结论</p>
-</blockquote>
-<p>对数据的了解：</p>
-<ul>
-<li>相关性：<strong>学生群体</strong>的balance，高于<strong>非学生群体</strong>的balance</li>
-</ul>
-<p>模型的结论实际上是：</p>
-<ul>
-<li>balance越高，越容易违约（模型1得出的结论）</li>
-<li>学生群体更容易违约是因为其balance更多（模型2的结论）</li>
-<li>在给定的balance的情况下，学生又比非学生还贷要及时得多（模型3的结论）</li>
-</ul>
-<p>也不知道有没有讲清楚😅</p>
-<h3 id="实在的：模型-决策"><a href="#实在的：模型-决策" class="headerlink" title="实在的：模型-决策"></a>实在的：模型-决策</h3><p>BTW，这份洞见可以帮助生成如下决策：</p>
-<ul>
-<li>没有balance信息时，不要贷款给学生，因为他们会有更多的balance，从而更容易违约。</li>
-<li>有了balance信息后，面对具有相同balance的学生A和非学生B，那就选择A吧~</li>
-</ul>
-<blockquote>
-<p>ps: 以上内容整理自《An Introduction to Statistical Learning》</p>
-</blockquote>
-<p>岛主夫人<br>2016.06 研一下期末</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;闲聊是个好传统&quot;&gt;&lt;a href=&quot;#闲聊是个好传统&quot; class=&quot;headerlink&quot; title=&quot;闲聊是个好传统&quot;&gt;&lt;/a&gt;闲聊是个好传统&lt;/h3&gt;&lt;p&gt;我大白天时常走神，关键时刻还迷路；但是，有时会有一些小恩赐，比如说：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;突然变聪明，想清楚一些事&lt;/li&gt;
-&lt;li&gt;突然与智慧零接触，也有些小感悟&lt;/li&gt;
-&lt;li&gt;突然有了「拾金不昧」「扶起倒下自行车」这类展现人品的机会😉&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;&lt;br&gt;    &lt;img src=&quot;/img/in-post/StatLear-fun/can&#39;t find sth.jpg&quot; title=&quot;很随意~&quot; width=&quot;300&quot; high=&quot;300&quot;&gt;&lt;br&gt;&lt;/center&gt;
-
-&lt;p&gt;开这个系列，是因为，我时常想写一些长长的、细致的、靠谱的文章，但是呢，我发现并没有这个时间和精力，对了，我还没有💰。嗯，还有一样我好像也没有，不过大庭广众的，就不献丑了。&lt;/p&gt;
-&lt;p&gt;鉴于此，我又不想错过这些宝贵的瞬间，怎么办呢？只有拿出&lt;strong&gt;「先写下最简洁」&lt;/strong&gt;版本的勇气，待日后有缘慢慢补上。这不，今儿我和数据挖掘的老师闲聊，要到了Peter Song的讲义，就可以把之前一个博客好好完善下咯！&lt;/p&gt;
-&lt;p&gt;ps: 岛主夫人期末阶段的承诺纯属虚构，请勿当真&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="数据科学实践" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6%E5%AE%9E%E8%B7%B5/"/>
-    
-    
-      <category term="Statistics" scheme="http://yoursite.com/tags/Statistics/"/>
-    
-      <category term="R" scheme="http://yoursite.com/tags/R/"/>
+      <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
     
   </entry>
   
