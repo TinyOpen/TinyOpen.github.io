@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-02T13:53:04.000Z</updated>
+  <updated>2017-09-18T09:20:32.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从 Hotelling 到 p &gt; n</title>
+    <link href="http://yoursite.com/2017-09-18-mean-test-covariance/"/>
+    <id>http://yoursite.com/2017-09-18-mean-test-covariance/</id>
+    <published>2017-09-18T15:29:10.000Z</published>
+    <updated>2017-09-18T09:20:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<center><br>讲讲一些我懂的，觉得很有用的。<br>希望，不光只对于文献定理证明有用。<br><br><img src="http://oqk9k7f97.bkt.clouddn.com/2017-09-18.png " width="300" high="300" title="COV COV COV"><br></center>
+
+
+
+
+<a id="more"></a>
+<h2 id="比较时要注意-scalling"><a href="#比较时要注意-scalling" class="headerlink" title="比较时要注意 scalling"></a>比较时要注意 scalling</h2><p>当两个样本的数据极度不稳定的时候，比较两个样本之间的差异并没有什么意义——就好像从两个阴晴不定的女人之中选出一个脾气比较好的，只要你选了，后悔的那一天也就不远了。</p>
+<p>所以在最简单的一维情形下，我们会利用以下这两个含有深刻意义的结论来思考问题——要进行 scaling:<br>$$ \frac{\bar{x} - \mu}{s/\sqrt{n}} \sim t(n-1) \quad \frac{\bar{x} - \mu}{\sigma} \sim N(0,1) $$</p>
+<p>回到均值比较的这个问题，如果要检验均值是否等于 $\mu$, 下面这个式子很自然就出现了：</p>
+<p>$$ t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}} $$<br>$$ \begin{eqnarray}<br>t^2 &amp; = &amp; \frac{(\bar{x} - \mu_0)^2}{s^2 / n} \<br>&amp; = &amp; n (\bar{x} - \mu_0)(s^2)^{-1} (\bar{x} - \mu_0) \, .<br>\end{eqnarray} $$</p>
+<p>到了高维的情况，仰仗着<a href="https://en.wikipedia.org/wiki/Harold_Hotelling" target="_blank" rel="external">Harold Hotelling</a> 的智慧，我们有了下面这个统计量——原理不变，在高维情况下利用样本协方差阵 $S$ 进行 scaling：</p>
+<p>$$ T^2 = n (\bar{X} - {\mu}_0) {S}^{-1} (\bar{X} - {\mu}_0) \, , $$</p>
+<p>$$ T^2 \sim \frac{p(n-1)}{n-p} F_{(p, \, n-p)} \, , $$</p>
+<p>上述式子是在 1947 年提出来的，等到 1996 年，也就是 50 年之后，为了应对上述式子中的<strong>一个缺陷</strong>，白老师和 Saranadasa 在论文 “Effect of high dimention:By an example of a two sample problem” 中用  $\tau tr(S_n)$ 代替 $ S^{-1} $来完成 scaling。</p>
+<p>比较两个样本均值的统计量于是就变成了：<br>$$(\bar{X_1}- \bar{X_2})(\bar{X_1}- \bar{X_2}) - \tau tr(S_n)$$</p>
+<p>其中的魅力，就在不用求 $S_n$ 的逆了。</p>
+<h2 id="p-gt-n，求逆不可行"><a href="#p-gt-n，求逆不可行" class="headerlink" title="p &gt; n，求逆不可行"></a>p &gt; n，求逆不可行</h2><p>在 Hotelling 的那个年代，统计是一门基于实验的科学，它有目标变量，还要控制变量。例如，我要研究的是，在 A 不变的情况下，B 的变化会造成 C 的哪些差异，是 A 多一点好呢？还是 A 少一点好。总的来说，它源于假设，而假设不可能包括成千上万个变量。好怀念那个年代呀！所以，在那个年代，变量的个数通常要比样本少，$p &lt; n \,$.但是现在的情况是，随随便便变量的个数就要比样本多，还多不少。</p>
+<p>让我们回到基础的代数知识看一下，变量个数大于样本个数，会对 Hotelling 的统计量造成怎样一个毁灭性的打击。</p>
+<p>对于一个$n \times n$ 方阵而言，如果它的 rank 小于 n, 那么它是不可逆的。同时，$rank(X’X) &lt;= rank(X) &lt;= dim(X)\,$, 样本协方差阵 $S_n =\frac{1}{n-1}X’X \,$ (注：$X_{n \times p}$), 也就是说，当 $p &gt; n $ 的时候，$S_n$ <strong>不可能可逆</strong>。</p>
+<h2 id="PCA-新思路"><a href="#PCA-新思路" class="headerlink" title="PCA 新思路"></a>PCA 新思路</h2><p>我在生物实验室干活的时候，发现大家在运用 PCA 的时候，对于矩阵的行列没有感觉，一会儿 $X_{n \times p}\,$, 一会儿$X_{p\times n}\,$. 之前我觉得这么做铁定不行，那时候我好蠢。</p>
+<p>事实上是这样的，矩阵的转秩前后，其特征值并不发生改变。当 $p &gt; n$的时候，如果能用 $n \times n$ 的矩阵来求 $p \times p $的特征值，岂不美哉。且看推导:</p>
+<p>$$ XX’v_i = \lambda_{i} v_i ==&gt; X’XX’v_i = \lambda_{i} X’v_i$$</p>
+<p>The end.</p>
+<center><br><br><img src="http://oqk9k7f97.bkt.clouddn.com/2017-09-18-1.JPG " width="300" high="300" title="哎呀我去好可爱"><br></center>
+
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;&lt;br&gt;讲讲一些我懂的，觉得很有用的。&lt;br&gt;希望，不光只对于文献定理证明有用。&lt;br&gt;&lt;br&gt;&lt;img src=&quot;http://oqk9k7f97.bkt.clouddn.com/2017-09-18.png &quot; width=&quot;300&quot; high=&quot;300&quot; title=&quot;COV COV COV&quot;&gt;&lt;br&gt;&lt;/center&gt;
+    
+    </summary>
+    
+      <category term="偶遇新事物" scheme="http://yoursite.com/categories/%E5%81%B6%E9%81%87%E6%96%B0%E4%BA%8B%E7%89%A9/"/>
+    
+    
+      <category term="Statistics" scheme="http://yoursite.com/tags/Statistics/"/>
+    
+  </entry>
   
   <entry>
     <title>个人化全基因测序时代的帷幕，正在拉开</title>
@@ -240,9 +287,9 @@
       <category term="偶遇新事物" scheme="http://yoursite.com/categories/%E5%81%B6%E9%81%87%E6%96%B0%E4%BA%8B%E7%89%A9/"/>
     
     
-      <category term="Biostatistics" scheme="http://yoursite.com/tags/Biostatistics/"/>
-    
       <category term="paper" scheme="http://yoursite.com/tags/paper/"/>
+    
+      <category term="Biostatistics" scheme="http://yoursite.com/tags/Biostatistics/"/>
     
   </entry>
   
@@ -639,7 +686,7 @@
     <link href="http://yoursite.com/2016-09-21-three-lectures-of-an-academician/"/>
     <id>http://yoursite.com/2016-09-21-three-lectures-of-an-academician/</id>
     <published>2016-09-21T07:36:24.000Z</published>
-    <updated>2017-05-26T15:27:47.000Z</updated>
+    <updated>2017-09-18T09:21:10.000Z</updated>
     
     <content type="html"><![CDATA[<p>这两天开学，兵荒马乱之余，听了三场陈木法院士的讲座。</p>
 <p>其中有个笑话让我印象很深。有次陈木法教授与一位浙大搞工程的教授在飞机上相遇，浙大教授太无聊遂提议「我们互相问问题吧？你问的我答不出来我给500，我问的你答不出来，你给50.」「好啊，你先问」浙大教授问了一个关于机翼的问题，陈老师给了50.然后陈老师问「有一种动物，白天5只腿，晚上3只腿，是什么动物？」下飞机时浙大教授还是没想出来，给了500顺便问了下「是什么？」陈老师没有说话，只是给了他50.🙂</p>
@@ -680,7 +727,7 @@
     
     </summary>
     
-      <category term="遇见新事物" scheme="http://yoursite.com/categories/%E9%81%87%E8%A7%81%E6%96%B0%E4%BA%8B%E7%89%A9/"/>
+      <category term="偶遇新事物" scheme="http://yoursite.com/categories/%E5%81%B6%E9%81%87%E6%96%B0%E4%BA%8B%E7%89%A9/"/>
     
     
       <category term="Lecture" scheme="http://yoursite.com/tags/Lecture/"/>
@@ -1849,215 +1896,6 @@ summary(lin.mod)$coef
       <category term="Statistics" scheme="http://yoursite.com/tags/Statistics/"/>
     
       <category term="译文" scheme="http://yoursite.com/tags/%E8%AF%91%E6%96%87/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>再听神经网络 From BNN to CNN</title>
-    <link href="http://yoursite.com/2016-06-18-ANN-to-CNN/"/>
-    <id>http://yoursite.com/2016-06-18-ANN-to-CNN/</id>
-    <published>2016-06-17T16:00:00.000Z</published>
-    <updated>2016-08-13T15:39:51.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li>What’s in common between artists and statisticians?</li>
-<li>Models😻</li>
-</ul>
-<p>此讲座由<br><a href="http://www.math.ust.hk/~majing/" target="_blank" rel="external">©Bingyi Jing, @香港科技大学</a>主讲，我整理而已。</p>
-<a id="more"></a>
-<hr>
-<p>讲座开始前:</p>
-<blockquote>
-<p>荆老师问了句「西班牙几比几？」😅</p>
-<p>女神张奕教授🙋🏻「3：0」</p>
-</blockquote>
-<hr>
-<h2 id="随便聊聊神经网络"><a href="#随便聊聊神经网络" class="headerlink" title="随便聊聊神经网络"></a>随便聊聊神经网络</h2><p>最近几年对机器学习充满了无穷的乐趣。Alpha Go通过深度学习&amp;加强学习「动态编程」打败了李世石。</p>
-<p>机器打败人是早晚的事，因为计算机的速度越来越快。当人也有机会向机器学习的时候，人才能打败机器。机器的确会取代人，例如常规新闻的撰写。</p>
-<p>目前深度学习很多人不相信，因为没有理论。统计人对此了解很少，但是计算机的人只需要它work就可以。如果能在理论上理解它为什么这么神奇，那么也能更进一步帮助计算机更好地实现。</p>
-<p>斯坦福的那些统计学家在ESL这本书的第十一章谈到ANN的时候，轻描淡写，它认为ANN认为是PPR的特例，但是ANN(Artificial Neural Network<br>)远不止于此。</p>
-<blockquote>
-<p>注，为了这句话，我复习了下<a href="https://book.douban.com/subject/3294335/" target="_blank" rel="external">ESL</a>的第十一章，写点感想吧。</p>
-</blockquote>
-<p>统计学家们发明了一个模型PPR——Projection Pursuit Regression，从几何的角度进行解释，参杂了线性可加与非参光滑的思想。</p>
-<p>基于这个模型的好效果，他们还起了一个名字——Universal Approximator.</p>
-<p>它在统计学中之所以没有得到非常广的应用，按照作者的言外之意，大概是「这个模型过于灵活丧失了可解释性，而可解释性对于统计而言，是深入骨髓不能丢弃的」。</p>
-<p>但是，我原先也是对照实验的信徒，欣赏这种明明白白的智慧，但是我们也可以，或者说，更应该。把部分目光转向：</p>
-<blockquote>
-<p><strong>「这个方法竟然work得这么好！虽然不知道原理，但是我不能只因为我不知道原理而自认为有了批判它的权利。」</strong></p>
-</blockquote>
-<hr>
-<h2 id="题外话：统计学的失败"><a href="#题外话：统计学的失败" class="headerlink" title="题外话：统计学的失败"></a>题外话：统计学的失败</h2><p>我们讨论了半天为什么统计学的术语这么绕？</p>
-<p>例如：<br>why logistic？<br>regression vs supervised learning<br>coefficient vs weight<br>covariates vs input&amp;output</p>
-<p>结论：<br>你们统计学有今天，真的起名字上太失败了。</p>
-<hr>
-<h2 id="BNN和一些历史"><a href="#BNN和一些历史" class="headerlink" title="BNN和一些历史"></a>BNN和一些历史</h2><p>一切都从生物上的神经网络开始，Neuroscience都是在模仿神经网络的东西。<strong>domain knowledge</strong>非常重要的，例如computational biologist是一个巨大的学科。</p>
-<p>八十年代人工智能已经很火了，但是九十年代有一个低潮，但是这一切都还早着呢。不要担心太多事情，关电源即可。95年的时候支持向量机出来了。老师94年去科大的时候做的是bootstrap，后来MCMC取代了Bootstrap，做了近十年大偏差，感慨如果那个时候学机器学习，现在的我们就不是这样了。机会大于能力，有的时候赶不上就赶不上了。</p>
-<blockquote>
-<p>笑着感慨：<br>机会还是存在的，就好像我们在十年前错过了买房一样，不能因为这样就去跳楼啊！<br>去年大数据火起来后，这对于我们而言，又是一次机会。</p>
-</blockquote>
-<h3 id="一个Neuron："><a href="#一个Neuron：" class="headerlink" title="一个Neuron："></a>一个Neuron：</h3><p>信息<br>总结 $\sum$ input function<br>处理 activation function </p>
-<p><strong>the simplest one：</strong><br>perceptron: activation function</p>
-<p>非0-1的情况下，用sigmoid/logistic transform function, 因为人对信号反应的强弱是不一样的</p>
-<h3 id="多于一个Neuron："><a href="#多于一个Neuron：" class="headerlink" title="多于一个Neuron："></a>多于一个Neuron：</h3><p>用两个就可以解决「无法用一条直线进行分类的问题」</p>
-<p>所以，增加neurons 和 layers（到底需要多少，是需要学习的）</p>
-<p>一般神经网络都有很多层，hidden nodes之间没有关系</p>
-<ul>
-<li><p>小n大p 生物</p>
-</li>
-<li><p>大n大p 神经网络</p>
-</li>
-</ul>
-<p>它在处理图像的时候特别有帮助，因为图片的数量是海量的，有庞大的数据量可以支持。统计之所以不做这件事是因为我们没有这样的n来支持我们的工作。</p>
-<hr>
-<h2 id="Back-Propagation-Algorithm"><a href="#Back-Propagation-Algorithm" class="headerlink" title="Back-Propagation Algorithm"></a>Back-Propagation Algorithm</h2><p>从ESL中找到了这个算法，还是很有趣的：</p>
-<p><img src="/img/in-post/6-18-ANN-CNN/5.png" alt="fun"></p>
-<p>nothing but <strong>gradient descent</strong> </p>
-<p>刚开始weights near zero, increasingly non-linear as training goes</p>
-<p>两个node就可以弄出抛物线，更多的node可能会出现overfit。<br>但是可以调到testing比较好的地步就可以啦！</p>
-<p>ps: 凸函数解是存在唯一的，非凸只有local optimal, but enough &amp; 也能避免过拟合。</p>
-<hr>
-<h2 id="CNN-卷积神经网络"><a href="#CNN-卷积神经网络" class="headerlink" title="CNN 卷积神经网络"></a>CNN 卷积神经网络</h2><p>98年做digit recognition大家就已经用上了这个啦！但是因为SVM也可以干，所以卷积神经网络还是被渐渐遗忘了。后来SVM渐渐不神秘了，CNN之前的缺点也一一被克服了。</p>
-<p>CNN为什么work这么好的原因还是可以去挖掘一下的。不要在别人专心用的时候去嘲讽其工具没有理论支撑。发现不同，找出相似，例如卷积神经网络和逻辑回归也非常有关系。</p>
-<p>CNN是深度学习中目前最重要的，也是研究的最为成熟的一个方法。无人驾驶、语音识别这类方法，都对机器学习、人工智能有着非常大的帮助。</p>
-<p>原先的神经网络是fully connected<br>现在的CNN是local connected</p>
-<p>数学上的本质都是：</p>
-<p>$$y = E(Y|X) + E(Y-E(Y|X))$$</p>
-<p>$m(x)$高维的时候，是一个曲面，学习的目标就是这个曲面——highly non-linear</p>
-<p>总结：模型不是最重要的，只需要足够地flexible就可以啦。数据量是关键。</p>
-<p><strong>一些前辈：</strong></p>
-<ul>
-<li><p>Hinton @ Google<br>  八十年代做到瓶颈的时候坚持下来了</p>
-</li>
-<li><p>LeCun @ Facebook</p>
-</li>
-</ul>
-<h3 id="再来闲话统计"><a href="#再来闲话统计" class="headerlink" title="再来闲话统计"></a>再来闲话统计</h3><p>有的时候我们过分强调统计的作用。但是实际上，统计太辅助了，只在别人需要我们的时候才能派上用场。</p>
-<p>现在大陆金融刚开始，发展很快。但是，北美不缺钱了，做生物的比做金融的要抢手得多。但是大陆做金融的还是很抢手的。</p>
-<p><strong>现在是互联网金融的大好时机</strong></p>
-<p>Internet Finance在中国是最火的，结合了金融和机器学习。</p>
-<p>ps：岛主夫人我今天早上还完信用卡账单后，把支付宝的默认顺序改变了一下，把「花呗」放在了第一位，这估计也是因为我看重互联网金融多于传统信用卡服务吧。</p>
-<h3 id="CNN-Application"><a href="#CNN-Application" class="headerlink" title="CNN Application"></a>CNN Application</h3><ul>
-<li>NLP</li>
-<li>Finance</li>
-<li>Speech</li>
-<li>Image</li>
-</ul>
-<h4 id="e-g-zip-code-recognition"><a href="#e-g-zip-code-recognition" class="headerlink" title="e.g. zip code recognition"></a>e.g. zip code recognition</h4><p>有很多办法去做这个问题，神经网络也发挥了它的作用，每一个图像是一个16*16的矩阵。</p>
-<p>五种不同的方法去处理这个图像👇：</p>
-<p><img src="/img/in-post/6-18-ANN-CNN/3.png" alt="fun"></p>
-<p><img src="/img/in-post/6-18-ANN-CNN/4.png" alt="fun"></p>
-<p>👆🏻6万的数据去train，5194 links，1060weights，correct 98.4%。</p>
-<p>虽然很高，但还是不够。例如现在的快递行业，2%的错误率还是不可以接受的。</p>
-<p>解决方法或许是：</p>
-<ul>
-<li>把错误的分出来，作为一类去学习。</li>
-<li>在数据量一定的情况下，如何提高精度呢？<br>  任何方法嵌入boosting后都可以在一定程度上得到提高。</li>
-</ul>
-<h4 id="e-g-Start-a-Business"><a href="#e-g-Start-a-Business" class="headerlink" title="e.g. Start a Business"></a>e.g. Start a Business</h4><p>又闲聊好久：</p>
-<ul>
-<li><p>很多大数据有限公司的「大」是属于前面的。<br>  例如：<strong>岛主夫人大数据有限公司</strong>实际上是<strong>岛主夫人大</strong>开的😹</p>
-</li>
-<li><p>BI实际上是”Beauty Index”</p>
-</li>
-</ul>
-<p>讲正事，当把决策模型抽象到神经元的程度，就有一种「万物皆神经网络」的感觉。</p>
-<p>招人时，我们大脑实际上在用一个模型，抽象出来就是一个多层神经网络的模型。</p>
-<ul>
-<li><p>筛选简历，input -&gt; feature I<br>  所用的模型实际上是一个locally connected的模型。</p>
-</li>
-<li><p>面试，feature I -&gt; feature II</p>
-</li>
-<li><p>结果，输出yes or no</p>
-</li>
-</ul>
-<h3 id="How-does-it-work"><a href="#How-does-it-work" class="headerlink" title="How does it work?"></a>How does it work?</h3><p>深度学习得到的效果比一般的要高5%左右的精度。一开始所有的点都对结点有刺激作用，后来变成了partially work。事实上，后者更符合我们认知过程，我们就是一块一块看待图像的。</p>
-<p>input -&gt; feature map</p>
-<p>convolution kernel is actually a similarity, 作用不同矩阵在提取不同的feature–实际上就是滤波器，computer vision: filter </p>
-<p><strong>CNN利用了这些性质，把图像识别的精度提高了很大一块。</strong></p>
-<ul>
-<li><p>找变化即求导求差分（一维时的离散化的求导）<br>  即与(-1,1)相乘一阶导数<br>  (-1,2,-1)是二阶导数</p>
-</li>
-<li><p>在找边缘，中间的点与边缘的点到底差距多大？<br>  这种距离的定义方式千奇百怪。</p>
-</li>
-<li><p>每一个矩阵都是在二维里面进行求导。</p>
-</li>
-<li><p>图像处理CNN与之前的BNN有本质的区别：<br>  后者拉成一个向量，损失了行与行之间的信息</p>
-</li>
-<li><p>以上都是模仿人看东西的方式，人看东西还是有很大的随机性的。</p>
-</li>
-</ul>
-<p>苏老师说:</p>
-<blockquote>
-<p>我没建立过任何一个模型，但我见过很多人建立的模型，都太理性了，不如计算机接人性，懂人性。</p>
-</blockquote>
-<p>👆🏻有趣的小对话：</p>
-<blockquote>
-<p>统计学：你不知道Lasso吗？<br>计算机：你不知道SVM吗？</p>
-</blockquote>
-<h2 id="稀疏网络社区识别"><a href="#稀疏网络社区识别" class="headerlink" title="稀疏网络社区识别"></a>稀疏网络社区识别</h2><p>Community Detection for Sparse Networks(A review and two methods)</p>
-<h3 id="再次闲聊"><a href="#再次闲聊" class="headerlink" title="再次闲聊"></a>再次闲聊</h3><p>要么高大上，要么接地气，不能在中间晃动。</p>
-<p>统计统计，通通忘记。任何问题要从实际出发，而不是有一个方法再去考虑怎么用它。</p>
-<p>networks相关的内容现在已经很成熟了，收集了上百篇，已经看了几十篇了，从计算机、物理领域开始，渐渐的在Annals of Statistics也有发表的。nature 和 Science上的一些文章考虑的问题很有趣，解释起来也很直观<br>看到最后，这块的水还是很深的，而且最终还是概率，可以用概率的模型去描述它。</p>
-<p>网络其实就是一个大的矩阵，最终关注的就是一个矩阵。</p>
-<p>现在很多的算法都是likelihood based，但是它也有劣势，处理不了特别大的数据量。</p>
-<h3 id="Application-of-Community-Detection"><a href="#Application-of-Community-Detection" class="headerlink" title="Application of Community Detection"></a>Application of Community Detection</h3><ul>
-<li>广告</li>
-<li>P2P金融，通过网络预测违约风险</li>
-<li><strong>推荐系统</strong> link probability </li>
-</ul>
-<h3 id="一些学术上的研究进展"><a href="#一些学术上的研究进展" class="headerlink" title="一些学术上的研究进展"></a>一些学术上的研究进展</h3><p>Bhattacharyya, Sharmodeep, and Peter J.Bickel </p>
-<p>Karate club network:<br>如何坎损失的边数最少</p>
-<p>方法：Spectral Method to Detect Communities<br>代数中有很多定理，SVD是老师认为最重要的定理。</p>
-<p>网络最终的形状，<strong>phase transition</strong>来自于物理，水加热到100度会从液体到固体，这种转变是突然发生的，是跳跃的。网络中也有这种性质。</p>
-<p>随着p的变化，网络：</p>
-<ul>
-<li>从<strong>fully connected</strong>直接👉🏻<strong>基本能连起来</strong></li>
-<li>从<strong>基本能连起来</strong>直接👉🏻<strong>一点都连不起来</strong></li>
-</ul>
-<p>以上的分类用数学术语表达出来就是这样：</p>
-<ul>
-<li>E(degress)/log(n)-&gt;无穷 </li>
-<li>E(degress)/log(n)=无穷</li>
-<li>E(degress)/log(n)=O(1)</li>
-</ul>
-<p>ps:<br> 高校里学生之间的恋爱关系就是「基本能连起来」——有一个大的树形结构其余的都是分散的，所以遇见真爱首先是个概率问题。这个大的树形结构中的人，关系相对混乱，或许颜值颇高或许有着「普世」人生观。</p>
-<p>现实当中的network实际上是非常sparse的network，facebook的网络就是一个sparse network。找最大的那个再去细分，此时已经趋于树状了。</p>
-<p>两篇文献：</p>
-<ul>
-<li>Consider the network of edges</li>
-<li>Graph distance based, multi-demensional scaling, consistency</li>
-</ul>
-<p>新的思路：</p>
-<ul>
-<li>Markov链，考虑带权重的随机游动，用游动到另一个点的概率来衡量两点之间的距离。图论中的Laplace，Google的page rank都有类似的思想在里面。</li>
-</ul>
-<h2 id="我的一些小感悟"><a href="#我的一些小感悟" class="headerlink" title="我的一些小感悟"></a>我的一些小感悟</h2><p>在讲座内容之余，想再说几点。很多数学院的老师本性极纯很有慧根，我老板就是这样，他笑起来有种我见到小学同学的亲切感，我还是很庆幸能当他的学生的。</p>
-<p>但是荆老师，还有点不一样。似乎他是认识到他本身的智慧和聪明程度的，同时也在运用着这份才华：</p>
-<ul>
-<li>他提出的问题不深，获得回答后，会有一种「感谢对方解答」&amp;「对方其实更厉害」的信息被传达出来，由此活跃了现场气氛</li>
-<li>他懂得如何打趣数学院的老师，这个度掌握得极好</li>
-<li>这场会议，他分享的是他才刚开始研究的神经网络。他有着其它的渠道获得专业认可（他的论文均发表在统计领域最顶尖的杂志上），很多学者在场的会议中，他更愿意把自己放到一个学习者的角色中。</li>
-</ul>
-<p>恩，他好乐呵！</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;What’s in common between artists and statisticians?&lt;/li&gt;
-&lt;li&gt;Models😻&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;此讲座由&lt;br&gt;&lt;a href=&quot;http://www.math.ust.hk/~majing/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;©Bingyi Jing, @香港科技大学&lt;/a&gt;主讲，我整理而已。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="偶遇新事物" scheme="http://yoursite.com/categories/%E5%81%B6%E9%81%87%E6%96%B0%E4%BA%8B%E7%89%A9/"/>
-    
-    
-      <category term="Lecture" scheme="http://yoursite.com/tags/Lecture/"/>
-    
-      <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
     
   </entry>
   

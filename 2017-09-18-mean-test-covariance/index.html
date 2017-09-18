@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="岛主夫人,统计" />
+  <meta name="keywords" content="Statistics," />
 
 
 
@@ -86,15 +86,20 @@
 
 
 
-<meta name="description" content="统计姑娘 | 漫威小粉 | 小黄人挚友">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TinyOpen">
-<meta property="og:url" content="http://yoursite.com/tags/Notes/index.html">
+<meta name="description" content="讲讲一些我懂的，觉得很有用的。希望，不光只对于文献定理证明有用。">
+<meta name="keywords" content="Statistics">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从 Hotelling 到 p &gt; n">
+<meta property="og:url" content="http://yoursite.com/2017-09-18-mean-test-covariance/index.html">
 <meta property="og:site_name" content="TinyOpen">
-<meta property="og:description" content="统计姑娘 | 漫威小粉 | 小黄人挚友">
+<meta property="og:description" content="讲讲一些我懂的，觉得很有用的。希望，不光只对于文献定理证明有用。">
+<meta property="og:image" content="http://oqk9k7f97.bkt.clouddn.com/2017-09-18.png ">
+<meta property="og:image" content="http://oqk9k7f97.bkt.clouddn.com/2017-09-18-1.JPG ">
+<meta property="og:updated_time" content="2017-09-18T09:20:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TinyOpen">
-<meta name="twitter:description" content="统计姑娘 | 漫威小粉 | 小黄人挚友">
+<meta name="twitter:title" content="从 Hotelling 到 p &gt; n">
+<meta name="twitter:description" content="讲讲一些我懂的，觉得很有用的。希望，不光只对于文献定理证明有用。">
+<meta name="twitter:image" content="http://oqk9k7f97.bkt.clouddn.com/2017-09-18.png ">
 
 
 
@@ -115,9 +120,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/Notes/"/>
+  <link rel="canonical" href="http://yoursite.com/2017-09-18-mean-test-covariance/"/>
 
-  <title> 标签: Notes | TinyOpen </title>
+  <title> 从 Hotelling 到 p > n | TinyOpen </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -147,7 +152,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -245,46 +250,181 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        Notes
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                从 Hotelling 到 p > n
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-09-18T23:29:10+08:00" content="2017-09-18">
+              2017-09-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/偶遇新事物/" itemprop="url" rel="index">
+                    <span itemprop="name">偶遇新事物</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017-09-18-mean-test-covariance/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017-09-18-mean-test-covariance/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017-09-18-mean-test-covariance/" class="leancloud_visitors" data-flag-title="从 Hotelling 到 p > n">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <center><br>讲讲一些我懂的，觉得很有用的。<br>希望，不光只对于文献定理证明有用。<br><br><img src="http://oqk9k7f97.bkt.clouddn.com/2017-09-18.png " width="300" high="300" title="COV COV COV"><br></center>
 
-      <h1 class="post-title">
+
+
+
+<a id="more"></a>
+<h2 id="比较时要注意-scalling"><a href="#比较时要注意-scalling" class="headerlink" title="比较时要注意 scalling"></a>比较时要注意 scalling</h2><p>当两个样本的数据极度不稳定的时候，比较两个样本之间的差异并没有什么意义——就好像从两个阴晴不定的女人之中选出一个脾气比较好的，只要你选了，后悔的那一天也就不远了。</p>
+<p>所以在最简单的一维情形下，我们会利用以下这两个含有深刻意义的结论来思考问题——要进行 scaling:<br>$$ \frac{\bar{x} - \mu}{s/\sqrt{n}} \sim t(n-1) \quad \frac{\bar{x} - \mu}{\sigma} \sim N(0,1) $$</p>
+<p>回到均值比较的这个问题，如果要检验均值是否等于 $\mu$, 下面这个式子很自然就出现了：</p>
+<p>$$ t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}} $$<br>$$ \begin{eqnarray}<br>t^2 &amp; = &amp; \frac{(\bar{x} - \mu_0)^2}{s^2 / n} \<br>&amp; = &amp; n (\bar{x} - \mu_0)(s^2)^{-1} (\bar{x} - \mu_0) \, .<br>\end{eqnarray} $$</p>
+<p>到了高维的情况，仰仗着<a href="https://en.wikipedia.org/wiki/Harold_Hotelling" target="_blank" rel="external">Harold Hotelling</a> 的智慧，我们有了下面这个统计量——原理不变，在高维情况下利用样本协方差阵 $S$ 进行 scaling：</p>
+<p>$$ T^2 = n (\bar{X} - {\mu}_0) {S}^{-1} (\bar{X} - {\mu}_0) \, , $$</p>
+<p>$$ T^2 \sim \frac{p(n-1)}{n-p} F_{(p, \, n-p)} \, , $$</p>
+<p>上述式子是在 1947 年提出来的，等到 1996 年，也就是 50 年之后，为了应对上述式子中的<strong>一个缺陷</strong>，白老师和 Saranadasa 在论文 “Effect of high dimention:By an example of a two sample problem” 中用  $\tau tr(S_n)$ 代替 $ S^{-1} $来完成 scaling。</p>
+<p>比较两个样本均值的统计量于是就变成了：<br>$$(\bar{X_1}- \bar{X_2})(\bar{X_1}- \bar{X_2}) - \tau tr(S_n)$$</p>
+<p>其中的魅力，就在不用求 $S_n$ 的逆了。</p>
+<h2 id="p-gt-n，求逆不可行"><a href="#p-gt-n，求逆不可行" class="headerlink" title="p &gt; n，求逆不可行"></a>p &gt; n，求逆不可行</h2><p>在 Hotelling 的那个年代，统计是一门基于实验的科学，它有目标变量，还要控制变量。例如，我要研究的是，在 A 不变的情况下，B 的变化会造成 C 的哪些差异，是 A 多一点好呢？还是 A 少一点好。总的来说，它源于假设，而假设不可能包括成千上万个变量。好怀念那个年代呀！所以，在那个年代，变量的个数通常要比样本少，$p &lt; n \,$.但是现在的情况是，随随便便变量的个数就要比样本多，还多不少。</p>
+<p>让我们回到基础的代数知识看一下，变量个数大于样本个数，会对 Hotelling 的统计量造成怎样一个毁灭性的打击。</p>
+<p>对于一个$n \times n$ 方阵而言，如果它的 rank 小于 n, 那么它是不可逆的。同时，$rank(X’X) &lt;= rank(X) &lt;= dim(X)\,$, 样本协方差阵 $S_n =\frac{1}{n-1}X’X \,$ (注：$X_{n \times p}$), 也就是说，当 $p &gt; n $ 的时候，$S_n$ <strong>不可能可逆</strong>。</p>
+<h2 id="PCA-新思路"><a href="#PCA-新思路" class="headerlink" title="PCA 新思路"></a>PCA 新思路</h2><p>我在生物实验室干活的时候，发现大家在运用 PCA 的时候，对于矩阵的行列没有感觉，一会儿 $X_{n \times p}\,$, 一会儿$X_{p\times n}\,$. 之前我觉得这么做铁定不行，那时候我好蠢。</p>
+<p>事实上是这样的，矩阵的转秩前后，其特征值并不发生改变。当 $p &gt; n$的时候，如果能用 $n \times n$ 的矩阵来求 $p \times p $的特征值，岂不美哉。且看推导:</p>
+<p>$$ XX’v_i = \lambda_{i} v_i ==&gt; X’XX’v_i = \lambda_{i} X’v_i$$</p>
+<p>The end.</p>
+<center><br><br><img src="http://oqk9k7f97.bkt.clouddn.com/2017-09-18-1.JPG " width="300" high="300" title="哎呀我去好可爱"><br></center>
+
+
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2016-08-18-OLS/" itemprop="url">
-              
-                <span itemprop="name">线性模型的开端——最小二乘&误差分布</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-08-18T09:31:52+08:00"
-              content="2016-08-18" >
-          08-18
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Statistics/" rel="tag">#Statistics</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017-06-01-Lecture-about-GWAS/" rel="next" title="个人化全基因测序时代的帷幕，正在拉开">
+                <i class="fa fa-chevron-left"></i> 个人化全基因测序时代的帷幕，正在拉开
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -292,6 +432,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -311,8 +462,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://oqk9k7f97.bkt.clouddn.com/header.jpg"
@@ -412,6 +572,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#比较时要注意-scalling"><span class="nav-number">1.</span> <span class="nav-text">比较时要注意 scalling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#p-gt-n，求逆不可行"><span class="nav-number">2.</span> <span class="nav-text">p > n，求逆不可行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PCA-新思路"><span class="nav-number">3.</span> <span class="nav-text">PCA 新思路</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -515,6 +686,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
@@ -531,9 +706,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'missislander';
-      var disqus_identifier = 'tags/Notes/index.html';
-      var disqus_title = "";
-      var disqus_url = '';
+      var disqus_identifier = '2017-09-18-mean-test-covariance/';
+      var disqus_title = "从 Hotelling 到 p > n";
+      var disqus_url = 'http://yoursite.com/2017-09-18-mean-test-covariance/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
@@ -544,6 +719,8 @@
       }
 
       run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
       
     </script>
   
