@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-24T14:48:42.000Z</updated>
+  <updated>2017-09-18T09:20:32.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,53 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>22 个月，终于画出了满意的跑量可视化报告</title>
-    <link href="http://yoursite.com/2017-10-24-Visualization-running-data/"/>
-    <id>http://yoursite.com/2017-10-24-Visualization-running-data/</id>
-    <published>2017-09-18T15:29:10.000Z</published>
-    <updated>2017-10-24T14:48:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<center><br><br><br><img src="http://oqk9k7f97.bkt.clouddn.com/2017-09-18.png " width="300" high="300" title="COV COV COV"><br></center>
-
-
-
-
-<a id="more"></a>
-<h2 id="比较时要注意-scalling"><a href="#比较时要注意-scalling" class="headerlink" title="比较时要注意 scalling"></a>比较时要注意 scalling</h2><p>当两个样本的数据极度不稳定的时候，比较两个样本之间的差异并没有什么意义——就好像从两个阴晴不定的女人之中选出一个脾气比较好的，只要你选了，后悔的那一天也就不远了。</p>
-<p>所以在最简单的一维情形下，我们会利用以下这两个含有深刻意义的结论来思考问题——要进行 scaling:<br>$$ \frac{\bar{x} - \mu}{s/\sqrt{n}} \sim t(n-1) \quad \frac{\bar{x} - \mu}{\sigma} \sim N(0,1) $$</p>
-<p>回到均值比较的这个问题，如果要检验均值是否等于 $\mu$, 下面这个式子很自然就出现了：</p>
-<p>$$ t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}} $$<br>$$ \begin{eqnarray}<br>t^2 &amp; = &amp; \frac{(\bar{x} - \mu_0)^2}{s^2 / n} \<br>&amp; = &amp; n (\bar{x} - \mu_0)(s^2)^{-1} (\bar{x} - \mu_0) \, .<br>\end{eqnarray} $$</p>
-<p>到了高维的情况，仰仗着<a href="https://en.wikipedia.org/wiki/Harold_Hotelling" target="_blank" rel="external">Harold Hotelling</a> 的智慧，我们有了下面这个统计量——原理不变，在高维情况下利用样本协方差阵 $S$ 进行 scaling：</p>
-<p>$$ T^2 = n (\bar{X} - {\mu}_0) {S}^{-1} (\bar{X} - {\mu}_0) \, , $$</p>
-<p>$$ T^2 \sim \frac{p(n-1)}{n-p} F_{(p, \, n-p)} \, , $$</p>
-<p>上述式子是在 1947 年提出来的，等到 1996 年，也就是 50 年之后，为了应对上述式子中的<strong>一个缺陷</strong>，白老师和 Saranadasa 在论文 “Effect of high dimention:By an example of a two sample problem” 中用  $\tau tr(S_n)$ 代替 $ S^{-1} $来完成 scaling。</p>
-<p>比较两个样本均值的统计量于是就变成了：<br>$$(\bar{X_1}- \bar{X_2})(\bar{X_1}- \bar{X_2}) - \tau tr(S_n)$$</p>
-<p>其中的魅力，就在不用求 $S_n$ 的逆了。</p>
-<h2 id="p-gt-n，求逆不可行"><a href="#p-gt-n，求逆不可行" class="headerlink" title="p &gt; n，求逆不可行"></a>p &gt; n，求逆不可行</h2><p>在 Hotelling 的那个年代，统计是一门基于实验的科学，它有目标变量，还要控制变量。例如，我要研究的是，在 A 不变的情况下，B 的变化会造成 C 的哪些差异，是 A 多一点好呢？还是 A 少一点好。总的来说，它源于假设，而假设不可能包括成千上万个变量。好怀念那个年代呀！所以，在那个年代，变量的个数通常要比样本少，$p &lt; n \,$.但是现在的情况是，随随便便变量的个数就要比样本多，还多不少。</p>
-<p>让我们回到基础的代数知识看一下，变量个数大于样本个数，会对 Hotelling 的统计量造成怎样一个毁灭性的打击。</p>
-<p>对于一个$n \times n$ 方阵而言，如果它的 rank 小于 n, 那么它是不可逆的。同时，$rank(X’X) &lt;= rank(X) &lt;= dim(X)\,$, 样本协方差阵 $S_n =\frac{1}{n-1}X’X \,$ (注：$X_{n \times p}$), 也就是说，当 $p &gt; n $ 的时候，$S_n$ <strong>不可能可逆</strong>。</p>
-<h2 id="PCA-新思路"><a href="#PCA-新思路" class="headerlink" title="PCA 新思路"></a>PCA 新思路</h2><p>我在生物实验室干活的时候，发现大家在运用 PCA 的时候，对于矩阵的行列没有感觉，一会儿 $X_{n \times p}\,$, 一会儿$X_{p\times n}\,$. 之前我觉得这么做铁定不行，那时候我好蠢。</p>
-<p>事实上是这样的，矩阵的转秩前后，其特征值并不发生改变。当 $p &gt; n$的时候，如果能用 $n \times n$ 的矩阵来求 $p \times p $的特征值，岂不美哉。且看推导:</p>
-<p>$$ XX’v_i = \lambda_{i} v_i ==&gt; X’XX’v_i = \lambda_{i} X’v_i$$</p>
-<p>The end.</p>
-<center><br><br><img src="http://oqk9k7f97.bkt.clouddn.com/2017-09-18-1.JPG " width="300" high="300" title="哎呀我去好可爱"><br></center>
-
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;center&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;http://oqk9k7f97.bkt.clouddn.com/2017-09-18.png &quot; width=&quot;300&quot; high=&quot;300&quot; title=&quot;COV COV COV&quot;&gt;&lt;br&gt;&lt;/center&gt;
-    
-    </summary>
-    
-      <category term="爬出坑后写清单" scheme="http://yoursite.com/categories/%E7%88%AC%E5%87%BA%E5%9D%91%E5%90%8E%E5%86%99%E6%B8%85%E5%8D%95/"/>
-    
-    
-      <category term="图儿" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%84%BF/"/>
-    
-  </entry>
   
   <entry>
     <title>从 Hotelling 到 p &gt; n</title>
@@ -106,6 +59,53 @@
     
     
       <category term="Statistics" scheme="http://yoursite.com/tags/Statistics/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>22 个月，终于画出了满意的跑量可视化报告</title>
+    <link href="http://yoursite.com/2017-10-24-Visualization-running-data/"/>
+    <id>http://yoursite.com/2017-10-24-Visualization-running-data/</id>
+    <published>2017-09-18T15:29:10.000Z</published>
+    <updated>2017-10-24T15:09:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<center><br><br><br><img src="http://oqk9k7f97.bkt.clouddn.com/2017-09-18.png " width="300" high="300" title="COV COV COV"><br></center>
+
+
+
+
+<a id="more"></a>
+<h2 id="比较时要注意-scalling"><a href="#比较时要注意-scalling" class="headerlink" title="比较时要注意 scalling"></a>比较时要注意 scalling</h2><p>当两个样本的数据极度不稳定的时候，比较两个样本之间的差异并没有什么意义——就好像从两个阴晴不定的女人之中选出一个脾气比较好的，只要你选了，后悔的那一天也就不远了。</p>
+<p>所以在最简单的一维情形下，我们会利用以下这两个含有深刻意义的结论来思考问题——要进行 scaling:<br>$$ \frac{\bar{x} - \mu}{s/\sqrt{n}} \sim t(n-1) \quad \frac{\bar{x} - \mu}{\sigma} \sim N(0,1) $$</p>
+<p>回到均值比较的这个问题，如果要检验均值是否等于 $\mu$, 下面这个式子很自然就出现了：</p>
+<p>$$ t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}} $$<br>$$ \begin{eqnarray}<br>t^2 &amp; = &amp; \frac{(\bar{x} - \mu_0)^2}{s^2 / n} \<br>&amp; = &amp; n (\bar{x} - \mu_0)(s^2)^{-1} (\bar{x} - \mu_0) \, .<br>\end{eqnarray} $$</p>
+<p>到了高维的情况，仰仗着<a href="https://en.wikipedia.org/wiki/Harold_Hotelling" target="_blank" rel="external">Harold Hotelling</a> 的智慧，我们有了下面这个统计量——原理不变，在高维情况下利用样本协方差阵 $S$ 进行 scaling：</p>
+<p>$$ T^2 = n (\bar{X} - {\mu}_0) {S}^{-1} (\bar{X} - {\mu}_0) \, , $$</p>
+<p>$$ T^2 \sim \frac{p(n-1)}{n-p} F_{(p, \, n-p)} \, , $$</p>
+<p>上述式子是在 1947 年提出来的，等到 1996 年，也就是 50 年之后，为了应对上述式子中的<strong>一个缺陷</strong>，白老师和 Saranadasa 在论文 “Effect of high dimention:By an example of a two sample problem” 中用  $\tau tr(S_n)$ 代替 $ S^{-1} $来完成 scaling。</p>
+<p>比较两个样本均值的统计量于是就变成了：<br>$$(\bar{X_1}- \bar{X_2})(\bar{X_1}- \bar{X_2}) - \tau tr(S_n)$$</p>
+<p>其中的魅力，就在不用求 $S_n$ 的逆了。</p>
+<h2 id="p-gt-n，求逆不可行"><a href="#p-gt-n，求逆不可行" class="headerlink" title="p &gt; n，求逆不可行"></a>p &gt; n，求逆不可行</h2><p>在 Hotelling 的那个年代，统计是一门基于实验的科学，它有目标变量，还要控制变量。例如，我要研究的是，在 A 不变的情况下，B 的变化会造成 C 的哪些差异，是 A 多一点好呢？还是 A 少一点好。总的来说，它源于假设，而假设不可能包括成千上万个变量。好怀念那个年代呀！所以，在那个年代，变量的个数通常要比样本少，$p &lt; n \,$.但是现在的情况是，随随便便变量的个数就要比样本多，还多不少。</p>
+<p>让我们回到基础的代数知识看一下，变量个数大于样本个数，会对 Hotelling 的统计量造成怎样一个毁灭性的打击。</p>
+<p>对于一个$n \times n$ 方阵而言，如果它的 rank 小于 n, 那么它是不可逆的。同时，$rank(X’X) &lt;= rank(X) &lt;= dim(X)\,$, 样本协方差阵 $S_n =\frac{1}{n-1}X’X \,$ (注：$X_{n \times p}$), 也就是说，当 $p &gt; n $ 的时候，$S_n$ <strong>不可能可逆</strong>。</p>
+<h2 id="PCA-新思路"><a href="#PCA-新思路" class="headerlink" title="PCA 新思路"></a>PCA 新思路</h2><p>我在生物实验室干活的时候，发现大家在运用 PCA 的时候，对于矩阵的行列没有感觉，一会儿 $X_{n \times p}\,$, 一会儿$X_{p\times n}\,$. 之前我觉得这么做铁定不行，那时候我好蠢。</p>
+<p>事实上是这样的，矩阵的转秩前后，其特征值并不发生改变。当 $p &gt; n$的时候，如果能用 $n \times n$ 的矩阵来求 $p \times p $的特征值，岂不美哉。且看推导:</p>
+<p>$$ XX’v_i = \lambda_{i} v_i ==&gt; X’XX’v_i = \lambda_{i} X’v_i$$</p>
+<p>The end.</p>
+<center><br><br><img src="http://oqk9k7f97.bkt.clouddn.com/2017-09-18-1.JPG " width="300" high="300" title="哎呀我去好可爱"><br></center>
+
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;http://oqk9k7f97.bkt.clouddn.com/2017-09-18.png &quot; width=&quot;300&quot; high=&quot;300&quot; title=&quot;COV COV COV&quot;&gt;&lt;br&gt;&lt;/center&gt;
+    
+    </summary>
+    
+      <category term="爬出坑后写清单" scheme="http://yoursite.com/categories/%E7%88%AC%E5%87%BA%E5%9D%91%E5%90%8E%E5%86%99%E6%B8%85%E5%8D%95/"/>
+    
+    
+      <category term="图儿" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%84%BF/"/>
     
   </entry>
   
