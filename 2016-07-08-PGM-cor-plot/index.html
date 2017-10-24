@@ -86,13 +86,13 @@
 
 
 
-<meta name="description" content="写在最开头 犹豫了一会儿是否要在标签中写Statistics &amp;amp; Algorithm，最后还是决定不写，因为这篇文章非常「随意溜达」，有很大的可能性我会写一篇比较正经的概率图的文章，那么这篇，就熬一会儿夜编辑下直接放在这里咯！ 这应该算是法国暑期学校的一个番外了。上了两节概率图模型的课，还挺有意思的，深挖下去肯定会牵扯很多底层的知识分外难啃，但至少乍一看「挺漂亮」&amp;amp;「挺有用」。 接">
+<meta name="description" content="写在最开头 犹豫了一会儿是否要在标签中写 Statistics &amp;amp; Algorithm ，最后还是决定不写，因为这篇文章非常「随意溜达」，熬一会儿夜编辑下直接放在这里咯！ 这应该算是法国暑期学校的一个番外了。上了两节概率图模型的课，还挺有意思的，深挖下去肯定会牵扯很多底层的知识分外难啃，但至少乍一看「挺漂亮」&amp;amp;「挺有用」。 接下来，我就现学现卖 &amp;amp; 借刀卖钱了。">
 <meta name="keywords" content="Statistics,R">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何优雅地表示变量之间的相关性——从图开始">
 <meta property="og:url" content="http://yoursite.com/2016-07-08-PGM-cor-plot/index.html">
 <meta property="og:site_name" content="TinyOpen">
-<meta property="og:description" content="写在最开头 犹豫了一会儿是否要在标签中写Statistics &amp;amp; Algorithm，最后还是决定不写，因为这篇文章非常「随意溜达」，有很大的可能性我会写一篇比较正经的概率图的文章，那么这篇，就熬一会儿夜编辑下直接放在这里咯！ 这应该算是法国暑期学校的一个番外了。上了两节概率图模型的课，还挺有意思的，深挖下去肯定会牵扯很多底层的知识分外难啃，但至少乍一看「挺漂亮」&amp;amp;「挺有用」。 接">
+<meta property="og:description" content="写在最开头 犹豫了一会儿是否要在标签中写 Statistics &amp;amp; Algorithm ，最后还是决定不写，因为这篇文章非常「随意溜达」，熬一会儿夜编辑下直接放在这里咯！ 这应该算是法国暑期学校的一个番外了。上了两节概率图模型的课，还挺有意思的，深挖下去肯定会牵扯很多底层的知识分外难啃，但至少乍一看「挺漂亮」&amp;amp;「挺有用」。 接下来，我就现学现卖 &amp;amp; 借刀卖钱了。">
 <meta property="og:image" content="http://yoursite.com/img/in-post/7-08-PGM1/pairs.png">
 <meta property="og:image" content="http://yoursite.com/img/in-post/7-08-PGM1/PCA1.png">
 <meta property="og:image" content="http://yoursite.com/img/in-post/7-08-PGM1/PCA2.png">
@@ -103,10 +103,10 @@
 <meta property="og:image" content="http://yoursite.com/img/in-post/7-08-PGM1/AIC-for-hard-threshold.png">
 <meta property="og:image" content="http://yoursite.com/img/in-post/7-08-PGM1/best-hard-threshold.png">
 <meta property="og:image" content="http://yoursite.com/img/in-post/7-08-PGM1/cv-for-soft-threshold.png">
-<meta property="og:updated_time" content="2017-05-26T15:35:30.000Z">
+<meta property="og:updated_time" content="2017-10-24T14:13:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何优雅地表示变量之间的相关性——从图开始">
-<meta name="twitter:description" content="写在最开头 犹豫了一会儿是否要在标签中写Statistics &amp;amp; Algorithm，最后还是决定不写，因为这篇文章非常「随意溜达」，有很大的可能性我会写一篇比较正经的概率图的文章，那么这篇，就熬一会儿夜编辑下直接放在这里咯！ 这应该算是法国暑期学校的一个番外了。上了两节概率图模型的课，还挺有意思的，深挖下去肯定会牵扯很多底层的知识分外难啃，但至少乍一看「挺漂亮」&amp;amp;「挺有用」。 接">
+<meta name="twitter:description" content="写在最开头 犹豫了一会儿是否要在标签中写 Statistics &amp;amp; Algorithm ，最后还是决定不写，因为这篇文章非常「随意溜达」，熬一会儿夜编辑下直接放在这里咯！ 这应该算是法国暑期学校的一个番外了。上了两节概率图模型的课，还挺有意思的，深挖下去肯定会牵扯很多底层的知识分外难啃，但至少乍一看「挺漂亮」&amp;amp;「挺有用」。 接下来，我就现学现卖 &amp;amp; 借刀卖钱了。">
 <meta name="twitter:image" content="http://yoursite.com/img/in-post/7-08-PGM1/pairs.png">
 
 
@@ -355,13 +355,13 @@
 
       
         <p>写在最开头</p>
-<p>犹豫了一会儿是否要在标签中写Statistics &amp; Algorithm，最后还是决定不写，因为这篇文章非常「随意溜达」，有很大的可能性我会写一篇比较正经的概率图的文章，那么这篇，就熬一会儿夜编辑下直接放在这里咯！</p>
+<p>犹豫了一会儿是否要在标签中写 Statistics &amp; Algorithm ，最后还是决定不写，因为这篇文章非常「随意溜达」，熬一会儿夜编辑下直接放在这里咯！</p>
 <p>这应该算是<a href="http://tinyopen.github.io/2016/06/30/Rennes/" target="_blank" rel="external">法国暑期学校</a>的一个番外了。上了两节概率图模型的课，还挺有意思的，深挖下去肯定会牵扯很多底层的知识分外难啃，但至少乍一看「挺漂亮」&amp;「挺有用」。</p>
-<p>接下来，我就现学现卖&amp;借刀卖钱了。</p>
+<p>接下来，我就现学现卖 &amp; 借刀卖钱了。</p>
 <a id="more"></a>
 <p>注：</p>
 <ol>
-<li><p>以下代码大部分是雷恩一大的V.Monbet教授写的，我只是加了些注释理了下逻辑，我就是个开心的小搬运工( -_・)</p>
+<li><p>以下代码大部分是雷恩一大的 V.Monbet 教授写的，我只是加了些注释理了下逻辑，我，一个开心的小搬运工( -_・)</p>
 </li>
 <li><p>另外，这篇文章尝试了下小赵的黑魔法，直接用rmd的html代码，恩，效果真的挺不错的，感谢！不过Rmd的输出太多warning和文本提示，不知道如何去掉，最后还是结合了笨办法，保存图片~</p>
 </li>
@@ -578,7 +578,7 @@ summary(lin.mod)$coef
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">27</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -595,7 +595,7 @@ summary(lin.mod)$coef
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

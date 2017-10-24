@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Statistics,Notes," />
+  <meta name="keywords" content="Statistics," />
 
 
 
@@ -87,18 +87,18 @@
 
 
 <meta name="description" content="这几日在家中看书，重温之前粗粗看过的统计学书籍，不过，闲适之余想到未来难免有点小忧愁，于是今早去了浙图，沾沾人气。这段时间一直有在做一些笔记，不过手中几本书多有重叠，我又是很喜欢「求其同」的人，所以这段时间就只憋出这一篇。 最小二乘是一个转折点——这么长时间里我们都对「多次测量取平均值」深信不疑，可是在它经得起历史的检验背后，究竟是什么在支撑着它？看到最后我们会发现，是误差的本质在支撑着它，而误差">
-<meta name="keywords" content="Statistics,Notes">
+<meta name="keywords" content="Statistics">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线性模型的开端——最小二乘&amp;误差分布">
+<meta property="og:title" content="Smart is Sexy -- Laplace, Gauss and Legendre">
 <meta property="og:url" content="http://yoursite.com/2016-08-18-OLS/index.html">
 <meta property="og:site_name" content="TinyOpen">
 <meta property="og:description" content="这几日在家中看书，重温之前粗粗看过的统计学书籍，不过，闲适之余想到未来难免有点小忧愁，于是今早去了浙图，沾沾人气。这段时间一直有在做一些笔记，不过手中几本书多有重叠，我又是很喜欢「求其同」的人，所以这段时间就只憋出这一篇。 最小二乘是一个转折点——这么长时间里我们都对「多次测量取平均值」深信不疑，可是在它经得起历史的检验背后，究竟是什么在支撑着它？看到最后我们会发现，是误差的本质在支撑着它，而误差">
 <meta property="og:image" content="http://obrxj270y.bkt.clouddn.com/chair-book.jpg">
 <meta property="og:image" content="http://obrxj270y.bkt.clouddn.com/Legendre.jpg">
 <meta property="og:image" content="http://obrxj270y.bkt.clouddn.com/Gauss.jpg">
-<meta property="og:updated_time" content="2016-08-18T14:39:45.000Z">
+<meta property="og:updated_time" content="2017-10-24T14:29:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线性模型的开端——最小二乘&amp;误差分布">
+<meta name="twitter:title" content="Smart is Sexy -- Laplace, Gauss and Legendre">
 <meta name="twitter:description" content="这几日在家中看书，重温之前粗粗看过的统计学书籍，不过，闲适之余想到未来难免有点小忧愁，于是今早去了浙图，沾沾人气。这段时间一直有在做一些笔记，不过手中几本书多有重叠，我又是很喜欢「求其同」的人，所以这段时间就只憋出这一篇。 最小二乘是一个转折点——这么长时间里我们都对「多次测量取平均值」深信不疑，可是在它经得起历史的检验背后，究竟是什么在支撑着它？看到最后我们会发现，是误差的本质在支撑着它，而误差">
 <meta name="twitter:image" content="http://obrxj270y.bkt.clouddn.com/chair-book.jpg">
 
@@ -123,7 +123,7 @@
 
   <link rel="canonical" href="http://yoursite.com/2016-08-18-OLS/"/>
 
-  <title> 线性模型的开端——最小二乘&误差分布 | TinyOpen </title>
+  <title> Smart is Sexy -- Laplace, Gauss and Legendre | TinyOpen </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -272,7 +272,7 @@
             
             
               
-                线性模型的开端——最小二乘&误差分布
+                Smart is Sexy -- Laplace, Gauss and Legendre
               
             
           </h1>
@@ -325,7 +325,7 @@
 
           
           
-             <span id="/2016-08-18-OLS/" class="leancloud_visitors" data-flag-title="线性模型的开端——最小二乘&误差分布">
+             <span id="/2016-08-18-OLS/" class="leancloud_visitors" data-flag-title="Smart is Sexy -- Laplace, Gauss and Legendre">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -361,11 +361,11 @@
 <p>最小二乘法之所以与统计学关系密切的原因在于——<strong>观测值有随机误差</strong>&amp;<strong>随机误差服从正态分布</strong>。因此，最小二乘与误差论紧密相联。有的学者把最小二乘法称为「十九世纪统计学的中心主题」。</p>
 <blockquote class="blockquote-center"><p>Legendre的贡献</p>
 </blockquote>
-<h2 id="Legendre贡献：最小二乘法崭露头角"><a href="#Legendre贡献：最小二乘法崭露头角" class="headerlink" title="Legendre贡献：最小二乘法崭露头角"></a>Legendre贡献：最小二乘法崭露头角</h2><center><br>    <img src="http://obrxj270y.bkt.clouddn.com/Legendre.jpg" width="300" high="300" title="Legendre~"><br></center>
+<h2 id="Legendre-贡献：最小二乘法崭露头角"><a href="#Legendre-贡献：最小二乘法崭露头角" class="headerlink" title="Legendre 贡献：最小二乘法崭露头角"></a>Legendre 贡献：最小二乘法崭露头角</h2><center><br>    <img src="http://obrxj270y.bkt.clouddn.com/Legendre.jpg" width="300" high="300" title="Legendre~"><br></center>
 
 
-<p>其实在Legendre之前，应该也有类似的问题，不过他将此真正抽象出来，并且赋予这个问题以新的高度。</p>
-<p>Legendre在研究天文和测地学中的一些数据分析问题时，将问题抽象成如下表述：</p>
+<p>其实在 Legendre 之前，应该也有类似的问题，不过他将此真正抽象出来，并且赋予这个问题以新的高度。</p>
+<p>Legendre 在研究天文和测地学中的一些数据分析问题时，将问题抽象成如下表述：</p>
 <p>有若干我们想要估计其值的量$\theta_{i}, i=1,2,…,k$, 另外有若干个可以测量的量$x_{j}, j=0,1,2,…,k$. <strong>理论上</strong>，这些量之间有线性关系：</p>
 <p>$$x_0 + \sum_{i=1}^{k} x_{i} \theta_{i} = 0$$</p>
 <p>但是实际得到的数据中有如下<strong>两道屏障</strong>：</p>
@@ -380,17 +380,17 @@
 <blockquote>
 <p>这个例子也启发了我们，在科研中的<strong>观念上的革新和突破</strong>是多么得不容易，一经点破，我们会感到事情理所当然，但在没有发现之前，许多 大学者努力了几十年也无功而返。——by 陈希孺</p>
 </blockquote>
-<p>最小二乘法也因其只涉及线性方程组计算效率高而应用广泛，因其有非常优良的统计推断性质（在正态误差的假定下，它有着较为完善的小样本理论）而被统计学家喜爱。不过，Legendre的工作没有涉及最小二乘方法误差分析的问题（即，误差的本质是什么？K·Pearson的观点我一直很欣赏，数据的本质是分布，只有分布才是真实的），高斯在1809年发表的正态误差理论将之补足。</p>
+<p>最小二乘法也因其只涉及线性方程组计算效率高而应用广泛，因其有非常优良的统计推断性质（在正态误差的假定下，它有着较为完善的小样本理论）而被统计学家喜爱。不过，Legendre 的工作没有涉及最小二乘方法误差分析的问题（即，误差的本质是什么？K·Pearson的观点我一直很欣赏，数据的本质是分布，只有分布才是真实的），高斯在1809年发表的正态误差理论将之补足。</p>
 <blockquote class="blockquote-center"><p>Gauss的贡献 </p>
 </blockquote>
 <h2 id="Gauss贡献1：Gauss-Markov定理"><a href="#Gauss贡献1：Gauss-Markov定理" class="headerlink" title="Gauss贡献1：Gauss-Markov定理"></a>Gauss贡献1：Gauss-Markov定理</h2><p>它被奉为最小二乘法理论中最重要的结果，它从统计学的角度肯定了最小二乘估计的合法性。在此之前，最小二乘估计只是一种算法（使得误差平方和最小），尽管它看上去合理且有计算简单的有点，但还是不足以回答它在缩小误差这个根本点上，究竟有何出众之处。</p>
 <p>这个定理说的是，线性模型$y_{i} = x_{i}’\beta + e_{i}$基于最小二乘方法得到的估计$\hat{\beta} = (XX’)^{-1}XY$是$\beta$的线性无偏估计，且参数的任一线性函数$c’\beta$的最小二乘估计$c’\hat{\beta}$也是无偏的。</p>
-<p>首先要感谢Laplace, 他注意到，在一维的情况下，模型$y_i = x_i \beta +e_i$两边乘以常数再将n个方程相加后可以得到$\beta$的无偏估计：</p>
+<p>首先要感谢 Laplace, 他注意到，在一维的情况下，模型$y_i = x_i \beta +e_i$两边乘以常数再将n个方程相加后可以得到$\beta$的无偏估计：</p>
 <p>$$\widetilde{\beta} \equiv \frac{\sum_{i=1}^{n}c_{i}y_{i}}{\sum_{i=1}^{n}c_{i}x_{i}} = \beta + \frac{\sum_{i=1}^{n}c_{i}e_{i}}{\sum_{i=1}^{n}c_{i}x_{i}} \equiv \beta + \xi_{n}$$</p>
 <p>进一步，为了得到最好的无偏估计，只需要$Var( \xi_{n})$尽可能小即可，注意到(施瓦茨不等式):</p>
 <p>$$Var(\xi_{i}) = \frac{\sigma^{2}\sum_{i=1}^{n}c_{i}^{2}}{(\sum_{i=i}^{n}c_{i}x_{i})^2} \ge \frac{\sigma^{2}\sum_{i=1}^{n}c_{i}^{2}}{(\sum_{i=i}^{n}c_{i}^{2} \sum_{i=i}^{n}x_{i}^{2})}$$</p>
 <p>当且仅当$c_{i}与x_{i}$相等时等号取到，即最小方差达到时有最小二乘估计：<br>$$ \widetilde { \beta} = \frac{\sum_{i=1}^{n}x_{i}y_{i}}{\sum_{i=1}^{n}x_{i}^{2}}$$</p>
-<h2 id="Gauss贡献2：误差与正态分布"><a href="#Gauss贡献2：误差与正态分布" class="headerlink" title="Gauss贡献2：误差与正态分布"></a>Gauss贡献2：误差与正态分布</h2><p>19世纪的统计学可以说是由正态分布所引导的，这源头是1908年Gauss提出的「正态误差理论」.Laplace在Gauss之前做了一些很有意义的工作，首先他提出的问题是：</p>
+<h2 id="Gauss-贡献2：误差与正态分布"><a href="#Gauss-贡献2：误差与正态分布" class="headerlink" title="Gauss 贡献2：误差与正态分布"></a>Gauss 贡献2：误差与正态分布</h2><p>19世纪的统计学可以说是由正态分布所引导的，这源头是 1908 年 Gauss 提出的「正态误差理论」.Laplace 在 Gauss 之前做了一些很有意义的工作，首先他提出的问题是：</p>
 <ul>
 <li>应该取怎样的分布为误差分布？</li>
 <li>在决定了误差分布后，如何根据未知量$\theta$的多次测量值$x_{1},…,x_n$去估计$\theta$</li>
@@ -416,7 +416,7 @@
 <p>使得这个概率最大的真实参数$\theta$的估计值为$\hat{\theta}$，同时还使得如下表达式达到最小，而这个表达式就是，最小二乘中我们遇到的那个（灰常神奇~😀）:</p>
 <p>$$ \sum_{i = 1}^{n}(x_{0i} + \sum_{j=1}^{k} x_{ji}\theta_{j})^2 = min $$</p>
 <p>高斯说法中虽然明显有循环论证的感觉：算术平均是优良的，所以误差分布是正态分布；因为误差分布是正态分布，所以算术平均和最小二乘估计的优良性也可以保证。</p>
-<p>此时，Laplace接了一棒帮了Gauss兄一把：若误差可以看作许多量的叠加，则根据中心极限定理，误差理应有高斯分布。</p>
+<p>此时，Laplace 接了一棒帮了 Gauss 兄一把：若误差可以看作许多量的叠加，则根据中心极限定理，误差理应有高斯分布。</p>
 <hr>
 <p>8月18日 @浙江图书馆</p>
 
@@ -442,8 +442,6 @@
         <div class="post-tags">
           
             <a href="/tags/Statistics/" rel="tag">#Statistics</a>
-          
-            <a href="/tags/Notes/" rel="tag">#Notes</a>
           
         </div>
       
@@ -537,7 +535,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">27</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -554,7 +552,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -633,7 +631,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Legendre贡献：最小二乘法崭露头角"><span class="nav-number">1.</span> <span class="nav-text">Legendre贡献：最小二乘法崭露头角</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gauss贡献1：Gauss-Markov定理"><span class="nav-number">2.</span> <span class="nav-text">Gauss贡献1：Gauss-Markov定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gauss贡献2：误差与正态分布"><span class="nav-number">3.</span> <span class="nav-text">Gauss贡献2：误差与正态分布</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Legendre-贡献：最小二乘法崭露头角"><span class="nav-number">1.</span> <span class="nav-text">Legendre 贡献：最小二乘法崭露头角</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gauss贡献1：Gauss-Markov定理"><span class="nav-number">2.</span> <span class="nav-text">Gauss贡献1：Gauss-Markov定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gauss-贡献2：误差与正态分布"><span class="nav-number">3.</span> <span class="nav-text">Gauss 贡献2：误差与正态分布</span></a></li></ol></div>
             
           </div>
         </section>
@@ -761,7 +759,7 @@
     <script type="text/javascript">
       var disqus_shortname = 'missislander';
       var disqus_identifier = '2016-08-18-OLS/';
-      var disqus_title = "线性模型的开端——最小二乘&误差分布";
+      var disqus_title = "Smart is Sexy -- Laplace, Gauss and Legendre";
       var disqus_url = 'http://yoursite.com/2016-08-18-OLS/';
 
       function run_disqus_script(disqus_script){

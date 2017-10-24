@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Statistics,R," />
+  <meta name="keywords" content="Statistics,R,Model," />
 
 
 
@@ -86,22 +86,22 @@
 
 
 
-<meta name="description" content="闲聊是个好传统我大白天时常走神，关键时刻还迷路；但是，有时会有一些小恩赐，比如说：  突然变聪明，想清楚一些事 突然与智慧零接触，也有些小感悟 突然有了「拾金不昧」「扶起倒下自行车」这类展现人品的机会😉        开这个系列，是因为，我时常想写一些长长的、细致的、靠谱的文章，但是呢，我发现并没有这个时间和精力，对了，我还没有💰。嗯，还有一样我好像也没有，不过大庭广众的，就不献丑了。 鉴于此">
-<meta name="keywords" content="Statistics,R">
+<meta name="description" content="闲聊是个好传统我大白天时常走神，关键时刻还迷路；但是，有时会有一些小恩赐，比如说：  突然变聪明，想清楚一些事 突然与智慧零接触，也有些小感悟 突然有了「拾金不昧」「扶起倒下自行车」这类展现人品的机会😉        我时常想写一些长长的、细致的、靠谱的文章，所以就拿出「先写下最简洁」版本的勇气。另外，今儿和张朋老师闲聊，要到了 Peter Song 的讲义，就可以把之前一个博客Divide &amp;">
+<meta name="keywords" content="Statistics,R,Model">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线性模型得出的参数到底该如何分析">
 <meta property="og:url" content="http://yoursite.com/2016-06-14-statlear-fun/index.html">
 <meta property="og:site_name" content="TinyOpen">
-<meta property="og:description" content="闲聊是个好传统我大白天时常走神，关键时刻还迷路；但是，有时会有一些小恩赐，比如说：  突然变聪明，想清楚一些事 突然与智慧零接触，也有些小感悟 突然有了「拾金不昧」「扶起倒下自行车」这类展现人品的机会😉        开这个系列，是因为，我时常想写一些长长的、细致的、靠谱的文章，但是呢，我发现并没有这个时间和精力，对了，我还没有💰。嗯，还有一样我好像也没有，不过大庭广众的，就不献丑了。 鉴于此">
+<meta property="og:description" content="闲聊是个好传统我大白天时常走神，关键时刻还迷路；但是，有时会有一些小恩赐，比如说：  突然变聪明，想清楚一些事 突然与智慧零接触，也有些小感悟 突然有了「拾金不昧」「扶起倒下自行车」这类展现人品的机会😉        我时常想写一些长长的、细致的、靠谱的文章，所以就拿出「先写下最简洁」版本的勇气。另外，今儿和张朋老师闲聊，要到了 Peter Song 的讲义，就可以把之前一个博客Divide &amp;">
 <meta property="og:image" content="http://yoursite.com/img/in-post/StatLear-fun/can%27t%20find%20sth.jpg">
 <meta property="og:image" content="http://yoursite.com/img/in-post/StatLear-fun/table4.1.png">
 <meta property="og:image" content="http://yoursite.com/img/in-post/StatLear-fun/table4.2.png">
 <meta property="og:image" content="http://yoursite.com/img/in-post/StatLear-fun/table4.3.png">
 <meta property="og:image" content="http://yoursite.com/img/in-post/StatLear-fun/figure4.3.png">
-<meta property="og:updated_time" content="2016-08-13T15:48:40.000Z">
+<meta property="og:updated_time" content="2017-10-24T14:07:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性模型得出的参数到底该如何分析">
-<meta name="twitter:description" content="闲聊是个好传统我大白天时常走神，关键时刻还迷路；但是，有时会有一些小恩赐，比如说：  突然变聪明，想清楚一些事 突然与智慧零接触，也有些小感悟 突然有了「拾金不昧」「扶起倒下自行车」这类展现人品的机会😉        开这个系列，是因为，我时常想写一些长长的、细致的、靠谱的文章，但是呢，我发现并没有这个时间和精力，对了，我还没有💰。嗯，还有一样我好像也没有，不过大庭广众的，就不献丑了。 鉴于此">
+<meta name="twitter:description" content="闲聊是个好传统我大白天时常走神，关键时刻还迷路；但是，有时会有一些小恩赐，比如说：  突然变聪明，想清楚一些事 突然与智慧零接触，也有些小感悟 突然有了「拾金不昧」「扶起倒下自行车」这类展现人品的机会😉        我时常想写一些长长的、细致的、靠谱的文章，所以就拿出「先写下最简洁」版本的勇气。另外，今儿和张朋老师闲聊，要到了 Peter Song 的讲义，就可以把之前一个博客Divide &amp;">
 <meta name="twitter:image" content="http://yoursite.com/img/in-post/StatLear-fun/can%27t%20find%20sth.jpg">
 
 
@@ -357,16 +357,13 @@
 </ul>
 <center><br>    <img src="/img/in-post/StatLear-fun/can't find sth.jpg" title="很随意~" width="300" high="300"><br></center>
 
-<p>开这个系列，是因为，我时常想写一些长长的、细致的、靠谱的文章，但是呢，我发现并没有这个时间和精力，对了，我还没有💰。嗯，还有一样我好像也没有，不过大庭广众的，就不献丑了。</p>
-<p>鉴于此，我又不想错过这些宝贵的瞬间，怎么办呢？只有拿出<strong>「先写下最简洁」</strong>版本的勇气，待日后有缘慢慢补上。这不，今儿我和数据挖掘的老师闲聊，要到了Peter Song的讲义，就可以把之前一个博客好好完善下咯！</p>
-<p>ps: 岛主夫人期末阶段的承诺纯属虚构，请勿当真</p>
+<p>我时常想写一些长长的、细致的、靠谱的文章，所以就拿出<strong>「先写下最简洁」</strong>版本的勇气。另外，今儿和张朋老师闲聊，要到了 Peter Song 的讲义，就可以把之前一个博客<a href="http://tinyopen.me/2016-05-12-Lecture-Divide-Combine/" target="_blank" rel="external">Divide &amp; Combine</a>好好完善下咯！</p>
+<p>👇这是最近非常有感触的一个点，here we go.</p>
 <a id="more"></a>
 <hr>
-<p>答应某人整理下最近非常有感触的一个点，既然答应了，就要全力以赴不食言😉～</p>
-<p>here we go～</p>
-<p>《An Introduction to Statistical Learning》第四章，讲的是分类模型。模型的细节这里就不展开了，直接跳到例子和结论。</p>
+<p><a href="https://www.douban.com/link2/?url=https%3A%2F%2Fbook.douban.com%2Fsubject%2F21706191%2F&amp;query=An+Introduction+to+Statistical+Learning&amp;cat_id=1001&amp;type=search&amp;pos=0" target="_blank" rel="external">《An Introduction to Statistical Learning》</a>第四章，讲的是分类模型。模型的细节这里就不展开了，直接跳到例子和结论。</p>
 <h3 id="数据集介绍"><a href="#数据集介绍" class="headerlink" title="数据集介绍"></a>数据集介绍</h3><p>这个例子的数据Default在R语言的ISLR包里，安装好后输入如下代码即可查看数据集</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">library(ISLR)</div><div class="line">\\查看ISLR中内置的数据集</div><div class="line">data(package = &quot;ISLR&quot;)</div><div class="line"></div><div class="line">\\此次讨论的是Default数据集</div><div class="line">help(Default)</div></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">library</span>(ISLR)</div><div class="line">\\查看ISLR中内置的数据集</div><div class="line">data(package = <span class="string">"ISLR"</span>)</div><div class="line"></div><div class="line">\\此次讨论的是Default数据集</div><div class="line">help(Default)</div></pre></td></tr></table></figure>
 <p>这个数据集给出了1000条信用记录，每条记录有四个变量：</p>
 <ul>
 <li><p>default<br>  顾客是否违约</p>
@@ -464,6 +461,8 @@
           
             <a href="/tags/R/" rel="tag">#R</a>
           
+            <a href="/tags/Model/" rel="tag">#Model</a>
+          
         </div>
       
 
@@ -556,7 +555,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">27</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -573,7 +572,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

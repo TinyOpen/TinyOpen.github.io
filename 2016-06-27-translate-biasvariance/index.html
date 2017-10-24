@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Statistics,译文," />
+  <meta name="keywords" content="Statistics,Model," />
 
 
 
@@ -87,18 +87,16 @@
 
 
 <meta name="description" content="此文初衷&amp;amp;构架 在Udacicy论坛上看到有位导师贴出了这篇文章:《Understanding the Bias-Variance Tradeoff》，希望感兴趣的同学能够翻译下。我想了下，那我就试试吧。既是试试，那就不藏拙了，也想介绍一些模型背后的智慧。">
-<meta name="keywords" content="Statistics,译文">
+<meta name="keywords" content="Statistics,Model">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线性模型往深讲——Trade-off between accuracy and precision">
 <meta property="og:url" content="http://yoursite.com/2016-06-27-translate-biasvariance/index.html">
 <meta property="og:site_name" content="TinyOpen">
 <meta property="og:description" content="此文初衷&amp;amp;构架 在Udacicy论坛上看到有位导师贴出了这篇文章:《Understanding the Bias-Variance Tradeoff》，希望感兴趣的同学能够翻译下。我想了下，那我就试试吧。既是试试，那就不藏拙了，也想介绍一些模型背后的智慧。">
-<meta property="og:image" content="http://yoursite.com/img/in-post/6-27-bias-variance/fun.jpg">
-<meta property="og:updated_time" content="2017-05-26T15:39:27.000Z">
+<meta property="og:updated_time" content="2017-10-24T14:09:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性模型往深讲——Trade-off between accuracy and precision">
 <meta name="twitter:description" content="此文初衷&amp;amp;构架 在Udacicy论坛上看到有位导师贴出了这篇文章:《Understanding the Bias-Variance Tradeoff》，希望感兴趣的同学能够翻译下。我想了下，那我就试试吧。既是试试，那就不藏拙了，也想介绍一些模型背后的智慧。">
-<meta name="twitter:image" content="http://yoursite.com/img/in-post/6-27-bias-variance/fun.jpg">
 
 
 
@@ -360,8 +358,6 @@
 <blockquote>
 <p>ps: 希望我写完后不会心生如下的感慨——我的功底呢？ ⊂( ˆ - ˆ )⊃ </p>
 </blockquote>
-<p>哦，容我贴张非常无关的小黄人的图放松下</p>
-<p><img src="/img/in-post/6-27-bias-variance/fun.jpg" alt="fun"></p>
 <hr>
 <h3 id="Why「真相无法用模型描述」"><a href="#Why「真相无法用模型描述」" class="headerlink" title="Why「真相无法用模型描述」"></a><strong>Why「真相无法用模型描述」</strong></h3><h4 id="Data浮出水面"><a href="#Data浮出水面" class="headerlink" title="Data浮出水面"></a><strong>Data浮出水面</strong></h4><p>在大脑一片空白的情况下，我们遇到了一堆数据。假设这是堆有自变量x和因变量y的数据，比如说，商品销售额是y，广告预算是x，我们要研究的是y怎样被x所影响。</p>
 <p>此时你要意识到，这些数据只是<strong>「观测值」</strong>，而不是<strong>「真实值」</strong>。真实值加上随机生成的&amp;无法观测的误差，然后变成了观测值。因为随机误差不可测，所以真实值也被掩藏起来了。</p>
@@ -503,7 +499,7 @@
           
             <a href="/tags/Statistics/" rel="tag">#Statistics</a>
           
-            <a href="/tags/译文/" rel="tag">#译文</a>
+            <a href="/tags/Model/" rel="tag">#Model</a>
           
         </div>
       
@@ -597,7 +593,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">27</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -614,7 +610,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Algorithm,Statistics,R," />
+  <meta name="keywords" content="Statistics,Algorithm,R," />
 
 
 
@@ -87,7 +87,7 @@
 
 
 <meta name="description" content="听说，干正事前闲聊是个好传统😉这篇文章写了好几天，断断续续，夹杂着数理统计的复习和回家看爸妈的过意不去。代码部分是在粽子节那天写的，回想起来还挺开心的。 那天，出门就带一张校园卡，穿白T黑色短裤人字拖，手机也不带，校园里相比以往人少了很多，由此鸟声凸显，清脆得引我抬头看，树叶得颜色真漂亮啊，有夏日即将来临的活力却非燥热难耐。 发布完就洗洗睡，我的勤奋似乎要使我在岛主那儿的信用破产了，写完这句话，">
-<meta name="keywords" content="Algorithm,Statistics,R">
+<meta name="keywords" content="Statistics,Algorithm,R">
 <meta property="og:type" content="article">
 <meta property="og:title" content="长得朴素但是很有效率的K-NN">
 <meta property="og:url" content="http://yoursite.com/2016-06-10-statlear-KNN/index.html">
@@ -110,7 +110,7 @@
 <meta property="og:image" content="http://yoursite.com/img/in-post/StatLearning-KNN/14.png">
 <meta property="og:image" content="http://yoursite.com/img/in-post/StatLearning-KNN/15.png">
 <meta property="og:image" content="http://yoursite.com/img/in-post/StatLearning-KNN/16.png">
-<meta property="og:updated_time" content="2016-08-13T15:43:58.000Z">
+<meta property="og:updated_time" content="2017-10-24T13:56:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="长得朴素但是很有效率的K-NN">
 <meta name="twitter:description" content="听说，干正事前闲聊是个好传统😉这篇文章写了好几天，断断续续，夹杂着数理统计的复习和回家看爸妈的过意不去。代码部分是在粽子节那天写的，回想起来还挺开心的。 那天，出门就带一张校园卡，穿白T黑色短裤人字拖，手机也不带，校园里相比以往人少了很多，由此鸟声凸显，清脆得引我抬头看，树叶得颜色真漂亮啊，有夏日即将来临的活力却非燥热难耐。 发布完就洗洗睡，我的勤奋似乎要使我在岛主那儿的信用破产了，写完这句话，">
@@ -394,12 +394,12 @@
 </li>
 </ul>
 <blockquote>
-<p>The Bayes Classifier produces the lowest possible test error rate, called the Bayes error rate. Since the Bayes classifier will always choose the class for which $Pr(Y=j|X=x_0)$ is largest, the error rate at $X = x<em>0$ will be $1- max</em>{j}Pr(Y = j|X = x<em>0)$. In general, the overall Bayes error rate is given by<br>$1 - E{max</em>{j}Pr(Y = j |X)}$, where the expectation averages the probability over all possible values of X, because the classes overlap in the true population so $max<em>{j} Pr(Y = j|X = x</em>{0}) &lt; 1$ for some values of $x_0$. <strong>The Bayes error rate is analogous to the irreducible error</strong>, discussed earlier.</p>
+<p>The Bayes Classifier produces the lowest possible test error rate, called the Bayes error rate. Since the Bayes classifier will always choose the class for which $Pr(Y=j|X=x_0)$ is largest, the error rate at $X = x_0$ will be $1- max_{j}Pr(Y = j|X = x_0)$. In general, the overall Bayes error rate is given by<br>$1 - E{max_{j}Pr(Y = j |X)}$, where the expectation averages the probability over all possible values of X, because the classes overlap in the true population so $max_{j} Pr(Y = j|X = x_{0}) &lt; 1$ for some values of $x_0$. <strong>The Bayes error rate is analogous to the irreducible error</strong>, discussed earlier.</p>
 </blockquote>
 <p>这段话写得很经典，有几处值得再讲一下：</p>
 <ol>
 <li><p>公式 $Error=1 - E{max_{j}Pr(Y = j |X)}$ 是对$X$求期望，后半部分的期望展开就是</p>
-<p> $ E{max<em>{j}Pr(Y = j |X)} = \int</em>{x \in X} max_{j}Pr(Y = j|X=x)P(X=x)dx$</p>
+<p> $ E{max_{j}Pr(Y = j |X)} = \int_{x \in X} max_{j}Pr(Y = j|X=x)P(X=x)dx$</p>
 </li>
 <li><p>多看几眼就知道这个式子很直观，我们对于每个点都取它最有可能取得的值，作为我们给出的预测值，那么在最优可能之外的那些可能性就是我们犯错的可能性。样本空间中的点$x_0$「出现的概率」*「在这点我们『犯错的可能性』」，也可看做是「犯错可能性」的权重。</p>
 </li>
@@ -418,7 +418,7 @@
 <p>休息一下吧～</p>
 <p><img src="/img/in-post/StatLearning-KNN/fun2.jpg" alt="have fun"></p>
 <p>☝️公式</p>
-<p>$Pr(Y = k |X = x<em>{0}) = \frac{1}{K}\sum</em>{i \in N<em>{0}} {I(y</em>{i}=j})$</p>
+<p>$Pr(Y = k |X = x_{0}) = \frac{1}{K}\sum_{i \in N_{0}} {I(y_{i}=j})$</p>
 <p>几句解释</p>
 <ul>
 <li><p>在$x_{0}$这一点，我们并不知道$Y$取到各个类别的真实概率，也就无法了解「其在哪个类别的可能性最大」</p>
@@ -477,7 +477,7 @@
 <blockquote>
 <p>When p=1 or p=2, KNN outperforms linear regression. But for p=3 the results are mixed, and for p &gt;=4 linear regression is superior to KNN. In fact, the increase in dimension has only caused a small deterioration in linear regression test set MSE, but it has caused more than a ten-fold increase in the MSE for KNN. </p>
 </blockquote>
-<p>简而言之，就是维数灾难，在高维情况下，给定的观测附近没有邻点，与$x_0$最为接近的K个观测值在p维空间中距离$x<em>0$很远，导致其对$f(x</em>{0})$的预测非常差。</p>
+<p>简而言之，就是维数灾难，在高维情况下，给定的观测附近没有邻点，与$x_0$最为接近的K个观测值在p维空间中距离$x_0$很远，导致其对$f(x_{0})$的预测非常差。</p>
 <p>举个小栗子吧~每个人都非常非常不一样，如果用很多维度的数据来描述一群人，那么这群人中的每两个都会显著不同（在很多维度都不同），那么用离A最近的K个人的特点取平均来描述A，肯定与A本身差别很大。</p>
 <p>不过，穷穷的统计学家的电脑中模拟的结果得出的结论必定是支持线性回归的，但是，真正的海量数据又是另外一回事咯！</p>
 <blockquote>
@@ -520,9 +520,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Algorithm/" rel="tag">#Algorithm</a>
-          
             <a href="/tags/Statistics/" rel="tag">#Statistics</a>
+          
+            <a href="/tags/Algorithm/" rel="tag">#Algorithm</a>
           
             <a href="/tags/R/" rel="tag">#R</a>
           
@@ -618,7 +618,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">27</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -635,7 +635,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
